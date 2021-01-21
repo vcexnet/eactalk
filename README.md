@@ -1,4 +1,5 @@
 [EACTALK](http://www.eactalk.com)
+# Welcome to Donald Trump! Use eactalk to build your own social Kingdom and let the social platforms that block your account die
 # 【EACTALK introduce】
 Eactalk is an information announcement weak social system based on EAC blockchain technology developed by a group of freedom advocates.<br>
 We don't try to control anything. We want freedom of speech in the world;<br>
@@ -18,6 +19,7 @@ Eactalk Chinese Name: easy to say. It is a decentralized social information appl
 6. Information is transmitted all over the world, what you think and what you reach;
 EACTALK TEAM
 --------------------------------------------------------------------------
+欢迎国内大厂需要吐槽的员工使用eactalk！揭露一下大厂丑恶的面目吧
 # 【EACTALK中文介绍】
 EACTALK是一群崇尚自由的技术人员基于EAC区块链技术开发的信息公告弱社交系统。
 
