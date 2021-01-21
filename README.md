@@ -1,11 +1,11 @@
 [EACTALK](http://www.eactalk.com)
 # 【EACTALK introduce】
 Eactalk is an information announcement weak social system based on EAC blockchain technology developed by a group of freedom advocates.<br>
-1.We don't try to control anything. We want freedom of speech in the world;<br>
-2.We want the world to be real, without lies;<br>
-3.Hope the world is full of positive energy;<br>
-4.We hope that speech in the world will be equal (even though we have nothing to do with a series of inequalities brought about by material inequality, we hope that speech born as human beings is equal, and that it will not be unequal because some organizations control resources);<br>
-5.Eactalk is designed to ensure that it will not be the second twitter, Facebook, Google.
+We don't try to control anything. We want freedom of speech in the world;<br>
+We want the world to be real, without lies;<br>
+Hope the world is full of positive energy;<br>
+We hope that speech in the world will be equal (even though we have nothing to do with a series of inequalities brought about by material inequality, we hope that speech born as human beings is equal, and that it will not be unequal because some organizations control resources);<br>
+Eactalk is designed to ensure that it will not be the second twitter, Facebook, Google.
 
 # 【EACTALK advantage】
 Eactalk Chinese Name: easy to say. It is a decentralized social information application based on EAC blockchain. In order to better express ideas freely, avoid the control of the existing centralized social platform, and truly realize the free expression of speech, eactalk features:
