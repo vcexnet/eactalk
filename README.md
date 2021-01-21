@@ -19,7 +19,7 @@ Eactalk Chinese Name: easy to say. It is a decentralized social information appl
 6. Information is transmitted all over the world, what you think and what you reach;
 EACTALK TEAM
 --------------------------------------------------------------------------
-欢迎国内大厂需要吐槽的员工使用eactalk！揭露一下大厂丑恶的面目吧
+# 欢迎国内大厂需要吐槽释放压力的员工使用eactalk！揭露一下大厂内不为人知的真实生活吧
 # 【EACTALK中文介绍】
 EACTALK是一群崇尚自由的技术人员基于EAC区块链技术开发的信息公告弱社交系统。
 
