@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:id="@+id/qr_main_layout"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+
+    <com.eactalk.tools.qrcode.QRCodeReaderView
+        android:id="@+id/qrdecoderview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="-2dp"
+        android:layout_marginTop="-3dp" />
+        />
+
+
+    <ImageView
+        android:id="@+id/scan_guide"
+        android:layout_width="240dp"
+        android:padding="40dp"
+        android:layout_height="240dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"/>
+
+    <com.eactalk.presenter.customviews.BRText
+        android:layout_width="wrap_content"
+        android:id="@+id/description_text"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="100dp"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:shadowDx="3"
+        android:shadowRadius="5"
+        android:shadowColor="@color/black"
+        android:shadowDy="3"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/btn_pick_photo"
+        android:text="@string/txt.pick_photo"
+        android:layout_alignParentBottom="true"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="48dp"
+        android:textColor="@color/white"
+        android:layout_height="wrap_content"/>
+</RelativeLayout>
