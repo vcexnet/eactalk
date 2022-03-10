@@ -2,7 +2,7 @@
 //  core.h
 //
 //  Created by Mihail Gutan on 9/24/2015.
-//  Copyright (c) 2015 eactalk LLC
+//  Copyright (c) 2015 eacpay LLC
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -23,25 +23,25 @@
 //  THE SOFTWARE.
 #include "jni.h"
 
-#ifndef eactalk_CORE_H
-#define eactalk_CORE_H
+#ifndef eacpay_CORE_H
+#define eacpay_CORE_H
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
 JNIEXPORT jbyteArray JNICALL
-Java_com_eactalk_tools_security_BitcoinUrlHandler_parsePaymentRequest(JNIEnv *env, jobject obj, jbyteArray payment);
+Java_com_eacpay_tools_security_BitcoinUrlHandler_parsePaymentRequest(JNIEnv *env, jobject obj, jbyteArray payment);
 
 JNIEXPORT jbyteArray JNICALL
-Java_com_eactalk_tools_security_BitcoinUrlHandler_getCertificatesFromPaymentRequest(JNIEnv *env, jobject obj,
+Java_com_eacpay_tools_security_BitcoinUrlHandler_getCertificatesFromPaymentRequest(JNIEnv *env, jobject obj,
                                                                                      jbyteArray payment, jint index);
 
 JNIEXPORT jstring JNICALL
-Java_com_eactalk_tools_security_BitcoinUrlHandler_parsePaymentACK(JNIEnv *env, jobject obj, jbyteArray paymentACK);
+Java_com_eacpay_tools_security_BitcoinUrlHandler_parsePaymentACK(JNIEnv *env, jobject obj, jbyteArray paymentACK);
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif //eactalk_CORE_H
+#endif //eacpay_CORE_H

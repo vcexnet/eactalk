@@ -11,14 +11,14 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import android.util.Base64;
 
-import com.eactalk.EactalkApp;
-import com.eactalk.R;
-import com.eactalk.presenter.activities.camera.CameraActivity;
-import com.eactalk.presenter.customviews.BRDialogView;
-import com.eactalk.tools.animation.BRDialog;
-import com.eactalk.tools.crypto.CryptoHelper;
-import com.eactalk.tools.threads.BRExecutor;
-import com.eactalk.tools.util.BRConstants;
+import com.eacpay.EacApp;
+import com.eacpay.R;
+import com.eacpay.presenter.activities.camera.CameraActivity;
+import com.eacpay.presenter.customviews.BRDialogView;
+import com.eacpay.tools.animation.BRDialog;
+import com.eacpay.tools.crypto.CryptoHelper;
+import com.eacpay.tools.threads.BRExecutor;
+import com.eacpay.tools.util.BRConstants;
 import com.platform.BRHTTPHelper;
 import com.platform.interfaces.Plugin;
 
@@ -62,7 +62,7 @@ public class CameraPlugin implements Plugin {
 
         if (target.startsWith("/_camera/take_picture")) {
             Timber.d("handling: " + target + " " + baseRequest.getMethod());
-            final Context app = EactalkApp.getBreadContext();
+            final Context app = EacApp.getBreadContext();
             if (app == null) {
                 Timber.i("handle: context is null: " + target + " " + baseRequest.getMethod());
                 return BRHTTPHelper.handleError(404, "context is null", baseRequest, response);
@@ -120,7 +120,7 @@ public class CameraPlugin implements Plugin {
             return true;
         } else if (target.startsWith("/_camera/picture/")) {
             Timber.i("handling: " + target + " " + baseRequest.getMethod());
-            final Context app = EactalkApp.getBreadContext();
+            final Context app = EacApp.getBreadContext();
             if (app == null) {
                 Timber.i("handle: context is null: " + target + " " + baseRequest.getMethod());
                 return BRHTTPHelper.handleError(404, "context is null", baseRequest, response);

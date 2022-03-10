@@ -2,8 +2,8 @@
 // Created by Mihail Gutan on 10/9/16.
 //
 
-#ifndef eactalk_JNIKEY_H
-#define eactalk_JNIKEY_H
+#ifndef eacpay_JNIKEY_H
+#define eacpay_JNIKEY_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -34,4 +34,4 @@ JNIEXPORT jbyteArray JNICALL Java_com_jniwrappers_BRKey_address(JNIEnv *env, job
 }
 #endif
 
-#endif //eactalk_JNIKEY_H
+#endif //eacpay_JNIKEY_H

@@ -5,9 +5,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 
-import com.eactalk.EactalkApp;
-import com.eactalk.tools.threads.BRExecutor;
-import com.eactalk.tools.util.Utils;
+import com.eacpay.EacApp;
+import com.eacpay.tools.threads.BRExecutor;
+import com.eacpay.tools.util.Utils;
 import com.platform.interfaces.Middleware;
 import com.platform.interfaces.Plugin;
 import com.platform.middlewares.APIProxy;
@@ -125,7 +125,7 @@ public class HTTPServer {
 
     private static boolean dispatch(String target, Request baseRequest, HttpServletRequest request, HttpServletResponse response) {
         Timber.d("TRYING TO HANDLE: " + target + " (" + request.getMethod() + ")");
-        final Context app = EactalkApp.getBreadContext();
+        final Context app = EacApp.getBreadContext();
         boolean result = false;
         if (target.equalsIgnoreCase("/_close")) {
             if (app != null) {

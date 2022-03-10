@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
   <!-- App name -->
-  <string name="About.appName.android">eactalk</string>
+  <string name="About.appName.android">EACTALK</string>
   <!-- About screen blog label -->
   <string name="About.blog">Website</string>
   <!-- About screen footer -->
-  <string name="About.footer">Gemaakt door het eactalk-team van de Earthcoin Foundation\n%1$s</string>
+  <string name="About.footer">Gemaakt door het EACPAY-team van de Earthcoin Foundation\n%1$s</string>
   <!-- Privay Policy button label -->
   <string name="About.privacy">Privatlivspolitik</string>
   <!-- About screen reddit label -->
@@ -33,9 +33,9 @@
   <!-- Error alert title -->
   <string name="Alert.error">Fejl</string>
   <!-- Keystore error -->
-  <string name="Alert.keystore.generic.android">Der er et problem med din Android OS keystore, kontakt venligst dev@eactalk.com</string>
+  <string name="Alert.keystore.generic.android">Der er et problem med din Android OS keystore, kontakt venligst dev@eacpay.com</string>
   <!-- KeyStore error, keys are invalidated -->
-  <string name="Alert.keystore.invalidated.android">Dine eactalk-krypterede data blev for nyligt ugyldiggjort, eftersom din Android skærmlås blev deaktiveret.</string>
+  <string name="Alert.keystore.invalidated.android">Dine EACPAY-krypterede data blev for nyligt ugyldiggjort, eftersom din Android skærmlås blev deaktiveret.</string>
   <!-- Keystore error title -->
   <string name="Alert.keystore.title.android">Android KeyStore fejl</string>
   <!-- No internet alert message -->
@@ -195,7 +195,7 @@
   <!-- password textfield placeholder -->
   <string name="Import.passwordPlaceholder">adgangskode</string>
   <!-- Caption for graphics -->
-  <string name="Import.rightCaption">Din eactalk pung</string>
+  <string name="Import.rightCaption">Din EACPAY pung</string>
   <!-- Scan Private key button label -->
   <string name="Import.scan">Scan privat nøgle</string>
   <!-- Import wallet success alert title -->
@@ -215,9 +215,9 @@
   <!-- Ignore jailbreak warning button -->
   <string name="JailbreakWarnings.ignore">Ignorer</string>
   <!-- Jailbreak warning message -->
-  <string name="JailbreakWarnings.messageWithBalance">ENHEDENS SIKKERHED ER KOMPROMITTERET\n Enhver \'jailbreak\' app kan få adgang til eactalk nøgledata og stjæle dine Earthcoin! Ryd straks denne pung og gendan på en sikker enhed.</string>
+  <string name="JailbreakWarnings.messageWithBalance">ENHEDENS SIKKERHED ER KOMPROMITTERET\n Enhver \'jailbreak\' app kan få adgang til EACPAY nøgledata og stjæle dine Earthcoin! Ryd straks denne pung og gendan på en sikker enhed.</string>
   <!-- Jailbreak warning message -->
-  <string name="JailbreakWarnings.messageWithoutBalance">ENHEDENS SIKKERHED ER KOMPROMITTERET\n Enhver \'jailbreak\' app kan få adgang til eactalk nøgledata og stjæle dine Earthcoin. Brug kun eactalk på en ikke jailbreaket enhed.</string>
+  <string name="JailbreakWarnings.messageWithoutBalance">ENHEDENS SIKKERHED ER KOMPROMITTERET\n Enhver \'jailbreak\' app kan få adgang til EACPAY nøgledata og stjæle dine Earthcoin. Brug kun EACPAY på en ikke jailbreaket enhed.</string>
   <!-- Jailbreak warning title -->
   <string name="JailbreakWarnings.title">ADVARSEL</string>
   <!-- Wipe wallet button -->
@@ -225,7 +225,7 @@
   <!-- Location services disabled error -->
   <string name="LocationPlugin.disabled">Placeringstjenester er deaktiveret.</string>
   <!-- No permissions for location services -->
-  <string name="LocationPlugin.notAuthorized">eactalk har ikke adgang til placeringstjenester.</string>
+  <string name="LocationPlugin.notAuthorized">EACPAY har ikke adgang til placeringstjenester.</string>
   <!-- Wallet creation date prefix -->
   <string name="ManageWallet.creationDatePrefix">Du lavede din pung den %1$s</string>
   <!-- Manage wallet description text -->
@@ -243,7 +243,7 @@
   <!-- Menu button title -->
   <string name="MenuButton.settings">Indstillinger</string>
   <!-- Menu button title -->
-  <string name="MenuButton.support">Support:       dev@eactalk.com</string>
+  <string name="MenuButton.support">Support:       dev@eacpay.com</string>
   <!-- button label -->
   <string name="MenuViewController.createButton">Opret ny pung</string>
   <!-- Menu modal title -->
@@ -317,11 +317,11 @@
   <!-- Button on fingerprint prompt so the user can enter their PIN instead -->
   <string name="Prompts.TouchId.usePin.android">PIN</string>
   <!-- Upgrade PIN prompt body. -->
-  <string name="Prompts.UpgradePin.body">eactalk er blevet opgraderet til at bruge en 6-cifret PIN. Tryk her for at opgradere.</string>
+  <string name="Prompts.UpgradePin.body">EACPAY er blevet opgraderet til at bruge en 6-cifret PIN. Tryk her for at opgradere.</string>
   <!-- Upgrade PIN prompt title. -->
   <string name="Prompts.UpgradePin.title">Opgader PIN</string>
   <!-- Notifications will be added later but users can set their preferences now, which is why we specify "in the future". -->
-  <string name="PushNotifications.body">Slå notifikationer til for at modtage særlige meddelelser fra eactalk i fremtiden.</string>
+  <string name="PushNotifications.body">Slå notifikationer til for at modtage særlige meddelelser fra EACPAY i fremtiden.</string>
   <!-- Push notifications toggle switch label -->
   <string name="PushNotifications.label">Push notifikationer</string>
   <!-- Push notifications are off label -->
@@ -351,7 +351,7 @@
   <!-- Enter paper key instruction -->
   <string name="RecoverWallet.instruction">Indtast paper key</string>
   <!-- Recover wallet intro -->
-  <string name="RecoverWallet.intro">Gendan dit eactalk med din paper key.</string>
+  <string name="RecoverWallet.intro">Gendan dit EACPAY med din paper key.</string>
   <!-- Invalid paper key message -->
   <string name="RecoverWallet.invalid">Den paper key du indtastede er ugyldig. Dobbelttjek hvert ord og prøv igen.</string>
   <!-- Previous button accessibility label -->
@@ -379,7 +379,7 @@
   <!-- extimated time -->
   <string name="ReScan.body1">20-45 minutter</string>
   <!-- Syncing explanation -->
-  <string name="ReScan.body2">Hvis en transaktion vises som gennemført i Earthcoin netværket, men ikke i dit eactalk.</string>
+  <string name="ReScan.body2">Hvis en transaktion vises som gennemført i Earthcoin netværket, men ikke i dit EACPAY.</string>
   <!-- Syncing explanation -->
   <string name="ReScan.body3">Du modtager gentagne gange en fejlmeddelelse om at din transaktion er blevet afvist.</string>
   <!-- Start Sync button label -->
@@ -409,7 +409,7 @@
   <!-- Paper Key button title -->
   <string name="SecurityCenter.paperKeyTitle">Paper key</string>
   <!-- PIN button description -->
-  <string name="SecurityCenter.pinDescription">Beskytter dit eactalk mod uberettigede brugere.</string>
+  <string name="SecurityCenter.pinDescription">Beskytter dit EACPAY mod uberettigede brugere.</string>
   <!-- PIN button title -->
   <string name="SecurityCenter.pinTitle">6-cifret PIN</string>
   <!-- Security Center Title -->
@@ -425,13 +425,13 @@
   <!-- Balance: $4.00 -->
   <string name="Send.balance">Balance: %1$s</string>
   <!-- Instructions how to allow the camera access for the app -->
-  <string name="Send.cameraUnavailabeMessage.android">Tillad adgang under \"Indstillinger\" &gt; \"Apps\" &gt; \"eactalk\" &gt; \"Tilladelser\"</string>
+  <string name="Send.cameraUnavailabeMessage.android">Tillad adgang under \"Indstillinger\" &gt; \"Apps\" &gt; \"EACPAY\" &gt; \"Tilladelser\"</string>
   <!-- Permission required to access camera -->
-  <string name="Send.cameraUnavailabeTitle.android">eactalk har ikke tilladelse til at få adgang til kameraet</string>
+  <string name="Send.cameraUnavailabeTitle.android">EACPAY har ikke tilladelse til at få adgang til kameraet</string>
   <!-- Camera not allowed message -->
   <string name="Send.cameraunavailableMessage">Gå til Indstillinger og giv adgang til kamera.</string>
   <!-- Camera not allowed alert title -->
-  <string name="Send.cameraUnavailableTitle">eactalk har ikke adgang til kameraet</string>
+  <string name="Send.cameraUnavailableTitle">EACPAY har ikke adgang til kameraet</string>
   <!-- Warning when sending to self. -->
   <string name="Send.containsAddress">Destinationen er din egen adresse. Du kan ikke sende til dig selv.</string>
   <!-- Could not create transaction alert title -->
@@ -497,7 +497,7 @@
   <!-- Join Early access label -->
   <string name="Settings.earlyAccess">Tilmeld dig Early Access</string>
   <!-- Are you enjoying bread alert message body -->
-  <string name="Settings.enjoying">Nyder du eactalk?</string>
+  <string name="Settings.enjoying">Nyder du EACPAY?</string>
   <!-- Import wallet label -->
   <string name="Settings.importTitle">Importer pung</string>
   <!-- Manage settings section header -->
@@ -529,7 +529,7 @@
   <!-- button label -->
   <string name="StartPaperPhrase.againButtonTitle">Skriv paper key ned igen</string>
   <!-- Paper key explanation text. -->
-  <string name="StartPaperPhrase.body">Din paper key er den eneste måde at gendanne dit eactalk på, hvis din telefon mistes, stjæles, går i stykker eller opgraderes.\n\nVi viser dig en liste over word du skal skrive ned på et papir, og holde sikkert.</string>
+  <string name="StartPaperPhrase.body">Din paper key er den eneste måde at gendanne dit EACPAY på, hvis din telefon mistes, stjæles, går i stykker eller opgraderes.\n\nVi viser dig en liste over word du skal skrive ned på et papir, og holde sikkert.</string>
   <!-- button label -->
   <string name="StartPaperPhrase.buttonTitle">Skriv paper key ned</string>
   <!-- Argument is date -->
@@ -561,7 +561,7 @@
   <!-- Fingerprint Is Not Setup -->
   <string name="TouchIdSettings.disabledWarning.title.android">Autentificering via fingeraftryk ikke aktiveret</string>
   <!-- Touch Id screen label -->
-  <string name="TouchIdSettings.label">Brug dit fingeraftryk til at låse op for dit eactalk og sende penge op til en vis grænse.</string>
+  <string name="TouchIdSettings.label">Brug dit fingeraftryk til at låse op for dit EACPAY og sende penge op til en vis grænse.</string>
   <!-- Link Text (see TouchIdSettings.customizeText) -->
   <string name="TouchIdSettings.linkText">Touch ID forbrugsgrænseside</string>
   <!-- Spending Limit: b100,000 ($100) -->
@@ -663,7 +663,7 @@
   <!-- Instruction to touch the sensor for fingerprint authentication -->
   <string name="UnlockScreen.touchIdInstructions.android">Touch sensor</string>
   <!-- TouchID prompt text -->
-  <string name="UnlockScreen.touchIdPrompt">Lås op for dit eactalk.</string>
+  <string name="UnlockScreen.touchIdPrompt">Lås op for dit EACPAY.</string>
   <!-- Device authentication body -->
   <string name="UnlockScreen.touchIdPrompt.android">Lås op for din Android enhed for at fortsætte</string>
   <!-- Unlock with TouchID accessibility label -->
@@ -675,7 +675,7 @@
   <!-- Update PIN caption text -->
   <string name="UpdatePin.caption">Husk denne PIN. Hvis du glemmer den, vil du ikke kunne få adgang til dine Earthcoin.</string>
   <!-- PIN creation info. -->
-  <string name="UpdatePin.createInstruction">Din PIN bliver brugt til at låse op for dit eactalk og sende penge.</string>
+  <string name="UpdatePin.createInstruction">Din PIN bliver brugt til at låse op for dit EACPAY og sende penge.</string>
   <!-- Update PIN title -->
   <string name="UpdatePin.createTitle">Indstil PIN</string>
   <!-- Update PIN title -->
@@ -717,9 +717,9 @@
   <!-- Updating webview message -->
   <string name="Webview.updating">Opdaterer...</string>
   <!-- Welcome screen text. (?) will be replaced with the help icon users should look for. -->
-  <string name="Welcome.body">eactalk har skiftet navn til eactalk med et helt nyt look og nogle nye funktioner.\n\nHvis du har brug for hjælp, led efter (?) øverst til højre på de fleste skærme.</string>
+  <string name="Welcome.body">EACPAY har skiftet navn til EACPAY med et helt nyt look og nogle nye funktioner.\n\nHvis du har brug for hjælp, led efter (?) øverst til højre på de fleste skærme.</string>
   <!-- Top title of welcome screen -->
-  <string name="Welcome.title">Velkommen til eactalk!</string>
+  <string name="Welcome.title">Velkommen til EACPAY!</string>
   <!-- Wipe wallet alert message -->
   <string name="WipeWallet.alertMessage">Er du sikker på at du vil slette denne wallet?</string>
   <!-- Wipe wallet alert title -->
@@ -731,9 +731,9 @@
   <!-- Enter phrase to wipe wallet instruction. -->
   <string name="WipeWallet.instruction">Indtast denne wallets gendannelsessætning for at slette den og starte eller gendanne en anden. Din nuværende saldo forbliver med denne sætning.</string>
   <!-- Start wipe wallet view message -->
-  <string name="WipeWallet.startMessage">Påbegyndelse eller gendannelse af en anden tegnebog giver mulighed for at få adgang samt administrere en eactalk tegnebog på denne enhed.</string>
+  <string name="WipeWallet.startMessage">Påbegyndelse eller gendannelse af en anden tegnebog giver mulighed for at få adgang samt administrere en EACPAY tegnebog på denne enhed.</string>
   <!-- Start wipe wallet view warning -->
-  <string name="WipeWallet.startWarning">Du vil ikke længere være i stand til at få adgang til din nuværende eactalk tegnebog fra denne enhed. Saldoen vil forblive på frasen.</string>
+  <string name="WipeWallet.startWarning">Du vil ikke længere være i stand til at få adgang til din nuværende EACPAY tegnebog fra denne enhed. Saldoen vil forblive på frasen.</string>
   <!-- Wipe wallet navigation item title. -->
   <string name="WipeWallet.title">Start eller gendan en anden wallet.</string>
   <!-- Wipe wallet button title -->
@@ -762,15 +762,15 @@
   <string name="message">Brev</string>
   <string name="ipfs">IPFS</string>
   <string name="MenuButton.supportCenter">Support center</string>
-  <string name="supportCenter.eac">Introduktion EAC og brug af eactalk</string>
+  <string name="supportCenter.eac">Introduktion EAC og brug af EACPAY</string>
   <string name="supportCenter.gainEac">Sådan får du EAC</string>
   <string name="supportCenter.buyEac">Køb EAC tutorial</string>
-  <string name="supportCenter.transEac">Træk dig tilbage til eactalk tutorial</string>
+  <string name="supportCenter.transEac">Træk dig tilbage til eacpay tutorial</string>
   <string name="supportCenter.drawEac">Minedrift EAC kursus</string>
   <string name="supportCenter.eacnode">Earthcoin node bygger tutorial</string>
   <string name="supportCenter.supportS">Support udveksling</string>
   <string name="supportCenter.supportA">Support pool</string>
-  <string name="supportCenter.supportP">Hjemmesider og applikationer, der bruger eactalk</string>
+  <string name="supportCenter.supportP">Hjemmesider og applikationer, der bruger eacpay</string>
   <string name="txt.support">Support</string>
   <string name="txt.tutorial">Tutorial</string>
   <string name="txt.introduction_and_use_of_eac">

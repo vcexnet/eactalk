@@ -2,7 +2,7 @@ package com.platform.middlewares;
 
 import android.content.Context;
 
-import com.eactalk.EactalkApp;
+import com.eacpay.EacApp;
 import com.platform.APIClient;
 import com.platform.interfaces.Middleware;
 
@@ -42,7 +42,7 @@ public class APIProxy implements Middleware {
             "connection"};
 
     public APIProxy() {
-        Context app = EactalkApp.getBreadContext();
+        Context app = EacApp.getBreadContext();
         if (app == null) {
             Timber.i("APIProxy: app is null!");
         }

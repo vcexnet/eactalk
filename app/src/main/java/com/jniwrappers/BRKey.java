@@ -1,6 +1,6 @@
 package com.jniwrappers;
 
-import com.eactalk.tools.util.Utils;
+import com.eacpay.tools.util.Utils;
 
 import java.util.Arrays;
 public class BRKey {

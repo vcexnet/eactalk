@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_main_home"
+        android:contentDescription="首页"
+        android:icon="@drawable/bottom_nav_icon_home"
+        android:title="首页" />
+    <item
+        android:id="@+id/nav_main_message"
+        android:contentDescription="消息"
+        android:icon="@drawable/bottom_nav_icon_message"
+        android:title="消息" />
+    <item
+        android:id="@+id/nav_main_send"
+        android:contentDescription="发布"
+        android:icon="@drawable/bottom_nav_icon_send"
+        android:title="发布" />
+    <item
+        android:id="@+id/nav_main_contact"
+        android:contentDescription="通讯录"
+        android:icon="@drawable/bottom_nav_icon_contact"
+        android:title="通讯录" />
+    <item
+        android:id="@+id/nav_main_mine"
+        android:contentDescription="我的"
+        android:icon="@drawable/bottom_nav_icon_mine"
+        android:title="我的" />
+</menu>

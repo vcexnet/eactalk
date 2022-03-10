@@ -1,91 +1,33 @@
 {
   "project_info": {
-    "project_number": "483140540088",
-    "project_id": "eacpay-359ce",
-    "storage_bucket": "eacpay-359ce.appspot.com"
+    "project_number": "119354849705",
+    "project_id": "eactalk",
+    "storage_bucket": "eactalk.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:483140540088:android:933afc2798b9632b6e464d",
-        "android_client_info": {
-          "package_name": "EACPAY.COM"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "483140540088-4p27n1a1rv0inslri3mj7e21olpikb0r.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyD3-6_0CLF5WaognKTYaj4lF81dhandwG4"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "483140540088-4p27n1a1rv0inslri3mj7e21olpikb0r.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:483140540088:android:b6cb946b2a21a7c46e464d",
-        "android_client_info": {
-          "package_name": "com.eacpay"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "483140540088-4p27n1a1rv0inslri3mj7e21olpikb0r.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyD3-6_0CLF5WaognKTYaj4lF81dhandwG4"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "483140540088-4p27n1a1rv0inslri3mj7e21olpikb0r.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:483140540088:android:af75cb01a73088446e464d",
+        "mobilesdk_app_id": "1:119354849705:android:6f8e33f3e7ed97e8876cb8",
         "android_client_info": {
           "package_name": "com.eactalk"
         }
       },
       "oauth_client": [
         {
-          "client_id": "483140540088-4p27n1a1rv0inslri3mj7e21olpikb0r.apps.googleusercontent.com",
+          "client_id": "119354849705-6jom2or5tbsppp0p2c1q28s1jqsu6c5q.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyD3-6_0CLF5WaognKTYaj4lF81dhandwG4"
+          "current_key": "AIzaSyAQEl6XnqeJlE4t-GXoey5Z1f1vzN-sgx4"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "483140540088-4p27n1a1rv0inslri3mj7e21olpikb0r.apps.googleusercontent.com",
+              "client_id": "119354849705-6jom2or5tbsppp0p2c1q28s1jqsu6c5q.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

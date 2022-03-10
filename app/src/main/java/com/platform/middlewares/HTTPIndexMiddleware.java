@@ -2,7 +2,7 @@ package com.platform.middlewares;
 
 import android.content.Context;
 
-import com.eactalk.EactalkApp;
+import com.eacpay.EacApp;
 import com.platform.APIClient;
 import com.platform.BRHTTPHelper;
 import com.platform.interfaces.Middleware;
@@ -23,7 +23,7 @@ public class HTTPIndexMiddleware implements Middleware {
     @Override
     public boolean handle(String target, org.eclipse.jetty.server.Request baseRequest, HttpServletRequest request, HttpServletResponse response) {
         Timber.d("handling: " + target + " " + baseRequest.getMethod());
-        Context app = EactalkApp.getBreadContext();
+        Context app = EacApp.getBreadContext();
         if (app == null) {
             Timber.i("handle: app is null!");
             return true;

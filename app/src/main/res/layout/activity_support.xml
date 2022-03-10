@@ -6,9 +6,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/extra_light_blue_background"
-    tools:context="com.eactalk.presenter.activities.SetPinActivity">
+    tools:context="com.eacpay.presenter.activities.SetPinActivity">
 
-    <com.eactalk.presenter.customviews.BRText
+    <com.eacpay.presenter.customviews.BRText
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -180,7 +180,7 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:gravity="center_vertical|left"
-            android:text="Email：dev@eactalk.com"></TextView>
+            android:text="Email：dev@eacpay.com"></TextView>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

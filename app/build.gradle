@@ -13,10 +13,10 @@ android {
     }
     def Properties props = new Properties()
     def propFile = file('../release.properties')
-    if (propFile.canRead()){
+    if (propFile.canRead()) {
         props.load(new FileInputStream(propFile))
 
-        if (props!=null && props.containsKey('storeFile') && props.containsKey('storePassword') &&
+        if (props != null && props.containsKey('storeFile') && props.containsKey('storePassword') &&
                 props.containsKey('keyAlias') && props.containsKey('keyPassword')) {
 
             android.signingConfigs.release.storeFile = file(props['storeFile'])
@@ -26,14 +26,14 @@ android {
         }
     }
 
-    compileSdkVersion = 29
+    compileSdkVersion = 31
     defaultConfig {
         testInstrumentationRunner = 'androidx.test.runner.AndroidJUnitRunner'
         applicationId = 'com.eactalk'
-        minSdkVersion 23
-        targetSdkVersion 30
-        versionCode 668
-        versionName "v2.0.8"
+        minSdkVersion 24
+        targetSdkVersion 31
+        versionCode 1
+        versionName "v1.0"
         multiDexEnabled true
 
         // Similar to other properties in the defaultConfig block,
@@ -72,7 +72,7 @@ android {
         loaf {
             applicationId "com.eactalk"
             dimension "mode"
-            resValue "string", "app_name", "eactalk"
+            resValue "string", "app_name", "EACTALK"
             buildConfigField "boolean", "LITECOIN_TESTNET", "false"
 
             externalNativeBuild {
@@ -156,7 +156,10 @@ android {
         }
 
     }
-    compileSdkVersion 29
+
+    viewBinding {
+        enabled = true
+    }
 }
 
 task copyResDirectoryToClasses(type: Copy) {
@@ -212,4 +215,10 @@ dependencies {
     // Timber
     implementation 'com.jakewharton.timber:timber:4.7.1'
     implementation 'com.google.android.exoplayer:exoplayer:2.14.0'
+
+    implementation 'androidx.navigation:navigation-fragment:2.3.5'
+    implementation 'androidx.navigation:navigation-runtime:2.3.5'
+    implementation 'androidx.navigation:navigation-ui:2.3.5'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'com.google.code.gson:gson:2.8.9'
 }

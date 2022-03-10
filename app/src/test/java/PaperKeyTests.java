@@ -1,7 +1,7 @@
 import android.util.Log;
 
-import com.eactalk.tools.util.Bip39Reader;
-import com.eactalk.wallet.BRWalletManager;
+import com.eacpay.tools.util.Bip39Reader;
+import com.eacpay.wallet.BRWalletManager;
 
 import org.apache.commons.io.IOUtils;
 import org.junit.Test;

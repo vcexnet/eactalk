@@ -5,11 +5,11 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.eactalk.EactalkApp;
-import com.eactalk.tools.security.BRKeyStore;
-import com.eactalk.tools.threads.BRExecutor;
-import com.eactalk.tools.util.BRConstants;
-import com.eactalk.tools.util.Utils;
+import com.eacpay.EacApp;
+import com.eacpay.tools.security.BRKeyStore;
+import com.eacpay.tools.threads.BRExecutor;
+import com.eacpay.tools.util.BRConstants;
+import com.eacpay.tools.util.Utils;
 import com.jniwrappers.BRKey;
 import com.platform.interfaces.KVStoreAdaptor;
 import com.platform.sqlite.KVItem;
@@ -802,7 +802,7 @@ public class ReplicatedKVStore {
             Timber.i("encrypt: data is null");
             return null;
         }
-        if (app == null) app = EactalkApp.getBreadContext();
+        if (app == null) app = EacApp.getBreadContext();
         if (app == null) {
             Timber.i("encrypt: app is null");
             return null;
@@ -838,7 +838,7 @@ public class ReplicatedKVStore {
             Timber.i("decrypt: failed to decrypt: %s", data == null ? null : data.length);
             return null;
         }
-        if (app == null) app = EactalkApp.getBreadContext();
+        if (app == null) app = EacApp.getBreadContext();
         if (app == null) return null;
         if (tempAuthKey == null)
             retrieveAuthKey(app);
