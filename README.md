@@ -1,81 +1,42 @@
-[![Eacpay wallet](/images/header-android.png)](https://play.google.com/store/apps/details?id=com.loafwallet&hl=en_US)
-======================
-[![Release](https://img.shields.io/github/v/release/litecoin-foundation/loafwallet-android?style=plastic)](https://img.shields.io/github/v/release/litecoin-foundation/loafwallet-android) 
-[![MIT License](https://img.shields.io/github/license/litecoin-foundation/loafwallet-android?style=plastic)](https://img.shields.io/github/license/litecoin-foundation/loafwallet-android?style=plastic)
+[EACTALK](http://www.eactalk.com)
+# Welcome to Donald Trump! Use eactalk to build your own social Kingdom and let the social platforms that block your account die
+# 【EACTALK introduce】
+Eactalk is an information announcement weak social system based on EAC blockchain technology developed by a group of freedom advocates.<br>
+We don't try to control anything. We want freedom of speech in the world;<br>
+We want the world to be real, without lies;<br>
+Hope the world is full of positive energy;<br>
+We hope that speech in the world will be equal (even though we have nothing to do with a series of inequalities brought about by material inequality, we hope that speech born as human beings is equal, and that it will not be unequal because some organizations control resources);<br>
+Eactalk is designed to ensure that it will not be the second twitter, Facebook, Google.
 
-## Easy and secure
-EACpay wallet is the best way to get started with Earthcoin. Our simple, streamlined design is easy for beginners, yet powerful enough for experienced users. This is a free app produced by Eacpay.com.
- 
-## Donations
-The Earthcoin wallet Team is a group of global volunteers & part of eacpay.com that work hard to promote the use of Earthcoin. Earthcoin takes a lot of time and resources to improve and test features but we need your help.  Please consider donating to one of our addresses:
+# 【EACTALK advantage】
+Eactalk Chinese Name: easy to say. It is a decentralized social information application based on EAC blockchain. In order to better express ideas freely, avoid the control of the existing centralized social platform, and truly realize the free expression of speech, eactalk features:
 
-EAC:egSkEWfeMSkkWtPePsaUhaHLfVwTep4AHQ
+1. The account does not need to be registered. It is unique in the world and cannot be forged. The ownership of the information is completely controlled by you;
+2. The information is open, permanent in the chain, can not be tampered with, no one can delete;
+3. The publisher is anonymous and secure, and will never be attacked by human flesh. It can choose self authentication at any time according to its needs;
+4. No one can seal or forbid the account;
+5. It does not identify the authenticity of the information itself, and the authenticity of the information is self certified by the publisher;
+6. Information is transmitted all over the world, what you think and what you reach;
+EACTALK TEAM
+--------------------------------------------------------------------------
+# 欢迎国内大厂需要吐槽释放压力的员工使用eactalk！揭露一下大厂内不为人知的真实生活吧
+# 【EACTALK中文介绍】
+EACTALK是一群崇尚自由的技术人员基于EAC区块链技术开发的信息公告弱社交系统。
 
-## Completely decentralized
+我们不试图掌控任何东西，我们希望世界上言论自由；<br>
+我们希望世界是真实的，没有谎言；<br>
+希望世界充满正能量；<br>
+我们希望世界言论平等（即便基于物质的不平等带来的一系列不平等我们无可奈何，但是我们希望作为人与生俱来的言论是平等的，而不会因为一些组织掌控资源造成不平等）；<br>
+EACTALK设计机制确保不会成为第二个Twitter、Facebook、Google。<br>
 
-Unlike other iOS eacpay wallets, **Eacpay wallet** is a standalone Earthcoin client. It connects directly to the Earthcoin network using [SPV](https://en.bitcoin.it/wiki/Thin_Client_Security#Header-Only_Clients) mode, and doesn't rely on servers that can be hacked or disabled. Even if eacpay wallet is removed from the App Store, the app will continue to function, allowing users to access their valuable Earthcoin at any time.
+# 【EACTALK特点】
+EACTALK中文名：易说。是基于EAC区块链的一款去中心化信息公告弱社交应用。为了更好的自由表达观点思想，避免现有中心化社交平台的控制，真正实现言论的自由表达，EACTALK的特点：
 
-## Cutting-edge security
+1、账户无需注册，全球唯一，无法伪造，信息所有权完全由你掌控；<br>
+2、信息公开，永久保留在链上，不可篡改，无人能删除；<br>
+3、发布者匿名安全，永远不会被人肉，根据需要可随时选择自我认证；<br>
+4、账户无人能封，无人能禁；<br>
+5、本身不辨别信息的真实性，信息真实性由发布者自我认证；<br>
+6、信息极速传递全球，所想及所达；<br>
 
-**eacpay wallet** utilizes AES hardware encryption, app sandboxing, and the latest iOS security features to protect users from malware, browser security holes, and even physical theft. Private keys are stored only in the secure enclave of the user's phone, inaccessible to anyone other than the user.
-
-## Designed with new users in mind
-
-Simplicity and ease-of-use is **Eacpay wallet**'s core design principle. A simple recovery phrase (which we call a paper key) is all that is needed to restore the user's wallet if they ever lose or replace their device. **Eacpay wallet** is [deterministic](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki), which means the user's balance and transaction history can be recovered just from the paper key.
-
-## Features:
-
-- ["simplified payment verification"](https://github.com/bitcoin/bips/blob/master/bip-0037.mediawiki) for fast mobile performance
-- no server to get hacked or go down
-- single backup phrase that works forever
-- private keys never leave your device
-- import [password protected](https://github.com/bitcoin/bips/blob/master/bip-0038.mediawiki) paper wallets
-- ["payment protocol"](https://github.com/bitcoin/bips/blob/master/bip-0070.mediawiki) payee identity certification
-
-
-## Localization
-
-**Eacpay wallet** is available in the following languages:
-
-- Chinese (Simplified and traditional)
-- Danish
-- Dutch
-- English
-- French
-- German
-- Indonesian
-- Italian
-- Japanese
-- Korean
-- Portuguese
-- Russian
-- Spanish
-- Swedish
-
----
-## Eacpay wallet Development:
-[![GitHub issues](https://img.shields.io/github/issues/litecoin-foundation/loafwallet-android?style=plastic)](https://github.com/litecoin-foundation/loafwallet-android/issues)
-[![GitHub pull requests](https://img.shields.io/github/issues-pr/litecoin-foundation/loafwallet-android?color=00ff00&style=plastic)](https://github.com/litecoin-foundation/loafwallet-android/pulls)
-
-### Building & Developing Eacpay wallet for Android: 
-
-1. Download and install Java 7 or up,Java 8 is recommended
-2. Download and install the latest Android studio 4.1.2
-3. Download NDK 21 from the [NDK Archives](https://developer.android.com/ndk/downloads/older_releases.html)
-4. Clone this repo & init submodules
-```bash
-$ git clone https://github.com/vcexnet/eacpay-android
-$ cd eacpay-android
-$ git submodule init
-$ git submodule update
-```
-5. Open the project with Android Studio, navigate to `File > Project Structure > SDK Location`
-6. Change `Android NDK Location` with the path to NDK 21 that you downloaded earlier(eacpay-android/local.properties Specify the SDK path and NDK version in the file)
-7. Go to SDK Manager and download all the SDK Platforms and SDK Tools
-9. Build -> Rebuild Project
-
-### Eacpay Team:
-* [Development Code of Conduct](https://github.com/vcexnet/eacpaywallet/blob/master/DEVELOPMENT.md)
----
-**Earthcoin** source code is available at https://github.com/Sandokaaan/Earthcoin
-
+EACTALK TEAM
