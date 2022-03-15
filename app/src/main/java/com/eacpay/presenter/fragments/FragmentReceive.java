@@ -3,9 +3,9 @@ package com.eacpay.presenter.fragments;
 import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import androidx.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +15,8 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import androidx.annotation.Nullable;
 
 import com.eacpay.EacApp;
 import com.eacpay.R;
@@ -44,7 +46,7 @@ public class FragmentReceive extends Fragment {
     private View separator;
     private BRButton shareButton;
     private Button shareEmail;
-//    private Button shareTextMessage;
+    //    private Button shareTextMessage;
     private Button requestButton;
     private BRLinearLayoutWithCaret shareButtonsLayout;
     private BRLinearLayoutWithCaret copiedLayout;
@@ -128,7 +130,14 @@ public class FragmentReceive extends Fragment {
             public void onClick(View v) {
                 if (!BRAnimator.isClickAllowed()) return;
                 shareButtonsShown = !shareButtonsShown;
-                showShareButtons(shareButtonsShown);
+//                showShareButtons(shareButtonsShown);
+                Intent sendIntent = new Intent();
+                sendIntent.setAction(Intent.ACTION_SEND);
+                sendIntent.putExtra(Intent.EXTRA_TEXT, BRSharedPrefs.getReceiveAddress(getActivity()));
+                sendIntent.setType("text/plain");
+
+                Intent shareIntent = Intent.createChooser(sendIntent, null);
+                startActivity(shareIntent);
             }
         });
         mAddress.setOnClickListener(new View.OnClickListener() {
@@ -215,7 +224,7 @@ public class FragmentReceive extends Fragment {
         observer.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
-                if(observer.isAlive()) {
+                if (observer.isAlive()) {
                     observer.removeOnGlobalLayoutListener(this);
                 }
                 BRAnimator.animateBackgroundDim(backgroundLayout, false);

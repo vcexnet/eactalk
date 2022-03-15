@@ -11,12 +11,15 @@ import android.net.ConnectivityManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.NavigationUI;
 
 import com.eacpay.R;
+import com.eacpay.eactalk.ipfs.IpfsManager;
+import com.eacpay.eactalk.ipfs.StartIPFS;
 import com.eacpay.presenter.activities.ReEnterPinActivity;
 import com.eacpay.presenter.activities.util.BRActivity;
 import com.eacpay.presenter.fragments.FragmentManage;
@@ -32,6 +35,7 @@ import com.eacpay.tools.util.BRConstants;
 import com.eacpay.wallet.BRPeerManager;
 import com.eacpay.wallet.BRWalletManager;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.pgyer.pgyersdk.PgyerSDKManager;
 import com.platform.APIClient;
 
 import timber.log.Timber;
@@ -90,6 +94,35 @@ public class MainActivity extends BRActivity implements BRWalletManager.OnBalanc
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_nav);
 
         NavigationUI.setupWithNavController(bottomNavigationView, navHostFragment.getNavController());
+
+        PgyerSDKManager.checkSoftwareUpdate(this);
+
+        new StartIPFS(this).execute();
+    }
+
+    public void displayPeerIDResult(final String peerID) {
+        IpfsManager.getInstance().setPeerID(peerID);
+//        ipfsStatus.setText("连接成功,本机 peerID: " + peerID);
+//
+//        ipfsStatus.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+//                ClipData clipData = ClipData.newPlainText("peerID", peerID);
+//                clipboard.setPrimaryClip(clipData);
+//                Toast.makeText(MainActivity.this, "复制成功", Toast.LENGTH_SHORT).show();
+//            }
+//        });
+    }
+
+    public static String exceptionToString(Exception error) {
+        String string = error.getMessage();
+
+        if (error.getCause() != null) {
+            string += ": " + error.getCause().getMessage();
+        }
+
+        return string;
     }
 
     private void setUrlHandler(Intent intent) {
@@ -259,11 +292,11 @@ public class MainActivity extends BRActivity implements BRWalletManager.OnBalanc
                     final double progress = BRPeerManager.syncProgress(BRSharedPrefs.getStartHeight(MainActivity.this));
                     Timber.d("Sync Progress: %s", progress);
                     if (progress < 1 && progress > 0) {
+                        Log.e(TAG, "run: onConnectionChanged startSyncingProgressThread ");
                         SyncManager.getInstance().startSyncingProgressThread();
                     }
                 }
             });
-
         } else {
             SyncManager.getInstance().stopSyncingProgressThread();
         }

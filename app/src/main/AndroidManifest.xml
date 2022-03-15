@@ -42,6 +42,7 @@
         android:largeHeap="true"
         android:launchMode="singleTask"
         android:networkSecurityConfig="@xml/network_security_config"
+        android:requestLegacyExternalStorage="true"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:windowSoftInputMode="stateVisible|adjustResize">
@@ -107,7 +108,15 @@
                 android:resource="@xml/searchable" />
         </activity>
         <activity
+            android:name=".eactalk.ApiSettings"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".eactalk.SendMessage"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".eactalk.main_fragment.HomeDetail"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity
@@ -241,6 +250,36 @@
             android:enabled="true"
             android:exported="false"
             android:label="SyncReceiver" />
+
+        <meta-data
+            android:name="PGYER_API_KEY"
+            android:value="9454aabcc1e12da0a9a33e958d7541ae" />
+        <meta-data
+            android:name="PGYER_FRONTJS_KEY"
+            android:value="600971f5c545f66ed77a678f930a9912" />
+
+        <!-- 渠道 -->
+        <meta-data
+            android:name="PGYER_CHALNNEL_KEY"
+            android:value="pgyer" />
+        <!-- 添加新版本检测 -->
+        <meta-data
+            android:name="PGYER_FEATURE_CHECK_UNPDATE"
+            android:value="true" />
+        <!-- 设置fps阈值 -->
+        <meta-data
+            android:name="PGYER_FPS_THRESHOLD"
+            android:value="10" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
     </application>
 
 </manifest>

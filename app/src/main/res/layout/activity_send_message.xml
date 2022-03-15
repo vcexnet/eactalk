@@ -99,13 +99,30 @@
                     android:layout_height="wrap_content"
                     android:text="消息:" />
 
-                <EditText
-                    android:id="@+id/send_message_content"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="top"
-                    android:inputType="textMultiLine"
-                    android:minLines="4" />
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/send_message_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/b_f6_4"
+                        android:gravity="top"
+                        android:inputType="textMultiLine"
+                        android:maxLength="256"
+                        android:minLines="4"
+                        android:padding="8dp" />
+
+                    <TextView
+                        android:id="@+id/send_message_content_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:padding="8dp"
+                        android:text="0/256" />
+                </RelativeLayout>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -114,6 +131,16 @@
 
                 <ListView
                     android:id="@+id/send_message_file_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/send_message_file_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/send_message_file_cid"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 

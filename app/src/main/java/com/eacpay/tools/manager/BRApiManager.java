@@ -31,6 +31,7 @@ import java.util.TimerTask;
 import okhttp3.Request;
 import okhttp3.Response;
 import timber.log.Timber;
+
 public class BRApiManager {
     private static BRApiManager instance;
     private Timer timer;
@@ -131,18 +132,6 @@ public class BRApiManager {
 
 
     public static JSONArray fetchRates(Activity activity) {
-        String jsonString = urlGET(activity, "https://api.eactalk.com/api/v1/rates/");
-        JSONArray jsonArray = null;
-        if (jsonString == null) return null;
-        try {
-            jsonArray = new JSONArray(jsonString);
-        } catch (JSONException ex) {
-            Timber.e(ex);
-        }
-        return jsonArray == null ? backupFetchRates(activity) : jsonArray;
-    }
-
-    public static JSONArray backupFetchRates(Activity activity) {
         String jsonString = urlGET(activity, "https://exapi.eacpay.com/api/v1/rates");
 
         JSONArray jsonArray = null;
@@ -152,6 +141,18 @@ public class BRApiManager {
 
         } catch (JSONException e) {
             Timber.e(e);
+        }
+        return jsonArray == null ? backupFetchRates(activity) : jsonArray;
+    }
+
+    public static JSONArray backupFetchRates(Activity activity) {
+        String jsonString = urlGET(activity, "https://api.eactalk.com/api/v1/rates/");
+        JSONArray jsonArray = null;
+        if (jsonString == null) return null;
+        try {
+            jsonArray = new JSONArray(jsonString);
+        } catch (JSONException ex) {
+            Timber.e(ex);
         }
         return jsonArray;
     }

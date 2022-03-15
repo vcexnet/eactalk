@@ -435,4 +435,37 @@ public class BRSharedPrefs {
         editor.putString("trustNode", trustNode);
         editor.apply();
     }
+
+    public static void putString(Context context, String key, String value) {
+        SharedPreferences prefs = context.getSharedPreferences(BRConstants.PREFS_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putString(key, value);
+        editor.apply();
+    }
+
+    public static String getString(Context context, String key) {
+        SharedPreferences prefs = context.getSharedPreferences(BRConstants.PREFS_NAME, Context.MODE_PRIVATE);
+        return prefs.getString(key, "");
+    }
+
+    public static String getString(Context context, String key, String defaultValue) {
+        SharedPreferences prefs = context.getSharedPreferences(BRConstants.PREFS_NAME, Context.MODE_PRIVATE);
+        String value = prefs.getString(key, defaultValue);
+        if (value == null || value.equals("")) {
+            return defaultValue;
+        }
+        return prefs.getString(key, defaultValue);
+    }
+
+    public static void putBoolean(Context context, String key, boolean value) {
+        SharedPreferences prefs = context.getSharedPreferences(BRConstants.PREFS_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putBoolean(key, value);
+        editor.apply();
+    }
+
+    public static boolean getBoolean(Context context, String key, boolean defaultValue) {
+        SharedPreferences prefs = context.getSharedPreferences(BRConstants.PREFS_NAME, Context.MODE_PRIVATE);
+        return prefs.getBoolean(key, defaultValue);
+    }
 }

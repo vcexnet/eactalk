@@ -15,18 +15,21 @@ import androidx.fragment.app.Fragment;
 
 import com.eacpay.R;
 import com.eacpay.databinding.FragmentMainMineBinding;
+import com.eacpay.eactalk.ApiSettings;
 import com.eacpay.presenter.activities.settings.AboutActivity;
 import com.eacpay.presenter.activities.settings.DisplayCurrencyActivity;
 import com.eacpay.presenter.activities.settings.ImportActivity;
-import com.eacpay.presenter.activities.settings.NodesActivity;
 import com.eacpay.presenter.activities.settings.SecurityCenterActivity;
 import com.eacpay.presenter.activities.settings.WipeActivity;
+import com.eacpay.presenter.customviews.BRDialogView;
 import com.eacpay.tools.animation.BRAnimator;
+import com.eacpay.tools.animation.BRDialog;
 import com.eacpay.tools.manager.BRSharedPrefs;
 import com.eacpay.tools.manager.TxManager;
 import com.eacpay.tools.threads.BRExecutor;
 import com.eacpay.tools.util.BRCurrency;
 import com.eacpay.tools.util.BRExchange;
+import com.eacpay.wallet.BRPeerManager;
 import com.eacpay.wallet.BRWalletManager;
 
 import java.math.BigDecimal;
@@ -91,7 +94,8 @@ public class Mine extends Fragment implements BRWalletManager.OnBalanceChanged {
         binding.mineNode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openActivity(NodesActivity.class);
+//                openActivity(NodesActivity.class);
+                openActivity(ApiSettings.class);
             }
         });
 
@@ -147,6 +151,35 @@ public class Mine extends Fragment implements BRWalletManager.OnBalanceChanged {
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent);
                 getActivity().overridePendingTransition(R.anim.enter_from_right, R.anim.exit_to_left);
+            }
+        });
+
+        binding.mineRescan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                BRDialog.showCustomDialog(getActivity(), getString(R.string.ReScan_alertTitle),
+                        getString(R.string.ReScan_footer), getString(R.string.ReScan_alertAction), getString(R.string.Button_cancel),
+                        new BRDialogView.BROnClickListener() {
+                            @Override
+                            public void onClick(BRDialogView brDialogView) {
+                                brDialogView.dismissWithAnimation();
+                                BRExecutor.getInstance().forLightWeightBackgroundTasks().execute(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        BRSharedPrefs.putStartHeight(getActivity(), 0);
+                                        BRSharedPrefs.putAllowSpend(getActivity(), false);
+                                        BRPeerManager.getInstance().rescan();
+                                        BRAnimator.startMainActivity(getActivity(), false);
+
+                                    }
+                                });
+                            }
+                        }, new BRDialogView.BROnClickListener() {
+                            @Override
+                            public void onClick(BRDialogView brDialogView) {
+                                brDialogView.dismissWithAnimation();
+                            }
+                        }, null, 0);
             }
         });
 

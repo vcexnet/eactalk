@@ -1,6 +1,7 @@
 package com.eacpay.wallet;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.eacpay.EacApp;
 import com.eacpay.presenter.entities.BlockEntity;
@@ -16,7 +17,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import timber.log.Timber;
+
 public class BRPeerManager {
+    private static final String TAG = "oldfeel";
     private static BRPeerManager instance;
 
     private static List<OnTxStatusUpdate> statusUpdateListeners;
@@ -52,6 +55,7 @@ public class BRPeerManager {
         int startHeight = BRSharedPrefs.getStartHeight(ctx);
         int lastHeight = BRSharedPrefs.getLastBlockHeight(ctx);
         if (startHeight > lastHeight) BRSharedPrefs.putStartHeight(ctx, lastHeight);
+        Log.e(TAG, "syncStarted: syncStarted startSyncingProgressThread");
         SyncManager.getInstance().startSyncingProgressThread();
     }
 
@@ -228,9 +232,9 @@ public class BRPeerManager {
 
     public native static int getCurrentBlockHeight();
 
-    public  native static int getRelayCount(byte[] hash);
+    public native static int getRelayCount(byte[] hash);
 
-    public  native boolean setFixedPeer(String node, int port);
+    public native boolean setFixedPeer(String node, int port);
 
     public native static int getEstimatedBlockHeight();
 

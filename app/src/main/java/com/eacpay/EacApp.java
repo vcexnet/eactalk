@@ -15,6 +15,8 @@ import com.eacpay.tools.manager.AnalyticsManager;
 import com.eacpay.tools.util.BRConstants;
 import com.eacpay.tools.util.Utils;
 import com.google.firebase.crashlytics.FirebaseCrashlytics;
+import com.pgyer.pgyersdk.PgyerSDKManager;
+import com.pgyer.pgyersdk.pgyerenum.Features;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +25,7 @@ import java.util.TimerTask;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import timber.log.Timber;
+
 public class EacApp extends Application {
     public static int DISPLAY_HEIGHT_PX;
     FingerprintManager mFingerprintManager;
@@ -59,6 +62,14 @@ public class EacApp extends Application {
         mFingerprintManager = (FingerprintManager) getSystemService(Context.FINGERPRINT_SERVICE);
     }
 
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        new PgyerSDKManager.Init()
+                .setContext(this) //设置上下问对象
+                .enable(Features.CHECK_UPDATE)//开启自动更新检测（不设置默认功能关闭 ，AndroidManifest中也可以设置该属性的开关）
+                .start();
+    }
 
     public static Context getBreadContext() {
         return currentActivity == null ? SyncReceiver.app : currentActivity;

@@ -76,4 +76,10 @@
     <color name="light_blue_A400">#FF00B0FF</color>
     <color name="black_overlay">#66000000</color>
 
+    <color name="c_999">#999999</color>
+    <color name="c_333">#333333</color>
+    <color name="c_eee">#eeeeee</color>
+    <color name="c_f6">#f6f6f6</color>
+    <color name="primary">#3D86F8</color>
+
 </resources>

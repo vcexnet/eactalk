@@ -5,8 +5,9 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
+import android.view.View;
 
-
+import com.eacpay.databinding.FragmentMainHomeBinding;
 import com.eacpay.eactalk.MainActivity;
 import com.eacpay.tools.listeners.SyncReceiver;
 import com.eacpay.tools.util.Utils;
@@ -22,6 +23,7 @@ public class SyncManager {
     private static final long SYNC_PERIOD = TimeUnit.HOURS.toMillis(24);
     private static SyncProgressTask syncTask;
     public boolean running;
+    private FragmentMainHomeBinding binding;
 
     public static SyncManager getInstance() {
         if (instance == null) instance = new SyncManager();
@@ -79,6 +81,10 @@ public class SyncManager {
         }
     }
 
+    public void setBinding(FragmentMainHomeBinding binding) {
+        this.binding = binding;
+    }
+
     private class SyncProgressTask extends Thread {
         public double progressStatus = 0;
         private MainActivity app;
@@ -101,10 +107,11 @@ public class SyncManager {
                     app.runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            if (TxManager.getInstance().syncingHolder != null)
-                                TxManager.getInstance().syncingHolder.progress.setProgress((int) (progressStatus * 100));
-                            if (TxManager.getInstance().syncingHolder != null)
-                                TxManager.getInstance().syncingHolder.date.setText(Utils.formatTimeStamp(lastBlockTimeStamp, "MMMdd, yyyy  ha"));
+                            if (binding != null) {
+                                binding.mainHomeSyncView.setVisibility(View.VISIBLE);
+                                binding.mainHomeSyncProgress.setProgress((int) (progressStatus * 100));
+                                binding.mainHomeSyncTime.setText("正在同步 " + Utils.formatTimeStamp(lastBlockTimeStamp, "yyyy/MM/dd HH:mm:ss"));
+                            }
                         }
                     });
                 }
@@ -117,20 +124,21 @@ public class SyncManager {
                             running = false;
                             continue;
                         }
+                        Log.e(TAG, "run: progressStatus" + progressStatus);
                         final long lastBlockTimeStamp = BRPeerManager.getInstance().getLastBlockTimestamp() * 1000;
                         app.runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-
                                 if (TxManager.getInstance().currentPrompt != PromptManager.PromptItem.SYNCING) {
                                     Timber.d("run: currentPrompt != SYNCING, showPrompt(SYNCING) ....");
                                     TxManager.getInstance().showPrompt(app, PromptManager.PromptItem.SYNCING);
                                 }
 
-                                if (TxManager.getInstance().syncingHolder != null)
-                                    TxManager.getInstance().syncingHolder.progress.setProgress((int) (progressStatus * 100));
-                                if (TxManager.getInstance().syncingHolder != null)
-                                    TxManager.getInstance().syncingHolder.date.setText(Utils.formatTimeStamp(lastBlockTimeStamp, "MMMdd, yyyy  ha"));
+                                if (binding != null) {
+                                    binding.mainHomeSyncView.setVisibility(View.VISIBLE);
+                                    binding.mainHomeSyncProgress.setProgress((int) (progressStatus * 100));
+                                    binding.mainHomeSyncTime.setText("正在同步 " + Utils.formatTimeStamp(lastBlockTimeStamp, "yyyy/MM/dd HH:mm:ss"));
+                                }
                             }
                         });
 

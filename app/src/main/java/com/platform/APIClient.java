@@ -1,14 +1,17 @@
 package com.platform;
 
+import static com.eacpay.tools.util.BRCompressor.gZipExtract;
+
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.net.Uri;
 import android.os.Build;
 import android.os.NetworkOnMainThreadException;
+import android.util.Log;
 
-import com.eacpay.EacApp;
 import com.eacpay.BuildConfig;
+import com.eacpay.EacApp;
 import com.eacpay.presenter.activities.util.ActivityUTILS;
 import com.eacpay.tools.crypto.Base58;
 import com.eacpay.tools.crypto.CryptoHelper;
@@ -37,7 +40,6 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.UnsupportedEncodingException;
 import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -60,11 +62,11 @@ import okio.Buffer;
 import okio.BufferedSink;
 import timber.log.Timber;
 
-import static com.eacpay.tools.util.BRCompressor.gZipExtract;
 public class APIClient {
 
     // proto is the transport protocol to use for talking to the API (either http or https)
     private static final String PROTO = "https";
+    private static final String TAG = "oldfeel";
 
     // convenience getter for the API endpoint
     public static String BASE_URL = PROTO + "://" + EacApp.HOST;
@@ -292,6 +294,7 @@ public class APIClient {
         try {
             OkHttpClient client = new OkHttpClient.Builder().followRedirects(false).connectTimeout(60, TimeUnit.SECONDS)/*.addInterceptor(new LoggingInterceptor())*/.build();
             Timber.d("sendRequest: headers for : %s \n %s", request.url(), request.headers());
+            Log.e(TAG, "sendRequest: headers for : " + request.url() + " " + request.headers());
             String agent = Utils.getAgentString(ctx, "OkHttp/3.4.1");
             request = request.newBuilder().header("User-agent", agent).build();
             response = client.newCall(request).execute();
@@ -324,20 +327,20 @@ public class APIClient {
             Timber.d("sendRequest: the content is gzip, unzipping");
             byte[] decompressed = gZipExtract(data);
             postReqBody = ResponseBody.create(null, decompressed);
-            try {
-                Timber.d("sendRequest: (%s)%s, code (%d), mess (%s), body (%s)", request.method(),
-                        request.url(), response.code(), response.message(), new String(decompressed, "utf-8"));
-            } catch (UnsupportedEncodingException e) {
-                Timber.e(e);
-            }
+//            try {
+//                Timber.d("sendRequest: (%s)%s, code (%d), mess (%s), body (%s)", request.method(),
+//                        request.url(), response.code(), response.message(), new String(decompressed, "utf-8"));
+//            } catch (UnsupportedEncodingException e) {
+//                Timber.e(e);
+//            }
             return response.newBuilder().body(postReqBody).build();
         } else {
-            try {
-                Timber.d("sendRequest: (%s)%s, code (%d), mess (%s), body (%s)", request.method(),
-                        request.url(), response.code(), response.message(), new String(data, "utf-8"));
-            } catch (UnsupportedEncodingException e) {
-                Timber.e(e);
-            }
+//            try {
+//                Timber.d("sendRequest: (%s)%s, code (%d), mess (%s), body (%s)", request.method(),
+//                        request.url(), response.code(), response.message(), new String(data, "utf-8"));
+//            } catch (UnsupportedEncodingException e) {
+//                Timber.e(e);
+//            }
         }
 
         postReqBody = ResponseBody.create(null, data);

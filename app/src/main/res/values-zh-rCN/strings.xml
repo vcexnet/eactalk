@@ -525,7 +525,7 @@
   <!-- Argument is date -->
   <string name="StartPaperPhrase.date">您最后一次记录纸上密钥是在 %1$s</string>
   <!-- Start view message -->
-  <string name="StartViewController.message">使用地球币最安全且最可靠的方式。</string>
+  <string name="StartViewController.message">说地球事, 用易说</string>
   <!-- Syncing view connectiong state header text -->
   <string name="SyncingView.connecting">连接中</string>
   <!-- Syncing view header text -->

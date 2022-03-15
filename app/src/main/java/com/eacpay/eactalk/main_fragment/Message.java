@@ -12,7 +12,8 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import com.eacpay.databinding.FragmentMainMessageBinding;
-import com.eacpay.eactalk.main_fragment.MessageFragment.MessageItemList;
+import com.eacpay.eactalk.main_fragment.MessageFragment.MyLikeList;
+import com.eacpay.eactalk.main_fragment.MessageFragment.MyMessageList;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
@@ -28,8 +29,8 @@ public class Message extends Fragment {
     }
 
     @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
         MyAdapter adapter = new MyAdapter(getActivity());
         binding.mainMessageViewPager.setAdapter(adapter);
         new TabLayoutMediator(binding.mainMessageTabs, binding.mainMessageViewPager, new TabLayoutMediator.TabConfigurationStrategy() {
@@ -49,11 +50,12 @@ public class Message extends Fragment {
         @NonNull
         @Override
         public Fragment createFragment(int position) {
-            MessageItemList messageItemList = new MessageItemList();
-            Bundle args = new Bundle();
-            args.putString("title", titles[position]);
-            messageItemList.setArguments(args);
-            return messageItemList;
+            if (position == 1) {
+                MyMessageList messageItemList = new MyMessageList();
+                return messageItemList;
+            }
+            MyLikeList myLikeList = new MyLikeList();
+            return myLikeList;
         }
 
         @Override

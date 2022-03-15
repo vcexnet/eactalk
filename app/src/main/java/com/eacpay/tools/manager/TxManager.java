@@ -206,7 +206,7 @@ public class TxManager {
         long took = (System.currentTimeMillis() - start);
         if (took > 500)
             Timber.d("updateTxList: took: %s", took);
-        if (adapter != null) {
+        if (adapter != null && app != null) {
             ((Activity) app).runOnUiThread(new Runnable() {
                 @Override
                 public void run() {

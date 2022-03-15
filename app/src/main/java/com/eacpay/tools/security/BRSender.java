@@ -42,11 +42,7 @@ public class BRSender {
     /**
      * Create tx from the PaymentItem object and try to send it
      */
-    public void sendTransaction(final Activity activity, final PaymentItem request) {
-        if (activity == null) {
-            return;
-        }
-        final Context app = activity.getApplicationContext();
+    public void sendTransaction(final Activity app, final PaymentItem request) {
         //array in order to be able to modify the first element from an inner block (can't be final)
         final String[] errTitle = {null};
         final String[] errMessage = {null};
@@ -111,9 +107,9 @@ public class BRSender {
                                 @Override
                                 public void onClick(BRDialogView brDialogView) {
                                     brDialogView.dismiss();
-                                    if (activity instanceof SendMessage) {
+                                    if (app instanceof SendMessage) {
                                         Toast.makeText(app, "发送成功", Toast.LENGTH_SHORT).show();
-                                        activity.finish();
+                                        app.finish();
                                     }
                                 }
                             }, null, null, 0);

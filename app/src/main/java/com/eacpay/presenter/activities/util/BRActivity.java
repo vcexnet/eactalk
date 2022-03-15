@@ -74,6 +74,7 @@ public class BRActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, final Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
         // 123 is the qrCode result
         switch (requestCode) {
             case BRConstants.PAY_REQUEST_CODE:

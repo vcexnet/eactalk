@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.NetworkOnMainThreadException;
 import android.security.keystore.UserNotAuthenticatedException;
+import android.util.Log;
 
 import com.eacpay.EacApp;
 import com.eacpay.R;
@@ -40,6 +41,7 @@ import okhttp3.Response;
 import timber.log.Timber;
 
 public class PostAuth {
+    private static final String TAG = "oldfeel";
     private String phraseForKeyStore;
     public PaymentItem paymentItem;
     private PaymentRequestWrapper paymentRequest;
@@ -171,6 +173,7 @@ public class PostAuth {
     }
 
     public void onPublishTxAuth(final Context app, boolean authAsked) {
+        Log.e(TAG, "onPublishTxAuth: ");
         if (ActivityUTILS.isMainThread()) throw new NetworkOnMainThreadException();
 
         final BRWalletManager walletManager = BRWalletManager.getInstance();
@@ -312,7 +315,7 @@ public class PostAuth {
     }
 
     public void onPaymentProtocolRequest(Activity app, boolean authAsked) {
-
+        Log.e(TAG, "onPaymentProtocolRequest: ");
         byte[] rawSeed;
         try {
             rawSeed = BRKeyStore.getPhrase(app, BRConstants.PAYMENT_PROTOCOL_REQUEST_CODE);

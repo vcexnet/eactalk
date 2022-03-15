@@ -26,12 +26,12 @@ android {
         }
     }
 
-    compileSdkVersion = 31
+    compileSdkVersion = 29
     defaultConfig {
         testInstrumentationRunner = 'androidx.test.runner.AndroidJUnitRunner'
         applicationId = 'com.eactalk'
         minSdkVersion 24
-        targetSdkVersion 31
+        targetSdkVersion 29 // IPFS 需要低于 29
         versionCode 1
         versionName "v1.0"
         multiDexEnabled true
@@ -180,6 +180,9 @@ gradle.projectsEvaluated {
 repositories {
     mavenCentral()
     google()
+    flatDir {
+        dirs 'libs'   // jar目录
+    }
 }
 
 dependencies {
@@ -188,7 +191,6 @@ dependencies {
     implementation 'org.eclipse.jetty.websocket:websocket-server:9.2.19.v20160908'
     implementation 'org.eclipse.jetty:jetty-continuation:9.2.19.v20160908'
     implementation 'org.slf4j:slf4j-api:1.7.22'
-    implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'com.google.android.material:material:1.0.0'
     implementation 'androidx.gridlayout:gridlayout:1.0.0'
     implementation 'androidx.legacy:legacy-support-v13:1.0.0'
@@ -207,10 +209,10 @@ dependencies {
     implementation 'com.google.firebase:firebase-analytics:17.2.2'
 
     // Firebase Crashlytics.
-    implementation 'com.google.firebase:firebase-crashlytics:17.0.0-beta01'
+    implementation 'com.google.firebase:firebase-crashlytics:17.2.2'
 
     // Firebase Crashlytics NDK
-    implementation 'com.google.firebase:firebase-crashlytics-ndk:17.0.0-beta01'
+    implementation 'com.google.firebase:firebase-crashlytics-ndk:17.2.2'
 
     // Timber
     implementation 'com.jakewharton.timber:timber:4.7.1'
@@ -221,4 +223,9 @@ dependencies {
     implementation 'androidx.navigation:navigation-ui:2.3.5'
     implementation 'com.google.android.material:material:1.4.0'
     implementation 'com.google.code.gson:gson:2.8.9'
+    implementation project(path: ':bridge')
+    implementation files('libs/jar_4_2_7.jar') // pgyer
+    implementation 'com.github.bumptech.glide:glide:4.13.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.13.0'
+    implementation 'com.j256.simplemagic:simplemagic:1.17'
 }
