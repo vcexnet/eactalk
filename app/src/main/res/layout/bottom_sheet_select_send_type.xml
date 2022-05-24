@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/b_white_10"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/send_notice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/b_bottom_f1"
+                android:text="@string/notice_message"
+                android:textColor="@color/c_3d86f8" />
+
+            <Button
+                android:id="@+id/send_normal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/b_bottom_f1"
+                android:text="@string/p2p_message"
+                android:textColor="@color/c_3d86f8" />
+
+            <Button
+                android:id="@+id/send_qrcode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:text="@string/scan_message"
+                android:textColor="@color/c_3d86f8" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/b_white_10"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/send_cancel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:text="@string/cancel"
+                android:textColor="@color/c_3d86f8" />
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

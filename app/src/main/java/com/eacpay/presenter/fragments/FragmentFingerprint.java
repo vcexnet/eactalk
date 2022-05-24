@@ -24,7 +24,6 @@ import android.content.Context;
 import android.hardware.fingerprint.FingerprintManager;
 import android.os.Bundle;
 import android.os.Handler;
-import androidx.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,8 +35,9 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.eacpay.R;
+import androidx.annotation.Nullable;
 
+import com.eacpay.R;
 import com.eacpay.eactalk.MainActivity;
 import com.eacpay.presenter.interfaces.BRAuthCompletion;
 import com.eacpay.tools.animation.BRAnimator;

@@ -26,7 +26,7 @@ public class SetPinActivity extends BRActivity {
 
     private ImageButton faq;
     private StringBuilder pin = new StringBuilder();
-    private int pinLimit = 6;
+    private final int pinLimit = 6;
     private boolean startingNextActivity;
     private TextView title;
     public static boolean appVisible = false;
@@ -139,7 +139,7 @@ public class SetPinActivity extends BRActivity {
                     intent.putExtra("noPin", getIntent().getBooleanExtra("noPin", false));
                     startActivity(intent);
                     overridePendingTransition(R.anim.enter_from_right, R.anim.exit_to_left);
-                    pin = new StringBuilder("");
+                    pin = new StringBuilder();
                     startingNextActivity = false;
                 }
             }, 100);

@@ -16,7 +16,6 @@ import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.eacpay.R;
-
 import com.eacpay.eactalk.MainActivity;
 import com.eacpay.presenter.customviews.BRKeyboard;
 import com.eacpay.presenter.interfaces.BRAuthCompletion;

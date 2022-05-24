@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.eacpay">
 
     <uses-permission android:name="android.permission.CAMERA" />
@@ -16,6 +17,8 @@
     <uses-permission android:name="android.permission.BIND_JOB_SERVICE" /> <!-- Allows unlocking your device and activating its screen so UI tests can succeed -->
     <uses-permission android:name="android.permission.DISABLE_KEYGUARD" /> <!-- Allows changing locales -->
     <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <uses-feature
         android:name="android.hardware.location.gps"
@@ -45,10 +48,12 @@
         android:requestLegacyExternalStorage="true"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:windowSoftInputMode="stateVisible|adjustResize">
+        android:usesCleartextTraffic="true"
+        android:windowSoftInputMode="stateVisible|adjustResize"
+        tools:replace="android:allowBackup">
 
         <activity
-            android:name="com.eacpay.presenter.activities.intro.IntroActivity"
+            android:name=".eactalk.StartActivity"
             android:exported="true"
             android:label="@string/About.appName.android"
             android:launchMode="singleTask"
@@ -89,7 +94,7 @@
             android:label="@string/About.appName.android"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme"
+            android:theme="@style/MainTheme"
             android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -108,6 +113,64 @@
                 android:resource="@xml/searchable" />
         </activity>
         <activity
+            android:name=".eactalk.VideoPlayer"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".eactalk.ContactDetail"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".eactalk.Share"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".eactalk.About"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".eactalk.Code"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".eactalk.Help"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".eactalk.Listen"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".eactalk.UnLock"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible" />
+        <activity
+            android:name=".eactalk.ReEnterPin"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".eactalk.SetPin"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible" />
+        <activity
+            android:name=".eactalk.InitWord"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".eactalk.VerifyWord"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".eactalk.ResetAccount"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".eactalk.InputWord"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".eactalk.ApiSettings"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
@@ -116,7 +179,7 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".eactalk.main_fragment.HomeDetail"
+            android:name=".eactalk.HomeDetail"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity
@@ -250,6 +313,22 @@
             android:enabled="true"
             android:exported="false"
             android:label="SyncReceiver" />
+
+        <service
+            android:name=".eactalk.service.MyService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <receiver
+            android:name=".eactalk.service.MyReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="EACTALK_CLOSE" />
+            </intent-filter>
+        </receiver>
 
         <meta-data
             android:name="PGYER_API_KEY"

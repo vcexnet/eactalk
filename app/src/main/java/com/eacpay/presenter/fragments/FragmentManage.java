@@ -2,7 +2,6 @@ package com.eacpay.presenter.fragments;
 
 import android.app.Fragment;
 import android.os.Bundle;
-import androidx.annotation.Nullable;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
@@ -13,6 +12,8 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import androidx.annotation.Nullable;
 
 import com.eacpay.R;
 import com.eacpay.tools.animation.BRAnimator;

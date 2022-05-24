@@ -17,7 +17,7 @@ import timber.log.Timber;
 public class CurrencyDataSource implements BRDataSourceInterface {
     private static final String TAG = CurrencyDataSource.class.getName();
 
-    private AtomicInteger mOpenCounter = new AtomicInteger();
+    private final AtomicInteger mOpenCounter = new AtomicInteger();
 
     // Database fields
     private SQLiteDatabase database;
@@ -84,7 +84,7 @@ public class CurrencyDataSource implements BRDataSourceInterface {
             database = openDatabase();
 
             cursor = database.query(BRSQLiteHelper.CURRENCY_TABLE_NAME,
-                    allColumns, null, null, null, null, "\'" + BRSQLiteHelper.CURRENCY_CODE + "\'");
+                    allColumns, null, null, null, null, "'" + BRSQLiteHelper.CURRENCY_CODE + "'");
 
             cursor.moveToFirst();
             while (!cursor.isAfterLast()) {

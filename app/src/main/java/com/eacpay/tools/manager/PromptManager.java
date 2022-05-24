@@ -1,5 +1,11 @@
 package com.eacpay.tools.manager;
 
+import static com.eacpay.tools.manager.PromptManager.PromptItem.FINGER_PRINT;
+import static com.eacpay.tools.manager.PromptManager.PromptItem.PAPER_KEY;
+import static com.eacpay.tools.manager.PromptManager.PromptItem.RECOMMEND_RESCAN;
+import static com.eacpay.tools.manager.PromptManager.PromptItem.SHARE_DATA;
+import static com.eacpay.tools.manager.PromptManager.PromptItem.UPGRADE_PIN;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -14,12 +20,6 @@ import com.eacpay.tools.security.BRKeyStore;
 import com.eacpay.tools.threads.BRExecutor;
 import com.eacpay.tools.util.Utils;
 import com.eacpay.wallet.BRPeerManager;
-
-import static com.eacpay.tools.manager.PromptManager.PromptItem.FINGER_PRINT;
-import static com.eacpay.tools.manager.PromptManager.PromptItem.PAPER_KEY;
-import static com.eacpay.tools.manager.PromptManager.PromptItem.RECOMMEND_RESCAN;
-import static com.eacpay.tools.manager.PromptManager.PromptItem.SHARE_DATA;
-import static com.eacpay.tools.manager.PromptManager.PromptItem.UPGRADE_PIN;
 public class PromptManager {
 
     private PromptManager() {

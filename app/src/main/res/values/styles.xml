@@ -1,7 +1,6 @@
 <resources>
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light">
-        <!-- Customize your theme here. -->
         <item name="android:windowLightStatusBar">true</item>
         <item name="android:title">false</item>
         <item name="windowNoTitle">true</item>
@@ -10,6 +9,14 @@
         <item name="android:statusBarColor">@android:color/darker_gray</item>
         <item name="android:actionBarStyle">@style/BreadActionBar</item>
         <item name="android:textViewStyle">@style/RobotoTextViewStyle</item>
+        <item name="android:buttonStyle">@style/RobotoButtonStyle</item>
+    </style>
+
+    <style name="MainTheme" parent="Theme.MaterialComponents.Light.NoActionBar.Bridge">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/c_3960DC</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:statusBarColor">@android:color/darker_gray</item>
         <item name="android:buttonStyle">@style/RobotoButtonStyle</item>
     </style>
 
@@ -24,8 +31,9 @@
 
     <style name="RobotoButtonStyle" parent="android:Widget.Holo.Button">
         <item name="android:fontFamily">sans-serif-light</item>
-        <item name="android:textColor">@color/dark_blue</item>
-
+        <item name="android:textColor">@color/btn_text_color</item>
+        <item name="android:background">@drawable/btn_background</item>
+        <item name="android:layout_height">40dp</item>
     </style>
 
     <style name="Send_ActionButStyle">
@@ -58,14 +66,6 @@
         <item name="android:background">@drawable/fee_selector_bg_end</item>
     </style>
 
-    <style name="Widget.AppTheme.ActionBar.Fullscreen" parent="Widget.AppCompat.ActionBar">
-        <item name="android:background">@color/black_overlay</item>
-    </style>
-
-    <style name="Widget.AppTheme.ButtonBar.Fullscreen" parent="">
-        <item name="android:background">@color/black_overlay</item>
-        <item name="android:buttonBarStyle">?android:attr/buttonBarStyle</item>
-    </style>
-
+    <style name="my_dialog" parent="Theme.AppCompat.Light.Dialog.Alert"></style>
 
 </resources>

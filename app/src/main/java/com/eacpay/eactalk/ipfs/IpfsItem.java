@@ -12,14 +12,27 @@ public class IpfsItem {
     public byte[] data;
     public String mimeType;
     public int confirmations;
+    public boolean loadOK;
+    public boolean isLoading;
+    public int imageErrCode; // 0: 非 ipfs; 1: 非 dir; 2: dir 中的文件不是视频/图片; 3: 图片加载成功; 4: 加载超时
+    public String address;
 
-    public boolean isShowImage() {
+    public boolean isImage() {
         if (isDir()) {
-            return MyUtils.isImageByName(ipfsLs.getFirstName())
-                    || MyUtils.isVideoByName(ipfsLs.getFirstName());
+            return MyUtils.isImageByName(ipfsLs.getFirstName());
         }
         if (isFile()) {
-            return mimeType != null && (mimeType.startsWith("image") || mimeType.startsWith("video"));
+            return mimeType != null && mimeType.startsWith("image");
+        }
+        return false;
+    }
+
+    public boolean isVideo() {
+        if (isDir()) {
+            return MyUtils.isVideoByName(ipfsLs.getFirstName());
+        }
+        if (isFile()) {
+            return mimeType != null && mimeType.startsWith("video");
         }
         return false;
     }
@@ -32,7 +45,7 @@ public class IpfsItem {
         return data != null;
     }
 
-    public boolean isParse() {
+    public boolean isParsed() {
         return ipfsLs != null || data != null;
     }
 

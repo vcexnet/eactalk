@@ -1,12 +1,12 @@
 package com.eacpay.presenter.activities.settings;
 
+import static com.eacpay.R.layout.settings_list_item;
+import static com.eacpay.R.layout.settings_list_section;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import androidx.annotation.LayoutRes;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +14,12 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import androidx.annotation.LayoutRes;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
 import com.eacpay.R;
+import com.eacpay.eactalk.ResetAccount;
 import com.eacpay.presenter.activities.util.BRActivity;
 import com.eacpay.presenter.entities.BRSettingsItem;
 import com.eacpay.presenter.interfaces.BRAuthCompletion;
@@ -25,9 +30,6 @@ import com.platform.HTTPServer;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static com.eacpay.R.layout.settings_list_item;
-import static com.eacpay.R.layout.settings_list_section;
 
 public class SettingsActivity extends BRActivity {
     private static final String TAG = SettingsActivity.class.getName();
@@ -52,8 +54,8 @@ public class SettingsActivity extends BRActivity {
 
     public class SettingsListAdapter extends ArrayAdapter<String> {
 
-        private List<BRSettingsItem> items;
-        private Context mContext;
+        private final List<BRSettingsItem> items;
+        private final Context mContext;
 
         public SettingsListAdapter(@NonNull Context context, @LayoutRes int resource, @NonNull List<BRSettingsItem> items) {
             super(context, resource);
@@ -132,7 +134,7 @@ public class SettingsActivity extends BRActivity {
         items.add(new BRSettingsItem(getString(R.string.Settings_wipe), "", new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SettingsActivity.this, WipeActivity.class);
+                Intent intent = new Intent(SettingsActivity.this, ResetAccount.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.enter_from_bottom, R.anim.empty_300);
             }

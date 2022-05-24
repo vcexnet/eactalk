@@ -30,11 +30,6 @@ import android.media.ImageReader;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.HandlerThread;
-import androidx.annotation.NonNull;
-import androidx.legacy.app.ActivityCompat;
-import androidx.legacy.app.FragmentCompat;
-import androidx.core.content.ContextCompat;
-
 import android.util.Size;
 import android.util.SparseIntArray;
 import android.view.Surface;
@@ -42,8 +37,12 @@ import android.view.TextureView;
 import android.view.View;
 import android.widget.Toast;
 
-import com.eacpay.R;
+import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
+import androidx.legacy.app.ActivityCompat;
+import androidx.legacy.app.FragmentCompat;
 
+import com.eacpay.R;
 import com.eacpay.eactalk.MainActivity;
 import com.eacpay.presenter.activities.util.BRActivity;
 import com.eacpay.tools.threads.BRExecutor;
@@ -251,7 +250,7 @@ public class CameraActivity extends BRActivity implements View.OnClickListener, 
     /**
      * A {@link Semaphore} to prevent the app from exiting before closing the camera.
      */
-    private Semaphore mCameraOpenCloseLock = new Semaphore(1);
+    private final Semaphore mCameraOpenCloseLock = new Semaphore(1);
 
     /**
      * Whether the current camera device supports Flash or not.
@@ -266,7 +265,7 @@ public class CameraActivity extends BRActivity implements View.OnClickListener, 
     /**
      * A {@link CameraCaptureSession.CaptureCallback} that handles events related to JPEG capture.
      */
-    private CameraCaptureSession.CaptureCallback mCaptureCallback
+    private final CameraCaptureSession.CaptureCallback mCaptureCallback
             = new CameraCaptureSession.CaptureCallback() {
 
         private void process(CaptureResult result) {
@@ -515,7 +514,7 @@ public class CameraActivity extends BRActivity implements View.OnClickListener, 
 
                 // Check if the flash is supported.
                 Boolean available = characteristics.get(CameraCharacteristics.FLASH_INFO_AVAILABLE);
-                mFlashSupported = available == null ? false : available;
+                mFlashSupported = available != null && available;
 
                 mCameraId = cameraId;
                 return;
@@ -526,7 +525,7 @@ public class CameraActivity extends BRActivity implements View.OnClickListener, 
             Timber.e(e);
             // Currently an NPE is thrown when the Camera2API is used but not supported on the
             // device this code runs.
-            ErrorDialog.newInstance("This device doesn\'t support Camera2 API.")
+            ErrorDialog.newInstance("This device doesn't support Camera2 API.")
                     .show(getFragmentManager(), FRAGMENT_DIALOG);
         }
     }

@@ -132,10 +132,10 @@ public class LinkPlugin implements Plugin {
                         String closeOn = json.getString("closeOn");
                         if (Utils.isNullOrEmpty(postUrl) || Utils.isNullOrEmpty(method) ||
                                 Utils.isNullOrEmpty(strBody) || Utils.isNullOrEmpty(headers) || Utils.isNullOrEmpty(closeOn))
-                            return BRHTTPHelper.handleError(400, "malformed json:" + json.toString(), baseRequest, response);
+                            return BRHTTPHelper.handleError(400, "malformed json:" + json, baseRequest, response);
                     } catch (JSONException e) {
                         Timber.e(e);
-                        return BRHTTPHelper.handleError(400, "malformed json:" + json.toString(), baseRequest, response);
+                        return BRHTTPHelper.handleError(400, "malformed json:" + json, baseRequest, response);
                     }
 
                     hasBrowser = true;

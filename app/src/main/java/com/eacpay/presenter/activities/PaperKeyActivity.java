@@ -4,8 +4,6 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.res.Resources;
 import android.os.Bundle;
-import androidx.legacy.app.FragmentPagerAdapter;
-import androidx.viewpager.widget.ViewPager;
 import android.util.SparseArray;
 import android.util.TypedValue;
 import android.view.View;
@@ -14,6 +12,9 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import androidx.legacy.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 import com.eacpay.R;
 import com.eacpay.presenter.activities.util.BRActivity;
@@ -62,10 +63,7 @@ public class PaperKeyActivity extends BRActivity {
             }
 
             public void onPageSelected(int position) {
-                if (position == 0)
-                    setButtonEnabled(false);
-                else
-                    setButtonEnabled(true);
+                setButtonEnabled(position != 0);
                 updateItemIndexText();
             }
         });
@@ -105,7 +103,7 @@ public class PaperKeyActivity extends BRActivity {
             throw new RuntimeException(TAG + ": cleanPhrase is null");
         }
 
-        String wordArray[] = cleanPhrase.split(" ");
+        String[] wordArray = cleanPhrase.split(" ");
 
         if (cleanPhrase.charAt(cleanPhrase.length() - 1) == '\0') {
             BRDialog.showCustomDialog(this, getString(R.string.JailbreakWarnings_title),

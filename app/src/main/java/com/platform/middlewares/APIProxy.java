@@ -24,7 +24,7 @@ import okhttp3.ResponseBody;
 import timber.log.Timber;
 public class APIProxy implements Middleware {
 
-    private APIClient apiInstance;
+    private final APIClient apiInstance;
     private static final String MOUNT_POINT = "/_api";
     private final String SHOULD_VERIFY_HEADER = "x-should-verify";
     private final String SHOULD_AUTHENTICATE = "x-should-authenticate";
@@ -61,7 +61,7 @@ public class APIProxy implements Middleware {
         Request req = mapToOkHttpRequest(baseRequest, path, request);
         String authHeader = baseRequest.getHeader(SHOULD_AUTHENTICATE);
 
-        if (authHeader != null && (authHeader.toLowerCase().equals("yes") || authHeader.toLowerCase().equals("true"))) {
+        if (authHeader != null && (authHeader.equalsIgnoreCase("yes") || authHeader.equalsIgnoreCase("true"))) {
             auth = true;
         }
 

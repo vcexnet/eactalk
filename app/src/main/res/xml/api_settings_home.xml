@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.preference.PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Preference
+        app:iconSpaceReserved="false"
+        app:key="home_url"
+        app:title="URL" />
+
+    <DropDownPreference
+        app:entries="@array/home_days"
+        app:entryValues="@array/home_days_values"
+        app:iconSpaceReserved="false"
+        app:key="home_day"
+        app:title="@string/show_days" />
+
+    <Preference
+        app:iconSpaceReserved="false"
+        app:key="earth_coin_url"
+        app:title="@string/earth_coin_browser" />
+
+    <SwitchPreferenceCompat
+        app:iconSpaceReserved="false"
+        app:key="home_filter"
+        app:summaryOff="@string/close"
+        app:summaryOn="@string/start"
+        app:title="@string/filter_by_eac" />
+</androidx.preference.PreferenceScreen>

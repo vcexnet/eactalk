@@ -27,8 +27,7 @@ import androidx.core.content.ContextCompat;
 
 import com.eacpay.R;
 import com.eacpay.eactalk.MainActivity;
-
-import com.eacpay.presenter.activities.LoginActivity;
+import com.eacpay.eactalk.UnLock;
 import com.eacpay.presenter.activities.camera.ScanQRActivity;
 import com.eacpay.presenter.customviews.BRDialogView;
 import com.eacpay.presenter.entities.TxItem;
@@ -393,7 +392,7 @@ public class BRAnimator {
     public static void startMainActivity(Activity from, boolean auth) {
         if (from == null) return;
         Timber.i("startMainActivity: %s", from.getClass().getName());
-        Class toStart = auth ? LoginActivity.class : MainActivity.class;
+        Class toStart = auth ? UnLock.class : MainActivity.class;
         Intent intent = new Intent(from, toStart);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         from.startActivity(intent);

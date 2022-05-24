@@ -4,14 +4,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
-import androidx.constraintlayout.widget.ConstraintLayout;
-
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import androidx.constraintlayout.widget.ConstraintLayout;
+
 import com.eacpay.R;
+import com.eacpay.eactalk.InputWord;
 import com.eacpay.presenter.activities.util.BRActivity;
 import com.eacpay.tools.animation.BRAnimator;
 import com.eacpay.tools.animation.SpringAnimator;
@@ -48,7 +49,7 @@ public class DisabledActivity extends BRActivity {
         resetButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(DisabledActivity.this, InputWordsActivity.class);
+                Intent intent = new Intent(DisabledActivity.this, InputWord.class);
                 intent.putExtra("resetPin", true);
                 startActivity(intent);
                 overridePendingTransition(R.anim.enter_from_right, R.anim.exit_to_left);

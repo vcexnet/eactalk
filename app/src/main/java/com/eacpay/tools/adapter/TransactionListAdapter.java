@@ -354,11 +354,8 @@ public class TransactionListAdapter extends RecyclerView.Adapter<RecyclerView.Vi
                 if (switchesON == 0) {
                     filteredList.add(item);
                 } else {
-                    boolean willAdd = true;
+                    boolean willAdd = !switches[0] || (item.getSent() - item.getReceived() > 0);
                     //filter by sent and this is received
-                    if (switches[0] && (item.getSent() - item.getReceived() <= 0)) {
-                        willAdd = false;
-                    }
                     //filter by received and this is sent
                     if (switches[1] && (item.getSent() - item.getReceived() > 0)) {
                         willAdd = false;

@@ -7,36 +7,54 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/b_white_10"
         android:orientation="vertical">
 
-        <Button
-            android:id="@+id/bottom_sheet_upload_video"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/b_bottom_f1"
-            android:text="上传视频" />
+            android:background="@drawable/b_white_10"
+            android:orientation="vertical">
 
-        <Button
-            android:id="@+id/bottom_sheet_upload_file"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/b_bottom_f1"
-            android:text="上传文件" />
+            <Button
+                android:id="@+id/bottom_sheet_upload_video"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/b_bottom_f1"
+                android:text="@string/upload_video"
+                android:textColor="@color/c_3d86f8" />
 
-        <Button
-            android:id="@+id/bottom_sheet_upload_image"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/b_bottom_f1"
-            android:text="上传图片" />
+            <Button
+                android:id="@+id/bottom_sheet_upload_file"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/b_bottom_f1"
+                android:text="@string/upload_file"
+                android:textColor="@color/c_3d86f8" />
 
-        <Button
-            android:id="@+id/bottom_sheet_upload_cancel"
+            <Button
+                android:id="@+id/bottom_sheet_upload_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:text="@string/upload_image"
+                android:textColor="@color/c_3d86f8" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            android:text="取消" />
+            android:layout_marginTop="10dp"
+            android:background="@drawable/b_white_10"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/bottom_sheet_upload_cancel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:text="@string/cancel"
+                android:textColor="@color/c_3d86f8" />
+        </LinearLayout>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

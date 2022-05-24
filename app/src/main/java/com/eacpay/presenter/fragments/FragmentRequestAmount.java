@@ -4,8 +4,6 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.os.Handler;
-import androidx.annotation.Nullable;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +16,8 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import androidx.annotation.Nullable;
+
 import com.eacpay.R;
 import com.eacpay.presenter.customviews.BRButton;
 import com.eacpay.presenter.customviews.BRKeyboard;
@@ -28,9 +28,9 @@ import com.eacpay.tools.manager.BRClipboardManager;
 import com.eacpay.tools.manager.BRSharedPrefs;
 import com.eacpay.tools.qrcode.QRUtils;
 import com.eacpay.tools.threads.BRExecutor;
-import com.eacpay.tools.util.BRExchange;
 import com.eacpay.tools.util.BRConstants;
 import com.eacpay.tools.util.BRCurrency;
+import com.eacpay.tools.util.BRExchange;
 import com.eacpay.tools.util.Utils;
 import com.eacpay.wallet.BRWalletManager;
 
@@ -55,7 +55,7 @@ public class FragmentRequestAmount extends Fragment {
     private boolean shareButtonsShown = true;
     private String selectedIso;
     private Button isoButton;
-    private Handler copyCloseHandler = new Handler();
+    private final Handler copyCloseHandler = new Handler();
     private LinearLayout keyboardLayout;
     private RelativeLayout amountLayout;
     private Button request;
@@ -329,7 +329,7 @@ public class FragmentRequestAmount extends Fragment {
         if (new BigDecimal(currAmount.concat(String.valueOf(dig))).doubleValue()
                 <= BRExchange.getMaxAmount(getActivity(), iso).doubleValue()) {
             //do not insert 0 if the balance is 0 now
-            if (currAmount.equalsIgnoreCase("0")) amountBuilder = new StringBuilder("");
+            if (currAmount.equalsIgnoreCase("0")) amountBuilder = new StringBuilder();
             if ((currAmount.contains(".") && (currAmount.length() - currAmount.indexOf(".") > BRCurrency.getMaxDecimalPlaces(iso))))
                 return;
             amountBuilder.append(dig);

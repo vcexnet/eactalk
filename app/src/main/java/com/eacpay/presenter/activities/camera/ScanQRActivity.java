@@ -265,7 +265,6 @@ public class ScanQRActivity extends BRActivity
     private void handleAlbumPic(Intent data) {
         //获取选中图片的路径
         final Uri uri = data.getData();
-;
         runOnUiThread(new Runnable() {
             @Override
             public void run() {

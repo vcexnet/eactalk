@@ -1,32 +1,36 @@
 package com.eacpay.eactalk;
 
 import static com.eacpay.presenter.activities.SetPinActivity.introSetPitActivity;
-import static com.eacpay.presenter.activities.intro.IntroActivity.introActivity;
 
+import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
+import android.content.ServiceConnection;
 import android.content.pm.PackageManager;
 import android.graphics.Point;
-import android.net.ConnectivityManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
+import android.os.IBinder;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.NavigationUI;
 
 import com.eacpay.R;
-import com.eacpay.eactalk.ipfs.IpfsManager;
-import com.eacpay.eactalk.ipfs.StartIPFS;
+import com.eacpay.databinding.BottomSheetSelectSendTypeBinding;
+import com.eacpay.eactalk.service.MyService;
 import com.eacpay.presenter.activities.ReEnterPinActivity;
 import com.eacpay.presenter.activities.util.BRActivity;
 import com.eacpay.presenter.fragments.FragmentManage;
 import com.eacpay.tools.animation.BRAnimator;
 import com.eacpay.tools.manager.BRSharedPrefs;
-import com.eacpay.tools.manager.InternetManager;
-import com.eacpay.tools.manager.SyncManager;
 import com.eacpay.tools.manager.TxManager;
 import com.eacpay.tools.security.BitcoinUrlHandler;
 import com.eacpay.tools.sqlite.TransactionDataSource;
@@ -34,30 +38,34 @@ import com.eacpay.tools.threads.BRExecutor;
 import com.eacpay.tools.util.BRConstants;
 import com.eacpay.wallet.BRPeerManager;
 import com.eacpay.wallet.BRWalletManager;
+import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.google.android.material.navigation.NavigationBarView;
 import com.pgyer.pgyersdk.PgyerSDKManager;
 import com.platform.APIClient;
 
-import timber.log.Timber;
-
 public class MainActivity extends BRActivity implements BRWalletManager.OnBalanceChanged,
         BRPeerManager.OnTxStatusUpdate, BRSharedPrefs.OnIsoChangedListener,
-        TransactionDataSource.OnTxAddedListener, FragmentManage.OnNameChanged, InternetManager.ConnectionReceiverListener {
+        TransactionDataSource.OnTxAddedListener, FragmentManage.OnNameChanged {
 
     private static final String TAG = "oldfeel";
 
     public static final Point screenParametersPoint = new Point();
 
-    private InternetManager mConnectionReceiver;
-
     public static boolean appVisible = false;
     private String savedFragmentTag;
 
     private static MainActivity app;
+    private NavController controller;
+    private BottomNavigationView bottomNavigationView;
 
     public static MainActivity getApp() {
         return app;
     }
+
+    MyService eacService;
+    boolean isBound;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,7 +81,7 @@ public class MainActivity extends BRActivity implements BRWalletManager.OnBalanc
         BRAnimator.init(this);
 
         if (introSetPitActivity != null) introSetPitActivity.finish();
-        if (introActivity != null) introActivity.finish();
+//        if (introActivity != null) introActivity.finish();
         if (ReEnterPinActivity.reEnterPinActivity != null)
             ReEnterPinActivity.reEnterPinActivity.finish();
 
@@ -86,43 +94,88 @@ public class MainActivity extends BRActivity implements BRWalletManager.OnBalanc
                 }
             }, 1000);
 
-
-        onConnectionChanged(InternetManager.getInstance().isConnected(this));
-
         NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_container);
 
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_nav);
+        bottomNavigationView = findViewById(R.id.bottom_nav);
 
         NavigationUI.setupWithNavController(bottomNavigationView, navHostFragment.getNavController());
 
         PgyerSDKManager.checkSoftwareUpdate(this);
 
-        new StartIPFS(this).execute();
+        controller = navHostFragment.getNavController();
+        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.nav_main_home:
+                        controller.navigate(R.id.nav_main_home);
+                        break;
+                    case R.id.nav_main_message:
+                        controller.navigate(R.id.nav_main_message);
+                        break;
+                    case R.id.nav_main_send:
+                        selectSendType();
+                        break;
+                    case R.id.nav_main_contact:
+                        controller.navigate(R.id.nav_main_contact);
+                        break;
+                    case R.id.nav_main_mine:
+                        controller.navigate(R.id.nav_main_mine);
+                        break;
+                }
+                return item.getItemId() != R.id.nav_main_send;
+            }
+        });
+
+        updateBadge();
+
+//        bottomNavigationView.setSelectedItemId(R.id.nav_main_mine);
+//        openActivity(ApiSettings.class);
     }
 
-    public void displayPeerIDResult(final String peerID) {
-        IpfsManager.getInstance().setPeerID(peerID);
-//        ipfsStatus.setText("连接成功,本机 peerID: " + peerID);
-//
-//        ipfsStatus.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-//                ClipData clipData = ClipData.newPlainText("peerID", peerID);
-//                clipboard.setPrimaryClip(clipData);
-//                Toast.makeText(MainActivity.this, "复制成功", Toast.LENGTH_SHORT).show();
-//            }
-//        });
-    }
+    private void selectSendType() {
+        BottomSheetSelectSendTypeBinding selectSendTypeBinding = BottomSheetSelectSendTypeBinding.inflate(getLayoutInflater());
+        final BottomSheetDialog dialog = new BottomSheetDialog(this);
+        dialog.setContentView(selectSendTypeBinding.getRoot());
+        dialog.show();
+        // Remove default white color background
+        FrameLayout bottomSheet = dialog.findViewById(R.id.design_bottom_sheet);
+        bottomSheet.setBackground(null);
 
-    public static String exceptionToString(Exception error) {
-        String string = error.getMessage();
+        selectSendTypeBinding.sendNormal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.cancel();
+                Intent intent = new Intent(MainActivity.this, SendMessage.class);
+                intent.putExtra("type", "normal");
+                startActivity(intent);
+            }
+        });
 
-        if (error.getCause() != null) {
-            string += ": " + error.getCause().getMessage();
-        }
+        selectSendTypeBinding.sendNotice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.cancel();
+                Intent intent = new Intent(MainActivity.this, SendMessage.class);
+                intent.putExtra("type", "notice");
+                startActivity(intent);
+            }
+        });
 
-        return string;
+        selectSendTypeBinding.sendQrcode.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.cancel();
+                BRAnimator.openScanner(MainActivity.this, BRConstants.REQUEST_SEND_MESSAGE);
+            }
+        });
+
+        selectSendTypeBinding.sendCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.cancel();
+            }
+        });
     }
 
     private void setUrlHandler(Intent intent) {
@@ -155,8 +208,6 @@ public class MainActivity extends BRActivity implements BRWalletManager.OnBalanc
         if (BRConstants.PLATFORM_ON)
             APIClient.getInstance(this).updatePlatform();
 
-        setupNetworking();
-
         if (!BRWalletManager.getInstance().isCreated()) {
             BRExecutor.getInstance().forBackgroundTasks().execute(new Runnable() {
                 @Override
@@ -172,35 +223,60 @@ public class MainActivity extends BRActivity implements BRWalletManager.OnBalanc
         savedFragmentTag = null;
         TxManager.getInstance().onResume(MainActivity.this);
 
+        updateBadge();
     }
-
-    private void setupNetworking() {
-        if (mConnectionReceiver == null) mConnectionReceiver = InternetManager.getInstance();
-        IntentFilter mNetworkStateFilter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
-        registerReceiver(mConnectionReceiver, mNetworkStateFilter);
-        InternetManager.addConnectionListener(this);
-    }
-
 
     @Override
     protected void onPause() {
         super.onPause();
         appVisible = false;
         saveVisibleFragment();
+    }
 
+    ServiceConnection connection = new ServiceConnection() {
+        @Override
+        public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
+            MyService.EacBinder binder = (MyService.EacBinder) iBinder;
+            eacService = binder.getService();
+            isBound = true;
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName componentName) {
+            isBound = false;
+        }
+    };
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Intent intent = new Intent(this, MyService.class);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            startForegroundService(intent);
+        } else {
+            startService(intent);
+        }
+        bindService(intent, connection, Context.BIND_AUTO_CREATE);
     }
 
     @Override
     protected void onStop() {
         super.onStop();
+        unbindService(connection);
+        isBound = false;
+    }
 
+    public MyService getEacService() {
+        return eacService;
+    }
+
+    public boolean isBound() {
+        return isBound;
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-
-        unregisterReceiver(mConnectionReceiver);
 
         //sync the kv stores
         if (BRConstants.PLATFORM_ON) {
@@ -225,9 +301,16 @@ public class MainActivity extends BRActivity implements BRWalletManager.OnBalanc
     public void onBalanceChanged(final long balance) {
     }
 
+    long clickTime = System.currentTimeMillis();
+
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
+        if (System.currentTimeMillis() - clickTime > 2000) {
+            Toast.makeText(this, getString(R.string.reclick_exit), Toast.LENGTH_SHORT).show();
+            clickTime = System.currentTimeMillis();
+        } else {
+            finish();
+        }
     }
 
     @Override
@@ -239,6 +322,34 @@ public class MainActivity extends BRActivity implements BRWalletManager.OnBalanc
             }
         });
 
+        updateBadge();
+    }
+
+    public void updateBadge() {
+        if (bottomNavigationView == null) {
+            return;
+        }
+        new Thread() {
+            @Override
+            public void run() {
+                final long unReadCount = TransactionDataSource.getInstance(MainActivity.this).unReadCount();
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        BadgeDrawable badge = bottomNavigationView.getOrCreateBadge(R.id.nav_main_message);
+                        if (unReadCount > 9) {
+                            badge.clearNumber();
+                            badge.setVisible(true);
+                        } else if (unReadCount > 0) {
+                            badge.setNumber((int) unReadCount);
+                            badge.setVisible(true);
+                        } else {
+                            badge.setVisible(false);
+                        }
+                    }
+                });
+            }
+        }.start();
     }
 
     @Override
@@ -281,25 +392,5 @@ public class MainActivity extends BRActivity implements BRWalletManager.OnBalanc
 
     @Override
     public void onNameChanged(String name) {
-    }
-
-    @Override
-    public void onConnectionChanged(boolean isConnected) {
-        if (isConnected) {
-            BRExecutor.getInstance().forLightWeightBackgroundTasks().execute(new Runnable() {
-                @Override
-                public void run() {
-                    final double progress = BRPeerManager.syncProgress(BRSharedPrefs.getStartHeight(MainActivity.this));
-                    Timber.d("Sync Progress: %s", progress);
-                    if (progress < 1 && progress > 0) {
-                        Log.e(TAG, "run: onConnectionChanged startSyncingProgressThread ");
-                        SyncManager.getInstance().startSyncingProgressThread();
-                    }
-                }
-            });
-        } else {
-            SyncManager.getInstance().stopSyncingProgressThread();
-        }
-
     }
 }

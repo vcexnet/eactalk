@@ -1,11 +1,14 @@
 package com.eacpay.tools.adapter;
 
+import static android.widget.Adapter.IGNORE_ITEM_VIEW_TYPE;
+
 import android.app.Activity;
 import android.content.Context;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.eacpay.R;
 import com.eacpay.presenter.customviews.BRButton;
@@ -13,8 +16,6 @@ import com.eacpay.tools.util.BRCurrency;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static android.widget.Adapter.IGNORE_ITEM_VIEW_TYPE;
 public class CurAdapter extends RecyclerView.Adapter<CurAdapter.CustomViewHolder> {
     public static final String TAG = CurAdapter.class.getName();
 

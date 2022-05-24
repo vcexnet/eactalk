@@ -1,128 +1,121 @@
 package com.eacpay.eactalk;
 
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
+import android.content.ServiceConnection;
+import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
-import android.util.Log;
-import android.view.View;
-import android.widget.CompoundButton;
-import android.widget.Toast;
+import android.os.IBinder;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import com.eacpay.R;
 import com.eacpay.databinding.ActivityApiSettingsBinding;
-import com.eacpay.eactalk.ipfs.IpfsManager;
+import com.eacpay.eactalk.fragment.api_settings.ApiSettingsEac;
+import com.eacpay.eactalk.fragment.api_settings.HomePreference;
+import com.eacpay.eactalk.fragment.api_settings.IpfsPreference;
+import com.eacpay.eactalk.service.MyService;
 import com.eacpay.presenter.activities.util.BRActivity;
-import com.eacpay.tools.manager.BRSharedPrefs;
-import com.eacpay.wallet.BRPeerManager;
-
-import java.util.Timer;
-import java.util.TimerTask;
-
-import ipfs.gomobile.android.IPFS;
-import ipfs.gomobile.android.RequestBuilder;
+import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
 
 public class ApiSettings extends BRActivity {
     private static final String TAG = "oldfeel";
     ActivityApiSettingsBinding binding;
+    String[] titles;
+    MyService myService;
+    boolean isBound;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityApiSettingsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        setTitle("节点设置");
+        setTitle(getString(R.string.node_settings));
+        titles = new String[]{getString(R.string.home_url), getString(R.string.earth_coin_node), getString(R.string.ipfs_node)};
 
-        binding.apiSettingsApiUrl.setText(BRSharedPrefs.getString(ApiSettings.this, "api_url"));
-        binding.apiSettingsIpfsNode.setText(BRSharedPrefs.getString(ApiSettings.this, "ipfs_node"));
-
-        boolean isAuto = BRSharedPrefs.getBoolean(ApiSettings.this, "eac_node_switch", true);
-        binding.apiSettingsEacNodeSwitch.setChecked(isAuto);
-        binding.apiSettingsEacNodeSwitchText.setText(isAuto ? "自动" : "手动");
-        binding.apiSettingsEacNode.setText(BRSharedPrefs.getString(ApiSettings.this, "eac_node"));
-
-        binding.apiSettingsSave.setOnClickListener(new View.OnClickListener() {
+        binding.apiSettingsViewPager.setAdapter(new MyAdapter(this));
+        new TabLayoutMediator(binding.apiSettingsTab, binding.apiSettingsViewPager, new TabLayoutMediator.TabConfigurationStrategy() {
             @Override
-            public void onClick(View view) {
-                if (!BRSharedPrefs.getString(ApiSettings.this, "ipfs_node", "/ip4/39.108.226.205/tcp/4001/p2p/12D3KooWR4g6cp5abx8PNUXFZPuajRLMvCPFmCGjvWS8ZhBCs1x3")
-                        .equals(binding.apiSettingsIpfsNode.getText().toString())) {
-                    BRSharedPrefs.putString(ApiSettings.this, "ipfs_node", binding.apiSettingsIpfsNode.getText().toString());
-                    String ipfsNode = BRSharedPrefs.getString(ApiSettings.this, "ipfs_node", "/ip4/39.108.226.205/tcp/4001/p2p/12D3KooWR4g6cp5abx8PNUXFZPuajRLMvCPFmCGjvWS8ZhBCs1x3");
-
-                    try {
-                        byte[] bootStrapData = IpfsManager.getInstance().getIpfs().newRequest("bootstrap")
-                                .withArgument("add")
-                                .withArgument(ipfsNode)
-                                .send();
-                        Log.d(TAG, "onClick: bootStrapData " + new String(bootStrapData));
-                    } catch (RequestBuilder.RequestBuilderException e) {
-                        e.printStackTrace();
-                    } catch (IPFS.ShellRequestException e) {
-                        e.printStackTrace();
-                    }
-
-                }
-                BRSharedPrefs.putString(ApiSettings.this, "api_url", binding.apiSettingsApiUrl.getText().toString());
-                BRSharedPrefs.putBoolean(ApiSettings.this, "eac_node_switch", binding.apiSettingsEacNodeSwitch.isChecked());
-                BRSharedPrefs.putString(ApiSettings.this, "eac_node", binding.apiSettingsEacNode.getText().toString());
-
-                Toast.makeText(ApiSettings.this, "保存成功", Toast.LENGTH_SHORT).show();
+            public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
+                tab.setText(titles[position]);
             }
-        });
+        }).attach();
 
-        binding.apiSettingsEacNodeSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                binding.apiSettingsEacNodeSwitchText.setText(b ? "自动" : "手动");
-            }
-        });
-
-        Timer timer = new Timer();
-        TimerTask timerTask = new TimerTask() {
-            @Override
-            public void run() {
-                handler.sendEmptyMessage(1);
-            }
-        };
-        timer.schedule(timerTask, 2000, 2000);
-
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                do {
-                    try {
-                        Thread.sleep(2000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                    final String peerName = BRPeerManager.getInstance().getCurrentPeerName();
-                    final boolean isConnected = BRPeerManager.getInstance().isConnected();
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            Log.e(TAG, "run: update eac node status");
-                            binding.apiSettingsEacNodeStatus.setText(peerName + " "
-                                    + (isConnected ? getString(R.string.NodeSelector_connected) : getString(R.string.NodeSelector_notConnected)));
-
-                        }
-                    });
-                } while (true);
-            }
-        }).start();
+//        binding.apiSettingsViewPager.setCurrentItem(2);
     }
 
-    Handler handler = new Handler() {
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        Intent intent = new Intent(this, MyService.class);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            startForegroundService(intent);
+        } else {
+            startService(intent);
+        }
+        bindService(intent, connection, Context.BIND_AUTO_CREATE);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+        unbindService(connection);
+        isBound = false;
+    }
+
+    public MyService getMyService() {
+        return myService;
+    }
+
+    public boolean isBound() {
+        return isBound;
+    }
+
+    ServiceConnection connection = new ServiceConnection() {
         @Override
-        public void handleMessage(@NonNull Message msg) {
-            super.handleMessage(msg);
-            updateStatus();
+        public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
+            MyService.EacBinder binder = (MyService.EacBinder) iBinder;
+            myService = binder.getService();
+            isBound = true;
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName componentName) {
+            isBound = false;
         }
     };
 
-    private void updateStatus() {
-        Log.e(TAG, "updateStatus: ipfs");
-        binding.apiSettingsIpfsNodeStatus.setText(IpfsManager.getInstance().getIpfsStatus());
+    class MyAdapter extends FragmentStateAdapter {
+
+        public MyAdapter(@NonNull FragmentActivity fragmentActivity) {
+            super(fragmentActivity);
+        }
+
+        @NonNull
+        @Override
+        public Fragment createFragment(int position) {
+            switch (position) {
+                case 0:
+                    return new HomePreference();
+                case 1:
+                    return new ApiSettingsEac();
+                case 2:
+                    return new IpfsPreference();
+            }
+            return null;
+        }
+
+        @Override
+        public int getItemCount() {
+            return 3;
+        }
     }
 }

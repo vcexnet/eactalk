@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.eacpay.R;
-import com.eacpay.presenter.activities.InputWordsActivity;
+import com.eacpay.eactalk.InputWord;
 import com.eacpay.presenter.activities.util.BRActivity;
 import com.eacpay.tools.animation.BRAnimator;
 
@@ -30,7 +30,7 @@ public class RecoverActivity extends BRActivity {
             @Override
             public void onClick(View v) {
                 if (!BRAnimator.isClickAllowed()) return;
-                Intent intent = new Intent(RecoverActivity.this, InputWordsActivity.class);
+                Intent intent = new Intent(RecoverActivity.this, InputWord.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.enter_from_right, R.anim.exit_to_left);
             }

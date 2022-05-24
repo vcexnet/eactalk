@@ -50,7 +50,7 @@ public class HTTPIndexMiddleware implements Middleware {
 
     public String rTrim(String str, String piece) {
         if (str.endsWith(piece)) {
-            return str.substring(str.lastIndexOf(piece), str.length());
+            return str.substring(str.lastIndexOf(piece));
         }
         return str;
     }

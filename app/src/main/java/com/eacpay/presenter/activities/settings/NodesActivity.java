@@ -31,7 +31,7 @@ public class NodesActivity extends BRActivity {
     private TextView trustNode;
     public static boolean appVisible = false;
     AlertDialog mDialog;
-    private int mInterval = 3000;
+    private final int mInterval = 3000;
     private Handler mHandler;
     private boolean updatingNode;
 //    private TextView nodeLabel;

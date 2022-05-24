@@ -2,8 +2,8 @@ package com.eacpay.tools.security;
 
 import android.util.Log;
 
-import com.eacpay.presenter.entities.PaymentRequestWrapper;
 import com.eacpay.exceptions.CertificateChainNotFound;
+import com.eacpay.presenter.entities.PaymentRequestWrapper;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;

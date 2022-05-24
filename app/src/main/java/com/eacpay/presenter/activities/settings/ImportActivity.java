@@ -2,10 +2,11 @@ package com.eacpay.presenter.activities.settings;
 
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+
+import androidx.annotation.NonNull;
 
 import com.eacpay.R;
 import com.eacpay.presenter.activities.util.BRActivity;

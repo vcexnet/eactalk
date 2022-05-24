@@ -159,7 +159,7 @@ public class GeoLocationPlugin implements Plugin {
             if (request.getMethod().equalsIgnoreCase("GET")) {
                 JSONObject obj = getAuthorizationError(app);
                 if (obj != null) {
-                    Timber.d("handle: error getting location: " + obj.toString() + ", " + target + " " + baseRequest.getMethod());
+                    Timber.d("handle: error getting location: " + obj + ", " + target + " " + baseRequest.getMethod());
                     return BRHTTPHelper.handleError(500, obj.toString(), baseRequest, response);
                 }
 

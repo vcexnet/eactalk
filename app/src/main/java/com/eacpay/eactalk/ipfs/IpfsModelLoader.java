@@ -12,18 +12,15 @@ import java.nio.ByteBuffer;
 /**
  * Loads an {@link InputStream} from a Base 64 encoded String.
  */
-public final class IpfsModelLoader implements ModelLoader<String, ByteBuffer> {
-    // From: https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URIs.
-    private static final String DATA_URI_PREFIX = "ipfs:";
-
+public final class IpfsModelLoader implements ModelLoader<IpfsItem, ByteBuffer> {
     @Nullable
     @Override
-    public LoadData<ByteBuffer> buildLoadData(String model, int width, int height, Options options) {
+    public LoadData<ByteBuffer> buildLoadData(IpfsItem model, int width, int height, Options options) {
         return new LoadData<>(new ObjectKey(model), new IpfsDataFetcher(model));
     }
 
     @Override
-    public boolean handles(String model) {
-        return model.startsWith(DATA_URI_PREFIX);
+    public boolean handles(IpfsItem model) {
+        return model.ipfs != null && !model.ipfs.equals("");
     }
 }

@@ -1,7 +1,5 @@
 package com.eacpay.tools.util;
 
-import android.util.Log;
-
 import java.io.File;
 
 import timber.log.Timber;

@@ -1,16 +1,15 @@
 package com.eacpay.wallet;
 
+import static org.junit.Assert.assertEquals;
+
 import com.eacpay.presenter.entities.RequestObject;
 import com.eacpay.tools.security.BitcoinUrlHandler;
 import com.eacpay.tools.util.BRConstants;
-
 
 import org.junit.Test;
 
 import java.math.BigDecimal;
 import java.security.InvalidAlgorithmParameterException;
-
-import static org.junit.Assert.assertEquals;
 public class WalletTests {
     public static final String TAG = WalletTests.class.getName();
 

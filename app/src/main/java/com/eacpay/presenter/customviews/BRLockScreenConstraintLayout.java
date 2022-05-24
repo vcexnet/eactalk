@@ -1,9 +1,9 @@
 package com.eacpay.presenter.customviews;
 
 import android.content.Context;
+import android.util.AttributeSet;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
-import android.util.AttributeSet;
 
 public class BRLockScreenConstraintLayout extends ConstraintLayout {
     public static final String TAG = BRLockScreenConstraintLayout.class.getName();

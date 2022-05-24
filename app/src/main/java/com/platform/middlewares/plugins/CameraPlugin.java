@@ -7,9 +7,10 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.util.Base64;
+
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-import android.util.Base64;
 
 import com.eacpay.EacApp;
 import com.eacpay.R;
@@ -35,7 +36,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -137,12 +138,7 @@ public class CameraPlugin implements Plugin {
             if (b64opt != null && !b64opt.isEmpty()) {
                 contentType = "text/plain";
                 String b64 = "data:image/jpeg;base64," + Base64.encodeToString(pictureBytes, Base64.NO_WRAP);
-                try {
-                    imgBytes = b64.getBytes("UTF-8");
-                } catch (UnsupportedEncodingException e) {
-                    Timber.e(e);
-                    return BRHTTPHelper.handleError(500, null, baseRequest, response);
-                }
+                imgBytes = b64.getBytes(StandardCharsets.UTF_8);
             }
             return BRHTTPHelper.handleSuccess(200, imgBytes, baseRequest, response, contentType);
         } else return false;

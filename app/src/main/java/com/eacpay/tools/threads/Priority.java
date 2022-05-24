@@ -26,6 +26,6 @@ public enum Priority {
     /**
      * Highest priority level. Used for data that are required instantly(mainly for emergency).
      */
-    IMMEDIATE;
+    IMMEDIATE
 
 }

@@ -80,11 +80,7 @@ public class DisplayCurrencyActivity extends BRActivity {
         });
 
         int unit = BRSharedPrefs.getCurrencyUnit(this);
-        if (unit == BRConstants.CURRENT_UNIT_LITES) {
-            setButton(true);
-        } else {
-            setButton(false);
-        }
+        setButton(unit == BRConstants.CURRENT_UNIT_LITES);
         updateExchangeRate();
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

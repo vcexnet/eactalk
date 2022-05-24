@@ -9,8 +9,8 @@ import android.util.Log;
 
 import com.eacpay.EacApp;
 import com.eacpay.R;
-import com.eacpay.presenter.activities.PaperKeyActivity;
-import com.eacpay.presenter.activities.PaperKeyProveActivity;
+import com.eacpay.eactalk.InitWord;
+import com.eacpay.eactalk.VerifyWord;
 import com.eacpay.presenter.activities.SetPinActivity;
 import com.eacpay.presenter.activities.intro.WriteDownActivity;
 import com.eacpay.presenter.activities.settings.WithdrawBchActivity;
@@ -93,7 +93,8 @@ public class PostAuth {
             }
             return;
         }
-        Intent intent = new Intent(app, PaperKeyActivity.class);
+//        Intent intent = new Intent(app, PaperKeyActivity.class);
+        Intent intent = new Intent(app, InitWord.class);
         intent.putExtra("phrase", cleanPhrase);
         app.startActivity(intent);
         app.overridePendingTransition(R.anim.enter_from_bottom, R.anim.empty_300);
@@ -111,7 +112,7 @@ public class PostAuth {
             }
             return;
         }
-        Intent intent = new Intent(app, PaperKeyProveActivity.class);
+        Intent intent = new Intent(app, VerifyWord.class);
         intent.putExtra("phrase", cleanPhrase);
         app.startActivity(intent);
         app.overridePendingTransition(R.anim.enter_from_right, R.anim.exit_to_left);

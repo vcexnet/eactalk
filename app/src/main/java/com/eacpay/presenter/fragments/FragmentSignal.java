@@ -16,12 +16,13 @@ import com.eacpay.presenter.interfaces.BROnSignalCompletion;
 import junit.framework.Assert;
 
 import timber.log.Timber;
+
 public class FragmentSignal extends Fragment {
     public static final String TITLE = "title";
     public static final String ICON_DESCRIPTION = "iconDescription";
     public static final String RES_ID = "resId";
     public TextView mTitle;
-//    public TextView mDescription;
+    //    public TextView mDescription;
     public ImageView mIcon;
     private BROnSignalCompletion completion;
     private LinearLayout signalLayout;
@@ -76,7 +77,7 @@ public class FragmentSignal extends Fragment {
                 try {
                     if (getActivity() != null)
                         getActivity().getFragmentManager().popBackStack();
-                } catch (Exception ignored){
+                } catch (Exception ignored) {
 
                 }
                 new Handler().postDelayed(new Runnable() {

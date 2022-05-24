@@ -1,11 +1,13 @@
 package com.eacpay.tools.qrcode;
 
+import static android.graphics.Color.BLACK;
+import static android.graphics.Color.WHITE;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Point;
-
 import android.view.Display;
 import android.view.WindowManager;
 import android.widget.ImageView;
@@ -24,9 +26,6 @@ import java.util.EnumMap;
 import java.util.Map;
 
 import timber.log.Timber;
-
-import static android.graphics.Color.BLACK;
-import static android.graphics.Color.WHITE;
 public class QRUtils {
 
     public static Bitmap encodeAsBitmap(String content, int dimension) {

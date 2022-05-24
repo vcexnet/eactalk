@@ -1,5 +1,7 @@
 package com.eacpay.presenter.fragments;
 
+import static com.platform.HTTPServer.URL_SUPPORT;
+
 import android.app.Fragment;
 import android.content.pm.ApplicationInfo;
 import android.os.Bundle;
@@ -24,8 +26,6 @@ import com.eacpay.tools.util.Utils;
 import com.platform.HTTPServer;
 
 import timber.log.Timber;
-
-import static com.platform.HTTPServer.URL_SUPPORT;
 public class FragmentSupport extends Fragment {
     public LinearLayout backgroundLayout;
     public CardView signalLayout;

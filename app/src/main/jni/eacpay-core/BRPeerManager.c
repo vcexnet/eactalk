@@ -889,7 +889,7 @@ static void _peerDisconnected(void *info, int error)
         array_clear(manager->peers);
         txError = ENOTCONN; // trigger any pending tx publish callbacks
         willSave = 1;
-        peer_log(peer, "sync failed");
+        peer_log(peer, "sync failed 1");
     }
     else if (manager->connectFailureCount < MAX_CONNECT_FAILURES) willReconnect = 1;
 
@@ -1738,7 +1738,7 @@ void BRPeerManagerConnect(BRPeerManager *manager)
     }
 
     if (array_count(manager->connectedPeers) == 0) {
-        peer_log(&BR_PEER_NONE, "sync failed");
+        peer_log(&BR_PEER_NONE, "sync failed 2");
         _BRPeerManagerSyncStopped(manager);
         pthread_mutex_unlock(&manager->lock);
         if (manager->syncStopped) manager->syncStopped(manager->info, ENETUNREACH);

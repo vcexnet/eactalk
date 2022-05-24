@@ -1,9 +1,11 @@
 package com.eacpay.presenter.entities;
+
 public class BRTransactionEntity {
-    private byte[] buff;
+    private final byte[] buff;
     private int blockheight;
     private long timestamp;
     private String txHash;
+    private boolean isRead;
 
     public long getBlockheight() {
         return blockheight;
@@ -36,8 +38,23 @@ public class BRTransactionEntity {
         this.txHash = txHash;
     }
 
+    public BRTransactionEntity(byte[] txBuff, int blockheight, long timestamp, String txHash, boolean isRead) {
+        this.blockheight = blockheight;
+        this.timestamp = timestamp;
+        this.buff = txBuff;
+        this.txHash = txHash;
+        this.isRead = isRead;
+    }
+
     public byte[] getBuff() {
         return buff;
     }
 
+    public void setRead(boolean read) {
+        isRead = read;
+    }
+
+    public boolean isRead() {
+        return isRead;
+    }
 }

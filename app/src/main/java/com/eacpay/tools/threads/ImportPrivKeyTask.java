@@ -27,7 +27,7 @@ import timber.log.Timber;
 public class ImportPrivKeyTask extends AsyncTask<String, String, String> {
     public static final String TAG = ImportPrivKeyTask.class.getName();
     public static String UNSPENT_URL;
-    private Activity app;
+    private final Activity app;
     private String key;
     private ImportPrivKeyEntity importPrivKeyEntity;
 

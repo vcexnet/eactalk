@@ -2,14 +2,14 @@ package com.eacpay.presenter.fragments;
 
 import android.app.Fragment;
 import android.os.Bundle;
-
-import androidx.annotation.Nullable;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.widget.RelativeLayout;
+
+import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.eacpay.R;
 import com.eacpay.presenter.customviews.BRButton;
@@ -36,7 +36,7 @@ public class FragmentGreetings extends Fragment {
         ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getActivity().onBackPressed();
+                getActivity().getFragmentManager().popBackStack();
             }
         });
         return rootView;
@@ -50,7 +50,7 @@ public class FragmentGreetings extends Fragment {
         observer.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
-                if(observer.isAlive()) {
+                if (observer.isAlive()) {
                     observer.removeOnGlobalLayoutListener(this);
                 }
                 BRAnimator.animateBackgroundDim(background, false);

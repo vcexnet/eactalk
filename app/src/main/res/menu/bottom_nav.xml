@@ -2,27 +2,27 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/nav_main_home"
-        android:contentDescription="首页"
+        android:contentDescription="@string/home"
         android:icon="@drawable/bottom_nav_icon_home"
-        android:title="首页" />
+        android:title="@string/home" />
     <item
         android:id="@+id/nav_main_message"
-        android:contentDescription="消息"
+        android:contentDescription="@string/message"
         android:icon="@drawable/bottom_nav_icon_message"
-        android:title="消息" />
+        android:title="@string/message" />
     <item
         android:id="@+id/nav_main_send"
-        android:contentDescription="发布"
+        android:contentDescription="@string/publish"
         android:icon="@drawable/bottom_nav_icon_send"
-        android:title="发布" />
+        android:title="@string/publish" />
     <item
         android:id="@+id/nav_main_contact"
-        android:contentDescription="通讯录"
+        android:contentDescription="@string/contact"
         android:icon="@drawable/bottom_nav_icon_contact"
-        android:title="通讯录" />
+        android:title="@string/contact" />
     <item
         android:id="@+id/nav_main_mine"
-        android:contentDescription="我的"
+        android:contentDescription="@string/mine"
         android:icon="@drawable/bottom_nav_icon_mine"
-        android:title="我的" />
+        android:title="@string/mine" />
 </menu>

@@ -8,7 +8,6 @@ import android.content.pm.ApplicationInfo;
 import android.net.Uri;
 import android.os.Build;
 import android.os.NetworkOnMainThreadException;
-import android.util.Log;
 
 import com.eacpay.BuildConfig;
 import com.eacpay.EacApp;
@@ -89,7 +88,7 @@ public class APIClient {
     private static String BREAD_EXTRACTED;
     private static final boolean PRINT_FILES = false;
 
-    private SimpleDateFormat sdf = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss z", Locale.US);
+    private final SimpleDateFormat sdf = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss z", Locale.US);
 
     private boolean platformUpdating = false;
     private AtomicInteger itemsLeftToUpdate = new AtomicInteger(0);
@@ -107,7 +106,7 @@ public class APIClient {
         /**
          * @param text
          */
-        private FeatureFlags(final String text) {
+        FeatureFlags(final String text) {
             this.text = text;
         }
 
@@ -236,7 +235,7 @@ public class APIClient {
             BRKeyStore.putToken(token.getBytes(), ctx);
             return token;
         } catch (JSONException e) {
-            Timber.e(e);
+            e.printStackTrace();
         }
         return null;
     }
@@ -293,15 +292,13 @@ public class APIClient {
         byte[] data = new byte[0];
         try {
             OkHttpClient client = new OkHttpClient.Builder().followRedirects(false).connectTimeout(60, TimeUnit.SECONDS)/*.addInterceptor(new LoggingInterceptor())*/.build();
-            Timber.d("sendRequest: headers for : %s \n %s", request.url(), request.headers());
-            Log.e(TAG, "sendRequest: headers for : " + request.url() + " " + request.headers());
             String agent = Utils.getAgentString(ctx, "OkHttp/3.4.1");
             request = request.newBuilder().header("User-agent", agent).build();
             response = client.newCall(request).execute();
             try {
                 data = response.body().bytes();
             } catch (IOException e) {
-                Timber.e(e);
+                e.printStackTrace();
             }
 
             if (response.isRedirect()) {
@@ -319,7 +316,7 @@ public class APIClient {
                 return new Response.Builder().code(500).request(request).body(ResponseBody.create(null, new byte[0])).message("Internal Error").protocol(Protocol.HTTP_1_1).build();
             }
         } catch (IOException e) {
-            Timber.e(e);
+            e.printStackTrace();
             return new Response.Builder().code(599).request(request).body(ResponseBody.create(null, new byte[0])).protocol(Protocol.HTTP_1_1).message("Network Connection Timeout").build();
         }
 

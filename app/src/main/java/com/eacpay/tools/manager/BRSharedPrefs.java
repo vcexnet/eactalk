@@ -3,7 +3,10 @@ package com.eacpay.tools.manager;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.eacpay.eactalk.fragment.main.ContactFragment.ContactItem;
 import com.eacpay.tools.util.BRConstants;
+import com.google.common.reflect.TypeToken;
+import com.google.gson.Gson;
 
 import org.json.JSONArray;
 
@@ -18,6 +21,44 @@ import timber.log.Timber;
 public class BRSharedPrefs {
 
     public static List<OnIsoChangedListener> isoChangedListeners = new ArrayList<>();
+
+    public static List<ContactItem> getContactList(Context context) {
+        String contactList = BRSharedPrefs.getString(context, "contact_list");
+        List<ContactItem> list = new ArrayList<>();
+        if (contactList != null && !contactList.equals("")) {
+            list = new Gson().fromJson(contactList, new TypeToken<List<ContactItem>>() {
+            }.getType());
+        }
+
+        return list;
+    }
+
+    public static void saveContactList(Context context, List<ContactItem> list) {
+        BRSharedPrefs.putString(context, "contact_list", new Gson().toJson(list));
+    }
+
+    public static void saveContactItem(Context context, ContactItem contactItem) {
+        List<ContactItem> list = getContactList(context);
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).name.equals(contactItem.originalName)) {
+                list.get(i).name = contactItem.name;
+                list.get(i).address = contactItem.address;
+                break;
+            }
+        }
+        saveContactList(context, list);
+    }
+
+    public static void removeContact(Context context, String name) {
+        List<ContactItem> list = getContactList(context);
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).name.equals(name)) {
+                list.remove(i);
+                break;
+            }
+        }
+        BRSharedPrefs.saveContactList(context, list);
+    }
 
     public interface OnIsoChangedListener {
         void onIsoChanged(String iso);

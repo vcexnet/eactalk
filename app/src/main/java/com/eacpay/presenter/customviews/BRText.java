@@ -3,9 +3,10 @@ package com.eacpay.presenter.customviews;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
-import androidx.annotation.Nullable;
 import android.util.AttributeSet;
 import android.widget.TextView;
+
+import androidx.annotation.Nullable;
 
 import com.eacpay.R;
 import com.eacpay.tools.manager.FontManager;

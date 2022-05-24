@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -8,13 +9,110 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <include layout="@layout/my_toolbar_center" />
-
-        <EditText
-            android:id="@+id/main_contact_search"
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/my_toolbar_center"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:hint="输入地址或别名进行搜索" />
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/white"
+            android:elevation="4dp"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+            <TextView
+                android:id="@+id/my_toolbar_center_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:textSize="17sp" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <EditText
+                android:id="@+id/main_contact_search"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/b_f1_20"
+                android:hint="@string/enter_alias_address"
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:maxLines="1"
+                android:paddingLeft="16dp"
+                android:paddingRight="46dp" />
+
+            <ImageView
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:padding="6dp"
+                android:src="@drawable/icon_search" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+
+            <Button
+                android:id="@+id/main_contact_create"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_marginRight="10dp"
+                android:text="@string/create" />
+
+            <Button
+                android:id="@+id/main_contact_scan"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_marginRight="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="@string/scan_like" />
+
+            <Button
+                android:id="@+id/main_contact_copy"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_marginRight="10dp"
+                android:text="@string/copy"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/main_contact_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:background="@drawable/btn_background_red"
+                android:text="@string/delete"
+                android:visibility="gone" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/main_contact_select"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:text="@string/select"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,3 +1,6 @@
+import static org.hamcrest.Matchers.is;
+import static org.junit.Assert.assertThat;
+
 import android.util.Log;
 
 import com.eacpay.tools.util.Bip39Reader;
@@ -11,10 +14,6 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
-import static org.hamcrest.Matchers.is;
-import static org.hamcrest.Matchers.notNullValue;
-import static org.junit.Assert.assertThat;
 public class PaperKeyTests {
 
     private static final String TAG = PaperKeyTests.class.getName();
@@ -58,7 +57,7 @@ public class PaperKeyTests {
             try {
                 in = getClass().getResourceAsStream(fileName);
                 String str = IOUtils.toString(in);
-                String lines[] = str.split("\\r?\\n");
+                String[] lines = str.split("\\r?\\n");
                 result.addAll(Arrays.asList(lines));
             } catch (IOException e) {
                 Log.e(TAG, "getAllWords: " + fileName + ", ", e);

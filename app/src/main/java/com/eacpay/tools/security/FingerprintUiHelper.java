@@ -16,13 +16,13 @@
 
 package com.eacpay.tools.security;
 
-import com.eacpay.R;
-
 import android.content.Context;
 import android.hardware.fingerprint.FingerprintManager;
 import android.os.CancellationSignal;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.eacpay.R;
 
 /**
  * Small helper class to manage text/icon around fingerprint authentication UI.
@@ -37,7 +37,7 @@ public class FingerprintUiHelper extends FingerprintManager.AuthenticationCallba
     private final TextView mErrorTextView;
     private final Callback mCallback;
     private CancellationSignal mCancellationSignal;
-    private Context mContext;
+    private final Context mContext;
 
     boolean mSelfCancelled;
 

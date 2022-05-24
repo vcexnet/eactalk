@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/item_init_word_text"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:background="@drawable/b_3d86f8_10"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="43sp" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

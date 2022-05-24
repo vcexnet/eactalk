@@ -1,5 +1,7 @@
 package com.eacpay.presenter.activities.util;
 
+import static android.content.Context.ACTIVITY_SERVICE;
+
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.content.Intent;
@@ -8,15 +10,14 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.eacpay.R;
+import com.eacpay.eactalk.InputWord;
 import com.eacpay.presenter.activities.DisabledActivity;
-import com.eacpay.presenter.activities.InputWordsActivity;
 import com.eacpay.presenter.activities.SetPinActivity;
 
 import java.util.List;
 
 import timber.log.Timber;
 
-import static android.content.Context.ACTIVITY_SERVICE;
 public class ActivityUTILS {
 
     private static void setStatusBarColor(Activity app, int color) {
@@ -29,7 +30,7 @@ public class ActivityUTILS {
 
     //return true if the app does need to show the disabled wallet screen
     public static boolean isAppSafe(Activity app) {
-        return app instanceof SetPinActivity || app instanceof InputWordsActivity;
+        return app instanceof SetPinActivity || app instanceof InputWord;
     }
 
     public static void showWalletDisabled(Activity app) {
@@ -44,11 +45,8 @@ public class ActivityUTILS {
 
         List<ActivityManager.RunningTaskInfo> taskList = mngr.getRunningTasks(10);
 
-        if (taskList.get(0).numActivities == 1 &&
-                taskList.get(0).topActivity.getClassName().equals(app.getClass().getName())) {
-            return true;
-        }
-        return false;
+        return taskList.get(0).numActivities == 1 &&
+                taskList.get(0).topActivity.getClassName().equals(app.getClass().getName());
     }
 
     public static boolean isMainThread() {

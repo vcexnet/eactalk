@@ -21,6 +21,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 
 import javax.servlet.http.HttpServletResponse;
 
@@ -103,7 +104,7 @@ public class GeoLocationManager {
     }
 
     // Define a listener that responds to location updates
-    private LocationListener socketLocationListener = new LocationListener() {
+    private final LocationListener socketLocationListener = new LocationListener() {
         private boolean sending;
 
         public void onLocationChanged(Location location) {
@@ -139,7 +140,7 @@ public class GeoLocationManager {
         }
     };
 
-    private LocationListener locationListener = new LocationListener() {
+    private final LocationListener locationListener = new LocationListener() {
         private boolean processing;
 
         public void onLocationChanged(final Location location) {
@@ -155,7 +156,7 @@ public class GeoLocationManager {
                             if (!Utils.isNullOrEmpty(jsonLocation)) {
                                 try {
                                     ((HttpServletResponse) continuation.getServletResponse()).setStatus(200);
-                                    continuation.getServletResponse().getOutputStream().write(jsonLocation.getBytes("UTF-8"));
+                                    continuation.getServletResponse().getOutputStream().write(jsonLocation.getBytes(StandardCharsets.UTF_8));
                                     baseRequest.setHandled(true);
                                     continuation.complete();
                                     continuation = null;

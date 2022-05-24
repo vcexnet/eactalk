@@ -22,7 +22,7 @@
 
     <fragment
         android:id="@+id/nav_main_mine_1"
-        android:name="com.eacpay.eactalk.main_fragment.Mine"
+        android:name="com.eacpay.eactalk.fragment.main.Mine"
         android:label="首页"
         tools:layout="@layout/fragment_main_home"></fragment>
 </navigation>

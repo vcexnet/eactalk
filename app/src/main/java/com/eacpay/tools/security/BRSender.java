@@ -293,12 +293,18 @@ public class BRSender {
                 BRExecutor.getInstance().forLightWeightBackgroundTasks().execute(new Runnable() {
                     @Override
                     public void run() {
+                        if (ctx instanceof SendMessage) {
+                            ((SendMessage) ctx).progressDialogShow();
+                        }
                         PostAuth.getInstance().onPublishTxAuth(ctx, false);
                         BRExecutor.getInstance().forMainThreadTasks().execute(new Runnable() {
                             @Override
                             public void run() {
                                 BRAnimator.killAllFragments((Activity) ctx);
-                                BRAnimator.startBreadIfNotStarted((Activity) ctx);
+                                if (ctx instanceof SendMessage) {
+                                    ((SendMessage) ctx).paySuccess();
+                                }
+//                                BRAnimator.startBreadIfNotStarted((Activity) ctx);
                             }
                         });
 

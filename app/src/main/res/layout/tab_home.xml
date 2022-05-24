@@ -15,6 +15,7 @@
             android:textColor="@color/bottom_nav_text_color" />
 
         <View
+            android:id="@+id/tab_home_divider"
             android:layout_width="1dp"
             android:layout_height="14dp"
             android:layout_alignParentRight="true"

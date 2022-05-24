@@ -11,13 +11,12 @@ import androidx.appcompat.widget.Toolbar;
 import com.eacpay.EacApp;
 import com.eacpay.R;
 import com.eacpay.eactalk.SendMessage;
+import com.eacpay.eactalk.utils.MyUtils;
 import com.eacpay.presenter.activities.DisabledActivity;
-import com.eacpay.presenter.activities.intro.IntroActivity;
 import com.eacpay.presenter.activities.intro.RecoverActivity;
 import com.eacpay.presenter.activities.intro.WriteDownActivity;
 import com.eacpay.tools.animation.BRAnimator;
 import com.eacpay.tools.manager.BRApiManager;
-import com.eacpay.tools.manager.InternetManager;
 import com.eacpay.tools.security.AuthManager;
 import com.eacpay.tools.security.BRKeyStore;
 import com.eacpay.tools.security.BitcoinUrlHandler;
@@ -25,7 +24,6 @@ import com.eacpay.tools.security.PostAuth;
 import com.eacpay.tools.threads.BRExecutor;
 import com.eacpay.tools.util.BRConstants;
 import com.eacpay.wallet.BRWalletManager;
-import com.platform.HTTPServer;
 import com.platform.tools.BRBitId;
 
 import timber.log.Timber;
@@ -39,6 +37,8 @@ public class BRActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
+        MyUtils.log("br activity onPause");
+        EacApp.isShow = false;
     }
 
     @Override
@@ -53,6 +53,8 @@ public class BRActivity extends AppCompatActivity {
     protected void onResume() {
         init(this);
         super.onResume();
+        MyUtils.log("br activity onResume");
+        EacApp.isShow = true;
     }
 
     @Override
@@ -169,8 +171,7 @@ public class BRActivity extends AppCompatActivity {
             case BRConstants.REQUEST_SEND_MESSAGE:
                 if (resultCode == RESULT_OK) {
                     Intent intent = new Intent(this, SendMessage.class);
-                    intent.putExtra("type", "qr");
-                    intent.putExtra("content", data.getStringExtra("result"));
+                    intent.putExtra("address", data.getStringExtra("result"));
                     startActivity(intent);
                 }
                 break;
@@ -178,8 +179,9 @@ public class BRActivity extends AppCompatActivity {
     }
 
     public static void init(Activity app) {
-        InternetManager.getInstance();
-        if (!(app instanceof IntroActivity || app instanceof RecoverActivity || app instanceof WriteDownActivity))
+        if (!(//app instanceof IntroActivity ||
+                app instanceof RecoverActivity ||
+                        app instanceof WriteDownActivity))
             BRApiManager.getInstance().startTimer(app);
         //show wallet locked if it is
         if (!ActivityUTILS.isAppSafe(app))
@@ -197,9 +199,14 @@ public class BRActivity extends AppCompatActivity {
         BRExecutor.getInstance().forBackgroundTasks().execute(new Runnable() {
             @Override
             public void run() {
-                HTTPServer.startServer();
+//                HTTPServer.startServer();
             }
         });
         EacApp.backgroundedTime = System.currentTimeMillis();
+    }
+
+    public void openActivity(Class<? extends BRActivity> c) {
+        Intent intent = new Intent(this, c);
+        startActivity(intent);
     }
 }

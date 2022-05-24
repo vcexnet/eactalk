@@ -5,10 +5,11 @@ import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Path;
-import androidx.annotation.ColorInt;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.widget.LinearLayout;
+
+import androidx.annotation.ColorInt;
 
 import com.eacpay.R;
 public class BRLinearLayoutWithCaret extends LinearLayout {

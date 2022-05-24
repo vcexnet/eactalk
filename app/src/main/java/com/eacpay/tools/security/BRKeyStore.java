@@ -39,7 +39,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 import java.security.InvalidAlgorithmParameterException;
 import java.security.InvalidKeyException;
 import java.security.KeyStore;
@@ -413,11 +413,7 @@ public class BRKeyStore {
         if (strToStore == null || strToStore.isEmpty()) return false;
         AliasObject obj = aliasObjectMap.get(CANARY_ALIAS);
         byte[] strBytes = new byte[0];
-        try {
-            strBytes = strToStore.getBytes("UTF-8");
-        } catch (UnsupportedEncodingException e) {
-            Timber.e(e);
-        }
+        strBytes = strToStore.getBytes(StandardCharsets.UTF_8);
         return strBytes.length != 0 && _setData(context, strBytes, obj.alias, obj.datafileName, obj.ivFileName, requestCode, true);
     }
 
@@ -430,11 +426,7 @@ public class BRKeyStore {
         byte[] data;
         data = _getData(context, obj.alias, obj.datafileName, obj.ivFileName, requestCode);
         String result = null;
-        try {
-            result = data == null ? null : new String(data, "UTF-8");
-        } catch (UnsupportedEncodingException e) {
-            Timber.e(e);
-        }
+        result = data == null ? null : new String(data, StandardCharsets.UTF_8);
         return result;
     }
 

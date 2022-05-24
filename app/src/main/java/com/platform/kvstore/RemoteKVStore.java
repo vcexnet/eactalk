@@ -1,12 +1,15 @@
 package com.platform.kvstore;
 
+import static android.R.attr.key;
+import static com.platform.kvstore.CompletionObject.RemoteKVStoreError.unknown;
+
 import com.platform.APIClient;
 import com.platform.interfaces.KVStoreAdaptor;
 import com.platform.sqlite.KVItem;
 
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
+import java.nio.charset.StandardCharsets;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,13 +17,10 @@ import java.util.List;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 import timber.log.Timber;
-
-import static android.R.attr.key;
-import static com.platform.kvstore.CompletionObject.RemoteKVStoreError.unknown;
 public class RemoteKVStore implements KVStoreAdaptor {
     private static RemoteKVStore instance;
-    private APIClient apiClient;
-    private int retryCount = 0;
+    private final APIClient apiClient;
+    private final int retryCount = 0;
 
     public static RemoteKVStore getInstance(APIClient apiClient) {
         if (instance == null)
@@ -208,11 +208,7 @@ public class RemoteKVStore implements KVStoreAdaptor {
 
                     byte[] keyBytes = new byte[keyLen];
                     buffer.get(keyBytes, 0, keyLen);
-                    try {
-                        key = new String(keyBytes, "UTF-8");
-                    } catch (UnsupportedEncodingException e) {
-                        Timber.e(e);
-                    }
+                    key = new String(keyBytes, StandardCharsets.UTF_8);
 
                     version = buffer.getLong();
                     time = buffer.getLong();

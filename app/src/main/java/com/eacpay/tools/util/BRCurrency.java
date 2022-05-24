@@ -1,5 +1,7 @@
 package com.eacpay.tools.util;
 
+import static com.eacpay.tools.util.BRConstants.CURRENT_UNIT_PHOTONS;
+
 import android.content.Context;
 
 import com.eacpay.tools.manager.BRSharedPrefs;
@@ -9,8 +11,6 @@ import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.Currency;
 import java.util.Locale;
-
-import static com.eacpay.tools.util.BRConstants.CURRENT_UNIT_PHOTONS;
 public class BRCurrency {
     public static final String TAG = BRCurrency.class.getName();
 

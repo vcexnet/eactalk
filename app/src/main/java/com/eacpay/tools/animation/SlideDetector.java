@@ -12,8 +12,8 @@ public class SlideDetector implements View.OnTouchListener {
 
     private static final String TAG = SlideDetector.class.getName();
 
-    private Context context;
-    private View _root;
+    private final Context context;
+    private final View _root;
     float origY;
     float dY;
 

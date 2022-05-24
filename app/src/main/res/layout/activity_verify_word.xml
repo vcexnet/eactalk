@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/my_toolbar" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/input_key_word_one_by_one"
+                android:textColor="@color/c_999"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/verify_word_title_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/word_7"
+                android:textColor="@color/c_87"
+                android:textSize="17sp" />
+
+            <EditText
+                android:id="@+id/verify_word_content_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/input"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+
+                android:maxLines="1"
+                android:nextFocusForward="@id/verify_word_content_2" />
+
+            <TextView
+                android:id="@+id/verify_word_title_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/word_7"
+                android:textColor="@color/c_87"
+                android:textSize="17sp" />
+
+            <EditText
+                android:id="@+id/verify_word_content_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/enter"
+                android:imeOptions="actionDone"
+                android:inputType="text"
+
+                android:maxLines="1" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/verify_word_submit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="36dp"
+                android:text="@string/submit" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

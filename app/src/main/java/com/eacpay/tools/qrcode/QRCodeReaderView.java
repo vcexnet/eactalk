@@ -15,6 +15,8 @@
  */
 package com.eacpay.tools.qrcode;
 
+import static android.hardware.Camera.getCameraInfo;
+
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.graphics.Point;
@@ -44,8 +46,6 @@ import java.lang.ref.WeakReference;
 import java.util.Map;
 
 import timber.log.Timber;
-
-import static android.hardware.Camera.getCameraInfo;
 
 /**
  * QRCodeReaderView Class which uses ZXING lib and let you easily integrate a QR decoder view.

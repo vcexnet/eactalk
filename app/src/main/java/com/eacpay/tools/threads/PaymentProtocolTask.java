@@ -312,7 +312,7 @@ public class PaymentProtocolTask extends AsyncTask<String, String, String> {
                 BigDecimal bigAm = BRExchange.getAmountFromSatoshis(app, iso, new BigDecimal(paymentRequest.amount));
                 BigDecimal bigFee = BRExchange.getAmountFromSatoshis(app, iso, new BigDecimal(paymentRequest.fee));
                 BigDecimal bigTotal = BRExchange.getAmountFromSatoshis(app, iso, new BigDecimal(total));
-                final String message = certification + memo + finalAllAddresses.toString() + "\n\n" + "amount: " + BRCurrency.getFormattedCurrencyString(app, iso, bigAm)
+                final String message = certification + memo + finalAllAddresses + "\n\n" + "amount: " + BRCurrency.getFormattedCurrencyString(app, iso, bigAm)
                         + "\nnetwork fee: +" + BRCurrency.getFormattedCurrencyString(app, iso, bigFee)
                         + "\ntotal: " + BRCurrency.getFormattedCurrencyString(app, iso, bigTotal);
 

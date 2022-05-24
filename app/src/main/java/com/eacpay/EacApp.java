@@ -28,6 +28,7 @@ import timber.log.Timber;
 
 public class EacApp extends Application {
     public static int DISPLAY_HEIGHT_PX;
+    public static boolean isShow = true;
     FingerprintManager mFingerprintManager;
     public static String HOST = "api.loafwallet.org";
     private static List<OnAppBackgrounded> listeners;
@@ -40,11 +41,10 @@ public class EacApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        boolean enableCrashlytics = true;
-        if (Utils.isEmulatorOrDebug(this)) {
-//            BRKeyStore.putFailCount(0, this);
-            enableCrashlytics = false;
-        }
+        com.blankj.utilcode.util.Utils.init(this);
+
+        boolean enableCrashlytics = !Utils.isEmulatorOrDebug(this);
+        //            BRKeyStore.putFailCount(0, this);
 
         // setup Timber
         Timber.plant(BuildConfig.DEBUG ? new Timber.DebugTree() : new CrashReportingTree());
@@ -60,6 +60,11 @@ public class EacApp extends Application {
         display.getSize(size);
         DISPLAY_HEIGHT_PX = size.y;
         mFingerprintManager = (FingerprintManager) getSystemService(Context.FINGERPRINT_SERVICE);
+
+//        ImagePipelineConfig config = ImagePipelineConfig.newBuilder(this)
+//                .setNetworkFetcher(new IpfsFetcher(new OkHttpClient()))
+//                .build();
+//        Fresco.initialize(this, config);
     }
 
     @Override

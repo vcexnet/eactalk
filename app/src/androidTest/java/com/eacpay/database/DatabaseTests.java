@@ -1,9 +1,10 @@
 package com.eacpay.database;
 
+import android.util.Log;
+
+import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.LargeTest;
 import androidx.test.rule.ActivityTestRule;
-import androidx.test.ext.junit.runners.AndroidJUnit4;
-import android.util.Log;
 
 import com.eacpay.presenter.activities.intro.IntroActivity;
 import com.eacpay.presenter.entities.BRMerkleBlockEntity;

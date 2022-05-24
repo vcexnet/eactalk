@@ -30,7 +30,7 @@ public class ReEnterPinActivity extends BRActivity {
     private View dot6;
     private StringBuilder pin = new StringBuilder();
     private TextView title;
-    private int pinLimit = 6;
+    private final int pinLimit = 6;
     private String firstPIN;
     private boolean isPressAllowed = true;
     private LinearLayout pinLayout;

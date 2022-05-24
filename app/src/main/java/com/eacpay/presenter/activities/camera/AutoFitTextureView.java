@@ -16,12 +16,11 @@ package com.eacpay.presenter.activities.camera;
  * limitations under the License.
  */
 
+import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.TextureView;
-
-import android.content.Context;
 
 import com.eacpay.R;
 
@@ -36,8 +35,8 @@ public class AutoFitTextureView extends TextureView {
     private int mRatioHeight = 0;
     private int width;
     private int height;
-    private int guideLineWidth = 600;
-    private int guideLineHeight = 400;
+    private final int guideLineWidth = 600;
+    private final int guideLineHeight = 400;
     private Paint framePaint;
 
     public AutoFitTextureView(Context context) {

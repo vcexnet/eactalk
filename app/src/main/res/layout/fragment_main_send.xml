@@ -17,18 +17,18 @@
             android:id="@+id/send_normal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="发布普通消息" />
+            android:text="@string/send_normal_message" />
 
         <Button
             android:id="@+id/send_notice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="发布公告消息" />
+            android:text="@string/send_notice_message" />
 
         <Button
             android:id="@+id/send_qrcode"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="扫码发消息" />
+            android:text="@string/send_scan_message" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

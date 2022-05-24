@@ -1,7 +1,9 @@
 package com.eacpay.tools.sqlite;
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.NetworkOnMainThreadException;
 
@@ -16,8 +18,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 import timber.log.Timber;
 
 public class TransactionDataSource implements BRDataSourceInterface {
-
-    private AtomicInteger mOpenCounter = new AtomicInteger();
+    private static final String TAG = "oldfeel";
+    private final AtomicInteger mOpenCounter = new AtomicInteger();
 
     // Database fields
     private SQLiteDatabase database;
@@ -26,7 +28,8 @@ public class TransactionDataSource implements BRDataSourceInterface {
             BRSQLiteHelper.TX_COLUMN_ID,
             BRSQLiteHelper.TX_BUFF,
             BRSQLiteHelper.TX_BLOCK_HEIGHT,
-            BRSQLiteHelper.TX_TIME_STAMP
+            BRSQLiteHelper.TX_TIME_STAMP,
+            BRSQLiteHelper.TX_IS_READ
     };
 
     public interface OnTxAddedListener {
@@ -124,14 +127,14 @@ public class TransactionDataSource implements BRDataSourceInterface {
     }
 
     private BRTransactionEntity cursorToTransaction(Cursor cursor) {
-        return new BRTransactionEntity(cursor.getBlob(1), cursor.getInt(2), cursor.getLong(3), cursor.getString(0));
+        return new BRTransactionEntity(cursor.getBlob(1), cursor.getInt(2), cursor.getLong(3), cursor.getString(0), cursor.getInt(4) == 1);
     }
 
     public void updateTxBlockHeight(String hash, int blockHeight, int timeStamp) {
         try {
             database = openDatabase();
             Timber.d("transaction updated with id: %s", hash);
-            String strFilter = "_id=\'" + hash + "\'";
+            String strFilter = "_id='" + hash + "'";
             ContentValues args = new ContentValues();
             args.put(BRSQLiteHelper.TX_BLOCK_HEIGHT, blockHeight);
             args.put(BRSQLiteHelper.TX_TIME_STAMP, timeStamp);
@@ -147,7 +150,7 @@ public class TransactionDataSource implements BRDataSourceInterface {
             database = openDatabase();
             Timber.d("transaction deleted with id: %s", hash);
             database.delete(BRSQLiteHelper.TX_TABLE_NAME, BRSQLiteHelper.TX_COLUMN_ID
-                    + " = \'" + hash + "\'", null);
+                    + " = '" + hash + "'", null);
         } finally {
             closeDatabase();
         }
@@ -171,5 +174,35 @@ public class TransactionDataSource implements BRDataSourceInterface {
 
 //        }
 //        Log.d("Database open counter: " , String.valueOf(mOpenCounter.get()));
+    }
+
+    /**
+     * 查看消息
+     */
+    public void setRead(final int blockHeight) {
+        new Thread() {
+            @Override
+            public void run() {
+                database = openDatabase();
+                String strFilter = BRSQLiteHelper.TX_BLOCK_HEIGHT + "='" + blockHeight + "'";
+                ContentValues values = new ContentValues();
+                values.put(BRSQLiteHelper.TX_IS_READ, true);
+
+                database.update(BRSQLiteHelper.TX_TABLE_NAME, values, strFilter, null);
+                closeDatabase();
+            }
+        }.start();
+    }
+
+    /**
+     * 未读消息数量
+     *
+     * @return
+     */
+    public long unReadCount() {
+        database = openDatabase();
+        long count = DatabaseUtils.queryNumEntries(database, BRSQLiteHelper.TX_TABLE_NAME, BRSQLiteHelper.TX_IS_READ + " is null", null);
+        closeDatabase();
+        return count;
     }
 }

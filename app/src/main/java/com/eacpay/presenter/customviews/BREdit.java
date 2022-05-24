@@ -3,9 +3,10 @@ package com.eacpay.presenter.customviews;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
-import androidx.annotation.Nullable;
 import android.util.AttributeSet;
 import android.widget.EditText;
+
+import androidx.annotation.Nullable;
 
 import com.eacpay.R;
 import com.eacpay.tools.manager.FontManager;
@@ -15,8 +16,8 @@ import com.eacpay.tools.util.Utils;
 public class BREdit extends EditText {
     private static final String TAG = BREdit.class.getName();
     private final int ANIMATION_DURATION = 200;
-    private int currentX = 0;
-    private int currentY = 0;
+    private final int currentX = 0;
+    private final int currentY = 0;
     private boolean isBreadButton; //meaning is has the special animation and shadow
 
     public BREdit(Context context) {

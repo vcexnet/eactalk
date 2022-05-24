@@ -26,11 +26,11 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
+import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
@@ -50,7 +50,7 @@ public class BRBitId {
     private static String _strToSign = null;
     private static String _promptString = null;
     private static int _index = 0;
-    private volatile static Map<String, Boolean> bitIdKeys = new HashMap<>();
+    private static final Map<String, Boolean> bitIdKeys = new HashMap<>();
 
     public static boolean isBitId(String uri) {
         try {
@@ -338,12 +338,8 @@ public class BRBitId {
         byte[] headerBytes = null;
         byte[] messageBytes = null;
 
-        try {
-            headerBytes = BITCOIN_SIGNED_MESSAGE_HEADER.getBytes("UTF-8");
-            messageBytes = message.getBytes("UTF-8");
-        } catch (UnsupportedEncodingException e) {
-            Timber.e(e);
-        }
+        headerBytes = BITCOIN_SIGNED_MESSAGE_HEADER.getBytes(StandardCharsets.UTF_8);
+        messageBytes = message.getBytes(StandardCharsets.UTF_8);
         assert (headerBytes != null);
         assert (messageBytes != null);
         if (headerBytes == null || messageBytes == null) return new byte[0];

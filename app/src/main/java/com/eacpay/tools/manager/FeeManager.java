@@ -14,7 +14,7 @@ public final class FeeManager {
     private static final long defaultLuxuryFeePerKB = 2_000_000L;
     private static final long defaultTimestamp = 1583015199122L;
 
-    private Fee defaultValues = new Fee(defaultLuxuryFeePerKB, defaultRegularFeePerKB, defaultEconomyFeePerKB, defaultTimestamp);
+    private final Fee defaultValues = new Fee(defaultLuxuryFeePerKB, defaultRegularFeePerKB, defaultEconomyFeePerKB, defaultTimestamp);
 
     private static final FeeManager instance;
 

@@ -134,7 +134,7 @@ public class WebViewActivity extends BRActivity {
     }
 
     private void navigate(String to) {
-        String js = String.format("window.location = \'%s\';", to);
+        String js = String.format("window.location = '%s';", to);
         webView.evaluateJavascript(js, new ValueCallback<String>() {
             @Override
             public void onReceiveValue(String value) {

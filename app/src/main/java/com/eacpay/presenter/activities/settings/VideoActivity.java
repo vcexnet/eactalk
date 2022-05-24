@@ -38,9 +38,9 @@ public class VideoActivity extends BRActivity {
     private MediaController mediaController;
     private TextView changeChinese;
     private TextView changeEnglish;
-    private int selectedBackgroundColor
+    private final int selectedBackgroundColor
             = Color.parseColor("#41c7db");
-    private int normalTextColor = Color.parseColor("#303030");
+    private final int normalTextColor = Color.parseColor("#303030");
 
     private String videoChineseUrl;
     private String videoEnglishUrl;

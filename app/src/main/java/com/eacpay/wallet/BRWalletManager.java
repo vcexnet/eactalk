@@ -22,7 +22,6 @@ import androidx.annotation.WorkerThread;
 
 import com.eacpay.EacApp;
 import com.eacpay.R;
-
 import com.eacpay.eactalk.MainActivity;
 import com.eacpay.presenter.activities.util.ActivityUTILS;
 import com.eacpay.presenter.customviews.BRDialogView;
@@ -49,10 +48,10 @@ import com.eacpay.tools.threads.BRExecutor;
 import com.eacpay.tools.threads.ImportPrivKeyTask;
 import com.eacpay.tools.util.BRConstants;
 import com.eacpay.tools.util.BRCurrency;
+import com.eacpay.tools.util.BRExchange;
 import com.eacpay.tools.util.Bip39Reader;
 import com.eacpay.tools.util.TypesConverter;
 import com.eacpay.tools.util.Utils;
-import com.eacpay.tools.util.BRExchange;
 import com.platform.entities.WalletInfo;
 import com.platform.tools.KVStoreManager;
 
@@ -64,6 +63,7 @@ import java.util.List;
 import java.util.Locale;
 
 import timber.log.Timber;
+
 public class BRWalletManager {
     private static BRWalletManager instance;
     public List<OnBalanceChanged> balanceListeners;
@@ -355,8 +355,8 @@ public class BRWalletManager {
                                     error == 0 ? app.getString(R.string.Alerts_sendSuccessSubheader) : message, error == 0 ? R.drawable.ic_check_mark_white : R.drawable.ic_error_outline_black_24dp, new BROnSignalCompletion() {
                                         @Override
                                         public void onComplete() {
-                                            if (!((Activity) app).isDestroyed())
-                                                ((Activity) app).getFragmentManager().popBackStack();
+//                                            if (!((Activity) app).isDestroyed())
+//                                                ((Activity) app).getFragmentManager().popBackStack();
                                         }
                                     });
                     }

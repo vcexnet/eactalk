@@ -1,5 +1,7 @@
 package com.eacpay.tools.manager;
 
+import static com.platform.APIClient.BASE_URL;
+
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -27,12 +29,10 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 import timber.log.Timber;
 
-import static com.platform.APIClient.BASE_URL;
-
 public class BREventManager implements EacApp.OnAppBackgrounded {
     private static BREventManager instance;
-    private String sessionId;
-    private List<Event> events = new ArrayList<>();
+    private final String sessionId;
+    private final List<Event> events = new ArrayList<>();
 
     private BREventManager() {
         sessionId = UUID.randomUUID().toString();

@@ -6,7 +6,6 @@ import android.widget.Toast;
 
 import com.eacpay.EacApp;
 import com.eacpay.R;
-
 import com.eacpay.eactalk.MainActivity;
 import com.eacpay.presenter.customviews.BRToast;
 import com.eacpay.presenter.entities.PaymentRequestWrapper;

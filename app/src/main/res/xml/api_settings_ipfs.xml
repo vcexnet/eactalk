@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.preference.PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <DropDownPreference
+        app:entries="@array/ipfs_times"
+        app:entryValues="@array/ipfs_times_values"
+        app:iconSpaceReserved="false"
+        app:key="time"
+        app:title="@string/node_run_time" />
+
+    <SwitchPreferenceCompat
+        app:iconSpaceReserved="false"
+        app:key="wifi"
+        app:summaryOff="@string/close"
+        app:summaryOn="@string/start"
+        app:title="@string/is_only_wifi" />
+
+    <Preference
+        app:iconSpaceReserved="false"
+        app:key="storage"
+        app:title="@string/max_storage" />
+
+    <Preference
+        app:iconSpaceReserved="false"
+        app:key="path"
+        app:title="@string/ipfs_path" />
+
+    <Preference
+        app:iconSpaceReserved="false"
+        app:key="peerID"
+        app:title="Peer ID" />
+
+    <Preference
+        app:iconSpaceReserved="false"
+        app:key="ipfs_node"
+        app:title="@string/default_node" />
+
+    <Preference
+        app:iconSpaceReserved="false"
+        app:key="ipfs_gateway"
+        app:title="@string/default_gateway_http_https" />
+
+    <!--    <Preference-->
+    <!--        app:iconSpaceReserved="false"-->
+    <!--        app:key="key"-->
+    <!--        app:title="私钥备份和恢复" />-->
+</androidx.preference.PreferenceScreen>

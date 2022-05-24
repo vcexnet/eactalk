@@ -81,8 +81,7 @@
         android:layout_height="160dp"
         android:layout_below="@+id/gradient_layout"
         android:focusable="false"
-        android:orientation="horizontal"
-        />
+        android:orientation="horizontal" />
 
     <LinearLayout
         android:id="@+id/buttons_layout"
@@ -143,7 +142,7 @@
         android:layout_marginTop="16dp"
         android:text="1 of 12"
         android:textColor="@color/light_gray"
-        app:customTFont="BarlowSemiCondensed-Medium.ttf"/>
+        app:customTFont="BarlowSemiCondensed-Medium.ttf" />
 
 
 </RelativeLayout>

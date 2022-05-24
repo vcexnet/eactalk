@@ -22,7 +22,7 @@
 
     <fragment
         android:id="@+id/nav_main_send_1"
-        android:name="com.eacpay.eactalk.main_fragment.Send"
+        android:name="com.eacpay.eactalk.fragment.main.Send"
         android:label="首页"
         tools:layout="@layout/fragment_main_home"></fragment>
 </navigation>

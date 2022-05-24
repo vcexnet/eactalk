@@ -596,7 +596,7 @@ public class FragmentSend extends Fragment {
         if (new BigDecimal(currAmount.concat(String.valueOf(dig))).doubleValue()
                 <= BRExchange.getMaxAmount(getActivity(), iso).doubleValue()) {
             //do not insert 0 if the balance is 0 now
-            if (currAmount.equalsIgnoreCase("0")) amountBuilder = new StringBuilder("");
+            if (currAmount.equalsIgnoreCase("0")) amountBuilder = new StringBuilder();
             if ((currAmount.contains(".") && (currAmount.length() - currAmount.indexOf(".") > BRCurrency.getMaxDecimalPlaces(iso))))
                 return;
             amountBuilder.append(dig);

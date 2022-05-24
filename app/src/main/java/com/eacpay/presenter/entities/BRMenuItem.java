@@ -1,8 +1,5 @@
 package com.eacpay.presenter.entities;
 
-import android.content.DialogInterface;
-import android.os.Parcel;
-import android.os.Parcelable;
 import android.view.View;
 public class BRMenuItem {
 

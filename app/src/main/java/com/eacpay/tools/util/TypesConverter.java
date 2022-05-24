@@ -2,7 +2,6 @@ package com.eacpay.tools.util;
 
 import java.nio.ByteBuffer;
 import java.nio.CharBuffer;
-import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 public class TypesConverter {
@@ -25,7 +24,7 @@ public class TypesConverter {
 
     public static byte[] toBytes(char[] chars) {
         CharBuffer charBuffer = CharBuffer.wrap(chars);
-        ByteBuffer byteBuffer = Charset.forName("UTF-8").encode(charBuffer);
+        ByteBuffer byteBuffer = StandardCharsets.UTF_8.encode(charBuffer);
         return Arrays.copyOfRange(byteBuffer.array(),
                 byteBuffer.position(), byteBuffer.limit());
     }
@@ -46,7 +45,7 @@ public class TypesConverter {
     }
 
     public static byte[] long2byteArray(long l) {
-        byte b[] = new byte[8];
+        byte[] b = new byte[8];
 
         ByteBuffer buf = ByteBuffer.wrap(b);
         buf.putLong(l);

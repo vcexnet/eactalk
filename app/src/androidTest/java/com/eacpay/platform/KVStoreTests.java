@@ -1,8 +1,8 @@
 package com.eacpay.platform;
 
+import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.LargeTest;
 import androidx.test.rule.ActivityTestRule;
-import androidx.test.ext.junit.runners.AndroidJUnit4;
 
 import com.eacpay.presenter.activities.intro.WriteDownActivity;
 import com.eacpay.tools.threads.BRExecutor;
@@ -37,7 +37,7 @@ public class KVStoreTests {
 
     @ClassRule
     public static ActivityTestRule<WriteDownActivity> mActivityRule = new ActivityTestRule<>(WriteDownActivity.class);
-    private static KVStoreAdaptor remote = new MockUpAdapter();
+    private static final KVStoreAdaptor remote = new MockUpAdapter();
     private static ReplicatedKVStore store;
 
     public static class MockUpAdapter implements KVStoreAdaptor {

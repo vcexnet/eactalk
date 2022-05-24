@@ -1,6 +1,5 @@
 package com.platform.entities;
 
-import static android.R.attr.name;
 public class WalletInfo {
 
     /**WalletInfo:

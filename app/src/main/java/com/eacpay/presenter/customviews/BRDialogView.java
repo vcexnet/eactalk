@@ -147,7 +147,7 @@ public class BRDialogView extends DialogFragment {
         this.iconRes = iconRes;
     }
 
-    public static interface BROnClickListener {
+    public interface BROnClickListener {
         void onClick(BRDialogView brDialogView);
     }
 

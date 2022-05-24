@@ -4,6 +4,7 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+
 public class BRSQLiteHelper extends SQLiteOpenHelper {
     private static final String TAG = BRSQLiteHelper.class.getName();
     private static BRSQLiteHelper instance;
@@ -18,8 +19,8 @@ public class BRSQLiteHelper extends SQLiteOpenHelper {
         return instance;
     }
 
-    private static final String DATABASE_NAME = "eacpay.db";
-    private static final int DATABASE_VERSION = 12;
+    private static final String DATABASE_NAME = "eactalk.db";
+    private static final int DATABASE_VERSION = 1;
 
     /**
      * MerkleBlock table
@@ -44,11 +45,13 @@ public class BRSQLiteHelper extends SQLiteOpenHelper {
     public static final String TX_BUFF = "transactionBuff";
     public static final String TX_BLOCK_HEIGHT = "transactionBlockHeight";
     public static final String TX_TIME_STAMP = "transactionTimeStamp";
+    public static final String TX_IS_READ = "is_read";
 
     private static final String TX_DATABASE_CREATE = "create table if not exists " + TX_TABLE_NAME + "(" +
             TX_COLUMN_ID + " text, " +
             TX_BUFF + " blob, " +
             TX_BLOCK_HEIGHT + " integer, " +
+            TX_IS_READ + " boolean, " +
             TX_TIME_STAMP + " integer );";
 
     /**
@@ -95,11 +98,11 @@ public class BRSQLiteHelper extends SQLiteOpenHelper {
         Log.e(TAG, "Upgrading database from version " + oldVersion + " to "
                 + newVersion + ", which will destroy all old data");
 //        db.execSQL("DROP TABLE IF EXISTS " + MB_TABLE_NAME);
-//        db.execSQL("DROP TABLE IF EXISTS " + TX_TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS " + TX_TABLE_NAME);
 //        db.execSQL("DROP TABLE IF EXISTS " + PEER_TABLE_NAME);
 //        db.execSQL("DROP TABLE IF EXISTS " + CURRENCY_TABLE_NAME);
 //        db.execSQL(MB_DATABASE_CREATE);
-//        db.execSQL(TX_DATABASE_CREATE);
+        db.execSQL(TX_DATABASE_CREATE);
 //        db.execSQL(PEER_DATABASE_CREATE);
 //        db.execSQL(CURRENCY_DATABASE_CREATE);
 //        db.execSQL("PRAGMA journal_mode=WAL;");

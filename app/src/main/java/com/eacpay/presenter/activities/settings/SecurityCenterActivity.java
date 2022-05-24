@@ -102,9 +102,9 @@ public class SecurityCenterActivity extends BRActivity {
 
     public class SecurityCenterListAdapter extends ArrayAdapter<BRSecurityCenterItem> {
 
-        private List<BRSecurityCenterItem> items;
-        private Context mContext;
-        private int defaultLayoutResource = R.layout.security_center_list_item;
+        private final List<BRSecurityCenterItem> items;
+        private final Context mContext;
+        private final int defaultLayoutResource = R.layout.security_center_list_item;
 
         public SecurityCenterListAdapter(@NonNull Context context, @LayoutRes int resource, @NonNull List<BRSecurityCenterItem> items) {
             super(context, resource);

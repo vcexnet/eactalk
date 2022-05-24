@@ -1,4 +1,7 @@
 package com.platform.kvstore;
+
+import static com.platform.sqlite.PlatformSqliteHelper.KV_STORE_TABLE_NAME;
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -25,8 +28,6 @@ import java.util.regex.Pattern;
 
 import timber.log.Timber;
 
-import static com.platform.sqlite.PlatformSqliteHelper.KV_STORE_TABLE_NAME;
-
 public class ReplicatedKVStore {
 
     private SQLiteDatabase mDatabase;
@@ -38,7 +39,7 @@ public class ReplicatedKVStore {
     //    private Lock dbLock = new ReentrantLock();
     public boolean syncImmediately = false;
     private boolean syncRunning = false;
-    private KVStoreAdaptor remoteKvStore;
+    private final KVStoreAdaptor remoteKvStore;
     private static Context mContext;
     private static byte[] tempAuthKey;
     // Database fields
@@ -475,7 +476,7 @@ public class ReplicatedKVStore {
                     }
 
                     boolean success = setRemoteVersion(key, localKv.version, obj.version).err == null;
-                    if (!success) return false;
+                    return success;
                 } else {
                     Timber.i("Local key %s is newer, updating remotely...", key);
                     // if the remote version is zero it means it doesnt yet exist on the server. set the remote version
@@ -495,7 +496,7 @@ public class ReplicatedKVStore {
 
                     boolean success = setRemoteVersion(key, localKv.version, obj.version).err == null;
                     Timber.i("Local key %s updated on server", key);
-                    if (!success) return false;
+                    return success;
                 }
             } else {
                 // local is out-of-date
@@ -541,7 +542,7 @@ public class ReplicatedKVStore {
                     }
                     if (setObj.err == null) {
                         boolean success = setRemoteVersion(key, setObj.version, remoteGet.version).err == null;
-                        if (!success) return false;
+                        return success;
                     }
                 }
             }

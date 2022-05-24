@@ -1,7 +1,5 @@
 package com.eacpay.tools.util;
 
-import android.text.format.DateUtils;
-
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;

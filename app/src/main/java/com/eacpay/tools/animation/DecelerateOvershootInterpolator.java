@@ -5,8 +5,8 @@ import android.view.animation.Interpolator;
 import android.view.animation.OvershootInterpolator;
 
 public class DecelerateOvershootInterpolator implements Interpolator {
-    private DecelerateInterpolator accelerate;
-    private OvershootInterpolator overshoot;
+    private final DecelerateInterpolator accelerate;
+    private final OvershootInterpolator overshoot;
 
     public DecelerateOvershootInterpolator(float factor, float tension) {
         accelerate = new DecelerateInterpolator(factor);

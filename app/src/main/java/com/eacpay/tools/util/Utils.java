@@ -1,5 +1,7 @@
 package com.eacpay.tools.util;
 
+import static android.content.Context.FINGERPRINT_SERVICE;
+
 import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
@@ -17,8 +19,6 @@ import android.widget.Toast;
 
 import androidx.core.app.ActivityCompat;
 
-import com.eacpay.presenter.activities.intro.IntroActivity;
-
 import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -28,7 +28,6 @@ import java.util.Locale;
 
 import timber.log.Timber;
 
-import static android.content.Context.FINGERPRINT_SERVICE;
 public class Utils {
 
     public static boolean isUsingCustomInputMethod(Activity context) {
@@ -57,7 +56,7 @@ public class Utils {
     @SuppressWarnings("deprecation")
     public static void printPhoneSpecs() {
         Timber.d("***************************PHONE SPECS***************************");
-        Timber.d("* screen X: %d , screen Y: %s", IntroActivity.screenParametersPoint.x, IntroActivity.screenParametersPoint.y);
+//        Timber.d("* screen X: %d , screen Y: %s", IntroActivity.screenParametersPoint.x, IntroActivity.screenParametersPoint.y);
         Timber.d("* Build.CPU_ABI: %s", Build.CPU_ABI);
         Timber.d("* maxMemory:%s", Runtime.getRuntime().maxMemory());
         Timber.d("----------------------------PHONE SPECS----------------------------");
@@ -168,6 +167,7 @@ public class Utils {
         if (app != null) {
             View view = ((Activity) app).getCurrentFocus();
             if (view != null) {
+                view.clearFocus();
                 InputMethodManager imm = (InputMethodManager) app.getSystemService(Context.INPUT_METHOD_SERVICE);
                 if (imm != null)
                     imm.hideSoftInputFromWindow(view.getWindowToken(), 0);

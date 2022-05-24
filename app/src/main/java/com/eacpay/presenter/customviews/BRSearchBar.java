@@ -2,9 +2,6 @@ package com.eacpay.presenter.customviews;
 
 import android.content.Context;
 import android.os.Handler;
-
-import androidx.annotation.Nullable;
-
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
@@ -13,8 +10,9 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
-import com.eacpay.R;
+import androidx.annotation.Nullable;
 
+import com.eacpay.R;
 import com.eacpay.eactalk.MainActivity;
 import com.eacpay.tools.manager.TxManager;
 import com.eacpay.tools.threads.BRExecutor;

@@ -53,7 +53,7 @@ public class FragmentReceive extends Fragment {
     private boolean shareButtonsShown = false;
     private boolean isReceive;
     private ImageButton close;
-    private Handler copyCloseHandler = new Handler();
+    private final Handler copyCloseHandler = new Handler();
     private BRKeyboard keyboard;
     private View separator2;
 
@@ -294,8 +294,8 @@ public class FragmentReceive extends Fragment {
         BRAnimator.animateSignalSlide(signalLayout, true, new BRAnimator.OnSlideAnimationEnd() {
             @Override
             public void onAnimationEnd() {
-                if (getActivity() != null)
-                    getActivity().getFragmentManager().popBackStack();
+//                if (getActivity() != null)
+//                    getActivity().getFragmentManager().popBackStack();
             }
         });
     }

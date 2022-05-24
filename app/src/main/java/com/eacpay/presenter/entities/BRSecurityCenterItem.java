@@ -1,9 +1,6 @@
 package com.eacpay.presenter.entities;
 
 import android.view.View;
-import android.widget.ImageView;
-
-import static android.R.attr.checkMark;
 public class BRSecurityCenterItem {
 
     public String title;

@@ -1,11 +1,13 @@
 package com.eacpay.platform;
 
-import androidx.test.rule.ActivityTestRule;
-import androidx.test.ext.junit.runners.AndroidJUnit4;
+import static com.platform.APIClient.BREAD_POINT;
+
 import android.util.Log;
 
-import com.eacpay.EacApp;
+import androidx.test.ext.junit.runners.AndroidJUnit4;
+import androidx.test.rule.ActivityTestRule;
 
+import com.eacpay.EacApp;
 import com.eacpay.eactalk.MainActivity;
 import com.eacpay.tools.util.BRCompressor;
 import com.eacpay.tools.util.BRConstants;
@@ -26,7 +28,6 @@ import java.io.IOException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-import static com.platform.APIClient.BREAD_POINT;
 import okhttp3.Request;
 import okhttp3.Response;
 @RunWith(AndroidJUnit4.class)

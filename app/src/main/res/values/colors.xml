@@ -2,14 +2,10 @@
 <resources>
 
     <item name="white" type="color">#ffffff</item>
-    <item name="blue" type="color">#FF33B5E5</item>
-    <item name="red" type="color">#FFFF4444</item>
     <item name="black" type="color">#ff000000</item>
     <item name="gray" type="color">#ff787878</item>
     <item name="light_gray" type="color">#ff9d9d9d</item>
     <item name="separator_gray" type="color">#c6c6c6</item>
-    <item name="gray_shadow" type="color">#41484848</item>
-    <item name="page_indicator_gray" type="color">#ff9d9d9d</item>
     <item name="extra_light_gray" type="color">#D6DAE1</item>
     <item name="dark_gray" type="color">#65696e</item>
     <item name="almost_black" type="color">#303030</item>
@@ -21,10 +17,6 @@
     <item name="black_trans" type="color">#b5000000</item>
     <item name="red_text" type="color">#FF5454</item>
     <item name="green_text" type="color">#00BF00</item>
-    <item name="pink" type="color">#68ffc0c1</item>
-    <item name="status_bar" type="color">#000000</item>
-    <item name="intro_status_bar" type="color">#ffbf7f</item>
-    <item name="warning_status_bar" type="color">#7f5225</item>
     <item name="camera_guideline" type="color">#50636363</item>
 
     <item name="logo_gradient_start" type="color">#83afe0</item>
@@ -35,9 +27,6 @@
 
     <item name="recover_gradient_start" type="color">#e5affc</item>
     <item name="recover_gradient_end" type="color">#d17df5</item>
-
-    <item name="restore_gradient_start" type="color">#83afe0</item>
-    <item name="restore_gradient_end" type="color">#767ee3</item>
 
     <item name="import_gradient_start" type="color">#76b0fd</item>
     <item name="import_gradient_end" type="color">#4C98FD</item>
@@ -58,28 +47,31 @@
     <color name="success_color">#009688</color>
 
     //the QR
-    <color name="viewfinder_mask">#60000000</color>
-    <color name="viewfinder_laser">#ffcc0000</color>
-    <color name="viewfinder_border">#ffafed44</color>
 
     //Litewallet brand color palette
-    <item name="litecoin_gray" type="color">#F1F1F1</item>
-    <item name="litecoin_silver" type="color">#A6A9AA</item>
-    <item name="litecoin_dark_silver" type="color">#4D4D4E</item>
     <item name="litecoin_litewallet_blue" type="color">#345D9D</item>
-    <item name="litecoin_litewallet_orange" type="color">#FE5F55</item>
-    <item name="litecoin_litewallet_green" type="color">#179E27</item>
-    <color name="white_30_alpha">#b3ffffff</color>
-    <color name="light_blue_600">#FF039BE5</color>
-    <color name="light_blue_900">#FF01579B</color>
-    <color name="light_blue_A200">#FF40C4FF</color>
-    <color name="light_blue_A400">#FF00B0FF</color>
-    <color name="black_overlay">#66000000</color>
 
     <color name="c_999">#999999</color>
     <color name="c_333">#333333</color>
     <color name="c_eee">#eeeeee</color>
     <color name="c_f6">#f6f6f6</color>
     <color name="primary">#3D86F8</color>
+    <color name="f1">#f1f1f1</color>
+    <color name="c_18">#181818</color>
+    <color name="f7">#f7f7f7</color>
+    <color name="c_666">#666666</color>
+    <color name="c_3d86f8">#3d86f8</color>
+    <color name="c_87">#878787</color>
+    <color name="c_423d86f8">#423D86F8</color>
+    <color name="c_e41e1e">#e41e1e</color>
+    <color name="c_42e41e1e">#42e41e1e</color>
+    <color name="c_303234">#303234</color>
+    <color name="c_3960DC">#3960DC</color>
+    <color name="c_3cffffff">#3cffffff</color>
+    <color name="c_0affffff">#0affffff</color>
+    <color name="c_80">#808080</color>
+    <color name="white_70">#b3ffffff</color>
+    <color name="white_79">#caffffff</color>
+    <color name="c_ffe4c4">#ffe4c4</color>
 
 </resources>

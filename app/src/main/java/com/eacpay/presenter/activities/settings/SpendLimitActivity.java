@@ -3,8 +3,6 @@ package com.eacpay.presenter.activities.settings;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +12,8 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
 
 import com.eacpay.R;
 import com.eacpay.presenter.activities.util.BRActivity;
@@ -28,7 +28,6 @@ import com.eacpay.wallet.BRWalletManager;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-
 
 import timber.log.Timber;
 

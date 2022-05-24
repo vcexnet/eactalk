@@ -5,6 +5,7 @@
     android:layout_marginBottom="10dp">
 
     <LinearLayout
+        android:id="@+id/item_my_message_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/b_white_10"
@@ -36,8 +37,19 @@
                 android:id="@+id/item_my_message_address"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:singleLine="true"
                 android:textColor="@color/c_999"
                 android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/item_my_message_from"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/c_999"
+                android:textSize="13sp"
+                android:visibility="gone" />
 
             <TextView
                 android:id="@+id/item_my_message_amount"

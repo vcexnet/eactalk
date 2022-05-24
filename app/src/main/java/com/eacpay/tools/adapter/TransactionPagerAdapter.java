@@ -2,6 +2,7 @@ package com.eacpay.tools.adapter;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
+
 import androidx.legacy.app.FragmentPagerAdapter;
 
 import com.eacpay.presenter.entities.TxItem;

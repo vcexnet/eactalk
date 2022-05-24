@@ -5,19 +5,18 @@ import android.app.Fragment;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-
-import androidx.annotation.Nullable;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import androidx.annotation.Nullable;
 
 import com.eacpay.R;
 import com.eacpay.presenter.entities.TxItem;
@@ -319,7 +318,7 @@ public class FragmentTransactionItem extends Fragment {
 
     private String getShortAddress(String addr) {
         String p1 = addr.substring(0, 5);
-        String p2 = addr.substring(addr.length() - 5, addr.length());
+        String p2 = addr.substring(addr.length() - 5);
         return p1 + "..." + p2;
     }
 

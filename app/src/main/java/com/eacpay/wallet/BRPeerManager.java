@@ -4,10 +4,10 @@ import android.content.Context;
 import android.util.Log;
 
 import com.eacpay.EacApp;
+import com.eacpay.eactalk.service.MyService;
 import com.eacpay.presenter.entities.BlockEntity;
 import com.eacpay.presenter.entities.PeerEntity;
 import com.eacpay.tools.manager.BRSharedPrefs;
-import com.eacpay.tools.manager.SyncManager;
 import com.eacpay.tools.sqlite.MerkleBlockDataSource;
 import com.eacpay.tools.sqlite.PeerDataSource;
 import com.eacpay.tools.threads.BRExecutor;
@@ -25,6 +25,11 @@ public class BRPeerManager {
     private static List<OnTxStatusUpdate> statusUpdateListeners;
     private static OnSyncSucceeded onSyncFinished;
 
+    private static MyService myService;
+
+    public static void setMyService(MyService service) {
+        myService = service;
+    }
 
     private BRPeerManager() {
         statusUpdateListeners = new ArrayList<>();
@@ -56,7 +61,9 @@ public class BRPeerManager {
         int lastHeight = BRSharedPrefs.getLastBlockHeight(ctx);
         if (startHeight > lastHeight) BRSharedPrefs.putStartHeight(ctx, lastHeight);
         Log.e(TAG, "syncStarted: syncStarted startSyncingProgressThread");
-        SyncManager.getInstance().startSyncingProgressThread();
+        if (myService != null) {
+            myService.startEac();
+        }
     }
 
     public static void syncSucceeded() {
@@ -64,9 +71,7 @@ public class BRPeerManager {
         final Context app = EacApp.getBreadContext();
         if (app == null) return;
         BRSharedPrefs.putLastSyncTime(app, System.currentTimeMillis());
-        SyncManager.getInstance().updateAlarms(app);
         BRSharedPrefs.putAllowSpend(app, true);
-        SyncManager.getInstance().stopSyncingProgressThread();
         BRExecutor.getInstance().forLightWeightBackgroundTasks().execute(new Runnable() {
             @Override
             public void run() {
@@ -78,12 +83,10 @@ public class BRPeerManager {
 
     public static void syncFailed() {
         Timber.d("syncFailed");
-        SyncManager.getInstance().stopSyncingProgressThread();
         Context ctx = EacApp.getBreadContext();
         if (ctx == null) return;
         Timber.d("Network Not Available, showing not connected bar");
 
-        SyncManager.getInstance().stopSyncingProgressThread();
         if (onSyncFinished != null) onSyncFinished.onFinished();
     }
 

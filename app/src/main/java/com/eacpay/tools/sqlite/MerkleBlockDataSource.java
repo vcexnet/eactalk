@@ -17,7 +17,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import timber.log.Timber;
 
 public class MerkleBlockDataSource implements BRDataSourceInterface {
-    private AtomicInteger mOpenCounter = new AtomicInteger();
+    private final AtomicInteger mOpenCounter = new AtomicInteger();
 
     // Database fields
     private SQLiteDatabase database;

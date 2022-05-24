@@ -150,7 +150,7 @@ public class FragmentMenu extends Fragment {
 
     public class MenuListAdapter extends ArrayAdapter<BRMenuItem> {
 
-        private LayoutInflater mInflater;
+        private final LayoutInflater mInflater;
 
         public MenuListAdapter(@NonNull Context context, @LayoutRes int resource, @NonNull List<BRMenuItem> items) {
             super(context, resource, items);
@@ -181,8 +181,8 @@ public class FragmentMenu extends Fragment {
         BRAnimator.animateSignalSlide(signalLayout, true, new BRAnimator.OnSlideAnimationEnd() {
             @Override
             public void onAnimationEnd() {
-                if (getActivity() != null)
-                    getActivity().getFragmentManager().popBackStack();
+//                if (getActivity() != null)
+//                    getActivity().getFragmentManager().popBackStack();
             }
         });
 

@@ -14,8 +14,10 @@ import java.util.List;
 import java.util.Locale;
 
 import timber.log.Timber;
+
 public class SmartValidator {
 
+    private static final String TAG = "oldfeel";
     private static List<String> list;
 
     public static boolean isPaperKeyValid(Context ctx, String paperKey) {

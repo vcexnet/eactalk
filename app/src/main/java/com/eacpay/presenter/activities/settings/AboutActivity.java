@@ -41,7 +41,7 @@ public class AboutActivity extends BRActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_about);
+        setContentView(R.layout.activity_about_backup);
 
         infoText = (TextView) findViewById(R.id.info_text);
         policyText = (TextView) findViewById(R.id.policy_text);

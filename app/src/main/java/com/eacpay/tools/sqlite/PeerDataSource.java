@@ -20,7 +20,7 @@ import timber.log.Timber;
 public class PeerDataSource implements BRDataSourceInterface {
     private static final String TAG = PeerDataSource.class.getName();
 
-    private AtomicInteger mOpenCounter = new AtomicInteger();
+    private final AtomicInteger mOpenCounter = new AtomicInteger();
 
     // Database fields
     private SQLiteDatabase database;
