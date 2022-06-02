@@ -72,7 +72,7 @@ public class MainActivity extends BRActivity implements BRWalletManager.OnBalanc
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         BRWalletManager.getInstance().addBalanceChangedListener(this);
-        BRPeerManager.getInstance().addStatusUpdateListener(this);
+        BRPeerManager.getInstance().setOnTxStatusUpdate(this);
         BRSharedPrefs.addIsoChangedListener(this);
 
         app = this;
@@ -278,6 +278,7 @@ public class MainActivity extends BRActivity implements BRWalletManager.OnBalanc
     protected void onDestroy() {
         super.onDestroy();
 
+        BRPeerManager.getInstance().setOnTxStatusUpdate(null);
         //sync the kv stores
         if (BRConstants.PLATFORM_ON) {
             BRExecutor.getInstance().forBackgroundTasks().execute(new Runnable() {
@@ -376,7 +377,7 @@ public class MainActivity extends BRActivity implements BRWalletManager.OnBalanc
                 // If request is cancelled, the result arrays are empty.
                 if (grantResults.length > 0
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    BRAnimator.openScanner(this, BRConstants.SCANNER_REQUEST);
+                    BRAnimator.openScanner(this, BRConstants.REQUEST_SEND_MESSAGE);
                     // permission was granted, yay! Do the
                     // contacts-related task you need to do.
                 } else {

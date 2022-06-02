@@ -1,5 +1,6 @@
 package com.eacpay.eactalk.fragment.main;
 
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
@@ -22,13 +23,16 @@ import com.eacpay.eactalk.ApiSettings;
 import com.eacpay.eactalk.Code;
 import com.eacpay.eactalk.Help;
 import com.eacpay.eactalk.Listen;
+import com.eacpay.eactalk.MainActivity;
 import com.eacpay.eactalk.ResetAccount;
 import com.eacpay.eactalk.SendMessage;
 import com.eacpay.eactalk.Share;
+import com.eacpay.eactalk.service.MyService;
 import com.eacpay.presenter.activities.settings.DisplayCurrencyActivity;
 import com.eacpay.presenter.activities.settings.ImportActivity;
 import com.eacpay.presenter.activities.settings.SecurityCenterActivity;
 import com.eacpay.presenter.customviews.BRDialogView;
+import com.eacpay.presenter.fragments.FragmentSend;
 import com.eacpay.tools.animation.BRAnimator;
 import com.eacpay.tools.animation.BRDialog;
 import com.eacpay.tools.manager.BRSharedPrefs;
@@ -72,7 +76,14 @@ public class Mine extends Fragment implements BRWalletManager.OnBalanceChanged {
         binding.mineSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                BRAnimator.showSendFragment(getActivity(), null);
+//                BRAnimator.showSendFragment(getActivity(), null);
+                MyService eacService = ((MainActivity) getActivity()).getEacService();
+                if (!eacService.isEacConnect || !eacService.isEacSyncFinish) {
+                    showCannotSend();
+                    return;
+                }
+                FragmentSend fragmentSend = new FragmentSend();
+                fragmentSend.show(getActivity().getSupportFragmentManager(), "fragment_send");
             }
         });
 
@@ -221,6 +232,21 @@ public class Mine extends Fragment implements BRWalletManager.OnBalanceChanged {
         updateUI();
     }
 
+    private void showCannotSend() {
+        Dialog dialog = new AlertDialog.Builder(getActivity(), R.style.my_dialog)
+                .setTitle(getString(R.string.tips))
+                .setMessage(R.string.tip_eac_syncing)
+                .setPositiveButton(R.string.submit, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                })
+                .create();
+        dialog.setCanceledOnTouchOutside(false);
+        dialog.show();
+    }
+
     @Override
     public void onResume() {
         super.onResume();
@@ -254,12 +280,14 @@ public class Mine extends Fragment implements BRWalletManager.OnBalanceChanged {
                 //amount in currency units
                 BigDecimal curAmount = BRExchange.getAmountFromSatoshis(getActivity(), iso, amount);
                 final String formattedCurAmount = BRCurrency.getFormattedCurrencyString(getActivity(), iso, curAmount);
-                if (getActivity() != null && binding != null && isVisible()) {
+                if (getActivity() != null) {
                     getActivity().runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            binding.mineBalance.setText(formattedBTCAmount);
-                            binding.mineBalanceLocal.setText(String.format("%s", formattedCurAmount));
+                            if (binding != null && binding.mineBalance != null) {
+                                binding.mineBalance.setText(formattedBTCAmount);
+                                binding.mineBalanceLocal.setText(String.format("%s", formattedCurAmount));
+                            }
                         }
                     });
                     TxManager.getInstance().updateTxList(getActivity());

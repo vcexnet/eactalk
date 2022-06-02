@@ -189,6 +189,9 @@ public class MyUtils {
     }
 
     private static String getEncryptKey(String addressTo) {
+        if (addressTo == null || addressTo.length() < 6) {
+            return "";
+        }
         String key = EncryptUtils.encryptMD5ToString((addressTo.substring(0, 3) + addressTo.substring(addressTo.length() - 6, addressTo.length() - 1)).getBytes());
         return key;
     }
@@ -214,5 +217,18 @@ public class MyUtils {
     public static byte[] decryptFile(byte[] data, String addressTo) {
         String key = getEncryptKey(addressTo);
         return EncryptUtils.decryptDES(data, key.getBytes(), "DES", key.getBytes());
+    }
+
+    /**
+     * 判断是否是 ipfs 的 cid
+     *
+     * @param txIPFS
+     * @return
+     */
+    public static boolean isIPFSCID(String txIPFS) {
+        if (txIPFS == null || txIPFS.length() != 46) {
+            return false;
+        }
+        return true;
     }
 }

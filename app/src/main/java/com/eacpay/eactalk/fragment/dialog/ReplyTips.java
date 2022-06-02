@@ -75,6 +75,9 @@ public class ReplyTips extends DialogFragment {
                     }
                     return;
                 }
+                if (getDialog() == null || !getDialog().isShowing()) {
+                    return;
+                }
                 timeLast--;
                 updateContent();
             }
@@ -85,6 +88,9 @@ public class ReplyTips extends DialogFragment {
     }
 
     private void updateContent() {
+        if (getActivity() == null) {
+            return;
+        }
         binding.dialogReplyTipsContent.setText(Html.fromHtml(getActivity().getString(R.string.confirm_send_message, timeLast), HtmlCompat.FROM_HTML_MODE_LEGACY));
     }
 }

@@ -24,4 +24,14 @@
         app:summaryOff="@string/close"
         app:summaryOn="@string/start"
         app:title="@string/filter_by_eac" />
+
+    <Preference
+        app:iconSpaceReserved="false"
+        app:key="eac_height"
+        app:title="@string/height" />
+
+    <Preference
+        app:iconSpaceReserved="false"
+        app:key="eac_hard"
+        app:title="@string/hard" />
 </androidx.preference.PreferenceScreen>

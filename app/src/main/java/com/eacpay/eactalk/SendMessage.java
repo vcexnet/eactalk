@@ -67,6 +67,7 @@ import com.eacpay.tools.manager.BRClipboardManager;
 import com.eacpay.tools.manager.BRSharedPrefs;
 import com.eacpay.tools.manager.FeeManager;
 import com.eacpay.tools.security.BRSender;
+import com.eacpay.tools.security.BitcoinUrlHandler;
 import com.eacpay.tools.threads.BRExecutor;
 import com.eacpay.tools.util.BRConstants;
 import com.eacpay.tools.util.BRCurrency;
@@ -172,6 +173,35 @@ public class SendMessage extends BRActivity {
         String amount = intent.getStringExtra("amount");
         String title = intent.getStringExtra("title");
         isReply = intent.getBooleanExtra("isReply", false);
+
+        if (address != null && address.startsWith("earthcoin:")) {
+            if (address.contains("amount=")) {
+                RequestObject obj = BitcoinUrlHandler.getRequestFromString(address);
+                if (obj == null) return;
+                if (obj.address != null) {
+                    address = obj.address.trim();
+                }
+
+                if (obj.label != null) {
+                    name = obj.label;
+                }
+
+                if (obj.message != null) {
+                    binding.sendMessageContent.setText(obj.message);
+                }
+                if (obj.amount != null) {
+                    String iso = selectedIso;
+                    //BigDecimal satoshiAmount = new BigDecimal(obj.amount).multiply(new BigDecimal(100000000));
+                    BigDecimal satoshiAmount = new BigDecimal(obj.amount);
+                    //amountBuilder = new StringBuilder(BRExchange.getAmountFromSatoshis(getActivity(), iso, satoshiAmount).toPlainString());
+                    amountBuilder = new StringBuilder(satoshiAmount.toString());
+                    updateText();
+                }
+            } else {
+                address = address.replace("earthcoin:", "");
+            }
+        }
+
         binding.sendMessageAddress.setText(address);
         binding.sendMessageName.setText(name);
         if (amount != null) {

@@ -292,7 +292,7 @@ public class HomeList extends Fragment {
     }
 
     private long getMinTime() {
-        String homeDayStr = PreferenceManager.getDefaultSharedPreferences(getActivity()).getString("home_day", "15");
+        String homeDayStr = PreferenceManager.getDefaultSharedPreferences(getActivity()).getString("home_day", "30");
         int homeDay = Integer.parseInt(homeDayStr);
         MyUtils.log("homeDay " + homeDay);
         Calendar c = Calendar.getInstance();

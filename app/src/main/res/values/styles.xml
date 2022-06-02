@@ -68,4 +68,8 @@
 
     <style name="my_dialog" parent="Theme.AppCompat.Light.Dialog.Alert"></style>
 
+    <style name="bottomInAndOutStyle">
+        <item name="android:windowEnterAnimation">@anim/enter_from_bottom</item>
+        <item name="android:windowExitAnimation">@anim/exit_to_bottom</item>
+    </style>
 </resources>

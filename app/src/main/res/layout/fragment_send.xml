@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:layout_gravity="bottom"
     android:animateLayoutChanges="true"
-    android:background="@color/black_trans"
+    android:background="@drawable/b_white_top_10"
     android:filterTouchesWhenObscured="true"
     android:isScrollContainer="false">
 
@@ -405,6 +405,7 @@
                 android:textSize="@dimen/sub_header" />
 
         </LinearLayout>
+
         <View
             android:id="@+id/separator7"
             android:layout_width="match_parent"

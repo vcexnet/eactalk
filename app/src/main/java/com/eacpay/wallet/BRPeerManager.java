@@ -13,17 +13,15 @@ import com.eacpay.tools.sqlite.PeerDataSource;
 import com.eacpay.tools.threads.BRExecutor;
 import com.eacpay.tools.util.TrustedNode;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import timber.log.Timber;
 
 public class BRPeerManager {
     private static final String TAG = "oldfeel";
     private static BRPeerManager instance;
 
-    private static List<OnTxStatusUpdate> statusUpdateListeners;
+    //    private static List<OnTxStatusUpdate> statusUpdateListeners;
     private static OnSyncSucceeded onSyncFinished;
+    private static OnTxStatusUpdate onTxStatusUpdate;
 
     private static MyService myService;
 
@@ -32,7 +30,7 @@ public class BRPeerManager {
     }
 
     private BRPeerManager() {
-        statusUpdateListeners = new ArrayList<>();
+//        statusUpdateListeners = new ArrayList<>();
     }
 
     public static BRPeerManager getInstance() {
@@ -93,8 +91,11 @@ public class BRPeerManager {
     public static void txStatusUpdate() {
         Timber.d("txStatusUpdate");
 
-        for (OnTxStatusUpdate listener : statusUpdateListeners) {
-            if (listener != null) listener.onStatusUpdate();
+//        for (OnTxStatusUpdate listener : statusUpdateListeners) {
+//            if (listener != null) listener.onStatusUpdate();
+//        }
+        if (onTxStatusUpdate != null) {
+            onTxStatusUpdate.onStatusUpdate();
         }
         BRExecutor.getInstance().forLightWeightBackgroundTasks().execute(new Runnable() {
             @Override
@@ -184,20 +185,24 @@ public class BRPeerManager {
             });
     }
 
-    public void addStatusUpdateListener(OnTxStatusUpdate listener) {
-        if (statusUpdateListeners == null) {
-            return;
-        }
-        if (!statusUpdateListeners.contains(listener))
-            statusUpdateListeners.add(listener);
+    public static void setOnTxStatusUpdate(OnTxStatusUpdate onTxStatusUpdate) {
+        BRPeerManager.onTxStatusUpdate = onTxStatusUpdate;
     }
 
-    public void removeListener(OnTxStatusUpdate listener) {
-        if (statusUpdateListeners == null) {
-            return;
-        }
-        statusUpdateListeners.remove(listener);
-    }
+    //    public void addStatusUpdateListener(OnTxStatusUpdate listener) {
+//        if (statusUpdateListeners == null) {
+//            return;
+//        }
+//        if (!statusUpdateListeners.contains(listener))
+//            statusUpdateListeners.add(listener);
+//    }
+
+//    public void removeListener(OnTxStatusUpdate listener) {
+//        if (statusUpdateListeners == null) {
+//            return;
+//        }
+//        statusUpdateListeners.remove(listener);
+//    }
 
     public static void setOnSyncFinished(OnSyncSucceeded listener) {
         onSyncFinished = listener;

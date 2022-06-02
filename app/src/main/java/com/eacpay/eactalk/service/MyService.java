@@ -108,12 +108,12 @@ public class MyService extends Service {
             }
         });
 
-        BRPeerManager.getInstance().addStatusUpdateListener(new BRPeerManager.OnTxStatusUpdate() {
-            @Override
-            public void onStatusUpdate() {
-
-            }
-        });
+//        BRPeerManager.getInstance().addStatusUpdateListener(new BRPeerManager.OnTxStatusUpdate() {
+//            @Override
+//            public void onStatusUpdate() {
+//
+//            }
+//        });
 
         BRPeerManager.setMyService(this);
         BRPeerManager.setOnSyncFinished(new BRPeerManager.OnSyncSucceeded() {

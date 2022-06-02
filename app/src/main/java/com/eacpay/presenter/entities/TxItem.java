@@ -56,6 +56,10 @@ public class TxItem {
         int pos = txComposedComment.indexOf("\n");
         this.txComment = (pos > 0) ? txComposedComment.substring(pos + 1) : txComposedComment;
         this.txIPFS = (pos > 0) ? txComposedComment.substring(0, pos) : "";
+        if (!MyUtils.isIPFSCID(this.txIPFS)) {
+            this.txComment = txComposedComment;
+            this.txIPFS = "";
+        }
     }
 
     public int getBlockHeight() {

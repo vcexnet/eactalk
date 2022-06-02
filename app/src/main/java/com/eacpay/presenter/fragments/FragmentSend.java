@@ -4,16 +4,16 @@ import static androidx.constraintlayout.widget.Constraints.TAG;
 import static com.eacpay.tools.security.BitcoinUrlHandler.getRequestFromString;
 
 import android.app.Activity;
-import android.app.Fragment;
+import android.app.Dialog;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.KeyEvent;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
+import android.view.Window;
+import android.view.WindowManager;
 import android.view.animation.OvershootInterpolator;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
@@ -30,12 +30,16 @@ import androidx.annotation.ColorRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
+import androidx.appcompat.app.AlertDialog;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.constraintlayout.widget.ConstraintSet;
+import androidx.fragment.app.DialogFragment;
 import androidx.transition.AutoTransition;
 import androidx.transition.TransitionManager;
 
 import com.eacpay.R;
+import com.eacpay.databinding.FragmentSendBinding;
+import com.eacpay.eactalk.utils.MyUtils;
 import com.eacpay.presenter.customviews.BRDialogView;
 import com.eacpay.presenter.customviews.BRKeyboard;
 import com.eacpay.presenter.customviews.BRLinearLayoutWithCaret;
@@ -64,7 +68,7 @@ import java.math.BigDecimal;
 
 import timber.log.Timber;
 
-public class FragmentSend extends Fragment {
+public class FragmentSend extends DialogFragment {
     public ScrollView backgroundLayout;
     public LinearLayout signalLayout;
     private BRKeyboard keyboard;
@@ -102,10 +106,65 @@ public class FragmentSend extends Fragment {
 
     private boolean ignoreCleanup;
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    FragmentSendBinding binding;
 
-        View rootView = inflater.inflate(R.layout.fragment_send, container, false);
+    @NonNull
+    @Override
+    public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity(), R.style.my_dialog);
+        binding = FragmentSendBinding.inflate(getLayoutInflater());
+        builder.setView(binding.getRoot());
+
+        initView(binding.getRoot());
+        initArguments();
+
+        AlertDialog dialog = builder.create();
+
+        Window window = dialog.getWindow();
+        window.getDecorView().setPadding(0, 0, 0, 0);
+        WindowManager.LayoutParams layoutParams = window.getAttributes();
+        layoutParams.width = WindowManager.LayoutParams.MATCH_PARENT;
+        layoutParams.horizontalMargin = 0;
+        window.setGravity(Gravity.BOTTOM);
+        window.setWindowAnimations(R.style.bottomInAndOutStyle);
+        window.setAttributes(layoutParams);
+        window.getDecorView().setMinimumWidth(getResources().getDisplayMetrics().widthPixels);
+        window.getDecorView().setBackground(null);
+        return dialog;
+    }
+
+    private void initArguments() {
+//        final ViewTreeObserver observer = signalLayout.getViewTreeObserver();
+//        observer.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+//            @Override
+//            public void onGlobalLayout() {
+//                if (observer.isAlive()) {
+//                    observer.removeOnGlobalLayoutListener(this);
+//                }
+//                BRAnimator.animateBackgroundDim(backgroundLayout, false);
+//                BRAnimator.animateSignalSlide(signalLayout, false, new BRAnimator.OnSlideAnimationEnd() {
+//                    @Override
+//                    public void onAnimationEnd() {
+//                        Bundle bundle = getArguments();
+//                        if (bundle != null && bundle.getString("url") != null) {
+//                            setUrl(bundle.getString("url"));
+//                        }
+//                    }
+//                });
+//            }
+//        });
+
+        Bundle bundle = getArguments();
+        if (bundle != null && bundle.getString("address") != null) {
+            MyUtils.log("set address " + bundle.getString("address"));
+            addressEdit.setText(bundle.getString("address"));
+        }
+        if (bundle != null && bundle.getString("url") != null) {
+            setUrl(bundle.getString("url"));
+        }
+    }
+
+    private void initView(View rootView) {
         backgroundLayout = (ScrollView) rootView.findViewById(R.id.background_layout);
         signalLayout = (LinearLayout) rootView.findViewById(R.id.signal_layout);
         keyboard = (BRKeyboard) rootView.findViewById(R.id.keyboard);
@@ -165,8 +224,6 @@ public class FragmentSend extends Fragment {
         showKeyboard(false);
 
         signalLayout.setLayoutTransition(BRAnimator.getDefaultTransition());
-
-        return rootView;
     }
 
     private void setupFeesSelector(View rootView) {
@@ -389,7 +446,7 @@ public class FragmentSend extends Fragment {
             public void onClick(View v) {
                 if (!BRAnimator.isClickAllowed()) return;
                 saveMetaData();
-                BRAnimator.openScanner(getActivity(), BRConstants.SCANNER_REQUEST);
+                BRAnimator.openScanner(getActivity(), BRConstants.REQUEST_MINE_SEND);
             }
         });
 
@@ -458,9 +515,7 @@ public class FragmentSend extends Fragment {
         close.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Activity app = getActivity();
-                if (app != null)
-                    app.getFragmentManager().popBackStack();
+                getDialog().cancel();
             }
         });
 
@@ -515,43 +570,14 @@ public class FragmentSend extends Fragment {
     }
 
     @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
-        final ViewTreeObserver observer = signalLayout.getViewTreeObserver();
-        observer.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
-            @Override
-            public void onGlobalLayout() {
-                if (observer.isAlive()) {
-                    observer.removeOnGlobalLayoutListener(this);
-                }
-                BRAnimator.animateBackgroundDim(backgroundLayout, false);
-                BRAnimator.animateSignalSlide(signalLayout, false, new BRAnimator.OnSlideAnimationEnd() {
-                    @Override
-                    public void onAnimationEnd() {
-                        Bundle bundle = getArguments();
-                        if (bundle != null && bundle.getString("url") != null)
-                            setUrl(bundle.getString("url"));
-                    }
-                });
-            }
-        });
-
-    }
-
-    @Override
     public void onStop() {
         super.onStop();
         BRAnimator.animateBackgroundDim(backgroundLayout, true);
         BRAnimator.animateSignalSlide(signalLayout, true, new BRAnimator.OnSlideAnimationEnd() {
             @Override
             public void onAnimationEnd() {
-                if (getActivity() != null) {
-                    try {
-                        getActivity().getFragmentManager().popBackStack();
-                    } catch (Exception ignored) {
-
-                    }
+                if (getDialog() != null) {
+                    getDialog().cancel();
                 }
             }
         });

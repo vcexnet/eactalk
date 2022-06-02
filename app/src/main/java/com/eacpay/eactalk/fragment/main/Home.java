@@ -128,9 +128,11 @@ public class Home extends Fragment {
                         getActivity().runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                if (((MainActivity) getActivity()).getEacService() != null) {
-                                    boolean isConnected = ((MainActivity) getActivity()).getEacService().isEacConnect;
-                                    binding.mainHomeEacStatus.setBackgroundResource(isConnected ? R.color.green_text : R.color.c_e41e1e);
+                                if (getActivity() != null) {
+                                    if (((MainActivity) getActivity()).getEacService() != null) {
+                                        boolean isConnected = ((MainActivity) getActivity()).getEacService().isEacConnect;
+                                        binding.mainHomeEacStatus.setBackgroundResource(isConnected ? R.color.green_text : R.color.c_e41e1e);
+                                    }
                                 }
                                 binding.mainHomeIpfsStatus.setBackgroundResource(IpfsManager.getInstance().getIpfs() == null ? R.color.c_e41e1e : R.color.green_text);
                             }

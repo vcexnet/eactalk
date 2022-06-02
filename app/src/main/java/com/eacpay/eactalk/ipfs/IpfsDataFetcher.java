@@ -84,11 +84,13 @@ public class IpfsDataFetcher implements DataFetcher<ByteBuffer> {
     }
 
     private void loadFailed(DataCallback<? super ByteBuffer> callback, String s) {
-        if (callback == null) {
+        if (s == null) {
             return;
         }
         Exception exception = new Exception(s);
-        callback.onLoadFailed(exception);
+        if (callback != null) {
+            callback.onLoadFailed(exception);
+        }
     }
 
     private void ipfsDownload(DataCallback<? super ByteBuffer> callback, String cid) {

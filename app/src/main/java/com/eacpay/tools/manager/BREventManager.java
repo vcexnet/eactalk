@@ -59,8 +59,8 @@ public class BREventManager implements EacApp.OnAppBackgrounded {
     @Override
     public void onBackgrounded() {
         Timber.d("onBackgrounded: ");
-        saveEvents();
-        pushToServer();
+//        saveEvents();
+//        pushToServer();
     }
 
     private void saveEvents() {

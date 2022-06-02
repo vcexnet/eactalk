@@ -27,7 +27,6 @@ import com.eacpay.tools.manager.BRSharedPrefs;
 import com.eacpay.tools.sqlite.TransactionDataSource;
 import com.eacpay.tools.util.BRCurrency;
 import com.eacpay.tools.util.BRExchange;
-import com.eacpay.wallet.BRPeerManager;
 import com.eacpay.wallet.BRWalletManager;
 import com.google.gson.Gson;
 
@@ -39,7 +38,7 @@ import java.util.List;
 
 import timber.log.Timber;
 
-public class MyMessageList extends Fragment implements TransactionDataSource.OnTxAddedListener, BRPeerManager.OnTxStatusUpdate, BRWalletManager.OnBalanceChanged {
+public class MyMessageList extends Fragment implements TransactionDataSource.OnTxAddedListener, BRWalletManager.OnBalanceChanged {
     private static final String TAG = "oldfeel";
     RecyclerViewBinding binding;
     MyMessageAdapter myMessageAdapter;
@@ -54,8 +53,6 @@ public class MyMessageList extends Fragment implements TransactionDataSource.OnT
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        BRPeerManager.getInstance().addStatusUpdateListener(this);
-
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         binding.recyclerView.setLayoutManager(linearLayoutManager);
         myMessageAdapter = new MyMessageAdapter();
@@ -112,11 +109,6 @@ public class MyMessageList extends Fragment implements TransactionDataSource.OnT
 
     @Override
     public void onTxAdded() {
-        getData();
-    }
-
-    @Override
-    public void onStatusUpdate() {
         getData();
     }
 

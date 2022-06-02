@@ -802,4 +802,8 @@
     <string name="enter_address">Please enter EAC address</string>
     <string name="enter_alias_address">Enter an address or alias to search</string>
     <string name="enter">Enter</string>
+    <string name="height">Height</string>
+    <string name="hard">Hard</string>
+    <string name="get_height_hard_error">获取高度和难度失败</string>
+    <string name="parse_height_hard_error">解析高度/难度失败</string>
 </resources>

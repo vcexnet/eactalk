@@ -50,6 +50,7 @@ public class BRConstants {
      * code by oldfeel
      */
     public static final int REQUEST_SEND_MESSAGE = 300;
+    public static final int REQUEST_MINE_SEND = 301;
 
     public static final String CANARY_STRING = "canary";
     public static final String FIRST_ADDRESS = "firstAddress";

@@ -2,6 +2,7 @@ package com.eacpay.presenter.activities.util;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 
@@ -15,6 +16,7 @@ import com.eacpay.eactalk.utils.MyUtils;
 import com.eacpay.presenter.activities.DisabledActivity;
 import com.eacpay.presenter.activities.intro.RecoverActivity;
 import com.eacpay.presenter.activities.intro.WriteDownActivity;
+import com.eacpay.presenter.fragments.FragmentSend;
 import com.eacpay.tools.animation.BRAnimator;
 import com.eacpay.tools.manager.BRApiManager;
 import com.eacpay.tools.security.AuthManager;
@@ -171,8 +173,27 @@ public class BRActivity extends AppCompatActivity {
             case BRConstants.REQUEST_SEND_MESSAGE:
                 if (resultCode == RESULT_OK) {
                     Intent intent = new Intent(this, SendMessage.class);
+                    MyUtils.log("scan " + data.getStringExtra("result"));
                     intent.putExtra("address", data.getStringExtra("result"));
                     startActivity(intent);
+                }
+                break;
+            case BRConstants.REQUEST_MINE_SEND:
+                if (resultCode == RESULT_OK) {
+                    FragmentSend fragmentSend = new FragmentSend();
+                    Bundle bundle = new Bundle();
+                    String address = data.getStringExtra("result");
+                    if (address != null && address.startsWith("earthcoin:")) {
+                        if (address.contains("amount=")) {
+                            bundle.putString("url", address);
+                        } else {
+                            address = address.replace("earthcoin:", "");
+                            bundle.putString("address", address);
+                        }
+                    }
+                    MyUtils.log("set address from result " + address);
+                    fragmentSend.setArguments(bundle);
+                    fragmentSend.show(getSupportFragmentManager(), "fragment_send");
                 }
                 break;
         }
