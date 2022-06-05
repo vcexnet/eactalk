@@ -174,10 +174,9 @@ public class SendMessage extends BRActivity {
         String title = intent.getStringExtra("title");
         isReply = intent.getBooleanExtra("isReply", false);
 
-        if (address != null && address.startsWith("earthcoin:")) {
-            if (address.contains("amount=")) {
-                RequestObject obj = BitcoinUrlHandler.getRequestFromString(address);
-                if (obj == null) return;
+        if (address != null) {
+            RequestObject obj = BitcoinUrlHandler.getRequestFromString(address);
+            if (obj != null) {
                 if (obj.address != null) {
                     address = obj.address.trim();
                 }
@@ -189,6 +188,7 @@ public class SendMessage extends BRActivity {
                 if (obj.message != null) {
                     binding.sendMessageContent.setText(obj.message);
                 }
+
                 if (obj.amount != null) {
                     String iso = selectedIso;
                     //BigDecimal satoshiAmount = new BigDecimal(obj.amount).multiply(new BigDecimal(100000000));
@@ -197,8 +197,6 @@ public class SendMessage extends BRActivity {
                     amountBuilder = new StringBuilder(satoshiAmount.toString());
                     updateText();
                 }
-            } else {
-                address = address.replace("earthcoin:", "");
             }
         }
 
@@ -720,11 +718,7 @@ public class SendMessage extends BRActivity {
                     if (result.getResultCode() == Activity.RESULT_OK) {
                         Intent intent = result.getData();
                         String address = intent.getStringExtra("result");
-                        if (address != null && address.startsWith("earthcoin:")) {
-                            binding.sendMessageAddress.setText(address.substring(10));
-                        } else {
-                            binding.sendMessageAddress.setText(address);
-                        }
+                        binding.sendMessageAddress.setText(MyUtils.parseAddress(address));
                     }
                 }
             });

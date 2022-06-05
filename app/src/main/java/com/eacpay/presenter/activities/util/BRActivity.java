@@ -187,11 +187,9 @@ public class BRActivity extends AppCompatActivity {
                         if (address.contains("amount=")) {
                             bundle.putString("url", address);
                         } else {
-                            address = address.replace("earthcoin:", "");
-                            bundle.putString("address", address);
+                            bundle.putString("address", MyUtils.parseAddress(address));
                         }
                     }
-                    MyUtils.log("set address from result " + address);
                     fragmentSend.setArguments(bundle);
                     fragmentSend.show(getSupportFragmentManager(), "fragment_send");
                 }

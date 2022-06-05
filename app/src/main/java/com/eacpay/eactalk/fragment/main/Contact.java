@@ -61,11 +61,7 @@ public class Contact extends Fragment {
                     if (result.getResultCode() == Activity.RESULT_OK) {
                         Intent intent = result.getData();
                         String address = intent.getStringExtra("result");
-                        if (address != null && address.startsWith("earthcoin:")) {
-                            create(address.substring(10));
-                        } else {
-                            create(address);
-                        }
+                        create(MyUtils.parseAddress(address));
                     }
                 }
             });

@@ -19,7 +19,9 @@ import androidx.preference.PreferenceManager;
 import com.blankj.utilcode.util.EncryptUtils;
 import com.eacpay.R;
 import com.eacpay.eactalk.fragment.main.ContactFragment.ContactItem;
+import com.eacpay.presenter.entities.RequestObject;
 import com.eacpay.tools.manager.BRSharedPrefs;
+import com.eacpay.tools.security.BitcoinUrlHandler;
 import com.google.gson.Gson;
 import com.j256.simplemagic.ContentInfo;
 import com.j256.simplemagic.ContentInfoUtil;
@@ -230,5 +232,22 @@ public class MyUtils {
             return false;
         }
         return true;
+    }
+
+    /**
+     * 解析地址
+     *
+     * @param address
+     * @return
+     */
+    public static String parseAddress(String address) {
+        RequestObject obj = BitcoinUrlHandler.getRequestFromString(address);
+        if (obj == null) {
+            return "";
+        }
+        if (obj.address != null) {
+            return obj.address.trim();
+        }
+        return "";
     }
 }

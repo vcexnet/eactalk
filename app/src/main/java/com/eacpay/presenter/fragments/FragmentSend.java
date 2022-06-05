@@ -489,6 +489,9 @@ public class FragmentSend extends DialogFragment {
                 if (allFilled) {
                     BRSender.getInstance().sendTransaction(getActivity(), new PaymentItem(new String[]{address}, null, satoshiAmount.longValue(), null, false, comment, composedComment));
                     AnalyticsManager.logCustomEvent(BRConstants._20191105_DSL);
+                    if (getDialog() != null) {
+                        getDialog().cancel();
+                    }
                 }
             }
         });
