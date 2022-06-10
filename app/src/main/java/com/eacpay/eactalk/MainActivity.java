@@ -23,9 +23,14 @@ import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.NavigationUI;
 
+import com.blankj.utilcode.util.AppUtils;
+import com.blankj.utilcode.util.PathUtils;
+import com.blankj.utilcode.util.ToastUtils;
 import com.eacpay.R;
 import com.eacpay.databinding.BottomSheetSelectSendTypeBinding;
 import com.eacpay.eactalk.service.MyService;
+import com.eacpay.eactalk.utils.HProgressDialogUtils;
+import com.eacpay.eactalk.utils.MyUtils;
 import com.eacpay.presenter.activities.ReEnterPinActivity;
 import com.eacpay.presenter.activities.util.BRActivity;
 import com.eacpay.presenter.fragments.FragmentManage;
@@ -44,6 +49,21 @@ import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.navigation.NavigationBarView;
 import com.pgyer.pgyersdk.PgyerSDKManager;
 import com.platform.APIClient;
+import com.xuexiang.xupdate.XUpdate;
+import com.xuexiang.xupdate.service.OnFileDownloadListener;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.File;
+import java.io.IOException;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 public class MainActivity extends BRActivity implements BRWalletManager.OnBalanceChanged,
         BRPeerManager.OnTxStatusUpdate, BRSharedPrefs.OnIsoChangedListener,
@@ -59,6 +79,9 @@ public class MainActivity extends BRActivity implements BRWalletManager.OnBalanc
     private static MainActivity app;
     private NavController controller;
     private BottomNavigationView bottomNavigationView;
+    private String tagName;
+    private String downloadUrl;
+    private boolean isFirst = true;
 
     public static MainActivity getApp() {
         return app;
@@ -131,6 +154,94 @@ public class MainActivity extends BRActivity implements BRWalletManager.OnBalanc
 
 //        bottomNavigationView.setSelectedItemId(R.id.nav_main_mine);
 //        openActivity(ApiSettings.class);
+
+        if (BRSharedPrefs.getBoolean(this, "auto_update", false)) {
+            autoUpdate();
+        }
+    }
+
+    private void autoUpdate() {
+        OkHttpClient client = new OkHttpClient();
+        Request request = new Request.Builder()
+                .url("https://api.github.com/repos/vcexnet/eactalk/releases/latest")
+                .build();
+        client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(@NonNull Call call, @NonNull IOException e) {
+                MyUtils.log("getVersionInfoFromGithub fail");
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(MainActivity.this, R.string.get_version_info_error, Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+
+            @Override
+            public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
+                MyUtils.log("getVersionInfoFromGithub success");
+                try {
+                    JSONObject jsonObject = new JSONObject(response.body().string());
+                    tagName = jsonObject.getString("tag_name");
+                    JSONArray assetsArray = jsonObject.getJSONArray("assets");
+                    for (int i = 0; i < assetsArray.length(); i++) {
+                        JSONObject assetsObject = assetsArray.getJSONObject(i);
+                        if (assetsObject.getString("name").equals("eactalk.apk")) {
+                            downloadUrl = assetsObject.getString("browser_download_url");
+                            break;
+                        }
+                    }
+
+                    if (tagName != null && !tagName.equals(AppUtils.getAppVersionName()) && downloadUrl != null) {
+                        startUpdate();
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
+
+    private void startUpdate() {
+        XUpdate.newBuild(MainActivity.this)
+                .apkCacheDir(PathUtils.getExternalAppCachePath())
+                .build()
+                .download(downloadUrl, new OnFileDownloadListener() {
+                    @Override
+                    public void onStart() {
+                        MyUtils.log("update onStart");
+                        HProgressDialogUtils.showHorizontalProgressDialog(MainActivity.this, getString(R.string.updating), false);
+                    }
+
+                    @Override
+                    public void onProgress(float progress, long total) {
+                        MyUtils.log("update onProgress " + progress + " " + total);
+                        HProgressDialogUtils.setProgress(Math.round(progress * 100));
+                    }
+
+                    @Override
+                    public boolean onCompleted(File file) {
+                        MyUtils.log("update onCompleted " + file.getPath());
+                        HProgressDialogUtils.cancel();
+                        ToastUtils.showLong(getString(R.string.apk_download_success) + file.getPath());
+                        AppUtils.installApp(file);
+                        return false;
+                    }
+
+                    @Override
+                    public void onError(Throwable throwable) {
+                        MyUtils.log("update onError " + throwable.getMessage());
+                        HProgressDialogUtils.cancel();
+                        if (!isFirst) {
+                            ToastUtils.showLong(R.string.apk_download_fail);
+                        }
+                        if (isFirst) {
+                            isFirst = false;
+                            downloadUrl = "https://www.eacpay.com/download/eactalk.apk";
+                            startUpdate();
+                        }
+                    }
+                });
     }
 
     private void selectSendType() {

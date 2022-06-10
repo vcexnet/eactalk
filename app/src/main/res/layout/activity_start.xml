@@ -6,7 +6,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/start_bg"
+        android:background="@mipmap/start_bg"
         android:orientation="vertical"
         android:padding="10dp">
 
@@ -50,7 +50,7 @@
                 android:layout_height="30dp"
                 android:background="@android:color/transparent"
                 android:scaleType="fitXY"
-                android:src="@drawable/start_add" />
+                android:src="@mipmap/start_add" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -85,7 +85,7 @@
                 android:layout_height="30dp"
                 android:background="@android:color/transparent"
                 android:scaleType="fitXY"
-                android:src="@drawable/start_import" />
+                android:src="@mipmap/start_import" />
 
             <TextView
                 android:layout_width="wrap_content"

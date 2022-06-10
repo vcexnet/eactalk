@@ -712,7 +712,8 @@
     <string name="portrait">Portrait</string>
     <string name="about_content">Eactalk is an information announcement weak social system based on EAC blockchain technology developed by a group of freedom advocates.\n\n\n\n1.We don\'t try to control anything. We want freedom of speech in the world;\n\n2.We want the world to be real, without lies;\n\n3.Hope the world is full of positive energy;\n\n4.We hope that speech in the world will be equal (even though we have nothing to do with a series of inequalities brought about by material inequality, we hope that speech born as human beings is equal, and that it will not be unequal because some organizations control resources);\n\n\n\n5.Eactalk is designed to ensure that it will not be the second twitter, Facebook, Google. \n\nOfficial website: https://www.eactalk.com/</string>
     <string name="listen_content">Eactalk can be used freely and spread freely. It provides complete privacy protection, and will not require and collect any personal information. The authenticity of the information is self certified by the user, and the authentication option is given to the user.\n\n\n\n1. The information ownership belongs to the account owner, the account belongs to the user, the account is unique in the world, and the account is completely anonymous and unforgeable.\n\n2. The information can not be deleted, revoked, modified, repudiated, traced and kept forever.\n\n3. Voluntary paid release of announcement type information, all eactalk top visible.\n\n4. Eactalk is copyrighted by eactalk developers and cannot be used for commercial purposes without permission.</string>
-    <string name="eac_help">EAC node: it is used to link the blockchain network and save your data to the chain. It is recommended to link your own trusted node. If conditions permit, it is recommended to build self built nodes. Please refer to help center for operation.\n\n\n\nIPFs node: used to store non text information in messages, such as video, audio, pictures, etc. it needs faster upload speed. It is recommended to build a self built node. Please refer to help center for operation.</string>
+    <string name="eac_help">EAC node: it is used to link the blockchain network and save your data to the chain. It is recommended to link your own trusted node. If conditions permit, it is recommended to build self built nodes. Please refer to help center for operation.</string>
+    <string name="ipfs_help">IPFs node: used to store non text information in messages, such as video, audio, pictures, etc. it needs faster upload speed. It is recommended to build a self built node. Please refer to help center for operation.</string>
     <string name="copy_address">Copy</string>
     <string name="delete">Delete</string>
     <string name="important_tips">Important tips</string>
@@ -804,6 +805,17 @@
     <string name="enter">Enter</string>
     <string name="height">Height</string>
     <string name="hard">Hard</string>
-    <string name="get_height_hard_error">获取高度和难度失败</string>
-    <string name="parse_height_hard_error">解析高度/难度失败</string>
+    <string name="get_height_hard_error">Failed to get altitude and difficulty</string>
+    <string name="parse_height_hard_error">Parsing height/difficulty failed</string>
+    <string name="get_peer_info_error">Failed to get peer information</string>
+    <string name="eac_peer_list_">Earthcoin available nodes:</string>
+    <string name="update">Update</string>
+    <string name="version_info">Current version: %1$s (Latest version: %2$s)</string>
+    <string name="is_auto_update">Whether to update automatically</string>
+    <string name="get_version_info_error">Failed to get version information</string>
+    <string name="update_url_error">Failed to get update address</string>
+    <string name="download_progress">Download progress</string>
+    <string name="apk_download_success">The apk is downloaded, the file path is:</string>
+    <string name="apk_download_fail">Download failed</string>
+    <string name="updating">Updating...</string>
 </resources>

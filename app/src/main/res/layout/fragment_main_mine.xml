@@ -98,7 +98,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="@color/white"
-                    android:drawableTop="@drawable/mine_send"
+                    android:drawableTop="@mipmap/mine_send"
                     android:text="@string/send"
                     android:textColor="#333" />
 
@@ -108,7 +108,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="@color/white"
-                    android:drawableTop="@drawable/mine_receive"
+                    android:drawableTop="@mipmap/mine_receive"
                     android:text="@string/receive"
                     android:textColor="#333" />
 
@@ -118,7 +118,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="@color/white"
-                    android:drawableTop="@drawable/mine_flash"
+                    android:drawableTop="@mipmap/mine_flash"
                     android:text="@string/flash"
                     android:textColor="#333" />
             </LinearLayout>
@@ -155,7 +155,7 @@
                             android:layout_width="24dp"
                             android:layout_height="24dp"
                             android:layout_marginRight="10dp"
-                            app:srcCompat="@drawable/mine_currency" />
+                            app:srcCompat="@mipmap/mine_currency" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -183,7 +183,7 @@
                             android:layout_width="24dp"
                             android:layout_height="24dp"
                             android:layout_marginRight="10dp"
-                            app:srcCompat="@drawable/mine_node" />
+                            app:srcCompat="@mipmap/mine_node" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -211,7 +211,7 @@
                             android:layout_width="24dp"
                             android:layout_height="24dp"
                             android:layout_marginRight="10dp"
-                            app:srcCompat="@drawable/mine_invitation" />
+                            app:srcCompat="@mipmap/mine_invitation" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -239,7 +239,7 @@
                             android:layout_width="24dp"
                             android:layout_height="24dp"
                             android:layout_marginRight="10dp"
-                            app:srcCompat="@drawable/mine_safe" />
+                            app:srcCompat="@mipmap/mine_safe" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -267,7 +267,7 @@
                             android:layout_width="24dp"
                             android:layout_height="24dp"
                             android:layout_marginRight="10dp"
-                            app:srcCompat="@drawable/mine_help" />
+                            app:srcCompat="@mipmap/mine_help" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -295,7 +295,7 @@
                             android:layout_width="24dp"
                             android:layout_height="24dp"
                             android:layout_marginRight="10dp"
-                            app:srcCompat="@drawable/mine_code" />
+                            app:srcCompat="@mipmap/mine_code" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -323,7 +323,7 @@
                             android:layout_width="24dp"
                             android:layout_height="24dp"
                             android:layout_marginRight="10dp"
-                            app:srcCompat="@drawable/mine_contact" />
+                            app:srcCompat="@mipmap/mine_contact" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -351,7 +351,7 @@
                             android:layout_width="24dp"
                             android:layout_height="24dp"
                             android:layout_marginRight="10dp"
-                            app:srcCompat="@drawable/mine_about" />
+                            app:srcCompat="@mipmap/mine_about" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -379,7 +379,7 @@
                             android:layout_width="24dp"
                             android:layout_height="24dp"
                             android:layout_marginRight="10dp"
-                            app:srcCompat="@drawable/mine_listen" />
+                            app:srcCompat="@mipmap/mine_listen" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -407,7 +407,7 @@
                             android:layout_width="24dp"
                             android:layout_height="24dp"
                             android:layout_marginRight="10dp"
-                            app:srcCompat="@drawable/mine_site" />
+                            app:srcCompat="@mipmap/mine_site" />
 
                         <TextView
                             android:layout_width="match_parent"

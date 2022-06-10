@@ -151,7 +151,7 @@ public class MyMessageList extends Fragment implements TransactionDataSource.OnT
             String fee = BRCurrency.getFormattedCurrencyString(getActivity(), iso, BRExchange.getAmountFromSatoshis(getActivity(), iso, new BigDecimal(item.getFee())));
 
             boolean received = item.getSent() == 0;
-            holder.binding.itemMyMessageIcon.setImageResource(received ? R.drawable.mine_receive : R.drawable.mine_send);
+            holder.binding.itemMyMessageIcon.setImageResource(received ? R.mipmap.mine_receive : R.mipmap.mine_send);
 
             holder.binding.itemMyMessageAmount.setText((received ? getString(R.string.received_) : getString(R.string.sended_)) + amount + (item.getFee() == -1 ? "" : String.format(getString(R.string.Transaction_fee), fee)));
             holder.binding.itemMyMessageAddress.setText(received ? (getString(R.string.from_) + item.getFrom()[0]) : (getString(R.string.send_) + item.getTo()[0]));

@@ -13,7 +13,7 @@
             android:layout_width="match_parent"
             android:layout_height="240dp"
             android:background="@android:color/transparent"
-            android:src="@drawable/b_un_lock_top" />
+            android:src="@mipmap/b_un_lock_top" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -21,13 +21,35 @@
             android:gravity="center_horizontal"
             android:orientation="vertical">
 
+            <TextView
+                android:id="@+id/un_lock_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="125dp"
+                android:text="@string/About.appName.android"
+                android:textColor="@color/white"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:typeface="sans" />
+
             <ImageView
                 android:layout_width="72dp"
                 android:layout_height="72dp"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="145dp"
+                android:layout_marginTop="6dp"
                 android:background="@android:color/transparent"
                 android:src="@mipmap/ic_launcher" />
+
+            <TextView
+                android:id="@+id/un_lock_ip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/b_white_border_10"
+                android:paddingLeft="6dp"
+                android:paddingRight="6dp"
+                android:text="IPv6"
+                android:textColor="@color/white" />
 
             <TextView
                 android:layout_width="match_parent"

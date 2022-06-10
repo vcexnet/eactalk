@@ -718,7 +718,8 @@
     <string name="portrait">竖屏</string>
     <string name="about_content">EACTALK是一群崇尚自由的技术人员基于EAC区块链技术开发的信息公告弱社交系统。 \n\n我们不试图掌控任何东西，我们希望世界上言论自由； \n\n我们希望世界是真实的，没有谎言； \n\n希望世界充满正能量； \n\n我们希望世界言论平等（即便基于物质的不平等带来的一系列不平等我们无可奈何，但是我们希望作为人与生俱来的言论是平等的，而不会因为一些组织掌控资源造成不平等）； \n\nEACTALK设计机制确保不会成为第二个Twitter、Facebook、Google。 \n\n官方网站: https://www.eactalk.com/</string>
     <string name="listen_content">EACTALK可以自由使用，随意传播。本身提供完全的隐私保护，不会要求并收集您的任何个人信息，信息真实性由使用者自我认证，认证选择权全部交给使用者。 \n\n1、信息所有权归账户所有者所有，账户归使用者所有，账户全球唯一，账户完全匿名且不可伪造。 \n\n2、信息不可删除撤销，不可修改，不可抵赖，不可追踪，永久保留。 \n\n3、自愿有偿发布公告类型信息，所有EACTALK置顶可见。 \n\n4、EACTALK版权归EACTALK开发者所有，未经许可，不得用于商业用途。</string>
-    <string name="eac_help">EAC节点：用于链接区块链网络，将您的数据保存到链上，建议链接自己可信节点。有条件的情况下，建议自建节点。格式 ip:端口。操作请参见：帮助中心。 IPFS节点：用于存储消息中的非文本信息，例如视频、音频、图片等，需要更快的上传速度，建议自建节点，格式 ip:端口。操作请参见：帮助中心。</string>
+    <string name="eac_help">EAC节点：用于链接区块链网络，将您的数据保存到链上，建议链接自己可信节点。有条件的情况下，建议自建节点。格式 ip:端口。操作请参见：帮助中心。</string>
+    <string name="ipfs_help">IPFS节点：用于存储消息中的非文本信息，例如视频、音频、图片等，需要更快的上传速度，建议自建节点，格式 ip:端口。操作请参见：帮助中心。</string>
     <string name="copy_address">复制地址</string>
     <string name="delete">删除</string>
     <string name="important_tips">重要提示</string>
@@ -807,5 +808,16 @@
     <string name="hard">难度</string>
     <string name="get_height_hard_error">获取高度和难度失败</string>
     <string name="parse_height_hard_error">解析高度/难度失败</string>
+    <string name="get_peer_info_error">获取节点信息失败</string>
+    <string name="eac_peer_list_">地球币可用节点:</string>
+    <string name="update">更新</string>
+    <string name="version_info">当前版本: %1$s (最新版本: %2$s)</string>
+    <string name="is_auto_update">是否自动更新</string>
+    <string name="get_version_info_error">获取版本信息失败</string>
+    <string name="update_url_error">获取更新地址失败</string>
+    <string name="download_progress">下载进度</string>
+    <string name="apk_download_success">apk下载完毕，文件路径：</string>
+    <string name="apk_download_fail">下载失败</string>
+    <string name="updating">正在更新...</string>
 
 </resources>

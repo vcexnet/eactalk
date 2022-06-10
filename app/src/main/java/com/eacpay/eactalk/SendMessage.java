@@ -280,7 +280,7 @@ public class SendMessage extends BRActivity {
 
                 int length = content.getBytes().length;
                 binding.sendMessageContentCount.setText(length + "/" + contentMaxLength);
-                binding.sendMessageContentCount.setTextColor(length >= contentMaxLength ? Color.RED : Color.BLACK);
+                binding.sendMessageContentCount.setTextColor(length > contentMaxLength ? Color.RED : Color.BLACK);
             }
         });
 
@@ -920,7 +920,7 @@ public class SendMessage extends BRActivity {
             return;
         }
 
-        if (composedComment.getBytes().length > contentMaxLength) {
+        if (txComment.getBytes().length > contentMaxLength) {
             Toast.makeText(this, R.string.message_too_long, Toast.LENGTH_SHORT).show();
             return;
         }

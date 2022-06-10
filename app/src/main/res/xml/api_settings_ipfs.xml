@@ -40,6 +40,12 @@
         app:key="ipfs_gateway"
         app:title="@string/default_gateway_http_https" />
 
+    <Preference
+        app:iconSpaceReserved="false"
+        app:key="ipfs_help"
+        app:summary="@string/ipfs_help"
+        app:title="@string/ipfs_node" />
+
     <!--    <Preference-->
     <!--        app:iconSpaceReserved="false"-->
     <!--        app:key="key"-->

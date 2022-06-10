@@ -45,9 +45,9 @@
             android:id="@+id/main_home_sync_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="10dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="12dp"
             android:background="@drawable/b_white_10"
             android:orientation="vertical"
             android:padding="10dp"
@@ -69,11 +69,13 @@
                 android:progressDrawable="@drawable/sync_wallet_progress" />
         </LinearLayout>
 
-        <androidx.viewpager2.widget.ViewPager2
+        <com.youth.banner.Banner
             android:id="@+id/main_home_banner"
             android:layout_width="match_parent"
             android:layout_height="130dp"
-            android:visibility="gone" />
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="12dp" />
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/main_home_view_pager"

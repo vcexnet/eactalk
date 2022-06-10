@@ -1,10 +1,12 @@
 package com.eacpay.eactalk.fragment.main;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -15,9 +17,14 @@ import androidx.preference.PreferenceManager;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import com.blankj.utilcode.util.CacheDiskUtils;
+import com.blankj.utilcode.util.LanguageUtils;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
+import com.bumptech.glide.request.RequestOptions;
 import com.eacpay.R;
 import com.eacpay.databinding.FragmentMainHomeBinding;
 import com.eacpay.databinding.TabHomeBinding;
+import com.eacpay.eactalk.HomeDetail;
 import com.eacpay.eactalk.MainActivity;
 import com.eacpay.eactalk.fragment.main.HomeFragment.HomeItem;
 import com.eacpay.eactalk.fragment.main.HomeFragment.HomeList;
@@ -29,6 +36,9 @@ import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.youth.banner.adapter.BannerImageAdapter;
+import com.youth.banner.holder.BannerImageHolder;
+import com.youth.banner.indicator.CircleIndicator;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -47,6 +57,7 @@ public class Home extends Fragment {
     //    String[] addresses = new String[]{"eTszssBjz6617L6XNBEAUJyeMiLYpN5ijJ", "ecTt5mii1LA1x2Mk7JfDXF8S8oFtzWhT3L", "epP4dE9tuoUUFNTpzragJg3UeRXEZExoLi", "eTszssBjz6617L6XNBEAUJyeMiLYpN5ijJ"};
     FragmentMainHomeBinding binding;
     List<HomeTab> homeTabList = new ArrayList<>();
+    HomeItem[] bannerItemList = new HomeItem[]{null, null, null, null};
 
     OkHttpClient client = new OkHttpClient();
     private boolean isRunning = true;
@@ -94,6 +105,125 @@ public class Home extends Fragment {
 //                }
 //            }
 //        });
+
+        List<String> bannerList = new ArrayList<>();
+        if (LanguageUtils.getSystemLanguage().getLanguage().equals("zh")) {
+            bannerList.add("https://eacpay.gitee.io/eactalkweb/1.jpg");
+            bannerList.add("https://eacpay.gitee.io/eactalkweb/2.jpg");
+            bannerList.add("https://eacpay.gitee.io/eactalkweb/3.jpg");
+            bannerList.add("https://eacpay.gitee.io/eactalkweb/4.jpg");
+        } else {
+            bannerList.add("https://vcexnet.github.io/eactalkweb/1.jpg");
+            bannerList.add("https://vcexnet.github.io/eactalkweb/2.jpg");
+            bannerList.add("https://vcexnet.github.io/eactalkweb/3.jpg");
+            bannerList.add("https://vcexnet.github.io/eactalkweb/4.jpg");
+        }
+
+        binding.mainHomeBanner.addBannerLifecycleObserver(this)
+                .setIndicator(new CircleIndicator(getActivity()))
+                .setAdapter(new BannerImageAdapter<String>(bannerList) {
+                    @Override
+                    public void onBindView(BannerImageHolder holder, String data, final int position, int size) {
+                        holder.imageView.setScaleType(ImageView.ScaleType.FIT_XY);
+                        Glide.with(holder.itemView)
+                                .load(data)
+                                .apply(RequestOptions.bitmapTransform(new RoundedCorners(30)))
+                                .into(holder.imageView);
+                        holder.itemView.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                if (bannerItemList[position] != null) {
+                                    Intent intent = new Intent(getActivity(), HomeDetail.class);
+                                    intent.putExtra("item", bannerItemList[position].toString());
+                                    startActivity(intent);
+                                }
+                            }
+                        });
+                    }
+                });
+        getBannerData();
+    }
+
+    private void getBannerData() {
+        if (getActivity() == null) {
+            return;
+        }
+        final String apiUrl = PreferenceManager.getDefaultSharedPreferences(getActivity()).getString("home_url", MyService.defaultHomeUrl) + "/addresshistory/egzQKymTBMJELYycmPRRqQ1csyHsf5aCop";
+        if (!apiUrl.startsWith("http")) {
+            Toast.makeText(getActivity(), getString(R.string.api_url_error) + apiUrl, Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        Log.e(TAG, "getData: " + apiUrl + " " + BRSharedPrefs.getLastBlockHeight(getActivity()));
+
+        final String cacheKey = apiUrl + BRSharedPrefs.getLastBlockHeight(getActivity());
+
+        String result = CacheDiskUtils.getInstance().getString(cacheKey);
+        if (result != null && !result.equals("")) {
+            parseBannerResult(result);
+            return;
+        }
+        Request request = new Request.Builder()
+                .url(apiUrl)
+                .build();
+
+        client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(@NonNull Call call, @NonNull IOException e) {
+                showBannerFailure();
+            }
+
+            @Override
+            public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
+                if (!response.isSuccessful()) {
+                    showBannerFailure();
+                    return;
+                }
+                final String result = response.body().string();
+                if (getActivity() == null) {
+                    return;
+                }
+                getActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        CacheDiskUtils.getInstance().put(cacheKey, result);
+                        parseBannerResult(result);
+                    }
+                });
+            }
+        });
+    }
+
+    private void showBannerFailure() {
+        if (getActivity() == null) {
+            return;
+        }
+        getActivity().runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                Toast.makeText(getActivity(), R.string.network_error, Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void parseBannerResult(String result) {
+        List<HomeItem> newBannerList = new Gson().fromJson(result, new TypeToken<List<HomeItem>>() {
+        }.getType());
+        for (int i = 0; i < newBannerList.size(); i++) {
+            HomeItem item = newBannerList.get(i);
+            if (item.value == 500001 && bannerItemList[0] == null) {
+                bannerItemList[0] = item;
+            }
+            if (item.value == 500002 && bannerItemList[1] == null) {
+                bannerItemList[1] = item;
+            }
+            if (item.value == 500003 && bannerItemList[2] == null) {
+                bannerItemList[2] = item;
+            }
+            if (item.value == 500004 && bannerItemList[3] == null) {
+                bannerItemList[3] = item;
+            }
+        }
     }
 
     @Override

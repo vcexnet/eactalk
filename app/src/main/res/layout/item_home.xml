@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/b_white_10"
         android:orientation="horizontal"
-        android:padding="10dp">
+        android:padding="12dp">
 
         <ImageView
             android:id="@+id/item_home_image"

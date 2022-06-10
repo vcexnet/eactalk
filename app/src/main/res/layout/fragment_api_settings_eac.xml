@@ -37,6 +37,14 @@
             android:layout_height="wrap_content"
             android:hint="" />
 
+        <Button
+            android:id="@+id/api_settings_eac_save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/save" />
+
         <TextView
             android:id="@+id/api_settings_eac_node_status"
             android:layout_width="match_parent"
@@ -45,14 +53,17 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/eac_help" />
+            android:layout_marginTop="8dp"
+            android:background="@drawable/b_bottom_f1"
+            android:paddingBottom="8dp"
+            android:text="@string/eac_peer_list_"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/api_settings_eac_save"
+        <ListView
+            android:id="@+id/api_settings_eac_peer_list"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/save" />
+            android:layout_height="wrap_content" />
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

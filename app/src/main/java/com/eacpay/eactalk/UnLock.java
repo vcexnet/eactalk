@@ -2,6 +2,7 @@ package com.eacpay.eactalk;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -65,6 +66,8 @@ public class UnLock extends BRActivity {
             if (!UnLock.this.isDestroyed()) finish();
             return;
         }
+
+        binding.unLockTitle.setTypeface(Typeface.createFromAsset(getAssets(), "fonts/puhuiti/AlibabaPuHuiTi-2-85-Bold.ttf"));
     }
 
     private void unLock() {
