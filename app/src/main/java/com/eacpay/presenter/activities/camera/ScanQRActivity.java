@@ -107,7 +107,7 @@ public class ScanQRActivity extends BRActivity
         task = new UIUpdateTask();
         task.start();
 
-        cameraGuide.setImageResource(R.drawable.cameraguide);
+        cameraGuide.setImageResource(R.mipmap.cameraguide);
         cameraGuide.setVisibility(View.GONE);
 
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
@@ -165,7 +165,7 @@ public class ScanQRActivity extends BRActivity
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            cameraGuide.setImageResource(R.drawable.cameraguide);
+                            cameraGuide.setImageResource(R.mipmap.cameraguide);
                             descriptionText.setText("");
                         }
                     });
@@ -208,7 +208,7 @@ public class ScanQRActivity extends BRActivity
                 @Override
                 public void run() {
                     lastUpdated = System.currentTimeMillis();
-                    cameraGuide.setImageResource(R.drawable.cameraguide);
+                    cameraGuide.setImageResource(R.mipmap.cameraguide);
                     descriptionText.setText("");
                     handlingCode = true;
                     Intent returnIntent = new Intent();
@@ -223,7 +223,7 @@ public class ScanQRActivity extends BRActivity
                 @Override
                 public void run() {
                     lastUpdated = System.currentTimeMillis();
-                    cameraGuide.setImageResource(R.drawable.cameraguide_red);
+                    cameraGuide.setImageResource(R.mipmap.cameraguide_red);
                     descriptionText.setText(getString(R.string.Send_invalidAddressTitle));
                 }
             });

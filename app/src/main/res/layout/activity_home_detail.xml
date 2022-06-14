@@ -125,7 +125,7 @@
                             android:layout_marginRight="10dp"
                             android:background="@android:color/transparent"
                             android:scaleType="fitXY"
-                            android:src="@drawable/full_screen"
+                            android:src="@mipmap/full_screen"
                             android:visibility="gone" />
 
                         <ImageButton
@@ -134,7 +134,7 @@
                             android:layout_height="24dp"
                             android:background="@android:color/transparent"
                             android:scaleType="fitXY"
-                            android:src="@drawable/translate" />
+                            android:src="@mipmap/translate" />
                     </LinearLayout>
 
                     <TextView

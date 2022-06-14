@@ -220,7 +220,7 @@
                 android:layout_height="20dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginBottom="0dp"
-                android:background="@drawable/edit"
+                android:background="@mipmap/edit"
                 android:visibility="invisible"
                 app:layout_constraintBottom_toBottomOf="@+id/fee_text"
                 app:layout_constraintLeft_toRightOf="@+id/fee_text" />

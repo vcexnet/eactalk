@@ -44,7 +44,7 @@
                 <ImageView
                     android:layout_width="16dp"
                     android:layout_height="16dp"
-                    android:src="@drawable/chevron" />
+                    android:src="@mipmap/chevron" />
             </LinearLayout>
 
             <LinearLayout
@@ -61,7 +61,7 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:layout_marginRight="10dp"
-                    app:srcCompat="@drawable/gitee" />
+                    app:srcCompat="@mipmap/gitee" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -74,7 +74,7 @@
                 <ImageView
                     android:layout_width="16dp"
                     android:layout_height="16dp"
-                    android:src="@drawable/chevron" />
+                    android:src="@mipmap/chevron" />
             </LinearLayout>
 
             <LinearLayout

@@ -28,7 +28,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginRight="4dp"
                 android:padding="6dp"
-                android:src="@drawable/close" />
+                android:src="@mipmap/close" />
         </RelativeLayout>
 
         <EditText

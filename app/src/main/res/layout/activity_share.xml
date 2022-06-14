@@ -37,7 +37,7 @@
                 <ImageView
                     android:layout_width="16dp"
                     android:layout_height="16dp"
-                    android:src="@drawable/chevron" />
+                    android:src="@mipmap/chevron" />
             </LinearLayout>
 
             <LinearLayout
@@ -68,7 +68,7 @@
                         android:id="@+id/share_qr_code"
                         android:layout_width="105dp"
                         android:layout_height="105dp"
-                        android:src="@drawable/qr_code" />
+                        android:src="@mipmap/qr_code" />
 
                     <TextView
                         android:layout_width="wrap_content"

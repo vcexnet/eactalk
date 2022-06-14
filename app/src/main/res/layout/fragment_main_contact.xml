@@ -52,7 +52,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginRight="10dp"
                 android:padding="6dp"
-                android:src="@drawable/icon_search" />
+                android:src="@mipmap/icon_search" />
 
         </RelativeLayout>
 

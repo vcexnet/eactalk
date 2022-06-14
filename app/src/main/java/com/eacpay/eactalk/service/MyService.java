@@ -247,7 +247,7 @@ public class MyService extends Service {
 
         notificationBuilder = new NotificationCompat.Builder(getApplicationContext(), channelId);
         notificationBuilder
-                .setSmallIcon(R.drawable.logo)
+                .setSmallIcon(R.mipmap.logo)
                 .setCustomBigContentView(createRemoteViews())
                 .setOngoing(true)
                 .setContentTitle("EACTALK")

@@ -39,7 +39,7 @@
         <ImageView
             android:layout_width="16dp"
             android:layout_height="16dp"
-            android:src="@drawable/chevron" />
+            android:src="@mipmap/chevron" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

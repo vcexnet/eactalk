@@ -228,7 +228,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="?attr/selectableItemBackground"
-            android:src="@drawable/ic_arrow_down" />
+            android:src="@mipmap/ic_arrow_down" />
 
         <SeekBar
             android:id="@+id/seekBar"
@@ -250,7 +250,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="?attr/selectableItemBackground"
-            android:src="@drawable/ic_arrow_up" />
+            android:src="@mipmap/ic_arrow_up" />
 
     </LinearLayout>
 

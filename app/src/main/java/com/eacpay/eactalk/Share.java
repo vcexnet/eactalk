@@ -64,7 +64,7 @@ public class Share extends BRActivity {
     private void saveQRCode() {
         Log.e(TAG, "saveQRCode: start ");
         try {
-            Drawable drawable = getResources().getDrawable(R.drawable.qr_code, null);
+            Drawable drawable = getResources().getDrawable(R.mipmap.qr_code, null);
             if (drawable == null) {
                 Log.e(TAG, "saveQRCode: drawable is null");
                 return;

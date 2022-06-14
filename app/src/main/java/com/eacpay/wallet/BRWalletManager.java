@@ -416,7 +416,7 @@ public class BRWalletManager {
                         }
 
                         if (!MainActivity.appVisible && BRSharedPrefs.getShowNotification(finalCtx))
-                            BRNotificationManager.sendNotification(finalCtx, R.drawable.notification_icon, finalCtx.getString(R.string.app_name), message, 1);
+                            BRNotificationManager.sendNotification(finalCtx, R.mipmap.notification_icon, finalCtx.getString(R.string.app_name), message, 1);
                     }
                 }
             }, 1000);

@@ -15,7 +15,7 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_marginRight="6dp"
-            android:src="@drawable/logo" />
+            android:src="@mipmap/logo" />
 
         <TextView
             android:layout_width="match_parent"
@@ -33,7 +33,7 @@
             android:background="@android:color/transparent"
             android:padding="6dp"
             android:scaleType="fitCenter"
-            android:src="@drawable/close" />
+            android:src="@mipmap/close" />
 
     </LinearLayout>
 

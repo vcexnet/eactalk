@@ -374,7 +374,7 @@ public class HomeDetail extends BRActivity {
         if (homeItem.isImage()) {
             Glide.with(this)
                     .load(homeItem)
-                    .placeholder(R.drawable.image_default)
+                    .placeholder(R.mipmap.image_default)
                     .apply(new RequestOptions().transform(new CenterCrop(), new RoundedCorners(16)))
                     .into(binding.homeDetailImage);
 
