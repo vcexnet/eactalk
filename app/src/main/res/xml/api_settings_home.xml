@@ -20,6 +20,7 @@
 
     <SwitchPreferenceCompat
         app:iconSpaceReserved="false"
+        app:isPreferenceVisible="false"
         app:key="home_filter"
         app:summaryOff="@string/close"
         app:summaryOn="@string/start"

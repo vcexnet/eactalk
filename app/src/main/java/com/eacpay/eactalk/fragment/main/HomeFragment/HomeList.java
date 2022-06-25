@@ -248,9 +248,10 @@ public class HomeList extends Fragment {
         }
 
         public void setDataList(List<HomeItem> dataList) {
-            if (PreferenceManager.getDefaultSharedPreferences(getActivity()).getBoolean("home_filter", true)) {
-                dataList = filterList(dataList, 0);
-            }
+            // if (PreferenceManager.getDefaultSharedPreferences(getActivity()).getBoolean("home_filter", true)) {
+            //     dataList = filterList(dataList, 0);
+            // }
+            dataList = filterList(dataList, 0);
 
             Collections.sort(dataList, new Comparator<HomeItem>() {
                 @Override

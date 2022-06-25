@@ -207,22 +207,26 @@ public class Home extends Fragment {
     }
 
     private void parseBannerResult(String result) {
-        List<HomeItem> newBannerList = new Gson().fromJson(result, new TypeToken<List<HomeItem>>() {
-        }.getType());
-        for (int i = 0; i < newBannerList.size(); i++) {
-            HomeItem item = newBannerList.get(i);
-            if (item.value == 500001 && bannerItemList[0] == null) {
-                bannerItemList[0] = item;
+        try {
+            List<HomeItem> newBannerList = new Gson().fromJson(result, new TypeToken<List<HomeItem>>() {
+            }.getType());
+            for (int i = 0; i < newBannerList.size(); i++) {
+                HomeItem item = newBannerList.get(i);
+                if (item.value == 500001 && bannerItemList[0] == null) {
+                    bannerItemList[0] = item;
+                }
+                if (item.value == 500002 && bannerItemList[1] == null) {
+                    bannerItemList[1] = item;
+                }
+                if (item.value == 500003 && bannerItemList[2] == null) {
+                    bannerItemList[2] = item;
+                }
+                if (item.value == 500004 && bannerItemList[3] == null) {
+                    bannerItemList[3] = item;
+                }
             }
-            if (item.value == 500002 && bannerItemList[1] == null) {
-                bannerItemList[1] = item;
-            }
-            if (item.value == 500003 && bannerItemList[2] == null) {
-                bannerItemList[2] = item;
-            }
-            if (item.value == 500004 && bannerItemList[3] == null) {
-                bannerItemList[3] = item;
-            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
