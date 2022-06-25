@@ -5,7 +5,7 @@
     <!-- About screen blog label -->
     <string name="About.blog">Website</string>
     <!-- About screen footer -->
-    <string name="About.footer">Made by the Eacpay DEV Team\n%1$s</string>
+    <string name="About.footer">Made by the EacTalk DEV Team\n%1$s</string>
     <!-- About app version -->
     <!-- Privay Policy button label -->
     <string name="About.privacy">Privacy Policy</string>
@@ -107,7 +107,7 @@
     <!-- Email unavailable alert title -->
     <!-- Email unavailable alert title -->
     <!-- Message that gets shown when we've detected the user has encountered the looping lock-screen bug. (preserve [ ] characters) -->
-    <string name="ErrorMessages.loopingLockScreen.android">Eacpay can not be authenticated due to a bug in your version of Android. [Please tap here for more information.]</string>
+    <string name="ErrorMessages.loopingLockScreen.android">EacTalk can not be authenticated due to a bug in your version of Android. [Please tap here for more information.]</string>
     <!-- Messaging unavailable alert title -->
     <!-- Messaging unavailable alert title -->
     <!-- Fingerprint was not recognized by the scanner, please try scanning again -->
@@ -334,7 +334,7 @@
     <!-- Balance: $4.00 -->
     <string name="Send.balance">Balance: %1$s</string>
     <!-- Instructions how to allow the camera access for the app -->
-    <string name="Send.cameraUnavailabeMessage.android">Allow camera access in \"Settings\" &gt; \"Apps\" &gt; \"Bread\" &gt; \"Permissions\"</string>
+    <string name="Send.cameraUnavailabeMessage.android">Allow camera access in \"Settings\" &gt; \"Apps\" &gt; \"EacTalk\" &gt; \"Permissions\"</string>
     <!-- Permission required to access camera -->
     <string name="Send.cameraUnavailabeTitle.android">EACTALK is not allowed to access the camera</string>
     <!-- Camera not allowed message -->
@@ -577,7 +577,7 @@
     <!-- 1 of 3 -->
     <string name="WritePaperPhrase.step">%1$d of %2$d</string>
 
-    <string name="Donate.title">Donate to the Eacpay Developer (%1$s)</string>
+    <string name="Donate.title">Donate to the EacTalk Developer (%1$s)</string>
 
     <string name="Confirmation.processingAndDonationTime">Processing time: These transactions will take %1$s minutes to process.</string>
     <string name="Donate.title.confirmation">Confirm Donation</string>
@@ -617,8 +617,8 @@
 
     <!--  add by oldfeel  -->
     <string name="about">About us</string>
-    <string name="home_url">Home Api</string>
-    <string name="earth_coin_node">Earth coin node</string>
+    <string name="home_url">Home api</string>
+    <string name="earth_coin_node">Earthcoin node</string>
     <string name="node_settings">Node settings</string>
     <string name="automatic">Automatic</string>
     <string name="manual">Manual</string>
@@ -649,7 +649,7 @@
     <string name="sended_">Sended:</string>
     <string name="from_">From:</string>
     <string name="date_">Date:</string>
-    <string name="language_same">The original language is the same as the system language, no translation is required</string>
+    <string name="language_same">The original language is the same as the system language, no translation is needed</string>
     <string name="translate_fail">Translation failed</string>
     <string name="identify_language_fail">Failed to recognize language</string>
     <string name="cancel_like">Unfollow</string>
@@ -687,18 +687,18 @@
     <string name="export_success_">"Export success: "</string>
     <string name="loading">Loading</string>
     <string name="confirm_send_message">Are you sure you want to send a message that cannot be displayed in more than characters and the paid EAC cannot be returned? Send countdown (%1$d seconds)</string>
-    <string name="tip_eac_syncing">Currently in the process of blockchain information synchronization, you cannot send or reply to information, please wait for the synchronization to complete before use.</string>
-    <string name="send_normal">Post a normal message</string>
-    <string name="send_notice">Post announcement message</string>
+    <string name="tip_eac_syncing">The blockchain is currently being synchronized, so you cannot send or reply to messages, please wait for the synchronization to complete before use.</string>
+    <string name="send_normal">Post Peer-to-peer message</string>
+    <string name="send_notice">Post Announcement message</string>
     <string name="min_eac">Amount (≥ %1$d EAC, &#060; unshow,sorted by amount)</string>
     <string name="file_name_">"File name: "</string>
-    <string name="confirm_sensitive_word">The information you posted contains sensitive words: %1$s, which will be replaced by * when displayed. Do you want to continue publishing?</string>
+    <string name="confirm_sensitive_word">The information you posted contains sensitive words: %1$s, which will be replaced by * when displayed. Do you want to continue send?</string>
     <string name="insufficient_balance">Insufficient balance</string>
     <string name="not_less_than">Cannot be lower than the minimum EAC</string>
     <string name="message_too_long">Message too long</string>
     <string name="sending">Sending...</string>
-    <string name="tip_send_notice_success">The announcement is successful, please do not close the status prompt in the notification bar, so that other users can browse the attachments you uploaded faster</string>
-    <string name="send_success">Published successfully</string>
+    <string name="tip_send_notice_success">Please don\'t turn off the status alert in the notification bar when sending successfully so that other users can view your uploaded attachments faster.</string>
+    <string name="send_success">Posting Success</string>
     <string name="set_pin">Set up a PIN</string>
     <string name="set_complete">Setup is complete</string>
     <string name="set_pin_success">Set PIN code successfully</string>
@@ -710,8 +710,8 @@
     <string name="set_key_word_success">Set mnemonic successfully</string>
     <string name="landscape">Landscape</string>
     <string name="portrait">Portrait</string>
-    <string name="about_content">Eactalk is an information announcement weak social system based on EAC blockchain technology developed by a group of freedom advocates.\n\n\n\n1.We don\'t try to control anything. We want freedom of speech in the world;\n\n2.We want the world to be real, without lies;\n\n3.Hope the world is full of positive energy;\n\n4.We hope that speech in the world will be equal (even though we have nothing to do with a series of inequalities brought about by material inequality, we hope that speech born as human beings is equal, and that it will not be unequal because some organizations control resources);\n\n\n\n5.Eactalk is designed to ensure that it will not be the second twitter, Facebook, Google. \n\nOfficial website: https://www.eactalk.com/</string>
-    <string name="listen_content">Eactalk can be used freely and spread freely. It provides complete privacy protection, and will not require and collect any personal information. The authenticity of the information is self certified by the user, and the authentication option is given to the user.\n\n\n\n1. The information ownership belongs to the account owner, the account belongs to the user, the account is unique in the world, and the account is completely anonymous and unforgeable.\n\n2. The information can not be deleted, revoked, modified, repudiated, traced and kept forever.\n\n3. Voluntary paid release of announcement type information, all eactalk top visible.\n\n4. Eactalk is copyrighted by eactalk developers and cannot be used for commercial purposes without permission.</string>
+    <string name="about_content">EacTalk is a meta-universe information publishing social web 3.0 application developed by a group of freedom-loving technicians based on EAC blockchain technology.\n\n1.We don\'t try to control anything. We want freedom of speech in the world. Speech itself is not right or wrong. The judgment of right or wrong is just that everyone has a different position;\n\n2.We hope the world is true, even if it is a lie;\n\n3.Hope the world is full of positive energy;\n\n4.We hope that speech in the world will be equal (even though we have nothing to do with a series of inequalities brought about by material inequality, we hope that speech born as human beings is equal, and that it will not be unequal because some organizations control resources);\n\n\n\n5.EacTalk is designed to ensure that it will not be the second twitter, Facebook,weibo,Google. \n\nOfficial website: https://www.eactalk.com/</string>
+    <string name="listen_content">EacTalk can be used freely and spread freely. It provides complete privacy protection, and will not require and collect any personal information. The authenticity of the information is self certified by the user, and the authentication option is given to the user.\n\n1. The information ownership belongs to the account owner, the account belongs to the user, the account is unique in the world, and the account is completely anonymous and unforgeable.\n\n2. The information can not be deleted, revoked, modified, repudiated, traced and kept forever.\n\n3. Voluntary paid release of announcement type information, all EacTalk top visible.\n\n4. EacTalk is copyrighted by EacTalk developers and cannot be used for commercial purposes without permission.</string>
     <string name="eac_help">EAC node: it is used to link the blockchain network and save your data to the chain. It is recommended to link your own trusted node. If conditions permit, it is recommended to build self built nodes. Please refer to help center for operation.</string>
     <string name="ipfs_help">IPFs node: used to store non text information in messages, such as video, audio, pictures, etc. it needs faster upload speed. It is recommended to build a self built node. Please refer to help center for operation.</string>
     <string name="copy_address">Copy</string>
@@ -736,7 +736,7 @@
     <string name="create_new_account_free">Create a new account for free (EAC Wallet)</string>
     <string name="import_account">Import account</string>
     <string name="recovery_account">Restore original account (EAC old wallet)</string>
-    <string name="input_password">Please enter password</string>
+    <string name="input_password">Enter PIN</string>
     <string name="word_7">Word #7</string>
     <string name="input">Please enter</string>
     <string name="back">Back</string>
@@ -759,9 +759,9 @@
     <string name="flash">Exchange</string>
     <string name="show_coin_type">Display currency</string>
     <string name="safe_center">Security center</string>
-    <string name="send_normal_message">Post a normal message</string>
+    <string name="send_normal_message">Post Peer-to-peer message</string>
     <string name="send_notice_message">Post announcement message</string>
-    <string name="send_scan_message">Scan the code to send a message</string>
+    <string name="send_scan_message">Scan code to send message</string>
     <string name="home">Home</string>
     <string name="publish">Post</string>
     <string name="mine">My</string>
@@ -769,27 +769,27 @@
     <string name="export">Export</string>
     <string name="info">Information</string>
     <string name="reply">Reply</string>
-    <string name="notice_type_">Type</string>
+    <string name="notice_type_">Type:</string>
     <string name="zg">Trumpet</string>
     <string name="bl">Deepthroat</string>
     <string name="qg">Emotion</string>
     <string name="sd">Treehole</string>
     <string name="receive_address_">To:</string>
-    <string name="send_eac">Amount (EAC)</string>
+    <string name="send_eac">Amount(EAC)</string>
     <string name="balance_">Balance:</string>
-    <string name="net_fee_">Internet fee:</string>
+    <string name="net_fee_">Fee:</string>
     <string name="message_">Message:</string>
     <string name="extra_type_">Attachment (support video/picture/audio):</string>
     <string name="is_encrypt_">Encrypt:</string>
     <string name="extra">Attachment</string>
-    <string name="save_send_address">Save the sending address</string>
+    <string name="save_send_address">Save send address</string>
     <string name="help_center">Help center</string>
     <string name="official_website">Official website: https://www.eactalk.com/</string>
     <string name="rescan">Resync</string>
     <string name="auto_translation">Automatic translation</string>
     <string name="node_run_time">Node runtime</string>
     <string name="start">Turn on</string>
-    <string name="is_only_wifi">Whether to connect only under WIFI</string>
+    <string name="is_only_wifi">Whether to connect only under WiFi</string>
     <string name="ipfs_path">Storage path</string>
     <string name="default_gateway_http_https">Default gateway (supports http and https)</string>
     <string name="filter_by_eac">Whether to filter content based on EAC</string>
@@ -804,10 +804,10 @@
     <string name="enter_alias_address">Enter an address or alias to search</string>
     <string name="enter">Enter</string>
     <string name="height">Height</string>
-    <string name="hard">Hard</string>
-    <string name="get_height_hard_error">Failed to get altitude and difficulty</string>
+    <string name="hard">Difficulty</string>
+    <string name="get_height_hard_error">Get height and difficulty failures</string>
     <string name="parse_height_hard_error">Parsing height/difficulty failed</string>
-    <string name="get_peer_info_error">Failed to get peer information</string>
+    <string name="get_peer_info_error">Failed to get node information</string>
     <string name="eac_peer_list_">Earthcoin available nodes:</string>
     <string name="update">Update</string>
     <string name="version_info">Current version: %1$s (Latest version: %2$s)</string>

@@ -1,0 +1,996 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+  <!-- App name -->
+  <string name="About.appName.android">EACTALK</string>
+  <!-- About screen blog label -->
+  <string name="About.blog">Blogue</string>
+  <!-- About screen footer -->
+  <string name="About.footer">Fabriqué par l\'équipe EACTALK de la Fondation Earthcoin\n%1$s</string>
+  <!-- Privay Policy button label -->
+  <string name="About.privacy">Politique de confidentialité</string>
+  <!-- About screen reddit label -->
+  <string name="About.reddit">Reddit</string>
+  <!-- Terms of Use button label -->
+  <string name="About.terms">Conditions d\'utilisation</string>
+  <!-- About screen title -->
+  <string name="About.title">À propos de</string>
+  <!-- About screen twitter label -->
+  <string name="About.twitter">Twitter</string>
+  <!-- Close modal button accessibility label -->
+  <string name="AccessibilityLabels.close">Fermer</string>
+  <!-- Support center accessibiliy label -->
+  <string name="AccessibilityLabels.faq">Centre d\'assistance</string>
+  <!-- Loading Wallet Message -->
+  <string name="Account.loadingMessage">Chargement du portefeuille</string>
+  <!-- Default wallet name -->
+  <string name="AccountHeader.defaultWalletName">Mon EACTALK</string>
+  <!-- Equals symbol -->
+  <string name="AccountHeader.equals">=</string>
+  <!-- Manage wallet button title -->
+  <string name="AccountHeader.manageButtonName">GÉRER</string>
+  <!-- Third party keyboard warning -->
+  <string name="Alert.customKeyboard.android">Il semble que vous utilisez un clavier tiers. Ce dernier peut enregistrer ce que vous tapez et voler votre portefeuille papier. Veuillez basculer vers le clavier Android par défaut pour plus de sécurité.</string>
+  <!-- Error alert title -->
+  <string name="Alert.error">Erreur</string>
+  <!-- Keystore error -->
+  <string name="Alert.keystore.generic.android">Un problème est survenu avec votre keystore Android OS, veuillez contacter dev@eacpay.com</string>
+  <!-- KeyStore error, keys are invalidated -->
+  <string name="Alert.keystore.invalidated.android">Vos données cryptées de EACTALK ont été récemment invalidées, car le verrouillage de l\'écran de votre appareil Android a été désactivé.</string>
+  <!-- Keystore error title -->
+  <string name="Alert.keystore.title.android">Erreur avec le KeyStore Android</string>
+  <!-- No internet alert message -->
+  <string name="Alert.noInternet">Aucune connexion Internet n\'a été trouvée. Vérifiez votre connexion et réessayez.</string>
+  <!-- Warning alert title -->
+  <string name="Alert.warning">Avertissement</string>
+  <!-- 'the addresses were copied'' Alert title -->
+  <string name="Alerts.copiedAddressesHeader">Adresses copiées</string>
+  <!-- Addresses Copied Alert sub header -->
+  <string name="Alerts.copiedAddressesSubheader">Toutes les adresses du portefeuille ont été copiées avec succès.</string>
+  <!-- Alert Header Label (the paper key was set) -->
+  <string name="Alerts.paperKeySet">Ensemble de clés de papier</string>
+  <!-- Alert Subheader label (playfully positive) -->
+  <string name="Alerts.paperKeySetSubheader">Impressionnant !</string>
+  <!-- Alert Header label (the PIN was set) -->
+  <string name="Alerts.pinSet">Ensemble PIN</string>
+  <!-- Send failure alert header label (the send failed to happen) -->
+  <string name="Alerts.sendFailure">Échec de l\'envoi</string>
+  <!-- Send success alert header label (confirmation that the send happened) -->
+  <string name="Alerts.sendSuccess">Envoyer confirmation</string>
+  <!-- Send success alert subheader label (e.g. the money was sent) -->
+  <string name="Alerts.sendSuccessSubheader">Argent envoyé !</string>
+  <!-- Fingerprint was recognized by the scanner -->
+  <string name="Alerts.touchIdSucceeded.android">Empreinte digitale reconnue</string>
+  <!-- JSON Serialization error message -->
+  <string name="ApiClient.jsonError">Erreur de sérialisation de JSON</string>
+  <!-- Wallet not ready error message -->
+  <string name="ApiClient.notReady">Le portefeuille n\'est pas prêt</string>
+  <!-- API Token error message -->
+  <string name="ApiClient.tokenError">Impossible de récupérer le jeton de l\'API</string>
+  <!-- Send BCH view body. -->
+  <string name="BCH.body">Entrez une adresse BCH de destination ci-dessous. Tous les BCH dans votre portefeuille au moment où la fourchette (%1$s) seront envoyés.</string>
+  <!-- Confirm sending <$5.00> to <address>? -->
+  <string name="BCH.confirmationMessage">Confirmer l\'envoi de %1$s à %2$s</string>
+  <!-- Confirmation alert title -->
+  <string name="BCH.confirmationTitle">Confirmation</string>
+  <!-- Generic bch erorr message -->
+  <string name="BCH.genericError">Votre compte ne contient aucun BCH ou vous avez reçu le BCH après la fourchette.</string>
+  <!-- Transaction ID copied message -->
+  <string name="BCH.hashCopiedMessage">ID de transaction copiée</string>
+  <!-- No address error message -->
+  <string name="BCH.noAddressError">Veuillez entrer une adresse</string>
+  <!-- Attempted to scan unsupported qr code error message. -->
+  <string name="BCH.paymentProtocolError">Les demandes de protocole de paiement ne sont pas prises en charge pour les transactions BCH</string>
+  <!-- BCH successfully sent alert message -->
+  <string name="BCH.successMessage">BCH envoyés avec succès.</string>
+  <!-- Widthdraw BCH view title -->
+  <string name="BCH.title">Retirer les BCH</string>
+  <!-- Tx Hash button header -->
+  <string name="BCH.txHashHeader">ID de transaction BCH</string>
+  <!-- Approve button label -->
+  <string name="BitID.approve">Approuver</string>
+  <!-- <sitename> is requesting authentication using your bitcoin wallet -->
+  <string name="BitID.authenticationRequest">%1$s requiert l\'authentification en utilisant le portefeuille Earthcoin</string>
+  <!-- Deny button label -->
+  <string name="BitID.deny">Refuser</string>
+  <!-- BitID error alert title -->
+  <string name="BitID.error">Erreur d\'authentification</string>
+  <!-- BitID error alert messaage (The payment service you are trying to use isn't working. Please contact them, as you may need to try again) -->
+  <string name="BitID.errorMessage">Veuillez vérifier avec le service. Vous pourriez avoir à essayer de nouveau.</string>
+  <!-- BitID success alert title -->
+  <string name="BitID.success">Authentification réussie</string>
+  <!-- BitID Authentication Request alert view title -->
+  <string name="BitID.title">Demande d\'authentification BitID</string>
+  <!-- Cancel button label -->
+  <string name="Button.cancel">Annuler</string>
+  <!-- Ignore button label -->
+  <string name="Button.ignore">Ignorer</string>
+  <!-- menu button -->
+  <string name="Button.menu">menu</string>
+  <!-- No button -->
+  <string name="Button.no">Non</string>
+  <!-- OK button label -->
+  <string name="Button.ok">OK</string>
+  <!-- receive button -->
+  <string name="Button.receive">recevoir</string>
+  <!-- send button -->
+  <string name="Button.send">envoyer</string>
+  <!-- Settings button label -->
+  <string name="Button.settings">Paramètres</string>
+  <!-- Settings button label -->
+  <string name="Button.submit">Envoyer</string>
+  <!-- Yes button -->
+  <string name="Button.yes">Oui</string>
+  <!-- Camera plugin instruction -->
+  <string name="CameraPlugin.centerInstruction">Centrez votre identifiant dans le champ</string>
+  <!-- Amount to Send: ($1.00) -->
+  <string name="Confirmation.amountLabel">Montant à envoyer :</string>
+  <!-- Network Fee: ($1.00) -->
+  <string name="Confirmation.feeLabel">Frais de réseau :</string>
+  <!-- eg. Processing time: This transaction is predicted to complete in [10-60 minutes]. -->
+  <string name="Confirmation.processingTime">Temps de traitement : cette opération devrait se conclure dans %1$s.</string>
+  <!-- Label for "send" button on final confirmation screen -->
+  <string name="Confirmation.send">Envoyer</string>
+  <!-- Confirmation Screen title -->
+  <string name="Confirmation.title">Confirmation</string>
+  <!-- To: (address) -->
+  <string name="Confirmation.to">À</string>
+  <!-- Total Cost: ($5.00) -->
+  <string name="Confirmation.totalLabel">Coût total :</string>
+  <!-- Confirm paper phrase view label. -->
+  <string name="ConfirmPaperPhrase.label">Pour vous assurer que tout a été écrit correctement, entrez les mots suivants à partir de votre clé de papier.</string>
+  <!-- Word label eg. Word #1, Word #2 -->
+  <string name="ConfirmPaperPhrase.word">Mot no.%1$s</string>
+  <!-- Earthcoin denomination picker label -->
+  <string name="DefaultCurrency.litecoinLabel">Earthcoin Display Unit</string>
+  <!-- Exchange rate label -->
+  <string name="DefaultCurrency.rateLabel">Taux de change</string>
+  <!-- Email unavailable alert title -->
+  <string name="ErrorMessages.emailUnavailableMessage">Cet appareil n\'est pas configuré pour envoyer un e-mail avec l\'application e-mail pour iOS.</string>
+  <!-- Email unavailable alert title -->
+  <string name="ErrorMessages.emailUnavailableTitle">E-mail non disponible</string>
+  <!-- Messaging unavailable alert title -->
+  <string name="ErrorMessages.messagingUnavailableMessage">Cet appareil n\'est pas configuré pour envoyer des messages.</string>
+  <!-- Messaging unavailable alert title -->
+  <string name="ErrorMessages.messagingUnavailableTitle">Messagerie non disponible</string>
+  <!-- Fingerprint was not recognized by the scanner, please try scanning again -->
+  <string name="ErrorMessages.touchIdFailed.android">L\'empreinte digitale n\'a pas été reconnue. Veuillez réessayer.</string>
+  <!-- Economy fee -->
+  <string name="FeeSelector.economy">Économie</string>
+  <!-- E.g. [This transaction is predicted to complete in] 1-24 hours -->
+  <string name="FeeSelector.economyTime">10 minutes ou +</string>
+  <!-- Warning message for economy fee -->
+  <string name="FeeSelector.economyWarning">Cette option n\'est pas recommandée pour les transactions dont les délais sont cruciaux.</string>
+  <!-- E.g. Estimated delivery: 10-60 minutes -->
+  <string name="FeeSelector.estimatedDeliver">Délai de réception estimé : %1$s</string>
+  <!-- Regular fee -->
+  <string name="FeeSelector.regular">Régulier</string>
+  <!-- E.g. [This transaction is predicted to complete in] 10-60 minutes -->
+  <string name="FeeSelector.regularTime">2.5 à 5+ minutes</string>
+  <!-- Fee Selector title -->
+  <string name="FeeSelector.title">Vitesse de traitement</string>
+  <!-- Checking private key balance progress view text -->
+  <string name="Import.checking">Vérification du solde des clés privées...</string>
+  <!-- Sweep private key confirmation message -->
+  <string name="Import.confirm">Envoyer %1$s de cette clé privée dans votre portefeuille ? Le réseau Earthcoin recevra des frais de %2$s.</string>
+  <!-- Duplicate key error message -->
+  <string name="Import.Error.duplicate">Cette clé privée est déjà dans votre portefeuille.</string>
+  <!-- empty private key error message -->
+  <string name="Import.Error.empty">Cette clé privée est vide.</string>
+  <!-- High fees error message -->
+  <string name="Import.Error.highFees">Les frais de transactions excederaient le sold disponible sur cette clé privée</string>
+  <!-- Not a valid private key error message -->
+  <string name="Import.Error.notValid">Pas une clé privée valide</string>
+  <!-- Import signing error message -->
+  <string name="Import.Error.signing">Erreur lors de la signature de la transaction</string>
+  <!-- Import button label -->
+  <string name="Import.importButton">Importer</string>
+  <!-- Importing wallet progress view label -->
+  <string name="Import.importing">Importation du portefeuille</string>
+  <!-- Caption for graphics -->
+  <string name="Import.leftCaption">Portefeuille à importer</string>
+  <!-- Import wallet intro screen message -->
+  <string name="Import.message">L\'importation d\'un portefeuille transfère tout l\'argent de votre autre portefeuille vers votre portefeuille EACTALK avec une seule transaction.</string>
+  <!-- Enter password alert view title -->
+  <string name="Import.password">Cette clé privée est protégée par mot de passe.</string>
+  <!-- password textfield placeholder -->
+  <string name="Import.passwordPlaceholder">mot de passe</string>
+  <!-- Caption for graphics -->
+  <string name="Import.rightCaption">Votre portefeuille de EACTALK</string>
+  <!-- Scan Private key button label -->
+  <string name="Import.scan">Scanner la clé privée</string>
+  <!-- Import wallet success alert title -->
+  <string name="Import.success">Succès</string>
+  <!-- Successfully imported wallet message body -->
+  <string name="Import.SuccessBody">Portefeuille importé avec succès.</string>
+  <!-- Import Wallet screen title -->
+  <string name="Import.title">Importer le portefeuille</string>
+  <!-- Unlocking Private key activity view message. -->
+  <string name="Import.unlockingActivity">Clé de déverrouillage</string>
+  <!-- Import wallet intro warning message -->
+  <string name="Import.warning">L\'importation d\'un portefeuille n\'inclut pas l\'historique des transactions ou d\'autres détails.</string>
+  <!-- Wrong password alert message -->
+  <string name="Import.wrongPassword">Mauvais mot de passe, veuillez essayer de nouveau.</string>
+  <!-- Close app button -->
+  <string name="JailbreakWarnings.close">Fermer</string>
+  <!-- Ignore jailbreak warning button -->
+  <string name="JailbreakWarnings.ignore">Ignorer</string>
+  <!-- Jailbreak warning message -->
+  <string name="JailbreakWarnings.messageWithBalance">SÉCURITÉ DU DISPOSITIF COMPROMISE\n  Toute application « évasive » peut accéder aux données du porte-clé de EACTALK et voler vos Earthcoins ! Détruisez ce portefeuille immédiatement et restaurez-le sur un appareil sécurisé.</string>
+  <!-- Jailbreak warning message -->
+  <string name="JailbreakWarnings.messageWithoutBalance">SÉCURITÉ DU DISPOSITIF COMPROMISE\n  Toute application « évasive » peut accéder aux données du porte-clé de EACTALK et voler vos Earthcoins. N\'utilisez EACTALK que sur un appareil non évasif.</string>
+  <!-- Jailbreak warning title -->
+  <string name="JailbreakWarnings.title">AVERTISSEMENT</string>
+  <!-- Wipe wallet button -->
+  <string name="JailbreakWarnings.wipe">Supprimer</string>
+  <!-- Location services disabled error -->
+  <string name="LocationPlugin.disabled">Les services de localisation sont désactivés.</string>
+  <!-- No permissions for location services -->
+  <string name="LocationPlugin.notAuthorized">EACTALK n\'a pas l\'autorisation d\'accéder aux services de localisation.</string>
+  <!-- Wallet creation date prefix -->
+  <string name="ManageWallet.creationDatePrefix">Vous avez créé votre portefeuille sur %1$s</string>
+  <!-- Manage wallet description text -->
+  <string name="ManageWallet.description">Le nom de votre portefeuille n\'apparaît que dans l\'historique des transactions de votre compte et ne peut être vu par personne d\'autre.</string>
+  <!-- Change Wallet name textfield label -->
+  <string name="ManageWallet.textFeildLabel">Nom du portefeuille</string>
+  <!-- Manage wallet modal title -->
+  <string name="ManageWallet.title">Gérer le portefeuille</string>
+  <!-- Buy bitcoin title -->
+  <string name="MenuButton.buy">Acheter des Earthcoins</string>
+  <!-- Menu button title -->
+  <string name="MenuButton.lock">Verrouiller le portefeuille</string>
+  <!-- Menu button title -->
+  <string name="MenuButton.security">Centre de sécurité</string>
+  <!-- Menu button title -->
+  <string name="MenuButton.settings">Paramètres</string>
+  <!-- Menu button title -->
+  <string name="MenuButton.support">Assistance:      dev@eacpay.com</string>
+  <!-- button label -->
+  <string name="MenuViewController.createButton">Créer un nouveau portefeuille</string>
+  <!-- Menu modal title -->
+  <string name="MenuViewController.modalTitle">Menu</string>
+  <!-- button label -->
+  <string name="MenuViewController.recoverButton">Récupérer le portefeuille</string>
+  <!-- Switch to automatic mode button label -->
+  <string name="NodeSelector.automaticButton">Passer au mode automatique</string>
+  <!-- Node is connected label -->
+  <string name="NodeSelector.connected">Connecté</string>
+  <!-- Enter node ip address view body -->
+  <string name="NodeSelector.enterBody">Entrer l\'adresse IP et le port des nœuds (optionnel)</string>
+  <!-- Enter Node ip address view title -->
+  <string name="NodeSelector.enterTitle">Soumettre le nœud</string>
+  <!-- Switch to manual mode button label -->
+  <string name="NodeSelector.manualButton">Passer au mode manuel</string>
+  <!-- Node address label -->
+  <string name="NodeSelector.nodeLabel">Nœud principal actuel</string>
+  <!-- Node is not connected label -->
+  <string name="NodeSelector.notConnected">Non connecté</string>
+  <!-- Node status label -->
+  <string name="NodeSelector.statusLabel">Statut de connexion du nœud</string>
+  <!-- Node Selector view title -->
+  <string name="NodeSelector.title">Nœuds Earthcoin</string>
+  <!-- Bad Payment request alert title -->
+  <string name="PaymentProtocol.Errors.badPaymentRequest">Mauvaise demande de paiement</string>
+  <!-- Error opening payment protocol file message -->
+  <string name="PaymentProtocol.Errors.corruptedDocument">Document non pris en charge ou endommagé</string>
+  <!-- Missing certificate payment protocol error message -->
+  <string name="PaymentProtocol.Errors.missingCertificate">certificat manquant</string>
+  <!-- Request expired payment protocol error message -->
+  <string name="PaymentProtocol.Errors.requestExpired">demande expirée</string>
+  <!-- Payment too small alert title -->
+  <string name="PaymentProtocol.Errors.smallOutputError">Impossible de faire un paiement</string>
+  <!-- Amount too small error message -->
+  <string name="PaymentProtocol.Errors.smallPayment">Les paiements par Earthcoin ne peuvent être inférieurs à %1$s.</string>
+  <!-- Output too small error message. -->
+  <string name="PaymentProtocol.Errors.smallTransaction">Les résultats des transactions de Earthcoin ne peuvent pas être inférieurs à %1$s.</string>
+  <!-- Unsupported signature type payment protocol error message -->
+  <string name="PaymentProtocol.Errors.unsupportedSignatureType">type de signature non pris en charge</string>
+  <!-- Untrusted certificate payment protocol error message -->
+  <string name="PaymentProtocol.Errors.untrustedCertificate">certificat non approuvé</string>
+  <!-- No passcode set warning body -->
+  <string name="Prompts.NoPasscode.body">Un code d\'accès pour l\'appareil est requis pour sécuriser votre portefeuille. Allez aux paramètres et activez le code d\'accès.</string>
+  <!-- No Passcode set warning title -->
+  <string name="Prompts.NoPasscode.title">Activez le code d\'accès de l\'appareil</string>
+  <!-- Instruction how to enable device encryption -->
+  <string name="Prompts.NoScreenLock.body.android">Il est nécessaire de configurer un verrouillage d\'écran l\'appareil pour protéger votre portefeuille. Allez dans « Paramètres » &gt; « Sécurité » &gt; « Verrouillage d\'écran », puis activez-le pour continuer.</string>
+  <!-- Device encryption prompt title -->
+  <string name="Prompts.NoScreenLock.title.android">Verrouillage d\'écran désactivé</string>
+  <!-- Warning about paper key. -->
+  <string name="Prompts.PaperKey.body">Votre paperkey doit être sauvegardé au cas où vous perdiez ou changiez votre téléphone. Cliquez ici pour continuer.</string>
+  <!-- An action is required (You must do this action). -->
+  <string name="Prompts.PaperKey.title">Une action est requise</string>
+  <!-- Transaction rejected prompt body -->
+  <string name="Prompts.RecommendRescan.body">Votre portefeuille peut être désynchronisé. Cela peut souvent être corrigé en scannant la chaîne de blocs à nouveau.</string>
+  <!-- Transaction rejected prompt title -->
+  <string name="Prompts.RecommendRescan.title">Transaction rejetée</string>
+  <!-- Share data prompt body -->
+  <string name="Prompts.ShareData.body">Aidez à améliorer EACTALK en partageant vos données anonymes avec nous</string>
+  <!-- Share data prompt title -->
+  <string name="Prompts.ShareData.title">Partager les données anonymes</string>
+  <!-- Enable touch ID prompt body -->
+  <string name="Prompts.TouchId.body">Tapez ici pour activer Touch ID</string>
+  <!-- Enable Fingerprint prompt body -->
+  <string name="Prompts.TouchId.body.android">Appuyez ici pour activer l\'identification par empreinte digitale</string>
+  <!-- Enable touch ID prompt title -->
+  <string name="Prompts.TouchId.title">Activer Touch ID</string>
+  <!-- Enable Fingerprint prompt title -->
+  <string name="Prompts.TouchId.title.android">Activer l\'identification par empreinte digitale</string>
+  <!-- Button on fingerprint prompt so the user can enter their PIN instead -->
+  <string name="Prompts.TouchId.usePin.android">PIN</string>
+  <!-- Upgrade PIN prompt body. -->
+  <string name="Prompts.UpgradePin.body">EACTALK a été mis à niveau pour utiliser un code PIN à six chiffres. Appuyez ici pour mettre à niveau.</string>
+  <!-- Upgrade PIN prompt title. -->
+  <string name="Prompts.UpgradePin.title">Mettre à jour le code PIN</string>
+  <!-- Notifications will be added later but users can set their preferences now, which is why we specify "in the future". -->
+  <string name="PushNotifications.body">Activez les notifications pour recevoir des messages spéciaux de EACTALK à l\'avenir.</string>
+  <!-- Push notifications toggle switch label -->
+  <string name="PushNotifications.label">Notifications push</string>
+  <!-- Push notifications are off label -->
+  <string name="PushNotifications.off">Off</string>
+  <!-- Push notifications are on label -->
+  <string name="PushNotifications.on">On</string>
+  <!-- Push notifications settings view title label -->
+  <string name="PushNotifications.title">Notifications</string>
+  <!-- Address copied message. -->
+  <string name="Receive.copied">Copié dans le presse-papier.</string>
+  <!-- Share via email button label -->
+  <string name="Receive.emailButton">E-mail</string>
+  <!-- Request button label -->
+  <string name="Receive.request">Demander un montant</string>
+  <!-- Share button label -->
+  <string name="Receive.share">Partager</string>
+  <!-- Share via text message (SMS) -->
+  <string name="Receive.textButton">Message texte</string>
+  <!-- Receive modal title -->
+  <string name="Receive.title">Recevoir</string>
+  <!-- Done button text -->
+  <string name="RecoverWallet.done">Terminé</string>
+  <!-- Recover wallet header -->
+  <string name="RecoverWallet.header">Récupérer le portefeuille</string>
+  <!-- Reset PIN with paper key: header -->
+  <string name="RecoverWallet.header_reset_pin">Réinitialiser PIN</string>
+  <!-- Enter paper key instruction -->
+  <string name="RecoverWallet.instruction">Entrez la clé de papier</string>
+  <!-- Recover wallet intro -->
+  <string name="RecoverWallet.intro">Récupérez votre EACTALK avec votre clé de papier.</string>
+  <!-- Invalid paper key message -->
+  <string name="RecoverWallet.invalid">La clé de papier saisie n\'est pas valide. Revérifiez chaque mot et réessayez.</string>
+  <!-- Previous button accessibility label -->
+  <string name="RecoverWallet.leftArrow">Flèche gauche</string>
+  <!-- Next button label -->
+  <string name="RecoverWallet.next">Suivant</string>
+  <!-- Reset PIN with paper key: more information button. -->
+  <string name="RecoverWallet.reset_pin_more_info">Cliquez ici pour plus d\'informations.</string>
+  <!-- Next button accessibility label -->
+  <string name="RecoverWallet.rightArrow">Flèche droite</string>
+  <!-- Recover wallet sub-header -->
+  <string name="RecoverWallet.subheader">Entrez la clé de papier pour le portefeuille que vous souhaitez récupérer.</string>
+  <!-- Reset PIN with paper key: sub-header -->
+  <string name="RecoverWallet.subheader_reset_pin">Pour réinitialiser votre NIP, entrez les mots de votre clé papier dans les cases ci-dessous.</string>
+  <!-- No amount entered error message. -->
+  <string name="RequestAnAmount.noAmount">Veuillez entrer un montant d\'abord.</string>
+  <!-- Request a specific amount of bitcoin -->
+  <string name="RequestAnAmount.title">Demander un montant</string>
+  <!-- Alert action button label -->
+  <string name="ReScan.alertAction">Synchroniser</string>
+  <!-- Alert message body -->
+  <string name="ReScan.alertMessage">Vous ne pourrez pas envoyer d\'argent lors de la synchronisation.</string>
+  <!-- Alert message title -->
+  <string name="ReScan.alertTitle">Synchroniser avec la chaîne de bloc ?</string>
+  <!-- extimated time -->
+  <string name="ReScan.body1">20-45 minutes</string>
+  <!-- Syncing explanation -->
+  <string name="ReScan.body2">Si une transaction apparaît comme achevée sur le réseau de Earthcoin mais pas dans votre EACTALK.</string>
+  <!-- Syncing explanation -->
+  <string name="ReScan.body3">Vous recevez de manière répétée un message d\'erreur vous informant du rejet de votre transaction.</string>
+  <!-- Start Sync button label -->
+  <string name="ReScan.buttonTitle">Démarrer la synchronisation</string>
+  <!-- Sync blockchain view footer -->
+  <string name="ReScan.footer">Vous ne pourrez pas envoyer d\'argent en synchronisant avec la chaîne de blocs.</string>
+  <!-- Sync Blockchain view header -->
+  <string name="ReScan.header">Synchroniser chaîne de blocs</string>
+  <!-- Subheader label -->
+  <string name="ReScan.subheader1">Temps estimé</string>
+  <!-- Subheader label -->
+  <string name="ReScan.subheader2">Quand synchroniser ?</string>
+  <!-- Scan bitcoin address camera flash toggle -->
+  <string name="Scanner.flashButtonLabel">Flash d\'appareil photo</string>
+  <!-- Complete filter label -->
+  <string name="Search.complete">achevé</string>
+  <!-- Pending filter label -->
+  <string name="Search.pending">en attente</string>
+  <!-- Received filter label -->
+  <string name="Search.received">reçu</string>
+  <!-- Sent filter label -->
+  <string name="Search.sent">envoyé</string>
+  <!-- Security Center Info -->
+  <string name="SecurityCenter.info">Activez toutes les fonctionnalités de sécurité pour une protection maximale.</string>
+  <!-- Paper Key button description -->
+  <string name="SecurityCenter.paperKeyDescription">La seule façon d\'accéder à votre Earthcoin si vous perdez ou mettez à niveau votre téléphone.</string>
+  <!-- Paper Key button title -->
+  <string name="SecurityCenter.paperKeyTitle">Clé de papier</string>
+  <!-- PIN button description -->
+  <string name="SecurityCenter.pinDescription">Protège votre EACTALK contre les utilisateurs non autorisés.</string>
+  <!-- PIN button title -->
+  <string name="SecurityCenter.pinTitle">PIN à six chiffres</string>
+  <!-- Security Center Title -->
+  <string name="SecurityCenter.title">Centre de sécurité</string>
+  <!-- Touch ID button description -->
+  <string name="SecurityCenter.touchIdDescription">Débloquez convenablement votre EACTALK et envoyez de l\'argent jusqu\'à une limite définie.</string>
+  <!-- Touch ID button title -->
+  <string name="SecurityCenter.touchIdTitle">Touch ID</string>
+  <!-- Security center fingerprint authentication button -->
+  <string name="SecurityCenter.touchIdTitle.android">Identification par empreinte digitale</string>
+  <!-- Send money amount label -->
+  <string name="Send.amountLabel">Montant</string>
+  <!-- Balance: $4.00 -->
+  <string name="Send.balance">Solde : %1$s</string>
+  <!-- Instructions how to allow the camera access for the app -->
+  <string name="Send.cameraUnavailabeMessage.android">Autoriser l\'accès à l\'appareil photo en allant dans « Paramètres » &gt; « Apps » &gt; « EACTALK » &gt; « Permissions »</string>
+  <!-- Permission required to access camera -->
+  <string name="Send.cameraUnavailabeTitle.android">EACTALK n\'est pas autorisé à accéder à l\'appareil photo</string>
+  <!-- Camera not allowed message -->
+  <string name="Send.cameraunavailableMessage">Accédez à Paramètres pour autoriser l\'accès à la caméra.</string>
+  <!-- Camera not allowed alert title -->
+  <string name="Send.cameraUnavailableTitle">EACTALK n\'est pas autorisé à accéder à la caméra</string>
+  <!-- Warning when sending to self. -->
+  <string name="Send.containsAddress">La destination est votre propre adresse. Vous ne pouvez pas envoyer à vous même.</string>
+  <!-- Could not create transaction alert title -->
+  <string name="Send.creatTransactionError">Impossible de créer une transaction.</string>
+  <!-- Description for sending money label -->
+  <string name="Send.descriptionLabel">Mémo</string>
+  <!-- Emtpy pasteboard error message -->
+  <string name="Send.emptyPasteboard">Le tableau d\'affichage est vide.</string>
+  <!-- Network Fee: $0.01 -->
+  <string name="Send.fee">Frais de réseau : %1$s</string>
+  <!-- Payee identity not certified alert title. -->
+  <string name="Send.identityNotCertified">L\'identité du bénéficiaire n\'est pas certifiée.</string>
+  <!-- Invalid address alert message -->
+  <string name="Send.invalidAddressMessage">L\'adresse de destination n\'est pas une adresse Earthcoin valide.</string>
+  <!-- Invalid address on pasteboard message -->
+  <string name="Send.invalidAddressOnPasteboard">Le tableau d\'affichage ne contient aucune adresse Earthcoin valide.</string>
+  <!-- Invalid address alert title -->
+  <string name="Send.invalidAddressTitle">Adresse non valide</string>
+  <!-- Is rescanning error message -->
+  <string name="Send.isRescanning">L\'envoi est désactivé pendant un renumérisation complète.</string>
+  <!-- We are loading the request (now) -->
+  <string name="Send.loadingRequest">Chargement de la demande</string>
+  <!-- Empty address alert message -->
+  <string name="Send.noAddress">Entrez l\'adresse du destinataire.</string>
+  <!-- Emtpy amount alert message -->
+  <string name="Send.noAmount">Entrez un montant à envoyer.</string>
+  <!-- Paste button label -->
+  <string name="Send.pasteLabel">Coller</string>
+  <!-- Could not publish transaction alert title -->
+  <string name="Send.publishTransactionError">Impossible de publier la transaction.</string>
+  <!-- Could not load remote request error message -->
+  <string name="Send.remoteRequestError">Impossible de charger la demande de paiement</string>
+  <!-- Scan button label -->
+  <string name="Send.scanLabel">Scanner</string>
+  <!-- Send button label (the action, "press here to send") -->
+  <string name="Send.sendLabel">Envoyer</string>
+  <!-- Send screen title (as in "this is the screen for sending money") -->
+  <string name="Send.title">Envoyer</string>
+  <!-- Send money to label -->
+  <string name="Send.toLabel">Entrez une adresse Earthcoin</string>
+
+  <!-- Enter to match domain name to LTC Address -->
+  <!--  <string name="Send.UnstoppableDomains.placeholder">Entrez un domaine .crypto ou .zil</string> -->
+  <!-- Or -->
+  <!--  <string name="Send.or">Ou</string> -->
+  <!-- Lookup -->
+  <!--  <string name="Send.UnstoppableDomains.lookup">Chercher</string> -->
+  <!-- Your address was resolved! -->
+  <!-- <string name="Send.UnstoppableDomains.domainResolved">Votre adresse a été résolue!</string> -->
+
+  <!-- Adress already used alert message - first part -->
+  <string name="Send.UsedAddress.firstLine">Les adresses Earthcoin sont destinées à une utilisation unique.</string>
+  <!-- Adress already used alert message - second part -->
+  <string name="Send.UsedAddress.secondLIne">La réutilisation réduit la confidentialité pour vous et le destinataire et peut entraîner une perte si le destinataire ne contrôle pas directement l\'adresse.</string>
+  <!-- Adress already used alert title -->
+  <string name="Send.UsedAddress.title">Adresse déjà utilisée</string>
+  <!-- About label -->
+  <string name="Settings.about">À propos de</string>
+  <!-- Advanced Settings title -->
+  <string name="Settings.advancedTitle">Paramètres avancés</string>
+  <!-- i.e. the currency which will be displayed -->
+  <string name="Settings.currency">Afficher la devise</string>
+  <!-- Join Early access label -->
+  <string name="Settings.earlyAccess">Rejoignez l\'accès anticipé</string>
+  <!-- Are you enjoying EACTALK alert message body -->
+  <string name="Settings.enjoying">Vous aimez EACTALK ?</string>
+  <!-- Import wallet label -->
+  <string name="Settings.importTitle">Importer le portefeuille</string>
+  <!-- Manage settings section header -->
+  <string name="Settings.manage">Gérer</string>
+  <!-- Notifications label -->
+  <string name="Settings.notifications">Notifications</string>
+  <!-- Leave review button label -->
+  <string name="Settings.review">Laissez-nous un commentaire</string>
+  <!-- Share anonymous data label -->
+  <string name="Settings.shareData">Partager des données anonymes</string>
+  <!-- Sync blockchain label -->
+  <string name="Settings.sync">Synchroniser chaîne de blocs</string>
+  <!-- Settings title -->
+  <string name="Settings.title">Paramètres</string>
+  <!-- Touch ID spending limit label -->
+  <string name="Settings.touchIdLimit">Limite de dépenses de Touch ID</string>
+  <!-- The fingerprint spending limit -->
+  <string name="Settings.touchIdLimit.android">Limite de dépenses par identification par empreinte digitale</string>
+  <!-- Wallet Settings section header -->
+  <string name="Settings.wallet">Portefeuille</string>
+  <!-- Start or recover another wallet menu label. -->
+  <string name="Settings.wipe">Démarrer/récupérer un autre portefeuille</string>
+  <!-- Share data view body -->
+  <string name="ShareData.body">Aidez à améliorer EACTALK en partageant vos données anonymes avec nous. Cela n\'inclut aucune information financière. Nous respectons votre confidentialité financière.</string>
+  <!-- Share data header -->
+  <string name="ShareData.header">Partager les données ?</string>
+  <!-- Share data switch label. -->
+  <string name="ShareData.toggleLabel">Partager des données anonymes ?</string>
+  <!-- button label -->
+  <string name="StartPaperPhrase.againButtonTitle">Enregistrez la clé de papier à nouveau</string>
+  <!-- Paper key explanation text. -->
+  <string name="StartPaperPhrase.body">Votre clé de papier est la seule façon de restaurer votre EACTALK si votre téléphone est perdu, volé, cassé ou mis à niveau.\n\nNous vous montrerons une liste de mots à écrire sur un morceau de papier et à garder en sécurité.</string>
+  <!-- button label -->
+  <string name="StartPaperPhrase.buttonTitle">Écrire la clé de papier</string>
+  <!-- Argument is date -->
+  <string name="StartPaperPhrase.date">Vous avez finalement écrit votre clé de papier sur %1$s</string>
+  <!-- Start view message -->
+  <string name="StartViewController.message">La façon la plus sécurisée et sûre d\'utiliser Earthcoin.</string>
+  <!-- Syncing view connectiong state header text -->
+  <string name="SyncingView.connecting">Connexion…</string>
+  <!-- Syncing view header text -->
+  <string name="SyncingView.header">Synchronisation</string>
+  <!-- Retry button label -->
+  <string name="SyncingView.retry">Réessayer</string>
+  <!-- Syncing view syncing state header text -->
+  <string name="SyncingView.syncing">Synchronisation</string>
+  <!-- 6 d (6 days) -->
+  <string name="TimeSince.days">%1$s d</string>
+  <!-- 6 h (6 hours) -->
+  <string name="TimeSince.hours">%1$s h</string>
+  <!-- 6 m (6 minutes) -->
+  <string name="TimeSince.minutes">%1$s m</string>
+  <!-- 6 s (6 seconds) -->
+  <string name="TimeSince.seconds">%1$s s</string>
+  <!-- You can customize your Touch ID Spending Limit from the [TouchIdSettings.linkText gets added here as a button] -->
+  <string name="TouchIdSettings.customizeText">Vous pouvez personnaliser votre plafond de dépenses Touch ID à partir de %1$s.</string>
+  <!-- Fingerprint enabling description body -->
+  <string name="TouchIdSettings.customizeText.android">Vous pouvez personnaliser votre limite de dépenses par une identification par empreinte digitale depuis l\'écran consacré à la limite de dépenses par une identification par empreinte digitale</string>
+  <!-- Instruction for the fingerprint setup -->
+  <string name="TouchIdSettings.disabledWarning.body.android">Vous n\'avez pas active l\'identification par empreinte digitale sur cet appareil. Allez dans « Paramètres », puis dans « Sécurité », pour configurer l\'identification par empreinte digitale</string>
+  <!-- Fingerprint Is Not Setup -->
+  <string name="TouchIdSettings.disabledWarning.title.android">L\'identification par empreinte digitale n\'est pas activée</string>
+  <!-- Touch Id screen label -->
+  <string name="TouchIdSettings.label">Utilisez votre empreinte digitale pour débloquer votre EACTALK et envoyer de l\'argent jusqu\'à une limite définie.</string>
+  <!-- Link Text (see TouchIdSettings.customizeText) -->
+  <string name="TouchIdSettings.linkText">Écran de plafond de dépenses Touch ID</string>
+  <!-- Spending Limit: b100,000 ($100) -->
+  <string name="TouchIdSettings.spendingLimit">Limite de dépenses : %1$s (%2$s)</string>
+  <!-- Touch id switch label. -->
+  <string name="TouchIdSettings.switchLabel">Activer Touch ID pour EACTALK</string>
+  <!-- Enable fingerprint for this wallet called EACTALK -->
+  <string name="TouchIdSettings.switchLabel.android">Activer l\'identification par empreinte digitale</string>
+  <!-- Touch ID settings view title -->
+  <string name="TouchIdSettings.title">Touch ID</string>
+  <!-- Fingerprint authentication label -->
+  <string name="TouchIdSettings.title.android">Identification par empreinte digitale</string>
+  <!-- Touch ID unavailable alert message -->
+  <string name="TouchIdSettings.unavailableAlertMessage">Vous n\'avez pas configuré Touch ID sur cet appareil. Accédez à Paramètres -&gt; Touch ID et mot de passe pour le configurer maintenant.</string>
+  <!-- Touch ID unavailable alert title -->
+  <string name="TouchIdSettings.unavailableAlertTitle">Touch ID non configuré</string>
+  <!-- Always require passcode option -->
+  <string name="TouchIdSpendingLimit">Toujours demander un code d\'accès</string>
+  <!-- Touch ID spending limit screen body -->
+  <string name="TouchIdSpendingLimit.body">Vous devrez entrer votre code PIN à six chiffres pour envoyer une transaction supérieure à votre limite de dépenses et toutes les 48 heures depuis la dernière fois que vous avez entré votre code PIN à six chiffres.</string>
+  <!-- Touch Id spending limit screen title -->
+  <string name="TouchIdSpendingLimit.title">Limite de dépenses de Touch ID</string>
+  <!-- name of spending limit when using fingerprint authorization -->
+  <string name="TouchIdSpendingLimit.title.android">Limite de dépenses par identification par empreinte digitale</string>
+  <!-- Availability status text -->
+  <string name="Transaction.available">Disponible pour dépenser</string>
+  <!-- Transaction complete label -->
+  <string name="Transaction.complete">Terminer</string>
+  <!-- eg. Ending balance: $50.00 -->
+  <string name="Transaction.ending">Solde final : %1$s</string>
+  <!-- Exchange rate on date header -->
+  <string name="Transaction.exchangeOnDayReceived">Taux de change au moment de la réception :</string>
+  <!-- Exchange rate on date header -->
+  <string name="Transaction.exchangeOnDaySent">Taux de change au moment de l\'envoi :</string>
+  <!-- (b600 fee) -->
+  <string name="Transaction.fee">(frais de %1$s)</string>
+  <!-- Invalid transaction -->
+  <string name="Transaction.invalid">NON VALIDE</string>
+  <!-- Timestamp label for event that just happened -->
+  <string name="Transaction.justNow">juste maintenant</string>
+  <!-- Receive status text: 'In progress: 20%' -->
+  <string name="Transaction.receivedStatus">En cours : %1$s</string>
+  <!-- Send status text: 'In progress: 20%' -->
+  <string name="Transaction.sendingStatus">En cours : %1$s</string>
+  <!-- eg. Starting balance: $50.00 -->
+  <string name="Transaction.starting">Solde initial : %1$s</string>
+  <!-- Waiting to be confirmed string -->
+  <string name="Transaction.waiting">En attente d\'être confirmé. Certains vendeurs exigent une confirmation pour mener à bien une transaction. Temps estimé : 1-2 heures.</string>
+  <!-- e.g. I received money from an account. -->
+  <string name="TransactionDetails.account">compte</string>
+  <!-- Amount section header -->
+  <string name="TransactionDetails.amountHeader">Montant</string>
+  <!-- Block height label -->
+  <string name="TransactionDetails.blockHeightLabel">Confirmé en bloc</string>
+  <!-- Memo section header -->
+  <string name="TransactionDetails.commentsHeader">Mémo</string>
+  <!-- Empty transaction list message. -->
+  <string name="TransactionDetails.emptyMessage">Vos transactions apparaîtront ici.</string>
+  <!-- "Received [$5] at [which of my addresses]" => This is the "at [which of my addresses]" part. -->
+  <string name="TransactionDetails.from">à %1$s</string>
+  <!-- More button title -->
+  <string name="TransactionDetails.more">Plus...</string>
+  <!-- Moved $5.00 (as in "I moved $5 to another location") -->
+  <string name="TransactionDetails.moved">Transféré %1$s</string>
+  <!-- Moved $5.00 -->
+  <string name="TransactionDetails.movedAmountDescription">Déplacé  <b>%1$s</b></string>
+  <!-- eg. Confirmed in Block: Not Confirmed -->
+  <string name="TransactionDetails.notConfirmedBlockHeightLabel">Non confirmé</string>
+  <!-- "Received [$5] at [which of my addresses]" => This is the "Received [$5]" part. -->
+  <string name="TransactionDetails.received">A reçu %1$s</string>
+  <!-- Received $5.00 -->
+  <string name="TransactionDetails.receivedAmountDescription">Reçu <b>%1$s</b></string>
+  <!-- "Sent [$5] to [address]" => This is the "Sent [$5]" part. -->
+  <string name="TransactionDetails.sent">A envoyé %1$s</string>
+  <!-- Sent $5.00 -->
+  <string name="TransactionDetails.sentAmountDescription">Envoyé <b>%1$s</b></string>
+  <!-- Status section header -->
+  <string name="TransactionDetails.statusHeader">État</string>
+  <!-- Transaction Details Title -->
+  <string name="TransactionDetails.title">Détails de la transaction</string>
+  <!-- "Sent [$5] to [address]" => This is the "to [address]" part. -->
+  <string name="TransactionDetails.to">jusqu\'à %1$s</string>
+  <!-- Transaction ID header -->
+  <string name="TransactionDetails.txHashHeader">Identifiant de transaction Earthcoin</string>
+  <!-- (this transaction was) Received at this address: -->
+  <string name="TransactionDirection.address">Reçu à cette adresse</string>
+  <!-- (this transaction was) Sent to this address: -->
+  <string name="TransactionDirection.to">Envoyé à cette adresse</string>
+  <!-- Disabled until date -->
+  <string name="UnlockScreen.disabled">Désactivé jusqu\'à : %1$s</string>
+  <!-- My Address button title -->
+  <string name="UnlockScreen.myAddress">Mon adresse</string>
+  <!-- Reset PIN with Paper Key button label. -->
+  <string name="UnlockScreen.resetPin">Réinitialiser PIN</string>
+  <!-- Scan button title -->
+  <string name="UnlockScreen.scan">Scanner</string>
+  <!-- Unlock Screen sub-header -->
+  <string name="UnlockScreen.subheader">Entrer le PIN</string>
+  <!-- Instruction to touch the sensor for fingerprint authentication -->
+  <string name="UnlockScreen.touchIdInstructions.android">Appuyez sur le capteur</string>
+  <!-- TouchID prompt text -->
+  <string name="UnlockScreen.touchIdPrompt">Déverrouillez votre EACTALK.</string>
+  <!-- Device authentication body -->
+  <string name="UnlockScreen.touchIdPrompt.android">Veuillez déverrouiller votre appareil Android pour continuer.</string>
+  <!-- Unlock with TouchID accessibility label -->
+  <string name="UnlockScreen.touchIdText">Déverrouiller avec TouchID</string>
+  <!-- Device authentication title -->
+  <string name="UnlockScreen.touchIdTitle.android">Identification nécessaire</string>
+  <!-- Wallet unlocked message -->
+  <string name="UnlockScreen.unlocked">Portefeuille déverrouillé</string>
+  <!-- Update PIN caption text -->
+  <string name="UpdatePin.caption">Souvenez-vous de ce code PIN. Si vous l\'oubliez, vous ne pourrez pas accéder à votre Earthcoin.</string>
+  <!-- PIN creation info. -->
+  <string name="UpdatePin.createInstruction">Votre NIP sera utilisé pour débloquer votre EACTALK et envoyer de l\'argent.</string>
+  <!-- Update PIN title -->
+  <string name="UpdatePin.createTitle">Définir PIN</string>
+  <!-- Update PIN title -->
+  <string name="UpdatePin.createTitleConfirm">Entrer le PIN à nouveau</string>
+  <!-- Enter current PIN instruction -->
+  <string name="UpdatePin.enterCurrent">Entrez votre code PIN actuel.</string>
+  <!-- Enter new PIN instruction -->
+  <string name="UpdatePin.enterNew">Entrez votre code PIN nouveau.</string>
+  <!-- Re-Enter new PIN instruction -->
+  <string name="UpdatePin.reEnterNew">Entrez votre nouveau PIN à nouveau.</string>
+  <!-- Update PIN failure error message. -->
+  <string name="UpdatePin.setPinError">Désolés, nous n\'avons pas pu mettre à jour le code PIN.</string>
+  <!-- Update PIN failure alert view title -->
+  <string name="UpdatePin.setPinErrorTitle">Erreur de mise à jour du code PIN</string>
+  <!-- Update PIN title -->
+  <string name="UpdatePin.updateTitle">Mettre à jour le code PIN</string>
+  <!-- Authorize to copy wallet addresses alert message -->
+  <string name="URLHandling.addressaddressListAlertMessage">Copier les adresses du portefeuille dans le presse-papiers ?</string>
+  <!-- Authorize to copy wallet address PIN view prompt. -->
+  <string name="URLHandling.addressList">Autoriser à copier l\'adresse du portefeuille dans le presse-papiers</string>
+  <!-- Authorize to copy wallet address alert title -->
+  <string name="URLHandling.addressListAlertTitle">Copier les adresses du portefeuille</string>
+  <!-- Copy wallet addresses alert button label -->
+  <string name="URLHandling.copy">Copier</string>
+  <!-- Verify PIN for transaction view body -->
+  <string name="VerifyPin.authorize">Veuillez entrer votre NIP pour autoriser cette transaction.</string>
+  <!-- Verify PIN view body -->
+  <string name="VerifyPin.continueBody">Entrez votre code PIN pour continuer.</string>
+  <!-- Verify PIN view title -->
+  <string name="VerifyPin.title">PIN requis</string>
+  <!-- Authorize transaction with touch id message -->
+  <string name="VerifyPin.touchIdMessage">Autoriser cette transaction</string>
+  <!-- 'No wallet' warning for watch app -->
+  <string name="Watch.noWalletWarning">Ouvrez l\'application EACTALK pour iPhone pour configurer votre portefeuille.</string>
+  <!-- Dismiss button label -->
+  <string name="Webview.dismiss">Rejeter</string>
+  <!-- Webview loading error message -->
+  <string name="Webview.errorMessage">Une erreur s\'est produite lors du chargement du contenu. Veuillez réessayer.</string>
+  <!-- Updating webview message -->
+  <string name="Webview.updating">Mise à jour...</string>
+  <!-- Welcome screen text. (?) will be replaced with the help icon users should look for. -->
+  <string name="Welcome.body">EACTALK est la première application web social 3.0 pour la publication d\'informations métavers, si vous avez besoin d\'aide, veuillez utiliser le (?)</string>
+  <!-- Top title of welcome screen -->
+  <string name="Welcome.title">Bienvenue chez EACTALK !</string>
+  <!-- Wipe wallet alert message -->
+  <string name="WipeWallet.alertMessage">Souhaitez-vous vraiment supprimer ce portefeuille ?</string>
+  <!-- Wipe wallet alert title -->
+  <string name="WipeWallet.alertTitle">Effacer le portefeuille ?</string>
+  <!-- Failed wipe wallet alert message -->
+  <string name="WipeWallet.failedMessage">Échec de la suppression du portefeuille.</string>
+  <!-- Failed wipe wallet alert title -->
+  <string name="WipeWallet.failedTitle">Échec</string>
+  <!-- Enter phrase to wipe wallet instruction. -->
+  <string name="WipeWallet.instruction">Soumettez la phrase de récupération de ce portefeuille pour l\'effacer et commencer à en récupérer un autre. Votre solde actuel demeure sur cette phrase.</string>
+  <!-- Start wipe wallet view message -->
+  <string name="WipeWallet.startMessage">L\'ouverture ou la récupération d\'un autre portefeuille vous permet d\'accéder et de gérer différents portefeuilles EACTALK depuis cet appareil.</string>
+  <!-- Start wipe wallet view warning -->
+  <string name="WipeWallet.startWarning">Vous ne pourrez plus accéder à votre portefeuille EACTALK depuis cet appareil. Le solde restera inchangé.</string>
+  <!-- Wipe wallet navigation item title. -->
+  <string name="WipeWallet.title">Commencer un nouveau portefeuille ou récupérer un autre portefeuille</string>
+  <!-- Wipe wallet button title -->
+  <string name="WipeWallet.wipe">Effacer</string>
+  <!-- Wiping activity message -->
+  <string name="WipeWallet.wiping">Effacement...</string>
+  <!-- Paper key instructions. -->
+  <string name="WritePaperPhrase.instruction">Écrivez chaque mot en ordre et rangez-le dans un lieu sûr.</string>
+  <!-- button label -->
+  <string name="WritePaperPhrase.next">Suivant</string>
+  <!-- button label -->
+  <string name="WritePaperPhrase.previous">Précédent</string>
+  <!-- 1 of 3 -->
+  <string name="WritePaperPhrase.step">%1$d de %2$d</string>
+  <string name="Donate.title">Faites un don à la Fondation Earthcoin (%1$s)</string>
+  <string name="Donate.title.confirmation">Confirmer le don</string>
+  <string name="Confirmation.processingAndDonationTime">Temps de traitement: le traitement de ces transactions prendra %1$s minutes.</string>
+  <string name="Confirmation.donateLabel">Montant à donner:</string>
+  <string name="Confirmation.staticAddressLabel">Adresse:</string>
+  <string name="Donate.word">Faire un don</string>
+  <string name="Donate.toThe">"Faire un don à "</string>
+  <string name="FeeSelector.luxury">Luxe</string>
+  <string name="FeeSelector.luxuryMessage">Cette option garantit pratiquement l\'acceptation de votre transaction même si vous payez une prime.</string>
+  <string name="FeeSelector.luxuryTime">2.5 à 5+ minutes</string>
+  <string name="settings">Paramètres</string>
+  <string name="message">Un message</string>
+  <string name="ipfs">IPFS</string>
+  <string name="MenuButton.supportCenter">Centre de soutien</string>
+  <string name="supportCenter.eac">Introduction EAC et utilisation d"EACTALK</string>
+  <string name="supportCenter.gainEac">Comment obtenir EAC</string>
+  <string name="supportCenter.buyEac">Acheter le didacticiel EAC</string>
+  <string name="supportCenter.transEac">Retrait vers le tutoriel EACTALK</string>
+  <string name="supportCenter.drawEac">Cours Mining EAC</string>
+  <string name="supportCenter.eacnode">Tutoriel de construction de noeuds Earthcoin</string>
+  <string name="supportCenter.supportS">Échange de soutien</string>
+  <string name="supportCenter.supportA">Pool d"assistance</string>
+  <string name="supportCenter.supportP">Sites Web et applications utilisant EACTALK</string>
+  <string name="txt.support">Support</string>
+  <string name="txt.tutorial">Didacticiel</string>
+  <string name="txt.introduction_and_use_of_eac">
+    EAC est une crypto-monnaie mondiale basée sur un algorithme de scrypt publié à Toronto, au Canada, le 20 décembre 2013, qui s"engage pour un développement durable et équitable. C\'est une nouvelle génération de monnaie scrypt et une extension de la monnaie Wright. Similaire à lightcoin - utilisant un mécanisme de preuve de charge de travail scrypt. La géo-monnaie est une monnaie numérique révolutionnaire et unique dont la popularité augmente rapidement. Ses fondateurs estiment que la crypto-monnaie a le potentiel de changer le monde. L\'attrait de la pièce de monnaie terrestre vient évidemment de son expérience en marketing, de son historique de fonctionnement stable et de sa large reconnaissance. La technologie sous-jacente de la monnaie terrestre a résolu certains défauts précoces de la crypto-monnaie.
+  </string>
+  <string name="txt.mining_eac_course">
+    EAC prend actuellement en charge le mode d"extraction aux-pow, c\'est-à-dire qu\'il prend en charge l\'extraction conjointe. Il peut extraire EAC tout en exploitant LTC ou Doge. Il a besoin du support de la piscine. S\'il ne le prend pas en charge, adressez-vous à votre fournisseur de services de piscine. Tant que la machine minière qui peut extraire LTC et Doge peut extraire EAC.
+  </string>
+  <string name="txt.you_can_view">
+    Obtenez EAC
+  </string>
+  <string name="txt.i_see">
+    je vois
+  </string>
+  <string name="txt.pick_photo">Sélectionner une photo</string>
+  <string name="txt.unknown_qrcode">QRCode inconnu</string>
+  <string name="tx_message">Message</string>
+
+    <!--  add by eactalk team  -->
+    <string name="about">À propos de nous</string>
+    <string name="home_url">API d\'accueil</string>
+    <string name="earth_coin_node">Nœud Earthcoin</string>
+    <string name="node_settings">Paramètres du nœud</string>
+    <string name="automatic">Automatique</string>
+    <string name="manual">Manuel</string>
+    <string name="save_success">Enregistrer le succès</string>
+    <string name="git">Code hosting</string>
+    <string name="import_success">Importation réussie</string>
+    <string name="contact">Adresse</string>
+    <string name="copy_success">Copie réussie</string>
+    <string name="save">Sauver</string>
+    <string name="cancel">Annuler</string>
+    <string name="enter_complete_info">Veuillez saisir les informations complètes</string>
+    <string name="tips">Conseils</string>
+    <string name="confirm_delete_address">Veuillez confirmer si vous souhaitez supprimer l\'adresse sélectionnée ? Elle ne peut pas être restaurée après la suppression, vous pouvez l\'ajouter à nouveau.</string>
+    <string name="submit">Soumettre</string>
+    <string name="delete_success">Supprimer le succès</string>
+    <string name="contact_info">Adresse</string>
+    <string name="copy_success_">Copie réussie:</string>
+    <string name="edit">Editer</string>
+    <string name="help">Aide</string>
+    <string name="shbl">Deepthroat</string>
+    <string name="zgtx">Trompette</string>
+    <string name="qggc">Émotion</string>
+    <string name="sdtc">Treehole</string>
+    <string name="api_url_error">Erreur d\'url API</string>
+    <string name="message_info">Message info</string>
+    <string name="status_submit"><![CDATA[Statut: <font color=\'#3d86f8\'>%1$d</font> confirmer]]></string>
+    <string name="received_">Reçu:</string>
+    <string name="sended_">Envoyé:</string>
+    <string name="from_">De:</string>
+    <string name="date_">Date:</string>
+    <string name="language_same">La langue d\'origine est la même que celle du système, aucune traduction n\'est nécessaire.</string>
+    <string name="translate_fail">La traduction a échoué</string>
+    <string name="identify_language_fail">Incapacité à reconnaître la langue</string>
+    <string name="cancel_like">Unsuivre</string>
+    <string name="confirm_cancel_like">Unsuivre %1$s ?</string>
+    <string name="like">Suivre</string>
+    <string name="unlike_success">Unsuivre Succès</string>
+    <string name="nickname_">Alias:</string>
+    <string name="liked">Suivi</string>
+    <string name="E__">(E)</string>
+    <string name="no_extra">Pas d\'attachement</string>
+    <string name="extra_">Attachment:</string>
+    <string name="earth_coin_browser">Earthcoin navigateur</string>
+    <string name="set_key">Définissez le mnémonique</string>
+    <string name="start_recovery_account">Démarrer/Restaurer un autre compte</string>
+    <string name="remove_account">Effacer le compte</string>
+    <string name="confirm_remove_account">Voulez-vous vraiment effacer ce compte?</string>
+    <string name="tips_key_error">Le mnémonique que vous avez saisi n\'est pas valide, veuillez vérifier chaque mot et réessayer</string>
+    <string name="close">Proche</string>
+    <string name="max_storage">Stockage maximal(GB)</string>
+    <string name="select_ipfs_path">Sélectionnez le chemin de stockage IPFS</string>
+    <string name="default_node">Nœud par défaut</string>
+    <string name="default_gateway">Passerelle par défaut</string>
+    <string name="listen_privacy"><![CDATA[Accord d\'utilisation&Confidentialité]]></string>
+    <string name="reclick_exit">Reculer à nouveau EACTALK</string>
+    <string name="my_like">Mon suivi</string>
+    <string name="tip_mine_flash">Fonctionnalité encore en développement... Le support d\'échange est requis, veuillez initier une proposition à Coinbase pour supporter l\'EAC.</string>
+    <string name="eactalk_team">EACTALK équipe</string>
+    <string name="contact_us">Nous contacter</string>
+    <string name="time_">Temps:</string>
+    <string name="ipfs_connecting">IPFS: Connexion</string>
+    <string name="eac_connecting">EAC: Connexion</string>
+    <string name="eac_sync_complete">EAC: Sync complète</string>
+    <string name="ipfs_close">IPFS: fermé</string>
+    <string name="eac_syncing">EAC: synchronisation</string>
+    <string name="export_success_">"Succès à l\'export: "</string>
+    <string name="loading">Chargement</string>
+    <string name="confirm_send_message">Êtes-vous sûr de vouloir envoyer un message, plus de caractères ne peuvent pas être affichés et l\'EAC payé ne peut pas être retourné? Envoyer le compte à rebours (%1$d seconde)</string>
+    <string name="tip_eac_syncing">La blockchain est en cours de synchronisation et ne peut ni envoyer ni répondre aux messages. Veuillez attendre que la synchronisation soit terminée.</string>
+    <string name="send_normal">Publier un message peer-to-peer</string>
+    <string name="send_notice">Publier un message d\'annonce</string>
+    <string name="min_eac">Montant (≥ %1$d EAC, &#060; unAfficher,trié par montant)</string>
+    <string name="file_name_">"Nom de fichier: "</string>
+    <string name="confirm_sensitive_word">Vous avez posté un message contenant le mot sensible : %1$s qui sera remplacé par * lors de son affichage, souhaitez-vous continuer ?</string>
+    <string name="insufficient_balance">Solde insuffisant</string>
+    <string name="not_less_than">Ne peut pas tomber en dessous de l\'EAC minimum</string>
+    <string name="message_too_long">Message trop long</string>
+    <string name="sending">Envoyer...</string>
+    <string name="tip_send_notice_success">Ne désactivez pas l\'alerte d\'état dans la barre de notification pour permettre aux autres utilisateurs de visualiser plus rapidement les pièces jointes que vous avez téléchargées.</string>
+    <string name="send_success">Publié avec succès</string>
+    <string name="set_pin">Configurer un NIP</string>
+    <string name="set_complete">Configuration terminée</string>
+    <string name="set_pin_success">Définir le code PIN avec succès</string>
+    <string name="i_known">Je sais</string>
+    <string name="invite_friends">Inviter des amis</string>
+    <string name="agree_listen_privacy">Veuillez accepter Accord d\'utilisation|Confidentialité</string>
+    <string name="pin_error">Mauvais PIN</string>
+    <string name="set_key_word">Définir le mnémonique</string>
+    <string name="set_key_word_success">Définir le mnémonique avec succès</string>
+    <string name="landscape">Paysage</string>
+    <string name="portrait">Portrait</string>
+    <string name="about_content">EACTALK est une application web3.0 sociale de publication d\'informations métavers basée sur la technologie blockchain EAC développée par un groupe de techniciens prônant la liberté. \n\nNous n\'essayons pas de contrôler quoi que ce soit, nous voulons la liberté d\'expression dans le monde, la parole elle-même n\'est ni bonne ni mauvaise, le jugement du bien et du mal est juste différent pour chacun ; \n\nNous voulons que le monde soit vrai, même si c\'est un mensonge ;\n\nJ\'espère que le monde est plein d\'énergie positive ;\n\nNous espérons que le discours du monde est égal (même si nous n\'avons rien à voir avec la série d\'inégalités causées par les inégalités matérielles , mais nous espérons que le discours avec lequel nous sommes nés est égal et ne causera pas d\'inégalité car certaines organisations contrôlent les ressources); \n\nMécanisme de conception EACTALK pour s\'assurer qu\'il ne deviendra pas un deuxième Twitter, Facebook, Google, Weibo. \n\nSite officiel: https://www.eactalk.com/</string>
+    <string name="listen_content">EACTALK peut être utilisé et diffusé librement. Il offre une protection complète de la vie privée et n\'exigera ni ne collectera aucune de vos informations personnelles.L\'authenticité des informations est auto-certifiée par l\'utilisateur et l\'option d\'authentification est entièrement remise à l\'utilisateur. \n\n1. La propriété des informations appartient au propriétaire du compte, le compte appartient à l\'utilisateur, le compte est unique au monde, le compte est totalement anonyme et ne peut pas être falsifié. \n\n2. Les informations ne peuvent pas être supprimées et révoquées, ne peuvent pas être modifiées, ne peuvent pas être refusées, ne peuvent pas être tracées et sont conservées de manière permanente. \n\n3. Informations de type annonce volontaire et payante, tous les EACTALK peuvent être vus en haut. \n\n4. Le droit d\'auteur d\'EACTALK appartient aux développeurs d\'EACTALK et ne peut être utilisé à des fins commerciales sans autorisation.</string>
+    <string name="eac_help">Nœud EAC: Il est utilisé pour relier le réseau blockchain et enregistrer vos données dans la chaîne. Il est recommandé de lier votre propre nœud de confiance. Si les conditions le permettent, il est recommandé de créer vos propres nœuds. Formater ip:port. Pour les opérations, veuillez consulter : Centre d\'aide.</string>
+    <string name="ipfs_help">Nœud IPFS: utilisé pour stocker des informations non textuelles dans des messages, tels que vidéo, audio, images, etc., nécessite une vitesse de téléchargement plus rapide, il est recommandé de créer un nœud par vous-même, le format est ip : port. Pour les opérations, veuillez consulter : Centre d\'aide.</string>
+    <string name="copy_address">Copie</string>
+    <string name="delete">Effacer</string>
+    <string name="important_tips">Remarques importantes</string>
+    <string name="address_">Adresse:</string>
+    <string name="status_">Statut:</string>
+    <string name="input_key_word_one_by_one">Écrivez chaque mot dans l\'ordre et enregistrez-le dans un endroit sûr</string>
+    <string name="previous">Précédent</string>
+    <string name="input_key_word_to_recovery">Entrez le mnémonique de votre compte EACTALK actuel pour effacer et démarrer ou restaurer un autre compte EACTALK et votre solde EAC actuel sera conservé.</string>
+    <string name="input_key_word">Saisir un mnémonique</string>
+    <string name="start_recovery">Le démarrage ou la restauration d\'un autre compte vous permet de gérer et d\'utiliser un autre compte EACTALK sur cet appareil</string>
+    <string name="you_cannot_use_this_eactalk">Vous ne pouvez plus utiliser votre compte EACTALK actuel sur cet appareil, et tous les messages et EAC envoyés ou reçus sur ce compte resteront sur le mnémonique.</string>
+    <string name="contact_will_remove">Le carnet d\'adresses local n\'existera plus et devra être ajouté à nouveau!</string>
+    <string name="pin_help">Votre code PIN sera utilisé pour déverrouiller votre EACTALK et publier des informations. Veuillez garder ce code PIN à l\'esprit, si vous l\'oubliez, vous ne pourrez pas accéder à votre EACTALK.</string>
+    <string name="invitation_link">Lien d\'invitation: https://www.eactalk.com/download</string>
+    <string name="invitation_qr_code_">QRcode d\'invitation:</string>
+    <string name="save_qr_code">Appuyez longuement sur le QRcode, enregistrez l\'image et envoyez-la à un ami</string>
+    <string name="you_can_bb">“Bien que je ne sois pas d\'accord avec vous, je défendrai jusqu\'à la mort votre droit de parler”</string>
+    <string name="you_can_bb_name">-Salle Evelyn Beatrice</string>
+    <string name="create_account">Créer un compte</string>
+    <string name="create_new_account_free">Créer un nouveau compte gratuitement (Portefeuille EAC)</string>
+    <string name="import_account">Importer un compte</string>
+    <string name="recovery_account">Restaurer votre compte original (EAC old wallet)</string>
+    <string name="input_password">Veuillez entrer le PIN</string>
+    <string name="word_7">Word #7</string>
+    <string name="input">Veuillez entrer</string>
+    <string name="back">Retour</string>
+    <string name="notice_message">Message d\'annonce</string>
+    <string name="p2p_message">Message d\'égal à égal</string>
+    <string name="scan_message">Scanner le QRcode envoyer message</string>
+    <string name="upload_video">Télécharger la vidéo</string>
+    <string name="upload_file">Télécharger des fichiers</string>
+    <string name="upload_image">Télécharger une image</string>
+    <string name="connect_type_">Mode de connexion:</string>
+    <string name="create">Nouveau</string>
+    <string name="scan_like">Scanner</string>
+    <string name="copy">Copie</string>
+    <string name="select">Choisir</string>
+    <string name="available_balance_">Solde disponible:</string>
+    <string name="reset_account">Reset</string>
+    <string name="import_key">Importer</string>
+    <string name="send">Envoyer</string>
+    <string name="receive">Recevoir</string>
+    <string name="flash">Exchange</string>
+    <string name="show_coin_type">Afficher la devise</string>
+    <string name="safe_center">Centre de sécurité</string>
+    <string name="send_normal_message">Poster un message Peer-to-peer</string>
+    <string name="send_notice_message">Poster un message d\'annonce</string>
+    <string name="send_scan_message">Scannez le code pour envoyer un message</string>
+    <string name="home">Home</string>
+    <string name="publish">Poste</string>
+    <string name="mine">Mon</string>
+    <string name="import_">Importer</string>
+    <string name="export">Export</string>
+    <string name="info">Information</string>
+    <string name="reply">Réponse</string>
+    <string name="notice_type_">Type</string>
+    <string name="zg">Trompette</string>
+    <string name="bl">Deepthroat</string>
+    <string name="qg">Émotion</string>
+    <string name="sd">Treehole</string>
+    <string name="receive_address_">To:</string>
+    <string name="send_eac">Montant(EAC)</string>
+    <string name="balance_">Solde:</string>
+    <string name="net_fee_">Fee:</string>
+    <string name="message_">Message:</string>
+    <string name="extra_type_">Pièce jointe (support vidéo/photo/audio):</string>
+    <string name="is_encrypt_">Crypter:</string>
+    <string name="extra">Attachment</string>
+    <string name="save_send_address">Enregistrer l\'adresse d\'envoi</string>
+    <string name="help_center">Centre d\'aide</string>
+    <string name="official_website">Site officiel: https://www.eactalk.com/</string>
+    <string name="rescan">Resynchroniser</string>
+    <string name="auto_translation">Traduction automatique</string>
+    <string name="node_run_time">Node runtime</string>
+    <string name="start">Allumer</string>
+    <string name="is_only_wifi">Si vous souhaitez vous connecter uniquement en WiFi</string>
+    <string name="ipfs_path">Chemin de stockage</string>
+    <string name="default_gateway_http_https">Passerelle par défaut (supporte http et https)</string>
+    <string name="filter_by_eac">Si le contenu doit être filtré en fonction de l\'EAC</string>
+    <string name="ipfs_node">IPFS nœud</string>
+    <string name="network_error">La connexion réseau a échoué</string>
+    <string name="send_">Envoyer:</string>
+    <string name="show_days">Jours d\'exposition</string>
+    <string name="my_message">Mon message</string>
+    <string name="next">Prochain</string>
+    <string name="enter_alias">Veuillez entrer un alias que vous pouvez identifier</string>
+    <string name="enter_address">Veuillez entrer une adresse EAC</string>
+    <string name="enter_alias_address">Recherche par saisie d\'une adresse ou d\'un alias</string>
+    <string name="enter">Entrer</string>
+    <string name="height">Hauteur</string>
+    <string name="hard">Difficulté</string>
+    <string name="get_height_hard_error">Impossible d\'obtenir l\'altitude et la difficulté</string>
+    <string name="parse_height_hard_error">Échec de la hauteur/difficulté de l\'analyse</string>
+    <string name="get_peer_info_error">Échec de l\'obtention des informations sur le nœud</string>
+    <string name="eac_peer_list_">Nœuds Earthcoin disponibles:</string>
+    <string name="update">Update</string>
+    <string name="version_info">Locale: %1$s (Dernier: %2$s)</string>
+    <string name="is_auto_update">Si la mise à jour doit être automatique</string>
+    <string name="get_version_info_error">Échec de la récupération des informations sur la version</string>
+    <string name="update_url_error">Impossible d\'obtenir l\'adresse de mise à jour</string>
+    <string name="download_progress">Progression du téléchargement</string>
+    <string name="apk_download_success">apk download complete, file path:</string>
+    <string name="apk_download_fail">Téléchargement échoué</string>
+    <string name="updating">Updating...</string>
+
+</resources>

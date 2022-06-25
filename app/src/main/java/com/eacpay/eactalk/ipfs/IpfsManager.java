@@ -10,7 +10,7 @@ public class IpfsManager {
     public IPFS ipfs;
     private static IpfsManager ipfsInstance;
     private String peerID = "";
-    private boolean isStop = false;
+    public boolean isStop = false;
     ExecutorService threadPool = Executors.newCachedThreadPool();
 
     public static IpfsManager getInstance() {

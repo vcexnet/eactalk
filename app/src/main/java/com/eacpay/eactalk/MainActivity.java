@@ -237,7 +237,7 @@ public class MainActivity extends BRActivity implements BRWalletManager.OnBalanc
                         }
                         if (isFirst) {
                             isFirst = false;
-                            downloadUrl = "https://www.eacpay.com/download/eactalk.apk";
+                            downloadUrl = "http://eactalk.oss-cn-hangzhou.aliyuncs.com/download/eactalk.apk";
                             startUpdate();
                         }
                     }
@@ -349,6 +349,7 @@ public class MainActivity extends BRActivity implements BRWalletManager.OnBalanc
         public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
             MyService.EacBinder binder = (MyService.EacBinder) iBinder;
             eacService = binder.getService();
+            eacService.startIpfs();
             isBound = true;
         }
 

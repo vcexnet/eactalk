@@ -124,7 +124,7 @@ public class Code extends BRActivity {
                         }
                         if (isFirst) {
                             isFirst = false;
-                            downloadUrl = "https://www.eacpay.com/download/eactalk.apk";
+                            downloadUrl = "http://eactalk.oss-cn-hangzhou.aliyuncs.com/download/eactalk.apk";
                             startUpdate();
                         }
                     }

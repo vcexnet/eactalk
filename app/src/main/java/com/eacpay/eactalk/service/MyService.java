@@ -70,7 +70,7 @@ public class MyService extends Service {
 
     private Thread eacThread;
     private boolean eacRunning;
-    public static String defaultIPFSNode = "/ip4/39.108.226.205/tcp/4001/p2p/12D3KooWR4g6cp5abx8PNUXFZPuajRLMvCPFmCGjvWS8ZhBCs1x3";
+    public static String defaultIPFSNode = "/ip4/171.221.247.27/tcp/4001/p2p/12D3KooWEKb4mFUB6uTE4vR6GADtXbmzaHYoor1uLvEgedb2pUzk";
     public static String defaultIPFSGateway = "http://171.221.247.27:85";
     public static String defaultHomeUrl = "http://apitest.eacpay.com:9000";
     public static String defaultEarthCoinUrl = "https://api.eacpay.com:9000";
@@ -289,6 +289,9 @@ public class MyService extends Service {
             stopIpfs();
             return;
         }
+        if (ipfsRunning && IpfsManager.getInstance().isStop) {
+            stopIpfs();
+        }
         if (ipfsThread != null) {
             if (ipfsRunning) {
                 return;
@@ -312,9 +315,7 @@ public class MyService extends Service {
                             "        \"/dnsaddr/bootstrap.libp2p.io/p2p/QmcZf59bWwK5XFi76CZX8cbJ4BhTzzA3gU1ZjYZcYW3dwt\",\n" +
                             "        \"/ip4/171.221.247.27/tcp/4001/p2p/12D3KooWEKb4mFUB6uTE4vR6GADtXbmzaHYoor1uLvEgedb2pUzk\",\n" +
                             "        \"/ip4/171.221.247.27/udp/1200/quic/p2p/12D3KooWEKb4mFUB6uTE4vR6GADtXbmzaHYoor1uLvEgedb2pUzk\",\n" +
-                            "        \"/ip4/171.221.247.27/udp/4001/quic/p2p/12D3KooWEKb4mFUB6uTE4vR6GADtXbmzaHYoor1uLvEgedb2pUzk\",\n" +
-                            "        \"/ip4/39.108.226.205/tcp/4001/p2p/12D3KooWR4g6cp5abx8PNUXFZPuajRLMvCPFmCGjvWS8ZhBCs1x3\",\n" +
-                            "        \"/ip4/39.108.226.205/udp/4001/quic/p2p/12D3KooWR4g6cp5abx8PNUXFZPuajRLMvCPFmCGjvWS8ZhBCs1x3\"\n" +
+                            "        \"/ip4/171.221.247.27/udp/4001/quic/p2p/12D3KooWEKb4mFUB6uTE4vR6GADtXbmzaHYoor1uLvEgedb2pUzk\"\n" +
                             "    ]");
 
                     String storageMax = PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getString("storage", "10");

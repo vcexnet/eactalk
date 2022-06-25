@@ -398,8 +398,6 @@ public class SendMessage extends BRActivity {
             }
         });
 
-        showKeyboard(false);
-
         binding.keyboard.setBRButtonBackgroundResId(R.drawable.keyboard_white_button);
         binding.keyboard.setBRKeyboardColor(R.color.white);
 
@@ -443,7 +441,7 @@ public class SendMessage extends BRActivity {
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    showAmountEdit(); // 要获取 scale,延迟处理
+//                    showAmountEdit(); // 要获取 scale,延迟处理
                     amountBuilder = new StringBuilder();
                     amountBuilder.append(minEac[1]);
                     updateText();
@@ -484,6 +482,8 @@ public class SendMessage extends BRActivity {
                         }
                     }
                 });
+
+        showKeyboard(false);
     }
 
     private void showAmountEdit() {

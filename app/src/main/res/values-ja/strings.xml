@@ -1,0 +1,995 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+  <!-- App name -->
+  <string name="About.appName.android">ブレッド</string>
+  <!-- About screen blog label -->
+  <string name="About.blog">ブログ</string>
+  <!-- About screen footer -->
+  <string name="About.footer">Earthcoin FoundationのEacTalkチームが作成\n%1$s</string>
+  <!-- Privay Policy button label -->
+  <string name="About.privacy">プライバシーポリシー</string>
+  <!-- About screen reddit label -->
+  <string name="About.reddit">Reddit（レディット）</string>
+  <!-- Terms of Use button label -->
+  <string name="About.terms">利用規約</string>
+  <!-- About screen title -->
+  <string name="About.title">概要</string>
+  <!-- About screen twitter label -->
+  <string name="About.twitter">Twitter</string>
+  <!-- Close modal button accessibility label -->
+  <string name="AccessibilityLabels.close">閉じる</string>
+  <!-- Support center accessibiliy label -->
+  <string name="AccessibilityLabels.faq">サポートセンター</string>
+  <!-- Loading Wallet Message -->
+  <string name="Account.loadingMessage">ウォレット読み込み中</string>
+  <!-- Default wallet name -->
+  <string name="AccountHeader.defaultWalletName">マイブレッド</string>
+  <!-- Equals symbol -->
+  <string name="AccountHeader.equals">=</string>
+  <!-- Manage wallet button title -->
+  <string name="AccountHeader.manageButtonName">管理</string>
+  <!-- Third party keyboard warning -->
+  <string name="Alert.customKeyboard.android">現在、サードパーティーのキーボードを使用しているようです。これを使うと入力した内容が記録され、ペーパー・キーが盗まれる可能性があります。追加の保護措置としてAndroidのデフォルトキーボードに切り替えてください。</string>
+  <!-- Error alert title -->
+  <string name="Alert.error">エラー</string>
+  <!-- Keystore error -->
+  <string name="Alert.keystore.generic.android">Android OSのKeystoreに問題があります。dev@EacTalk.com にお問い合わせください。</string>
+  <!-- KeyStore error, keys are invalidated -->
+  <string name="Alert.keystore.invalidated.android">お使いのAndroidロック画面が無効にされたため、暗号化されたブレッドのデータはつい最近無効になりました。</string>
+  <!-- Keystore error title -->
+  <string name="Alert.keystore.title.android">Android KeyStoreエラー</string>
+  <!-- No internet alert message -->
+  <string name="Alert.noInternet">インターネット接続が見つかりません。接続を確認してから、もう一度お試しください。</string>
+  <!-- Warning alert title -->
+  <string name="Alert.warning">警告</string>
+  <!-- 'the addresses were copied'' Alert title -->
+  <string name="Alerts.copiedAddressesHeader">アドレスがコピーされました</string>
+  <!-- Addresses Copied Alert sub header -->
+  <string name="Alerts.copiedAddressesSubheader">すべてのウォレットアドレスが正常にコピーされました。</string>
+  <!-- Alert Header Label (the paper key was set) -->
+  <string name="Alerts.paperKeySet">紙の鍵、セットされました。</string>
+  <!-- Alert Subheader label (playfully positive) -->
+  <string name="Alerts.paperKeySetSubheader">素晴らしい!</string>
+  <!-- Alert Header label (the PIN was set) -->
+  <string name="Alerts.pinSet">PINコードのセット</string>
+  <!-- Send failure alert header label (the send failed to happen) -->
+  <string name="Alerts.sendFailure">送金に失敗しました</string>
+  <!-- Send success alert header label (confirmation that the send happened) -->
+  <string name="Alerts.sendSuccess">送金のご確認</string>
+  <!-- Send success alert subheader label (e.g. the money was sent) -->
+  <string name="Alerts.sendSuccessSubheader">送金しました!</string>
+  <!-- Fingerprint was recognized by the scanner -->
+  <string name="Alerts.touchIdSucceeded.android">指紋が認識されました</string>
+  <!-- JSON Serialization error message -->
+  <string name="ApiClient.jsonError">JSONシリアル化エラー</string>
+  <!-- Wallet not ready error message -->
+  <string name="ApiClient.notReady">ウォレットの準備ができていません</string>
+  <!-- API Token error message -->
+  <string name="ApiClient.tokenError">APIトークンを取得できません</string>
+  <!-- Send BCH view body. -->
+  <string name="BCH.body">送金先のBCHアドレスを入力してください。フォーク時（%1$s）にウォレット内にあった全てのBCHが送られます。</string>
+  <!-- Confirm sending <$5.00> to <address>? -->
+  <string name="BCH.confirmationMessage">%1$sを%2$sに送金することを確認する</string>
+  <!-- Confirmation alert title -->
+  <string name="BCH.confirmationTitle">承認</string>
+  <!-- Generic bch erorr message -->
+  <string name="BCH.genericError">アカウントにBCHがない、またはフォークの後にBCHを受け取っています。</string>
+  <!-- Transaction ID copied message -->
+  <string name="BCH.hashCopiedMessage">トランザクションIDをコピー済み</string>
+  <!-- No address error message -->
+  <string name="BCH.noAddressError">アドレスを入力してください</string>
+  <!-- Attempted to scan unsupported qr code error message. -->
+  <string name="BCH.paymentProtocolError">BCHのトランザクションでペイメントプロトコルリクエストはサポートされていません。</string>
+  <!-- BCH successfully sent alert message -->
+  <string name="BCH.successMessage">BCHの送金に成功しました。</string>
+  <!-- Widthdraw BCH view title -->
+  <string name="BCH.title">BCHを引き出す</string>
+  <!-- Tx Hash button header -->
+  <string name="BCH.txHashHeader">BCHのトランザクションID</string>
+  <!-- Approve button label -->
+  <string name="BitID.approve">承認する</string>
+  <!-- <sitename> is requesting authentication using your bitcoin wallet -->
+  <string name="BitID.authenticationRequest">%1$sがライトコインウォレットを使っての認証を求めています</string>
+  <!-- Deny button label -->
+  <string name="BitID.deny">拒否する</string>
+  <!-- BitID error alert title -->
+  <string name="BitID.error">認証エラー</string>
+  <!-- BitID error alert messaage (The payment service you are trying to use isn't working. Please contact them, as you may need to try again) -->
+  <string name="BitID.errorMessage">サービスを確認してください。やり直さなければいけない可能性もあります。</string>
+  <!-- BitID success alert title -->
+  <string name="BitID.success">認証成功</string>
+  <!-- BitID Authentication Request alert view title -->
+  <string name="BitID.title">BitID認証リクエスト</string>
+  <!-- Cancel button label -->
+  <string name="Button.cancel">キャンセル</string>
+  <!-- Ignore button label -->
+  <string name="Button.ignore">無視する</string>
+  <!-- menu button -->
+  <string name="Button.menu">メニュー</string>
+  <!-- No button -->
+  <string name="Button.no">いいえ</string>
+  <!-- OK button label -->
+  <string name="Button.ok">OK</string>
+  <!-- receive button -->
+  <string name="Button.receive">受取</string>
+  <!-- send button -->
+  <string name="Button.send">送金する</string>
+  <!-- Settings button label -->
+  <string name="Button.settings">設定</string>
+  <!-- Settings button label -->
+  <string name="Button.submit">提出</string>
+  <!-- Yes button -->
+  <string name="Button.yes">はい</string>
+  <!-- Camera plugin instruction -->
+  <string name="CameraPlugin.centerInstruction">ご自身のIDをこのボックス内で中央に配置してください</string>
+  <!-- Amount to Send: ($1.00) -->
+  <string name="Confirmation.amountLabel">送金する数量：</string>
+  <!-- Network Fee: ($1.00) -->
+  <string name="Confirmation.feeLabel">ネットワーク手数料：</string>
+  <!-- eg. Processing time: This transaction is predicted to complete in [10-60 minutes]. -->
+  <string name="Confirmation.processingTime">処理時間: この取引は%1$sで完了する見込みです。</string>
+  <!-- Label for "send" button on final confirmation screen -->
+  <string name="Confirmation.send">送金する</string>
+  <!-- Confirmation Screen title -->
+  <string name="Confirmation.title">承認</string>
+  <!-- To: (address) -->
+  <string name="Confirmation.to">宛て先</string>
+  <!-- Total Cost: ($5.00) -->
+  <string name="Confirmation.totalLabel">費用合計：</string>
+  <!-- Confirm paper phrase view label. -->
+  <string name="ConfirmPaperPhrase.label">すべてが正しく書き留められていることを確認するため、紙の鍵に記入した下記のフレーズを入力してください。</string>
+  <!-- Word label eg. Word #1, Word #2 -->
+  <string name="ConfirmPaperPhrase.word">フレーズ #%1$s</string>
+  <!-- Earthcoin denomination picker label -->
+  <string name="DefaultCurrency.litecoinLabel">ライトコインの表示単位</string>
+  <!-- Exchange rate label -->
+  <string name="DefaultCurrency.rateLabel">為替レート</string>
+  <!-- Email unavailable alert title -->
+  <string name="ErrorMessages.emailUnavailableMessage">この端末は、iOSのメールアプリを使用してメールを送信する設定がされていません。</string>
+  <!-- Email unavailable alert title -->
+  <string name="ErrorMessages.emailUnavailableTitle">メールが利用できません</string>
+  <!-- Messaging unavailable alert title -->
+  <string name="ErrorMessages.messagingUnavailableMessage">この端末はメール送信の設定がされていません。</string>
+  <!-- Messaging unavailable alert title -->
+  <string name="ErrorMessages.messagingUnavailableTitle">メッセージの送受信ができません</string>
+  <!-- Fingerprint was not recognized by the scanner, please try scanning again -->
+  <string name="ErrorMessages.touchIdFailed.android">指紋が認識されませんでした。もう一度やり直してください。</string>
+  <!-- Economy fee -->
+  <string name="FeeSelector.economy">エコノミー</string>
+  <!-- E.g. [This transaction is predicted to complete in] 1-24 hours -->
+  <string name="FeeSelector.economyTime">60分以上</string>
+  <!-- Warning message for economy fee -->
+  <string name="FeeSelector.economyWarning">このオプションは速く送金を済ませたい方にはお勧めしません。</string>
+  <!-- E.g. Estimated delivery: 10-60 minutes -->
+  <string name="FeeSelector.estimatedDeliver">お届け予定時間: %1$s</string>
+  <!-- Regular fee -->
+  <string name="FeeSelector.regular">レギュラー</string>
+  <!-- E.g. [This transaction is predicted to complete in] 10-60 minutes -->
+  <string name="FeeSelector.regularTime">2.5～5+分</string>
+  <!-- Fee Selector title -->
+  <string name="FeeSelector.title">処理速度</string>
+  <!-- Checking private key balance progress view text -->
+  <string name="Import.checking">秘密鍵の残高確認中...</string>
+  <!-- Sweep private key confirmation message -->
+  <string name="Import.confirm">この秘密鍵からウォレットに%1$sを送信しますか? ライトコインネットワークは手数料%2$sを頂戴します。</string>
+  <!-- Duplicate key error message -->
+  <string name="Import.Error.duplicate">この秘密鍵はすでにあなたのウォレットに存在しています。</string>
+  <!-- empty private key error message -->
+  <string name="Import.Error.empty">この秘密鍵は空白です。</string>
+  <!-- High fees error message -->
+  <string name="Import.Error.highFees">トランザクション手数料がこのプライベートキーのアカウントにある残高を上回っています。</string>
+  <!-- Not a valid private key error message -->
+  <string name="Import.Error.notValid">有効な秘密鍵ではありません</string>
+  <!-- Import signing error message -->
+  <string name="Import.Error.signing">トランザクションへのサイン中にエラーが発生しました</string>
+  <!-- Import button label -->
+  <string name="Import.importButton">インポート</string>
+  <!-- Importing wallet progress view label -->
+  <string name="Import.importing">ウォレットをインポート中</string>
+  <!-- Caption for graphics -->
+  <string name="Import.leftCaption">インポート\nされる\nウォレット</string>
+  <!-- Import wallet intro screen message -->
+  <string name="Import.message">ウォレットをインポートすると、1回のトランザクションで、ご自身の他のウォレットからすべてのお金をブレッドのウォレットへ転送できます。</string>
+  <!-- Enter password alert view title -->
+  <string name="Import.password">この秘密鍵はパスワードで保護されています。</string>
+  <!-- password textfield placeholder -->
+  <string name="Import.passwordPlaceholder">パスワード</string>
+  <!-- Caption for graphics -->
+  <string name="Import.rightCaption">あなたの\nブレッドの\nウォレット</string>
+  <!-- Scan Private key button label -->
+  <string name="Import.scan">秘密鍵をスキャン</string>
+  <!-- Import wallet success alert title -->
+  <string name="Import.success">成功</string>
+  <!-- Successfully imported wallet message body -->
+  <string name="Import.SuccessBody">ウォレットが正常にインポートされました。</string>
+  <!-- Import Wallet screen title -->
+  <string name="Import.title">ウォレットをインポート</string>
+  <!-- Unlocking Private key activity view message. -->
+  <string name="Import.unlockingActivity">鍵のロックを解除中です</string>
+  <!-- Import wallet intro warning message -->
+  <string name="Import.warning">ウォレットのインポートには、取引履歴やその他の詳細は含まれません。</string>
+  <!-- Wrong password alert message -->
+  <string name="Import.wrongPassword">パスワードが違います。もう一度お試しください。</string>
+  <!-- Close app button -->
+  <string name="JailbreakWarnings.close">閉じる</string>
+  <!-- Ignore jailbreak warning button -->
+  <string name="JailbreakWarnings.ignore">無視する</string>
+  <!-- Jailbreak warning message -->
+  <string name="JailbreakWarnings.messageWithBalance">端末がセキュリティの危険にさらされている可能性があります\n 「脱獄」アプリはブレッドのキーチェーンデータにアクセスし、あなたのライトコインを盗む恐れがあります!  直ちにこのウォレットを完全削除して、安全な端末で復元して下さい。</string>
+  <!-- Jailbreak warning message -->
+  <string name="JailbreakWarnings.messageWithoutBalance">端末がセキュリティの危険にさらされている可能性があります\n「脱獄」アプリはブレッドのキーチェーンデータにアクセスし、あなたのライトコインを盗む恐れがあります!  ブレッドは必ず脱獄端末以外で利用してください。</string>
+  <!-- Jailbreak warning title -->
+  <string name="JailbreakWarnings.title">警告</string>
+  <!-- Wipe wallet button -->
+  <string name="JailbreakWarnings.wipe">完全削除</string>
+  <!-- Location services disabled error -->
+  <string name="LocationPlugin.disabled">位置情報サービスが無効化されています。</string>
+  <!-- No permissions for location services -->
+  <string name="LocationPlugin.notAuthorized">ブレッドは位置情報サービスへのアクセスが許可されていません。</string>
+  <!-- Wallet creation date prefix -->
+  <string name="ManageWallet.creationDatePrefix">あなたは%1$sでご自身のウォレットを作成しました</string>
+  <!-- Manage wallet description text -->
+  <string name="ManageWallet.description">あなたのウォレットの名前はご自身のアカウントの取引履歴上でのみ表示され、あなた以外誰も閲覧することができません。</string>
+  <!-- Change Wallet name textfield label -->
+  <string name="ManageWallet.textFeildLabel">ウォレットの名前</string>
+  <!-- Manage wallet modal title -->
+  <string name="ManageWallet.title">ウォレットを管理</string>
+  <!-- Buy bitcoin title -->
+  <string name="MenuButton.buy">ライトコインを購入</string>
+  <!-- Menu button title -->
+  <string name="MenuButton.lock">ウォレットにロックを設定する</string>
+  <!-- Menu button title -->
+  <string name="MenuButton.security">セキュリティセンター</string>
+  <!-- Menu button title -->
+  <string name="MenuButton.settings">設定</string>
+  <!-- Menu button title -->
+  <string name="MenuButton.support">サポート:       dev@Eacpay.com</string>
+  <!-- button label -->
+  <string name="MenuViewController.createButton">新規ウォレットを作成</string>
+  <!-- Menu modal title -->
+  <string name="MenuViewController.modalTitle">メニュー</string>
+  <!-- button label -->
+  <string name="MenuViewController.recoverButton">ウォレットを復元</string>
+  <!-- Switch to automatic mode button label -->
+  <string name="NodeSelector.automaticButton">自動モードに切り替える</string>
+  <!-- Node is connected label -->
+  <string name="NodeSelector.connected">接続中</string>
+  <!-- Enter node ip address view body -->
+  <string name="NodeSelector.enterBody">ノードのIPアドレスとポートを入力する（任意）</string>
+  <!-- Enter Node ip address view title -->
+  <string name="NodeSelector.enterTitle">ノードを入力する</string>
+  <!-- Switch to manual mode button label -->
+  <string name="NodeSelector.manualButton">マニュアルモードに切り替える</string>
+  <!-- Node address label -->
+  <string name="NodeSelector.nodeLabel">現在のプライマリーノード</string>
+  <!-- Node is not connected label -->
+  <string name="NodeSelector.notConnected">未接続</string>
+  <!-- Node status label -->
+  <string name="NodeSelector.statusLabel">ノードの接続状況</string>
+  <!-- Node Selector view title -->
+  <string name="NodeSelector.title">ライトコインノード</string>
+  <!-- Bad Payment request alert title -->
+  <string name="PaymentProtocol.Errors.badPaymentRequest">不正な支払い要求</string>
+  <!-- Error opening payment protocol file message -->
+  <string name="PaymentProtocol.Errors.corruptedDocument">ドキュメントがサポートされていないか、またはドキュメントが破損しています</string>
+  <!-- Missing certificate payment protocol error message -->
+  <string name="PaymentProtocol.Errors.missingCertificate">証明書が不足しています</string>
+  <!-- Request expired payment protocol error message -->
+  <string name="PaymentProtocol.Errors.requestExpired">期限切れのリクエスト</string>
+  <!-- Payment too small alert title -->
+  <string name="PaymentProtocol.Errors.smallOutputError">支払いが行えませんでした</string>
+  <!-- Amount too small error message -->
+  <string name="PaymentProtocol.Errors.smallPayment">%1$s未満のライトコインの支払いは行えません。</string>
+  <!-- Output too small error message. -->
+  <string name="PaymentProtocol.Errors.smallTransaction">ライトコインのトランザクションの出力は%1$s以上である必要があります。</string>
+  <!-- Unsupported signature type payment protocol error message -->
+  <string name="PaymentProtocol.Errors.unsupportedSignatureType">署名の種類がサポートされていません</string>
+  <!-- Untrusted certificate payment protocol error message -->
+  <string name="PaymentProtocol.Errors.untrustedCertificate">信頼できない証明書</string>
+  <!-- No passcode set warning body -->
+  <string name="Prompts.NoPasscode.body">ウォレットを保護するためには端末のパスコードが必要です。設定画面にてパスコードをオンにしてください。</string>
+  <!-- No Passcode set warning title -->
+  <string name="Prompts.NoPasscode.title">端末のパスコードをオンにする</string>
+  <!-- Instruction how to enable device encryption -->
+  <string name="Prompts.NoScreenLock.body.android">ウォレットを守るため機器の画面をロックする必要があります。「設定」 &gt; 「セキュリティ」 &gt; 「画面ロック」で有効にしてから続行してください。</string>
+  <!-- Device encryption prompt title -->
+  <string name="Prompts.NoScreenLock.title.android">画面ロックが無効になっています</string>
+  <!-- Warning about paper key. -->
+  <string name="Prompts.PaperKey.body">携帯電話の紛失時や変更時に備えて、お客様のペーパーキーは必ず保管しておいてください。続けるにはここをタップしてください。</string>
+  <!-- An action is required (You must do this action). -->
+  <string name="Prompts.PaperKey.title">アクションが要求されました</string>
+  <!-- Transaction rejected prompt body -->
+  <string name="Prompts.RecommendRescan.body">あなたのウォレットは同期されていない可能性があります。ブロックチェーンを再スキャンすることで修復できる可能性があります。</string>
+  <!-- Transaction rejected prompt title -->
+  <string name="Prompts.RecommendRescan.title">トランザクションが拒否されました</string>
+  <!-- Share data prompt body -->
+  <string name="Prompts.ShareData.body">匿名のデータを共有してEacTalkの機能向上に役立てる</string>
+  <!-- Share data prompt title -->
+  <string name="Prompts.ShareData.title">匿名のデータを共有する</string>
+  <!-- Enable touch ID prompt body -->
+  <string name="Prompts.TouchId.body">Touch IDを有効にするにはこちらをタップしてください</string>
+  <!-- Enable Fingerprint prompt body -->
+  <string name="Prompts.TouchId.body.android">こちらをタップして指紋認証を有効にしてください</string>
+  <!-- Enable touch ID prompt title -->
+  <string name="Prompts.TouchId.title">Touch IDを有効化する</string>
+  <!-- Enable Fingerprint prompt title -->
+  <string name="Prompts.TouchId.title.android">指紋認証を有効にする</string>
+  <!-- Button on fingerprint prompt so the user can enter their PIN instead -->
+  <string name="Prompts.TouchId.usePin.android">PIN</string>
+  <!-- Upgrade PIN prompt body. -->
+  <string name="Prompts.UpgradePin.body">ブレッドは6桁のPINコード使用にアップグレードされました。こちらをタップして更新してください。</string>
+  <!-- Upgrade PIN prompt title. -->
+  <string name="Prompts.UpgradePin.title">PINコードを更新する</string>
+  <!-- Notifications will be added later but users can set their preferences now, which is why we specify "in the future". -->
+  <string name="PushNotifications.body">今後、EacTalkからの特別なメッセージを受け取るために通知をオンにしてください。</string>
+  <!-- Push notifications toggle switch label -->
+  <string name="PushNotifications.label">プッシュ通知</string>
+  <!-- Push notifications are off label -->
+  <string name="PushNotifications.off">オフ</string>
+  <!-- Push notifications are on label -->
+  <string name="PushNotifications.on">オン</string>
+  <!-- Push notifications settings view title label -->
+  <string name="PushNotifications.title">通知</string>
+  <!-- Address copied message. -->
+  <string name="Receive.copied">クリップボードにコピーされました。</string>
+  <!-- Share via email button label -->
+  <string name="Receive.emailButton">メール</string>
+  <!-- Request button label -->
+  <string name="Receive.request">金額のリクエスト</string>
+  <!-- Share button label -->
+  <string name="Receive.share">シェアする</string>
+  <!-- Share via text message (SMS) -->
+  <string name="Receive.textButton">テキストメッセージ</string>
+  <!-- Receive modal title -->
+  <string name="Receive.title">受け取る</string>
+  <!-- Done button text -->
+  <string name="RecoverWallet.done">終了</string>
+  <!-- Recover wallet header -->
+  <string name="RecoverWallet.header">ウォレットを復元</string>
+  <!-- Reset PIN with paper key: header -->
+  <string name="RecoverWallet.header_reset_pin">PINコードをリセット</string>
+  <!-- Enter paper key instruction -->
+  <string name="RecoverWallet.instruction">紙の鍵を入力してください</string>
+  <!-- Recover wallet intro -->
+  <string name="RecoverWallet.intro">紙の鍵を使用し、あなたのブレッドを復元する。</string>
+  <!-- Invalid paper key message -->
+  <string name="RecoverWallet.invalid">あなたが入力した紙の鍵は無効です。各フレーズを再確認の上、もう一度お試しください。</string>
+  <!-- Previous button accessibility label -->
+  <string name="RecoverWallet.leftArrow">左矢印</string>
+  <!-- Next button label -->
+  <string name="RecoverWallet.next">次へ</string>
+  <!-- Reset PIN with paper key: more information button. -->
+  <string name="RecoverWallet.reset_pin_more_info">詳しくはこちらをタップしてください。</string>
+  <!-- Next button accessibility label -->
+  <string name="RecoverWallet.rightArrow">右矢印</string>
+  <!-- Recover wallet sub-header -->
+  <string name="RecoverWallet.subheader">復元を希望するウォレットのペーパーキーを入力してください。</string>
+  <!-- Reset PIN with paper key: sub-header -->
+  <string name="RecoverWallet.subheader_reset_pin">PINコードをリセットするには、紙の鍵の中からこのフレーズを下記ボックスの中に入力してください。</string>
+  <!-- No amount entered error message. -->
+  <string name="RequestAnAmount.noAmount">初めに数量を入力してください。</string>
+  <!-- Request a specific amount of bitcoin -->
+  <string name="RequestAnAmount.title">金額のリクエスト</string>
+  <!-- Alert action button label -->
+  <string name="ReScan.alertAction">同期</string>
+  <!-- Alert message body -->
+  <string name="ReScan.alertMessage">同期中は送金することができません。</string>
+  <!-- Alert message title -->
+  <string name="ReScan.alertTitle">ブロックチェーンで同期しますか?</string>
+  <!-- extimated time -->
+  <string name="ReScan.body1">20〜45分</string>
+  <!-- Syncing explanation -->
+  <string name="ReScan.body2">ライトコインネットワークでトランザクションが完了したと表示されているが、EacTalk上では完了と表示されない場合。</string>
+  <!-- Syncing explanation -->
+  <string name="ReScan.body3">送金しているが、拒否され続けている場合。</string>
+  <!-- Start Sync button label -->
+  <string name="ReScan.buttonTitle">同期を開始する</string>
+  <!-- Sync blockchain view footer -->
+  <string name="ReScan.footer">ブロックチェーンで同期中は送金することはできません。</string>
+  <!-- Sync Blockchain view header -->
+  <string name="ReScan.header">ブロックチェーン同期</string>
+  <!-- Subheader label -->
+  <string name="ReScan.subheader1">予定時刻</string>
+  <!-- Subheader label -->
+  <string name="ReScan.subheader2">いつ同期しますか?</string>
+  <!-- Scan bitcoin address camera flash toggle -->
+  <string name="Scanner.flashButtonLabel">カメラのフラッシュ</string>
+  <!-- Complete filter label -->
+  <string name="Search.complete">完了</string>
+  <!-- Pending filter label -->
+  <string name="Search.pending">保留中</string>
+  <!-- Received filter label -->
+  <string name="Search.received">受取済</string>
+  <!-- Sent filter label -->
+  <string name="Search.sent">送信済</string>
+  <!-- Security Center Info -->
+  <string name="SecurityCenter.info">セキュリティを最大限に高めるため、すべてのセキュリティ設定を有効にしてください。</string>
+  <!-- Paper Key button description -->
+  <string name="SecurityCenter.paperKeyDescription">あなたが携帯電話を紛失したり、アップグレードした場合にご自身のライトコインへアクセスできる唯一の方法です。</string>
+  <!-- Paper Key button title -->
+  <string name="SecurityCenter.paperKeyTitle">ペーパーキー</string>
+  <!-- PIN button description -->
+  <string name="SecurityCenter.pinDescription">アクセス権限のないユーザーからあなたのブレッドを守ります。</string>
+  <!-- PIN button title -->
+  <string name="SecurityCenter.pinTitle">6桁のPINコード</string>
+  <!-- Security Center Title -->
+  <string name="SecurityCenter.title">セキュリティセンター</string>
+  <!-- Touch ID button description -->
+  <string name="SecurityCenter.touchIdDescription">EacTalkロック解除の他、設定した限度額までの送金も指紋認証で出来ます。</string>
+  <!-- Touch ID button title -->
+  <string name="SecurityCenter.touchIdTitle">Touch ID</string>
+  <!-- Security center fingerprint authentication button -->
+  <string name="SecurityCenter.touchIdTitle.android">指紋認証</string>
+  <!-- Send money amount label -->
+  <string name="Send.amountLabel">金額</string>
+  <!-- Balance: $4.00 -->
+  <string name="Send.balance">残高: %1$s</string>
+  <!-- Instructions how to allow the camera access for the app -->
+  <string name="Send.cameraUnavailabeMessage.android">「設定」 &gt; 「アプリ」 &gt; 「ブレッド」 &gt; 「許可」でカメラへのアクセスを許可してください</string>
+  <!-- Permission required to access camera -->
+  <string name="Send.cameraUnavailabeTitle.android">ブレッドはカメラへのアクセスを許可されていません</string>
+  <!-- Camera not allowed message -->
+  <string name="Send.cameraunavailableMessage">設定画面へ移動し、カメラへのアクセス許可をしてください。</string>
+  <!-- Camera not allowed alert title -->
+  <string name="Send.cameraUnavailableTitle">ブレッドはカメラへのアクセスが許可されていません</string>
+  <!-- Warning when sending to self. -->
+  <string name="Send.containsAddress">送金先がご自身のアドレスになっています。自分宛てには送金できません。</string>
+  <!-- Could not create transaction alert title -->
+  <string name="Send.creatTransactionError">トランザクションの作成ができませんでした。</string>
+  <!-- Description for sending money label -->
+  <string name="Send.descriptionLabel">メモ</string>
+  <!-- Emtpy pasteboard error message -->
+  <string name="Send.emptyPasteboard">ペーストボードが空です</string>
+  <!-- Network Fee: $0.01 -->
+  <string name="Send.fee">ネットワーク手数料: %1$s</string>
+  <!-- Payee identity not certified alert title. -->
+  <string name="Send.identityNotCertified">受取人の本人確認が行われていません。</string>
+  <!-- Invalid address alert message -->
+  <string name="Send.invalidAddressMessage">送金先のアドレスが無効なライトコインアドレスです。</string>
+  <!-- Invalid address on pasteboard message -->
+  <string name="Send.invalidAddressOnPasteboard">ペーストボードに有効なライトコインアドレスが入っていません。</string>
+  <!-- Invalid address alert title -->
+  <string name="Send.invalidAddressTitle">無効なアドレスです</string>
+  <!-- Is rescanning error message -->
+  <string name="Send.isRescanning">フルリスキャンを行っている間は送金できません。</string>
+  <!-- We are loading the request (now) -->
+  <string name="Send.loadingRequest">ロード要求</string>
+  <!-- Empty address alert message -->
+  <string name="Send.noAddress">受取人のアドレスを入力してください。</string>
+  <!-- Emtpy amount alert message -->
+  <string name="Send.noAmount">送金金額を入力してください。</string>
+  <!-- Paste button label -->
+  <string name="Send.pasteLabel">貼り付け</string>
+  <!-- Could not publish transaction alert title -->
+  <string name="Send.publishTransactionError">取引を実行できませんでした。</string>
+  <!-- Could not load remote request error message -->
+  <string name="Send.remoteRequestError">支払い要求がロードできませんでした</string>
+  <!-- Scan button label -->
+  <string name="Send.scanLabel">スキャン</string>
+  <!-- Send button label (the action, "press here to send") -->
+  <string name="Send.sendLabel">送金する</string>
+  <!-- Send screen title (as in "this is the screen for sending money") -->
+  <string name="Send.title">送金</string>
+  <!-- Send money to label -->
+  <string name="Send.toLabel">Earthcoinのアドレスを入力してください。</string>
+
+  <!-- Enter to match domain name to EAC Address -->
+  <!--  <string name="Send.UnstoppableDomains.placeholder">.cryptoまたは.zilドメインを入力してください</string> -->
+  <!-- Or -->
+  <!--  <string name="Send.or">或いは</string> -->
+  <!-- Lookup -->
+  <!--  <string name="Send.UnstoppableDomains.lookup">調べる</string> -->
+  <!-- Your address was resolved! -->
+  <!--  <string name="Send.UnstoppableDomains.domainResolved">あなたの住所は解決されました！</string> -->
+
+  <!-- Adress already used alert message - first part -->
+  <string name="Send.UsedAddress.firstLine">ライトコインアドレスは、個人利用のみを想定しています。</string>
+  <!-- Adress already used alert message - second part -->
+  <string name="Send.UsedAddress.secondLIne">再利用は、最初の利用者と受取人の両方のプライバシーの侵害につながるおそれがあり、受取人がアドレスを直接管理しない場合、損害につながるおそれもあります。</string>
+  <!-- Adress already used alert title -->
+  <string name="Send.UsedAddress.title">アドレスはすでに使用されています</string>
+  <!-- About label -->
+  <string name="Settings.about">概要</string>
+  <!-- Advanced Settings title -->
+  <string name="Settings.advancedTitle">詳細設定</string>
+  <!-- i.e. the currency which will be displayed -->
+  <string name="Settings.currency">表示される通貨</string>
+  <!-- Join Early access label -->
+  <string name="Settings.earlyAccess">早期アクセスに参加</string>
+  <!-- Are you enjoying EacTalk alert message body -->
+  <string name="Settings.enjoying">ブレッドをお楽しみいただいていますか?</string>
+  <!-- Import wallet label -->
+  <string name="Settings.importTitle">ウォレットをインポート</string>
+  <!-- Manage settings section header -->
+  <string name="Settings.manage">管理</string>
+  <!-- Notifications label -->
+  <string name="Settings.notifications">通知</string>
+  <!-- Leave review button label -->
+  <string name="Settings.review">レビューを書く</string>
+  <!-- Share anonymous data label -->
+  <string name="Settings.shareData">匿名データをシェアする</string>
+  <!-- Sync blockchain label -->
+  <string name="Settings.sync">ブロックチェーン同期</string>
+  <!-- Settings title -->
+  <string name="Settings.title">設定</string>
+  <!-- Touch ID spending limit label -->
+  <string name="Settings.touchIdLimit">Touch IDの利用限度額</string>
+  <!-- The fingerprint spending limit -->
+  <string name="Settings.touchIdLimit.android">指紋認証利用上限</string>
+  <!-- Wallet Settings section header -->
+  <string name="Settings.wallet">ウォレット</string>
+  <!-- Start or recover another wallet menu label. -->
+  <string name="Settings.wipe">別のウォレットを作成、または復元する</string>
+  <!-- Share data view body -->
+  <string name="ShareData.body">匿名データをシェアして、ブレッドの改善にご協力ください。これにはいかなる財務情報も含まれません。私たちはあなたの財務プライバシーを尊重しています。</string>
+  <!-- Share data header -->
+  <string name="ShareData.header">データをシェしますか?</string>
+  <!-- Share data switch label. -->
+  <string name="ShareData.toggleLabel">匿名データをシェアしますか?</string>
+  <!-- button label -->
+  <string name="StartPaperPhrase.againButtonTitle">紙の鍵をもう一度書き留めてください</string>
+  <!-- Paper key explanation text. -->
+  <string name="StartPaperPhrase.body">紙の鍵は、あなたが携帯電話を紛失したり、盗まれたり、壊れたり、アップグレードした場合に、ご自身のブレッドを復元できる唯一の方法です。\n\nフレーズの一覧を表示しますので、紙に書き留めて安全に保管してください。</string>
+  <!-- button label -->
+  <string name="StartPaperPhrase.buttonTitle">紙の鍵を書き留めてください</string>
+  <!-- Argument is date -->
+  <string name="StartPaperPhrase.date">あなたが最後に紙の鍵を書き留めたのは %1$sです</string>
+  <!-- Start view message -->
+  <string name="StartViewController.message">最も安全にリテコインを使う手段。</string>
+  <!-- Syncing view connectiong state header text -->
+  <string name="SyncingView.connecting">接続中</string>
+  <!-- Syncing view header text -->
+  <string name="SyncingView.header">同期中</string>
+  <!-- Retry button label -->
+  <string name="SyncingView.retry">再試行</string>
+  <!-- Syncing view syncing state header text -->
+  <string name="SyncingView.syncing">同期中</string>
+  <!-- 6 d (6 days) -->
+  <string name="TimeSince.days">%1$s日</string>
+  <!-- 6 h (6 hours) -->
+  <string name="TimeSince.hours">%1$s時間</string>
+  <!-- 6 m (6 minutes) -->
+  <string name="TimeSince.minutes">%1$s分</string>
+  <!-- 6 s (6 seconds) -->
+  <string name="TimeSince.seconds">%1$s秒</string>
+  <!-- You can customize your Touch ID Spending Limit from the [TouchIdSettings.linkText gets added here as a button] -->
+  <string name="TouchIdSettings.customizeText">%1$sからTouch ID利用限度額を変更できます。</string>
+  <!-- Fingerprint enabling description body -->
+  <string name="TouchIdSettings.customizeText.android">指紋認証利用上限は指紋認証利用上限画面でカスタマイズできます</string>
+  <!-- Instruction for the fingerprint setup -->
+  <string name="TouchIdSettings.disabledWarning.body.android">この機器は指紋認証が有効化されていません。設定 -&gt; セキュリティに移動して指紋認証を設定してください。</string>
+  <!-- Fingerprint Is Not Setup -->
+  <string name="TouchIdSettings.disabledWarning.title.android">指紋認証が有効ではありません</string>
+  <!-- Touch Id screen label -->
+  <string name="TouchIdSettings.label">設定された限度額以下の送金を行う場合には、指紋を使ってご自身のブレッドのロックを解除してください。</string>
+  <!-- Link Text (see TouchIdSettings.customizeText) -->
+  <string name="TouchIdSettings.linkText">Touch ID利用限度額画面</string>
+  <!-- Spending Limit: b100,000 ($100) -->
+  <string name="TouchIdSettings.spendingLimit">利用限度: %1$s (%2$s)</string>
+  <!-- Touch id switch label. -->
+  <string name="TouchIdSettings.switchLabel">ブレッドでTouch IDの有効化</string>
+  <!-- Enable fingerprint for this wallet called EacTalk -->
+  <string name="TouchIdSettings.switchLabel.android">指紋認証を有効にする</string>
+  <!-- Touch ID settings view title -->
+  <string name="TouchIdSettings.title">Touch ID</string>
+  <!-- Fingerprint authentication label -->
+  <string name="TouchIdSettings.title.android">指紋認証</string>
+  <!-- Touch ID unavailable alert message -->
+  <string name="TouchIdSettings.unavailableAlertMessage">あなたはこの端末でTouch IDの利用設定をしていません。設定-&gt;Touch IDとパスコードに移動し、今すぐ設定してください。</string>
+  <!-- Touch ID unavailable alert title -->
+  <string name="TouchIdSettings.unavailableAlertTitle">Touch IDが設定されていません</string>
+  <!-- Always require passcode option -->
+  <string name="TouchIdSpendingLimit">常にパスコードを要求する</string>
+  <!-- Touch ID spending limit screen body -->
+  <string name="TouchIdSpendingLimit.body">限度額を超える金額の送金を行う場合や、最後に6桁のPINコードを入力してから48時間毎に6桁のPINコードの入力が求められます。</string>
+  <!-- Touch Id spending limit screen title -->
+  <string name="TouchIdSpendingLimit.title">Touch IDの利用限度額</string>
+  <!-- name of spending limit when using fingerprint authorization -->
+  <string name="TouchIdSpendingLimit.title.android">指紋認証利用上限</string>
+  <!-- Availability status text -->
+  <string name="Transaction.available">利用可能</string>
+  <!-- Transaction complete label -->
+  <string name="Transaction.complete">完了</string>
+  <!-- eg. Ending balance: $50.00 -->
+  <string name="Transaction.ending">期末残高: %1$s</string>
+  <!-- Exchange rate on date header -->
+  <string name="Transaction.exchangeOnDayReceived">受け取り時の為替レート：</string>
+  <!-- Exchange rate on date header -->
+  <string name="Transaction.exchangeOnDaySent">送金時の為替レート：</string>
+  <!-- (b600 fee) -->
+  <string name="Transaction.fee">(%1$s 手数料)</string>
+  <!-- Invalid transaction -->
+  <string name="Transaction.invalid">無効</string>
+  <!-- Timestamp label for event that just happened -->
+  <string name="Transaction.justNow">たった今</string>
+  <!-- Receive status text: 'In progress: 20%' -->
+  <string name="Transaction.receivedStatus">進行中: %1$s</string>
+  <!-- Send status text: 'In progress: 20%' -->
+  <string name="Transaction.sendingStatus">進行中: %1$s</string>
+  <!-- eg. Starting balance: $50.00 -->
+  <string name="Transaction.starting">期首残高: %1$s</string>
+  <!-- Waiting to be confirmed string -->
+  <string name="Transaction.waiting">認証を待っています。トランザクションの完了に認証を必要とする販売者もいます。推定時間: 1-2時間。</string>
+  <!-- e.g. I received money from an account. -->
+  <string name="TransactionDetails.account">アカウント</string>
+  <!-- Amount section header -->
+  <string name="TransactionDetails.amountHeader">金額</string>
+  <!-- Block height label -->
+  <string name="TransactionDetails.blockHeightLabel">ブロックにて承認済み</string>
+  <!-- Memo section header -->
+  <string name="TransactionDetails.commentsHeader">メモ</string>
+  <!-- Empty transaction list message. -->
+  <string name="TransactionDetails.emptyMessage">あなたの取引はこちらに表示されます。</string>
+  <!-- "Received [$5] at [which of my addresses]" => This is the "at [which of my addresses]" part. -->
+  <string name="TransactionDetails.from">%1$sで</string>
+  <!-- More button title -->
+  <string name="TransactionDetails.more">もっと見る...</string>
+  <!-- Moved $5.00 (as in "I moved $5 to another location") -->
+  <string name="TransactionDetails.moved">%1$sを移動させました</string>
+  <!-- Moved $5.00 -->
+  <string name="TransactionDetails.movedAmountDescription"><b>%1$s</b>を移動させました</string>
+  <!-- eg. Confirmed in Block: Not Confirmed -->
+  <string name="TransactionDetails.notConfirmedBlockHeightLabel">未承認</string>
+  <!-- "Received [$5] at [which of my addresses]" => This is the "Received [$5]" part. -->
+  <string name="TransactionDetails.received">%1$sを受け取りました</string>
+  <!-- Received $5.00 -->
+  <string name="TransactionDetails.receivedAmountDescription"><b>%1$s</b>を受け取りました</string>
+  <!-- "Sent [$5] to [address]" => This is the "Sent [$5]" part. -->
+  <string name="TransactionDetails.sent">%1$sを送金しました</string>
+  <!-- Sent $5.00 -->
+  <string name="TransactionDetails.sentAmountDescription"><b>%1$s</b>を送金しました</string>
+  <!-- Status section header -->
+  <string name="TransactionDetails.statusHeader">ステータス</string>
+  <!-- Transaction Details Title -->
+  <string name="TransactionDetails.title">取引詳細</string>
+  <!-- "Sent [$5] to [address]" => This is the "to [address]" part. -->
+  <string name="TransactionDetails.to">%1$sに</string>
+  <!-- Transaction ID header -->
+  <string name="TransactionDetails.txHashHeader">ライトコイン トランザクションID</string>
+  <!-- (this transaction was) Received at this address: -->
+  <string name="TransactionDirection.address">このアドレスで受け取りました</string>
+  <!-- (this transaction was) Sent to this address: -->
+  <string name="TransactionDirection.to">このアドレスに送金しました</string>
+  <!-- Disabled until date -->
+  <string name="UnlockScreen.disabled">以下まで無効: %1$s</string>
+  <!-- My Address button title -->
+  <string name="UnlockScreen.myAddress">マイアドレス</string>
+  <!-- Reset PIN with Paper Key button label. -->
+  <string name="UnlockScreen.resetPin">PINコードをリセット</string>
+  <!-- Scan button title -->
+  <string name="UnlockScreen.scan">スキャン</string>
+  <!-- Unlock Screen sub-header -->
+  <string name="UnlockScreen.subheader">PINコードを入力してください</string>
+  <!-- Instruction to touch the sensor for fingerprint authentication -->
+  <string name="UnlockScreen.touchIdInstructions.android">タッチセンサー</string>
+  <!-- TouchID prompt text -->
+  <string name="UnlockScreen.touchIdPrompt">ブレッドのロックを解除してください。</string>
+  <!-- Device authentication body -->
+  <string name="UnlockScreen.touchIdPrompt.android">続行するためAndroid機器のロックを解除 してください</string>
+  <!-- Unlock with TouchID accessibility label -->
+  <string name="UnlockScreen.touchIdText">Touch IDでロックを解除する</string>
+  <!-- Device authentication title -->
+  <string name="UnlockScreen.touchIdTitle.android">認証が必要です</string>
+  <!-- Wallet unlocked message -->
+  <string name="UnlockScreen.unlocked">ウォレットのロックが解除されました</string>
+  <!-- Update PIN caption text -->
+  <string name="UpdatePin.caption">このPINコードは覚えておいてください。忘れた場合、ご自身のライトコインへアクセスできなくなります。</string>
+  <!-- PIN creation info. -->
+  <string name="UpdatePin.createInstruction">あなたのPINコードはご自身のブレッドのロックを解除したり、送金する時に利用します。</string>
+  <!-- Update PIN title -->
+  <string name="UpdatePin.createTitle">PINコードの設定</string>
+  <!-- Update PIN title -->
+  <string name="UpdatePin.createTitleConfirm">PINコードを再入力してください</string>
+  <!-- Enter current PIN instruction -->
+  <string name="UpdatePin.enterCurrent">現在のPINコードを入力してください。</string>
+  <!-- Enter new PIN instruction -->
+  <string name="UpdatePin.enterNew">新しいPINコードを入力してください。</string>
+  <!-- Re-Enter new PIN instruction -->
+  <string name="UpdatePin.reEnterNew">新しいPINコードを再入力してください。</string>
+  <!-- Update PIN failure error message. -->
+  <string name="UpdatePin.setPinError">申し訳ありませんが、PINコードが更新できませんでした。</string>
+  <!-- Update PIN failure alert view title -->
+  <string name="UpdatePin.setPinErrorTitle">PINコード更新エラー</string>
+  <!-- Update PIN title -->
+  <string name="UpdatePin.updateTitle">PINコードを更新する</string>
+  <!-- Authorize to copy wallet addresses alert message -->
+  <string name="URLHandling.addressaddressListAlertMessage">ウォレットアドレスをクリップボードにコピーしますか?</string>
+  <!-- Authorize to copy wallet address PIN view prompt. -->
+  <string name="URLHandling.addressList">ウォレットアドレスのクリップボードへのコピーを認証</string>
+  <!-- Authorize to copy wallet address alert title -->
+  <string name="URLHandling.addressListAlertTitle">ウォレットアドレスをコピーします</string>
+  <!-- Copy wallet addresses alert button label -->
+  <string name="URLHandling.copy">コピー</string>
+  <!-- Verify PIN for transaction view body -->
+  <string name="VerifyPin.authorize">このトランザクションを認証するためにはPINを入力してください。</string>
+  <!-- Verify PIN view body -->
+  <string name="VerifyPin.continueBody">続けるにはPINコードを入力してください。</string>
+  <!-- Verify PIN view title -->
+  <string name="VerifyPin.title">PINコードが必要です</string>
+  <!-- Authorize transaction with touch id message -->
+  <string name="VerifyPin.touchIdMessage">このトランザクションを認証する</string>
+  <!-- 'No wallet' warning for watch app -->
+  <string name="Watch.noWalletWarning">EacTalkのiPhoneアプリを開き、ウォレットをセットアップする</string>
+  <!-- Dismiss button label -->
+  <string name="Webview.dismiss">解除</string>
+  <!-- Webview loading error message -->
+  <string name="Webview.errorMessage">このコンテンツの読み込み中にエラーが発生しました。もう一度お試しください。</string>
+  <!-- Updating webview message -->
+  <string name="Webview.updating">更新中...</string>
+  <!-- Welcome screen text. (?) will be replaced with the help icon users should look for. -->
+  <string name="Welcome.body">EacTalkwalletは新しい見た目と新機能を備えて、EacTalkという名前に生まれ変わりました。\n\nヘルプをご覧になるには、ほとんどの画面の右上にある(?)をお探しください。</string>
+  <!-- Top title of welcome screen -->
+  <string name="Welcome.title">EacTalkへようこそ！</string>
+  <!-- Wipe wallet alert message -->
+  <string name="WipeWallet.alertMessage">本当にこのウォレットを削除しますか？</string>
+  <!-- Wipe wallet alert title -->
+  <string name="WipeWallet.alertTitle">ウォレットを消去しますか？</string>
+  <!-- Failed wipe wallet alert message -->
+  <string name="WipeWallet.failedMessage">ウォレットを消去できませんでした。</string>
+  <!-- Failed wipe wallet alert title -->
+  <string name="WipeWallet.failedTitle">失敗しました</string>
+  <!-- Enter phrase to wipe wallet instruction. -->
+  <string name="WipeWallet.instruction">ウォレットを消去し、新しいウォレットを作成したり、復元したりしたい場合は復旧フレーズを入力してください。この段階では残高は残っています。</string>
+  <!-- Start wipe wallet view message -->
+  <string name="WipeWallet.startMessage">別のウォレットを開設するか復元することにより、このデバイス上で異なるEacTalkウォレットへのアクセスと管理ができるようになります。</string>
+  <!-- Start wipe wallet view warning -->
+  <string name="WipeWallet.startWarning">このデバイスから現在使用中のEacTalkウォレットへのアクセスはできなくなります。残高はフレーズに残されます。</string>
+  <!-- Wipe wallet navigation item title. -->
+  <string name="WipeWallet.title">別のウォレットを作成、または復元する</string>
+  <!-- Wipe wallet button title -->
+  <string name="WipeWallet.wipe">消去</string>
+  <!-- Wiping activity message -->
+  <string name="WipeWallet.wiping">消去中...</string>
+  <!-- Paper key instructions. -->
+  <string name="WritePaperPhrase.instruction">フレーズは順番通りに書き留めて、安全な場所に保管しておいてください。</string>
+  <!-- button label -->
+  <string name="WritePaperPhrase.next">次へ</string>
+  <!-- button label -->
+  <string name="WritePaperPhrase.previous">前へ</string>
+  <!-- 1 of 3 -->
+  <string name="WritePaperPhrase.step">%2$dの%1$d</string>
+  <string name="Donate.title">ライトコイン財団に寄付してください (%1$s)</string>
+  <string name="Donate.title.confirmation">寄付を確認する</string>
+  <string name="Confirmation.processingAndDonationTime">処理時間：これらのトランザクションの処理には %1$s 分かかります。</string>
+  <string name="Confirmation.donateLabel">寄付金額：</string>
+  <string name="Confirmation.staticAddressLabel">住所：</string>
+  <string name="Donate.word">寄付</string>
+  <string name="Donate.toThe">"に寄付する "</string>
+  <string name="FeeSelector.luxury">ぜいたく</string>
+  <string name="FeeSelector.luxuryMessage">このオプションは、プレミアムを支払っていますが、トランザクションの受け入れを事実上保証します。</string>
+  <string name="FeeSelector.luxuryTime">2.5～5+分</string>
+  <string name="settings">設定</string>
+  <string name="message">メッセージ</string>
+  <string name="ipfs">IPFS</string>
+  <string name="MenuButton.supportCenter">サポートセンター</string>
+  <string name="supportCenter.eac">EAC紹介及びEacTalk使用教程</string>
+  <string name="supportCenter.gainEac">どうやってEACを獲得しますか</string>
+  <string name="supportCenter.buyEac">EAC教程の購入</string>
+  <string name="supportCenter.transEac">お札を持ってEacTalk教程に行きます。</string>
+  <string name="supportCenter.drawEac">EAC教程を掘る</string>
+  <string name="supportCenter.eacnode">Earthcoinノード構築教程</string>
+  <string name="supportCenter.supportS">取引所をサポートする</string>
+  <string name="supportCenter.supportA">鉱床をサポートする</string>
+  <string name="supportCenter.supportP">EacTalkのウェブサイトとアプリケーションをサポートします。</string>
+  <string name="txt.support">サポート</string>
+  <string name="txt.tutorial">教程</string>
+  <string name="txt.introduction_and_use_of_eac">
+    地球ドル（EAC）は2013年12月20日にカナダのトロントで発表されたSryptアルゴリズムに基づくグローバルな暗号化通貨で、持続可能で公平な発展に努めています。次世代のscrypt貨幣で、ライト元の延長です。ライトコインのようです。scryptを使って仕事量を証明する仕組みです。地球ドルは急速に知名度を上げている革命的な独特のデジタル通貨で、その創設者は暗号化された通貨が世界を変える可能性があると信じています。地球ドルの魅力は明らかにそのマーケティング経験から来ています。地球貨幣の下部技術は暗号化された貨幣のいくつかの初期の欠陥を解決しました。
+  </string>
+  <string name="txt.mining_eac_course">
+    EACは現在AUX-OWの採掘モードをサポートしています。つまり共同で採掘することをサポートしています。LTCやDOGEを掘ると同時にEACを掘ることができます。鉱山プールのサポートが必要です。サポートしていないなら、あなたのいる鉱山プールのサービス業者に聞いてください。LTCやDOGEの鉱床を掘りさえすれば、EACは掘れる。
+  </string>
+  <string name="txt.you_can_view">
+    EACメソッドを取得
+  </string>
+  <string name="txt.i_see">
+    分かりました
+  </string>
+  <string name="txt.pick_photo">選択写真</string>
+  <string name="txt.unknown_qrcode">未知のQrcode</string>
+    <string name="tx_message">ニュース</string>
+
+    <!--  add by oldfeel  -->
+    <string name="about">会社概要</string>
+    <string name="home_url">ホームノード</string>
+    <string name="earth_coin_node">EACノード</string>
+    <string name="ipfs_node">IPFSノード</string>
+    <string name="node_settings">ノードの設定</string>
+    <string name="automatic">自動</string>
+    <string name="manual">手動</string>
+    <string name="save_success">保存に成功</string>
+    <string name="git">コード管理</string>
+    <string name="import_success">輸入に成功</string>
+    <string name="contact">アドレス帳</string>
+    <string name="copy_success">コピー成功</string>
+    <string name="save">セーブ</string>
+    <string name="cancel">キャンセル</string>
+    <string name="enter_complete_info">完全な情報を入力してください</string>
+    <string name="tips">ヒント</string>
+    <string name="confirm_delete_address">選択したアドレスを削除しますか？削除後は復元できず、再度追加することができます。</string>
+    <string name="submit">確認</string>
+    <string name="delete_success">削除成功</string>
+    <string name="contact_info">問い合わせ先</string>
+    <string name="copy_success_">コピー成功: </string>
+    <string name="edit">変更</string>
+    <string name="help">よくある質問</string>
+    <string name="shbl">のどが深い</string>
+    <string name="zgtx">に告げる</string>
+    <string name="qggc">感情広場</string>
+    <string name="sdtc">木の穴</string>
+    <string name="api_url_error">Api url エラー</string>
+    <string name="network_error">ネットワーク接続の失敗</string>
+    <string name="message_info">メッセージの内容</string>
+    <string name="status_submit"><![CDATA[ステータス: <font color=\'#3d86f8\'>%1$d</font>個の確認]]></string>
+    <string name="received_">受信: </string>
+    <string name="sended_">送信: </string>
+    <string name="send_">に届く: </string>
+    <string name="from_">から: </string>
+    <string name="date_">日付: </string>
+    <string name="language_same">元の言語とシステム言語が同じなので、翻訳は不要</string>
+    <string name="translate_fail">翻訳の失敗</string>
+    <string name="identify_language_fail">言語を認識しない</string>
+    <string name="cancel_like">フォロー解除</string>
+    <string name="confirm_cancel_like">フォローを解除するかどうか %1$s か?</string>
+    <string name="like">付従う</string>
+    <string name="unlike_success">フォロー解除成功</string>
+    <string name="nickname_">仮名: </string>
+    <string name="liked">注目</string>
+    <string name="E__">(エンクリプト)</string>
+    <string name="no_extra">付属品なし</string>
+    <string name="extra_">附属書: </string>
+    <string name="show_days">表示日数</string>
+    <string name="earth_coin_browser">earthcoin ブラウザー</string>
+    <string name="set_key">助記詞の設定</string>
+    <string name="start_recovery_account">アカウントの開始/復元</string>
+    <string name="remove_account">アカウントの消去</string>
+    <string name="confirm_remove_account">本当にこのアカウントを消去しますか？</string>
+    <string name="tips_key_error">入力した助記語は無効です。各単語をよくチェックして再試行してください。</string>
+    <string name="close">閉じる</string>
+    <string name="max_storage">最大記憶容量(GB)</string>
+    <string name="select_ipfs_path">IPFSストレージパスの選択</string>
+    <string name="default_node">デフォルトのノード</string>
+    <string name="default_gateway">デフォルトゲートウェイ</string>
+    <string name="listen_privacy"><![CDATA[利用規約・個人情報保護方針]]></string>
+    <string name="reclick_exit">再度終了に戻る EACTALK</string>
+    <string name="my_like">私の関心</string>
+    <string name="my_message">私のニュース</string>
+    <string name="tip_mine_flash">機能は開発中のものです...\n需取引所で対応予定,coinbaseのサポートにご提案ください EAC</string>
+    <string name="eactalk_team">EACTALKチーム</string>
+    <string name="contact_us">お問い合わせ</string>
+    <string name="time_">時間: </string>
+    <string name="ipfs_connecting">IPFS: 接続中</string>
+    <string name="eac_connecting">EAC: 接続中</string>
+    <string name="eac_sync_complete">EAC: 同時完成</string>
+    <string name="ipfs_close">IPFS: 閉じました</string>
+    <string name="eac_syncing">EAC: 同期中 </string>
+    <string name="export_success_">輸出に成功: </string>
+    <string name="loading">ロード中...</string>
+    <string name="confirm_send_message">確かにメッセージを送ると、表示可能な文字数より多く、支払ったEACは返却できない？カウントダウン送信(<font color="#3d86f8">%1$d秒</font>)</string>
+    <string name="tip_eac_syncing">現在、ブロックチェーンは同期中であり、メッセージの送信や返信はできません。</string>
+    <string name="send_normal">一般メッセージの発行</string>
+    <string name="send_notice">発売告知ニュース</string>
+    <string name="min_eac">出動回数(最低 %1$d EAC)</string>
+    <string name="file_name_">"ファイル名: "</string>
+    <string name="confirm_sensitive_word">発表された情報には機密ワードが含まれています。: %1$s，展示中の★に置き換えて、出版を続けるのか?</string>
+    <string name="insufficient_balance">バランス不足</string>
+    <string name="not_less_than">"EACの下限値を下回らないこと "</string>
+    <string name="message_too_long">メッセージが長すぎる</string>
+    <string name="sending">送信中...</string>
+    <string name="tip_send_notice_success">アップロードした添付ファイルを他のユーザーがより早く閲覧できるようにするため、通知バーのステータスアラートをオフにしないでください。</string>
+    <string name="send_success">正常に送信された</string>
+    <string name="set_pin">PINコード設定</string>
+    <string name="set_complete">設定完了</string>
+    <string name="set_pin_success">PIN設定成功</string>
+    <string name="i_known">そういうことか</string>
+    <string name="invite_friends">友達を招待する</string>
+    <string name="agree_listen_privacy">利用規約|個人情報保護方針に同意してください</string>
+    <string name="pin_error">PINコードの誤り</string>
+    <string name="set_key_word">助記詞の設定</string>
+    <string name="set_key_word_success">助数詞の設定に成功しました</string>
+    <string name="landscape">よこスクリーン</string>
+    <string name="portrait">たてスクリーン</string>
+    <string name="about_content">EACTALKは、自由を志向する技術者集団が、EACブロックチェーン技術をベースに開発したメタバース型情報公開ソーシャルウェブ3.0アプリケーションです。\n\n私たちは何かをコントロールしようとするのではなく、世界に言論の自由を求めます。言論そのものに善悪はなく、善悪の判断は各人の立場の問題に過ぎないのです； \n\nたとえそれが嘘であっても、世界は真実であってほしい； \n\n世界がポジティブなエネルギーで満たされますように； \n\n私たちは、世界における言論の平等を望みます（物質的な不平等に基づく一連の不平等についてはどうしようもないとしても、一部の組織による資源の支配のためではなく、生まれながらの人間としての言論の平等を望みます）； \n\nEACTALKの設計メカニズムにより、第2のTwitter、Facebook、Google、Weiboになることはありません。 \n\n公式サイト: https://www.eactalk.com/</string>
+    <string name="listen_content">EACTALKは、自由に使用・配布することができます。 EACTALK自体は完全なプライバシー保護を提供しており、お客様から個人情報を求めたり収集したりすることはなく、情報の真偽はユーザーによる自己証明で、証明の選択は完全にユーザーに委ねられています。 \n\n1、情報の所有権はアカウント所有者に帰属し、アカウントはユーザーに帰属し、アカウントはグローバルにユニークで、アカウントは完全に匿名であり、改ざんすることはできません。 \n\n2、情報は、削除不可、取消不可、修正不可、否認不可、追跡不可、永久的なものです。 \n\n3、自主的な有料告知型情報、すべてEACTALKのトップビジビリティ。 \n\n4、EACTALKの著作権はEACTALKの開発者に帰属し、許可なく商用利用することを禁じます。</string>
+    <string name="eac_help">EACノード：ブロックチェーンネットワークをリンクし、チェーンにデータを保存するために使用され、あなた自身の信頼できるノードをリンクすることが推奨されます。 利用可能な場合は、独自のノードを構築することが推奨されます。 ip:port の形式。 参照：ヘルプセンター 操作方法</string>
+    <string name="ipfs_help">IPFSノード：ビデオ、オーディオ、画像など、メッセージ内の非テキスト情報を保存するために使用されます。より高速なアップロード速度が要求されるので、独自のノード、フォーマットip:portを作成することをお勧めします。 参照：ヘルプセンター 操作方法</string>
+    <string name="copy_address">コピーアドレス</string>
+    <string name="delete">削除</string>
+    <string name="important_tips">重要なお知らせ</string>
+    <string name="address_">アドレス:</string>
+    <string name="status_">ステータス:</string>
+    <string name="input_key_word_one_by_one">単語を順番に書き出し、安全な場所に保存する</string>
+    <string name="previous">前へ</string>
+    <string name="next">次へ</string>
+    <string name="input_key_word_to_recovery">現在のEACTALKアカウントのニモニックを入力して消去し、別のEACTALKアカウントを起動または復元すると、現在のEAC残高が保持されます。</string>
+    <string name="input_key_word">助記詞を入力</string>
+    <string name="start_recovery">別のアカウントを起動または復元することで、本機で未使用のEACTALKアカウントを管理・使用することができます</string>
+    <string name="you_cannot_use_this_eactalk">このデバイスで現在のEACTALKアカウントを使用することはできません。現在、このアカウント上のすべての送信または受信された情報、EACは助記詞に残ります。</string>
+    <string name="contact_will_remove">ローカルアドレス帳はもう存在しません。再び追加する必要があります！</string>
+    <string name="pin_help">PINコードはEACTALKをロック解除し、情報を公開するために使用されます。このPINコードを覚えておいてください。忘れているとEACTALKにアクセスできません。</string>
+    <string name="invitation_link">招待リンク: https://www.eactalk.com/download</string>
+    <string name="invitation_qr_code_">招待QRコード:</string>
+    <string name="save_qr_code">QRコードを長く押して、画像を保存して、親友に送ります。</string>
+    <string name="you_can_bb">“賛成はしないが、発言する権利は死守する。”</string>
+    <string name="you_can_bb_name">-イブリン・ビアトリス・ホール</string>
+    <string name="create_account">アカウントの作成</string>
+    <string name="create_new_account_free">新しいアカウントを無料で作成（EACウォレット）</string>
+    <string name="import_account">アカウントのインポート</string>
+    <string name="recovery_account">元のアカウントを復元する（EAC旧ウォレット）</string>
+    <string name="input_password">PINを入力してください</string>
+    <string name="word_7">単語#7</string>
+    <string name="input">入力してください</string>
+    <string name="back">リターン</string>
+    <string name="notice_message">公告情報</string>
+    <string name="p2p_message">ピアツーピアメッセージ</string>
+    <string name="scan_message">スキャンコード送信メッセージ</string>
+    <string name="upload_video">ビデオのアップロード</string>
+    <string name="upload_file">ファイルのアップロード</string>
+    <string name="upload_image">画像をアップロード</string>
+    <string name="connect_type_">接続モード:</string>
+    <string name="create">新しい</string>
+    <string name="scan_like">スキャンコードの注目</string>
+    <string name="copy">リプロダクト</string>
+    <string name="select">選択</string>
+    <string name="available_balance_">残高あり:</string>
+    <string name="reset_account">アカウントをリセット</string>
+    <string name="import_key">秘密鍵のインポート</string>
+    <string name="send">送信</string>
+    <string name="receive">受入</string>
+    <string name="flash">両替</string>
+    <string name="show_coin_type">通貨の表示</string>
+    <string name="safe_center">セキュリティセンター</string>
+    <string name="send_normal_message">一般メッセージの発行</string>
+    <string name="send_notice_message">公告情報を発表する</string>
+    <string name="send_scan_message">スキャンコード送信メッセージ</string>
+    <string name="home">ホーム</string>
+    <string name="publish">発行</string>
+    <string name="mine">私の</string>
+    <string name="import_">輸入</string>
+    <string name="export">輸出</string>
+    <string name="info">情報＃ジョウホウ＃</string>
+    <string name="reply">返信</string>
+    <string name="notice_type_">投稿タイプ:</string>
+    <string name="zg">に告げる</string>
+    <string name="bl">ばくはつ</string>
+    <string name="qg">感情</string>
+    <string name="sd">木の穴</string>
+    <string name="receive_address_">受信アドレス:</string>
+    <string name="send_eac">送信数量(EAC)</string>
+    <string name="balance_">残高:</string>
+    <string name="net_fee_">インターネット料金:</string>
+    <string name="message_">ニュース:</string>
+    <string name="extra_type_">添付ファイル（動画/写真/音声対応）:</string>
+    <string name="is_encrypt_">闇号化するかどうか:</string>
+    <string name="extra">附属書</string>
+    <string name="save_send_address">送信先の保存</string>
+    <string name="help_center">ヘルプセンター</string>
+    <string name="official_website">公式サイト: https://www.eactalk.com/</string>
+    <string name="rescan">再同期</string>
+    <string name="auto_translation">自動翻訳</string>
+    <string name="node_run_time">ノード実行時間</string>
+    <string name="start">オープン</string>
+    <string name="is_only_wifi">WiFi環境下のみでの接続の有無</string>
+    <string name="ipfs_path">ストレージパス</string>
+    <string name="default_gateway_http_https">デフォルトゲートウェイ（httpとhttpsをサポート）</string>
+    <string name="filter_by_eac">EACに基づいてコンテンツをフィルタリングするかどうか</string>
+    <string name="enter_alias">自分で識別できる別名を入力してください</string>
+    <string name="enter_address">EACアドレスを入力してください</string>
+    <string name="enter_alias_address">アドレスまたは別名を入力して検索</string>
+    <string name="enter">入力してください</string>
+    <string name="height">高さ</string>
+    <string name="hard">難易度</string>
+    <string name="get_height_hard_error">高さと難易度の失敗を取得する</string>
+    <string name="parse_height_hard_error">高さ・難易度の解決失敗</string>
+    <string name="get_peer_info_error">ノード情報の取得に失敗</string>
+    <string name="eac_peer_list_">アースコイン利用可能ノード:</string>
+    <string name="update">更新</string>
+    <string name="version_info">現在のバージョン: %1$s (最新バージョン: %2$s)</string>
+    <string name="is_auto_update">自動更新の可否</string>
+    <string name="get_version_info_error">バージョン情報の取得に失敗しました</string>
+    <string name="update_url_error">更新アドレスの取得に失敗しました</string>
+    <string name="download_progress">ダウンロードの進行状況</string>
+    <string name="apk_download_success">apkダウンロード完了・ファイルパス：</string>
+    <string name="apk_download_fail">ダウンロード失敗</string>
+    <string name="updating">更新中...</string>
+</resources>

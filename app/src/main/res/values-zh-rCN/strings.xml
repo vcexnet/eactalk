@@ -5,7 +5,7 @@
     <!-- About screen blog label -->
     <string name="About.blog">网站</string>
     <!-- About screen footer -->
-    <string name="About.footer">由Eacpay Dev Team制作\n%1$s</string>
+    <string name="About.footer">由EacTalk Dev Team制作\n%1$s</string>
     <!-- Privay Policy button label -->
     <string name="About.privacy">隐私政策</string>
     <!-- About screen reddit label -->
@@ -334,7 +334,7 @@
     <!-- Balance: $4.00 -->
     <string name="Send.balance">余额：%1$s</string>
     <!-- Instructions how to allow the camera access for the app -->
-    <string name="Send.cameraUnavailabeMessage.android">在“设置”&gt;“应用”&gt;“Eacpay”&gt;“权限”中允许访问相机</string>
+    <string name="Send.cameraUnavailabeMessage.android">在“设置”&gt;“应用”&gt;“EacTalk”&gt;“权限”中允许访问相机</string>
     <!-- Permission required to access camera -->
     <string name="Send.cameraUnavailabeTitle.android">EACTALK 没有访问相机的权限</string>
     <!-- Camera not allowed message -->
@@ -553,7 +553,7 @@
     <!-- Updating webview message -->
     <string name="Webview.updating">正在更新...</string>
     <!-- Welcome screen text. (?) will be replaced with the help icon users should look for. -->
-    <string name="Welcome.body">Eacwallet 更名为 EACTALK， 并增加了全新的界面和功能。如果您需要帮助，请使用在大多数设备屏幕右上角的(?)</string>
+    <string name="Welcome.body">EACTALK是首款元宇宙信息发布社交web3.0应用，如果您需要帮助，请使用在大多数设备屏幕右上角的(?)</string>
     <!-- Top title of welcome screen -->
     <string name="Welcome.title">欢迎使用EACTALK！</string>
     <!-- Wipe wallet alert message -->
@@ -644,7 +644,7 @@
     <string name="zgtx">昭告天下</string>
     <string name="qggc">情感广场</string>
     <string name="sdtc">树洞吐槽</string>
-    <string name="api_url_error">api url 错误</string>
+    <string name="api_url_error">Api url 错误</string>
     <string name="network_error">网络连接失败</string>
     <string name="message_info">消息详情</string>
     <string name="status_submit"><![CDATA[状态: <font color=\'#3d86f8\'>%1$d</font>个确认]]></string>
@@ -671,10 +671,10 @@
     <string name="start_recovery_account">开始/恢复账号</string>
     <string name="remove_account">擦除账户</string>
     <string name="confirm_remove_account">您确定要擦除此账户吗？</string>
-    <string name="tips_key_error">您输入的助记词无效，请仔细检查每一个单词并重试。</string>
+    <string name="tips_key_error">您输入的助记词无效，请仔细检查每一个单词并重试</string>
     <string name="close">关闭</string>
     <string name="max_storage">最大存储空间(GB)</string>
-    <string name="select_ipfs_path">选择 IPFS 存储路径</string>
+    <string name="select_ipfs_path">选择IPFS存储路径</string>
     <string name="default_node">默认节点</string>
     <string name="default_gateway">默认网关</string>
     <string name="listen_privacy"><![CDATA[用户协议&隐私政策]]></string>
@@ -689,18 +689,18 @@
     <string name="eac_connecting">EAC: 正在连接</string>
     <string name="eac_sync_complete">EAC: 同步完成</string>
     <string name="ipfs_close">IPFS: 已关闭</string>
-    <string name="eac_syncing">EAC: 正在同步 </string>
+    <string name="eac_syncing">EAC: 正在同步</string>
     <string name="export_success_">导出成功: </string>
     <string name="loading">正在加载...</string>
     <string name="confirm_send_message">确定要发送消息，超过字符不能显示，支付的EAC不能退回？ 发送倒计时(<font color="#3d86f8">%1$d秒钟</font>)</string>
-    <string name="tip_eac_syncing">当前正在区块链信息同步中，不能发送或回复信息，请等待同步完成后使⽤。</string>
+    <string name="tip_eac_syncing">当前正在区块链同步中，不能发送或回复信息，请等待同步完成后使⽤。</string>
     <string name="send_normal">发布普通消息</string>
     <string name="send_notice">发布公告消息</string>
-    <string name="min_eac">发送金额(最低 %1$d EAC)</string>
+    <string name="min_eac">发送数量(最低 %1$d EAC)</string>
     <string name="file_name_">"文件名: "</string>
     <string name="confirm_sensitive_word">您发布的信息包含敏感字: %1$s，在显示时候会被*替代，是否继续发布?</string>
     <string name="insufficient_balance">余额不足</string>
-    <string name="not_less_than">"不能低于最低EAC "</string>
+    <string name="not_less_than">"不能低于最低EAC"</string>
     <string name="message_too_long">消息太长了</string>
     <string name="sending">正在发送...</string>
     <string name="tip_send_notice_success">发布公告成功,请不要关闭通知栏的状态提示,以便其他用户可以更快的浏览您上传的附件</string>
@@ -716,7 +716,7 @@
     <string name="set_key_word_success">设置助记词成功</string>
     <string name="landscape">横屏</string>
     <string name="portrait">竖屏</string>
-    <string name="about_content">EACTALK是一群崇尚自由的技术人员基于EAC区块链技术开发的信息公告弱社交系统。 \n\n我们不试图掌控任何东西，我们希望世界上言论自由； \n\n我们希望世界是真实的，没有谎言； \n\n希望世界充满正能量； \n\n我们希望世界言论平等（即便基于物质的不平等带来的一系列不平等我们无可奈何，但是我们希望作为人与生俱来的言论是平等的，而不会因为一些组织掌控资源造成不平等）； \n\nEACTALK设计机制确保不会成为第二个Twitter、Facebook、Google。 \n\n官方网站: https://www.eactalk.com/</string>
+    <string name="about_content">EACTALK是一群崇尚自由的技术人员基于EAC区块链技术开发的元宇宙信息发布社交web3.0应用。 \n\n我们不试图掌控任何东西，我们希望世界上言论自由，言论本身没有对错，对错的判定不过是每个人立场不同而已； \n\n我们希望世界是真实的，哪怕是谎言； \n\n希望世界充满正能量； \n\n我们希望世界言论平等（即便基于物质的不平等带来的一系列不平等我们无可奈何，但是我们希望作为人与生俱来的言论是平等的，而不会因为一些组织掌控资源造成不平等）； \n\nEACTALK设计机制确保不会成为第二个Twitter、Facebook、Google、微博。 \n\n官方网站: https://www.eactalk.com/</string>
     <string name="listen_content">EACTALK可以自由使用，随意传播。本身提供完全的隐私保护，不会要求并收集您的任何个人信息，信息真实性由使用者自我认证，认证选择权全部交给使用者。 \n\n1、信息所有权归账户所有者所有，账户归使用者所有，账户全球唯一，账户完全匿名且不可伪造。 \n\n2、信息不可删除撤销，不可修改，不可抵赖，不可追踪，永久保留。 \n\n3、自愿有偿发布公告类型信息，所有EACTALK置顶可见。 \n\n4、EACTALK版权归EACTALK开发者所有，未经许可，不得用于商业用途。</string>
     <string name="eac_help">EAC节点：用于链接区块链网络，将您的数据保存到链上，建议链接自己可信节点。有条件的情况下，建议自建节点。格式 ip:端口。操作请参见：帮助中心。</string>
     <string name="ipfs_help">IPFS节点：用于存储消息中的非文本信息，例如视频、音频、图片等，需要更快的上传速度，建议自建节点，格式 ip:端口。操作请参见：帮助中心。</string>
@@ -782,7 +782,7 @@
     <string name="qg">情感</string>
     <string name="sd">树洞</string>
     <string name="receive_address_">接收地址:</string>
-    <string name="send_eac">发送金额(EAC)</string>
+    <string name="send_eac">发送数量(EAC)</string>
     <string name="balance_">余额:</string>
     <string name="net_fee_">网络费:</string>
     <string name="message_">消息:</string>
@@ -796,10 +796,10 @@
     <string name="auto_translation">自动翻译</string>
     <string name="node_run_time">节点运行时间</string>
     <string name="start">开启</string>
-    <string name="is_only_wifi">是否仅在 WIFI 下连接</string>
+    <string name="is_only_wifi">是否仅在WiFi下连接</string>
     <string name="ipfs_path">存储路径</string>
     <string name="default_gateway_http_https">默认网关(支持http和https)</string>
-    <string name="filter_by_eac">是否根据 EAC 过滤内容</string>
+    <string name="filter_by_eac">是否根据EAC过滤内容</string>
     <string name="enter_alias">请输入一个自己能辨别的别名</string>
     <string name="enter_address">请输入一个EAC地址</string>
     <string name="enter_alias_address">输入地址或别名进行搜索</string>
