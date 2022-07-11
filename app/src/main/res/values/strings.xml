@@ -818,4 +818,5 @@
     <string name="apk_download_success">The apk is downloaded, the file path is:</string>
     <string name="apk_download_fail">Download failed</string>
     <string name="updating">Updating...</string>
+    <string name="share_text">Say Earth things with EACTALK</string>
 </resources>

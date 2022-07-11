@@ -5,12 +5,18 @@ import static com.eacpay.eactalk.ipfs.IpfsDataFetcher.ENCRYPT_PREFIX;
 import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
+import android.provider.MediaStore;
 import android.text.Html;
 import android.util.Log;
 import android.view.View;
 import android.webkit.MimeTypeMap;
+import android.widget.ScrollView;
 import android.widget.Toast;
 
 import androidx.activity.result.ActivityResult;
@@ -25,6 +31,7 @@ import androidx.core.text.HtmlCompat;
 import androidx.preference.PreferenceManager;
 
 import com.blankj.utilcode.util.LanguageUtils;
+import com.blankj.utilcode.util.ScreenUtils;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
@@ -167,6 +174,19 @@ public class HomeDetail extends BRActivity {
             }
         });
 
+        binding.homeDetailShare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                binding.homeDetailShareView.setVisibility(View.VISIBLE);
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        startShare();
+                    }
+                }, 200);
+            }
+        });
+
         boolean autoTranslate = BRSharedPrefs.getBoolean(this, "auto_translate", false);
         if (autoTranslate) {
             identifyLanguage(homeItem.txcomment);
@@ -196,6 +216,36 @@ public class HomeDetail extends BRActivity {
                 }
             }
         }).start();
+    }
+
+    public static Bitmap getBitmapByView(ScrollView scrollView) {
+        int h = 0;
+        Bitmap bitmap = null;
+        // 获取scrollview实际高度 
+        for (int i = 0; i < scrollView.getChildCount(); i++) {
+            h += scrollView.getChildAt(i).getHeight();
+            scrollView.getChildAt(i).setBackgroundColor(
+                    Color.parseColor("#ffffff"));
+        }
+        // 创建对应大小的bitmap 
+        bitmap = Bitmap.createBitmap(scrollView.getWidth(), h,
+                Bitmap.Config.RGB_565);
+        final Canvas canvas = new Canvas(bitmap);
+        scrollView.draw(canvas);
+        return bitmap;
+    }
+
+    private void startShare() {
+//        Bitmap bitmap = ScreenUtils.screenShot(this);
+        Bitmap bitmap = getBitmapByView(binding.homeDetailScrollView);
+
+        String bitmapPath = MediaStore.Images.Media.insertImage(getContentResolver(), bitmap, getString(R.string.About_appName_android), null);
+        Uri bitmapUri = Uri.parse(bitmapPath);
+
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.putExtra(Intent.EXTRA_STREAM, bitmapUri);
+        intent.setType("image/jpeg");
+        startActivity(Intent.createChooser(intent, getResources().getText(R.string.About_appName_android)));
     }
 
 

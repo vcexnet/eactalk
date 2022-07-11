@@ -4,6 +4,13 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/eactalk.iml" filepath="$PROJECT_DIR$/.idea/modules/eactalk.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/eactalk.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/eactalk.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/eactalk.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/eactalk.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/eactalk.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/eactalk.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/eactalk.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/eactalk.app.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bridge/eactalk.bridge.iml" filepath="$PROJECT_DIR$/.idea/modules/bridge/eactalk.bridge.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bridge/eactalk.bridge.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/bridge/eactalk.bridge.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bridge/eactalk.bridge.main.iml" filepath="$PROJECT_DIR$/.idea/modules/bridge/eactalk.bridge.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bridge/eactalk.bridge.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/bridge/eactalk.bridge.unitTest.iml" />
     </modules>
   </component>
 </project>

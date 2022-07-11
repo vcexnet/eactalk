@@ -984,5 +984,6 @@
     <string name="apk_download_success">apk下載完畢，檔案路徑：</string>
     <string name="apk_download_fail">下載失敗</string>
     <string name="updating">正在更新...</string>
+    <string name="share_text">说地球事,用易说</string>
 
 </resources>
