@@ -1,7 +1,7 @@
 [EACTALK](http://www.eactalk.com)
 # Welcome to Donald Trump! Use eactalk to build your own social Kingdom and let the social platforms that block your account die
 # 【EACTALK introduce】
-Eactalk is an information announcement weak social system based on EAC blockchain technology developed by a group of freedom advocates.<br>
+Eactalk is Meta-universe information publishing social web 3.0 application based on EAC blockchain technology developed by a group of freedom advocates.<br>
 We don't try to control anything. We want freedom of speech in the world;<br>
 We want the world to be real, without lies;<br>
 Hope the world is full of positive energy;<br>
@@ -21,7 +21,7 @@ EACTALK TEAM
 --------------------------------------------------------------------------
 # 欢迎国内大厂需要吐槽释放压力的员工使用eactalk！揭露一下大厂内不为人知的真实生活吧
 # 【EACTALK中文介绍】
-EACTALK是一群崇尚自由的技术人员基于EAC区块链技术开发的信息公告弱社交系统。
+EACTALK是一群崇尚自由的技术人员基于EAC区块链技术开发的元宇宙信息发布社交web3.0应用。
 
 我们不试图掌控任何东西，我们希望世界上言论自由；<br>
 我们希望世界是真实的，没有谎言；<br>
@@ -30,7 +30,7 @@ EACTALK是一群崇尚自由的技术人员基于EAC区块链技术开发的信�
 EACTALK设计机制确保不会成为第二个Twitter、Facebook、Google。<br>
 
 # 【EACTALK特点】
-EACTALK中文名：易说。是基于EAC区块链的一款去中心化信息公告弱社交应用。为了更好的自由表达观点思想，避免现有中心化社交平台的控制，真正实现言论的自由表达，EACTALK的特点：
+EACTALK中文名：易说。是基于EAC区块链的一款元宇宙信息发布社交web3.0应用。为了更好的自由表达观点思想，避免现有中心化社交平台的控制，真正实现言论的自由表达，EACTALK的特点：
 
 1、账户无需注册，全球唯一，无法伪造，信息所有权完全由你掌控；<br>
 2、信息公开，永久保留在链上，不可篡改，无人能删除；<br>
