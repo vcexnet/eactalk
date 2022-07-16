@@ -86,8 +86,9 @@ import timber.log.Timber;
 public class SendMessage extends BRActivity {
     private static final String TAG = "oldfeel";
     String[] titles;
+    // 深喉爆料/昭告天下/情感广场/树洞吐槽
     String[] addresses = new String[]{"epJ9S6gVFjigZtHvRdK8VDFEJYh8JE16vC", "ecTt5mii1LA1x2Mk7JfDXF8S8oFtzWhT3L", "epP4dE9tuoUUFNTpzragJg3UeRXEZExoLi", "eTszssBjz6617L6XNBEAUJyeMiLYpN5ijJ"};
-    int[] minEac = new int[]{100000, 50000, 1000, 100};
+    int[] minEac = new int[]{50000, 100000, 1000, 100};
     int noticeIndex = 1;
     ActivitySendMessageBinding binding;
     private String messageType;
@@ -434,16 +435,16 @@ public class SendMessage extends BRActivity {
         });
 
         if (isNotice) { // 默认 昭告
-            binding.sendMessageNoticeType.check(R.id.send_message_notice_zg);
-            binding.sendMessageAddress.setText(addresses[1]);
-            binding.sendMessageName.setText(titles[1]);
-            noticeIndex = 1;
+            binding.sendMessageNoticeType.check(R.id.send_message_notice_bl);
+            binding.sendMessageAddress.setText(addresses[0]);
+            binding.sendMessageName.setText(titles[0]);
+            noticeIndex = 0;
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
 //                    showAmountEdit(); // 要获取 scale,延迟处理
                     amountBuilder = new StringBuilder();
-                    amountBuilder.append(minEac[1]);
+                    amountBuilder.append(minEac[0]);
                     updateText();
                 }
             }, 500);

@@ -51,18 +51,18 @@
                         app:layout_constraintTop_toBottomOf="@+id/BRText2">
 
                         <RadioButton
-                            android:id="@+id/send_message_notice_zg"
+                            android:id="@+id/send_message_notice_bl"
                             style="@style/FeeSelectorStartStyle"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:text="@string/zg" />
+                            android:text="@string/bl" />
 
                         <RadioButton
-                            android:id="@+id/send_message_notice_bl"
+                            android:id="@+id/send_message_notice_zg"
                             style="@style/FeeSelectorMiddleStyle"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:text="@string/bl" />
+                            android:text="@string/zg" />
 
                         <RadioButton
                             android:id="@+id/send_message_notice_qg"

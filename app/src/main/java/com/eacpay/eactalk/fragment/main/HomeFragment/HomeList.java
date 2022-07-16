@@ -270,6 +270,11 @@ public class HomeList extends Fragment {
         private List<HomeItem> filterList(List<HomeItem> dataList, int position) {
             for (int i = position; i < dataList.size(); i++) {
                 HomeItem item = dataList.get(i);
+//                if (item.value < getMinEac(homeTab.address) || (getMinTime() > 0 && item.time < getMinTime())) {
+//                    dataList.remove(i);
+//                    return filterList(dataList, i);
+//                }
+
                 if (item.value < getMinEac(homeTab.address) || item.time < getMinTime()) {
                     dataList.remove(i);
                     return filterList(dataList, i);
@@ -295,7 +300,6 @@ public class HomeList extends Fragment {
     private long getMinTime() {
         String homeDayStr = PreferenceManager.getDefaultSharedPreferences(getActivity()).getString("home_day", "30");
         int homeDay = Integer.parseInt(homeDayStr);
-        MyUtils.log("homeDay " + homeDay);
         Calendar c = Calendar.getInstance();
         if (homeDay == 0) {
             c.setTimeInMillis(0);
