@@ -984,6 +984,29 @@
     <string name="apk_download_success">apk下載完畢，檔案路徑：</string>
     <string name="apk_download_fail">下載失敗</string>
     <string name="updating">正在更新...</string>
-    <string name="share_text">说地球事,用易说</string>
-
+    <string name="share_text">說地球事，用易說</string>
+  <string-array name="ipfs_times">
+    <item>10分鐘</item>
+    <item>30分鐘</item>
+    <item>1小時</item>
+    <item>永久</item>
+  </string-array>
+  <string-array name="ipfs_times_values">
+    <item>10</item>
+    <item>30</item>
+    <item>60</item>
+    <item>0</item>
+  </string-array>
+  <string-array name="home_days">
+    <item>5天</item>
+    <item>15天</item>
+    <item>30天</item>
+    <item>所有</item>
+  </string-array>
+  <string-array name="home_days_values">
+    <item>5</item>
+    <item>15</item>
+    <item>30</item>
+    <item>0</item>
+  </string-array>
 </resources>

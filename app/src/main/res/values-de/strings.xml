@@ -992,5 +992,28 @@
     <string name="apk_download_success">Apk Der Download ist abgeschlossen, Dateipfad：</string>
     <string name="apk_download_fail">Herunterladen fehlgeschlagen</string>
     <string name="updating">Aktualisierung...</string>
-
+  <string-array name="ipfs_times">
+    <item>10M</item>
+    <item>30M</item>
+    <item>1St</item>
+    <item>Dauerhaft</item>
+  </string-array>
+  <string-array name="ipfs_times_values">
+    <item>10</item>
+    <item>30</item>
+    <item>60</item>
+    <item>0</item>
+  </string-array>
+  <string-array name="home_days">
+    <item>5Tage</item>
+    <item>15Tage</item>
+    <item>30Tage</item>
+    <item>Alle</item>
+  </string-array>
+  <string-array name="home_days_values">
+    <item>5</item>
+    <item>15</item>
+    <item>30</item>
+    <item>0</item>
+  </string-array>
 </resources>

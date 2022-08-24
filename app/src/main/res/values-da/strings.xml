@@ -992,5 +992,28 @@
     <string name="apk_download_success">APK\'en er downloadet, filstien er：</string>
     <string name="apk_download_fail">Download fejlede</string>
     <string name="updating">Opdatering...</string>
-
+  <string-array name="ipfs_times">
+    <item>10M</item>
+    <item>30M</item>
+    <item>1T</item>
+    <item>Altid</item>
+  </string-array>
+  <string-array name="ipfs_times_values">
+    <item>10</item>
+    <item>30</item>
+    <item>60</item>
+    <item>0</item>
+  </string-array>
+  <string-array name="home_days">
+    <item>5D</item>
+    <item>15D</item>
+    <item>30D</item>
+    <item>Alle</item>
+  </string-array>
+  <string-array name="home_days_values">
+    <item>5</item>
+    <item>15</item>
+    <item>30</item>
+    <item>0</item>
+  </string-array>
 </resources>
